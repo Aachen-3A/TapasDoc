@@ -1,0 +1,189 @@
+.TH "television" 3 "Wed Feb 4 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+television \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNoDaemonProcess\fP"
+.br
+.ti -1c
+.RI "class \fBNoDaemonPool\fP"
+.br
+.ti -1c
+.RI "class \fBOverview\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBterminate\fP"
+.br
+.ti -1c
+.RI "def \fBaddtime\fP"
+.br
+.ti -1c
+.RI "def \fBtimerepr\fP"
+.br
+.ti -1c
+.RI "def \fBcheckTask\fP"
+.br
+.ti -1c
+.RI "def \fBnextUpdate\fP"
+.br
+.ti -1c
+.RI "def \fBresubmitByStatus\fP"
+.br
+.ti -1c
+.RI "def \fBaddToList\fP"
+.br
+.ti -1c
+.RI "def \fBgetRunTimeFromHistory\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBwaitingForExit\fP = False"
+.br
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+.br
+.ti -1c
+.RI "tuple \fBtask\fP = cesubmit\&.Task\&.load(directory)"
+.br
+.ti -1c
+.RI "tuple \fBpp\fP = pprint\&.PrettyPrinter(indent=2)"
+.br
+.ti -1c
+.RI "\fBpassphrase\fP = None"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def television\&.addtime (tfor, tsince, tto)"
+
+.PP
+.nf
+Add two time intervals
+tfor to tto-tsince
+
+.fi
+.PP
+ 
+.PP
+Definition at line 39 of file television\&.py\&.
+.SS "def television\&.addToList (taskList, myList, overview)"
+
+.PP
+.nf
+add jobs to the kill / resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 97 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.checkTask (task, resubmitJobs, killJobs)"
+
+.PP
+.nf
+perform actions on a task
+resubmit jobs, get status, get output and get status again
+
+.fi
+.PP
+ 
+.PP
+Definition at line 63 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.getRunTimeFromHistory (history)"
+
+.PP
+Definition at line 113 of file television\&.py\&.
+.PP
+References timerepr()\&.
+.PP
+Referenced by television\&.Overview\&.update()\&.
+.SS "def television\&.main (stdscr, options, args, passphrase)"
+
+.PP
+Definition at line 270 of file television\&.py\&.
+.PP
+References addToList(), checkTask(), lumi\&.format, nextUpdate(), resubmitByStatus(), and timerepr()\&.
+.SS "def television\&.nextUpdate (lastUpdate, updateInterval, nextTaskId)"
+
+.PP
+Definition at line 76 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.resubmitByStatus (taskList, resubmitList, status, overview)"
+
+.PP
+.nf
+add jobs with a certain status to the resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 82 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.terminate (signum, frame)"
+
+.PP
+Definition at line 35 of file television\&.py\&.
+.SS "def television\&.timerepr (deltat)"
+
+.PP
+.nf
+Return formatted time interval
+
+.fi
+.PP
+ 
+.PP
+Definition at line 51 of file television\&.py\&.
+.PP
+References lumi\&.format\&.
+.PP
+Referenced by getRunTimeFromHistory(), and main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple television\&.parser = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+
+.PP
+Definition at line 431 of file television\&.py\&.
+.SS "tuple television\&.passphrase = None"
+
+.PP
+Definition at line 445 of file television\&.py\&.
+.SS "tuple television\&.pp = pprint\&.PrettyPrinter(indent=2)"
+
+.PP
+Definition at line 439 of file television\&.py\&.
+.SS "tuple television\&.task = cesubmit\&.Task\&.load(directory)"
+
+.PP
+Definition at line 438 of file television\&.py\&.
+.SS "television\&.waitingForExit = False"
+
+.PP
+Definition at line 22 of file television\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

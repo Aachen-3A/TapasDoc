@@ -1,0 +1,102 @@
+.TH "crabConfigParser.CrabConfigParser" 3 "Wed Feb 4 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+crabConfigParser.CrabConfigParser \- 
+.PP
+The \fBCrabConfigParser\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ConfigParser\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.RI "\fIThe constructor\&. \fP"
+.ti -1c
+.RI "def \fBwriteCrabConfig\fP"
+.br
+.RI "\fIWrite \fBCrabConfigParser\fP object to file  self: \fBCrabConfigParser\fP\&. \fP"
+.ti -1c
+.RI "def \fBgetSectionLines\fP"
+.br
+.RI "\fIHelper function to retrieve crab config output lines for one section  self: \fBCrabConfigParser\fP\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoptionxform\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCrabConfigParser\fP class\&. 
+
+This class extends the python ConfigParser class and adds functions to output crab3 config files 
+.PP
+Definition at line 13 of file crabConfigParser\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def crabConfigParser\&.CrabConfigParser\&.__init__ (self)"
+
+.PP
+The constructor\&. 
+.PP
+Definition at line 16 of file crabConfigParser\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def crabConfigParser\&.CrabConfigParser\&.getSectionLines (self, section)"
+
+.PP
+Helper function to retrieve crab config output lines for one section  self: \fBCrabConfigParser\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself:The\fP object pointer\&.  section: string 
+.br
+\fIsection:The\fP section name\&. : list of strings 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+: Lines for one section in crab3 config file 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file crabConfigParser\&.py\&.
+.PP
+Referenced by crabConfigParser\&.CrabConfigParser\&.writeCrabConfig()\&.
+.SS "def crabConfigParser\&.CrabConfigParser\&.writeCrabConfig (self, filename)"
+
+.PP
+Write \fBCrabConfigParser\fP object to file  self: \fBCrabConfigParser\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  filename: string 
+.br
+\fIfilename\fP The name of the output crab3 config file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file crabConfigParser\&.py\&.
+.PP
+References crabConfigParser\&.CrabConfigParser\&.getSectionLines()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "crabConfigParser\&.CrabConfigParser\&.optionxform"
+
+.PP
+Definition at line 18 of file crabConfigParser\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

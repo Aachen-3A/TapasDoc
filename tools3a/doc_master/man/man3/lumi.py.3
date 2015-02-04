@@ -1,0 +1,103 @@
+.TH "scripts/lumi.py" 3 "Wed Feb 4 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scripts/lumi.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "\fBlumi\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlumi\&.log\fP = logging\&.getLogger( 'lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.lumi_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.lumi_map_file\fP = os\&.path\&.join( lumi_dir, 'lumi-map\&.txt' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.date\fP = datetime\&.datetime\&.today()"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.parser\fP = optparse\&.OptionParser( description='Calculate the integrated luminosity of CRAB tasks after applying additional luminosity-masks', usage='usage: %prog [options] CRAB_TASKS\&.\&.\&.' )"
+.br
+.ti -1c
+.RI "string \fBlumi\&.help\fP = 'Use lumiCalc\&.py instead of pixelLumiCalc\&.py\&. [default: %default]'"
+.br
+.ti -1c
+.RI "string \fBlumi\&.format\fP = '%(levelname)s at %(asctime)s: %(message)s'"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.units\fP = dict( [ ['/\\xce\\xbcb', 1e-6 ], [ '/ub', 1e-6 ], [ '/nb', 1e-3 ], [ '/pb', 1 ], [ '/fb', 1e3 ] ] )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.c2aix3adb\fP = crab2aix3adb\&.Crab2aix3adb()"
+.br
+.ti -1c
+.RI "list \fBlumi\&.lumi_map\fP = []"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.line\fP = line\&.split( '#' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.lumis\fP = LumiList( os\&.path\&.join( options\&.lumi_dir, file ) )"
+.br
+.ti -1c
+.RI "list \fBlumi\&.jsons_to_read\fP = []"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.infosForDB_by_json\fP = defaultdict( list )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.crabCfgPath\fP = os\&.path\&.join( task, 'share/crab\&.cfg' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.output_file_name\fP = os\&.path\&.splitext( os\&.path\&.basename( parser\&.get( 'CMSSW', 'output_file' ) ) )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.datasetpath\fP = parser\&.get( 'CMSSW', 'datasetpath' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.ana_lumis\fP = LumiList( os\&.path\&.join( task, 'res/lumiSummary\&.json' ) )"
+.br
+.ti -1c
+.RI "\fBlumi\&.output_lumis\fP = cert_lumis&ana_lumis"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.tee\fP = subprocess\&.Popen( [ 'tee', options\&.output ], stdin = subprocess\&.PIPE )"
+.br
+.ti -1c
+.RI "list \fBlumi\&.args\fP = [ options\&.lumi, 'overview', '-i', json ]"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.proc\fP = subprocess\&.Popen( args, stdout=subprocess\&.PIPE, stderr=subprocess\&.STDOUT )"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.output\fP = proc\&.communicate()"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.lines\fP = output\&.splitlines()"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.unit_line\fP = line\&.next()"
+.br
+.ti -1c
+.RI "list \fBlumi\&.recorded\fP = unit_line[4]"
+.br
+.ti -1c
+.RI "tuple \fBlumi\&.unit\fP = re\&.compile('\\(([^)]*)\\)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

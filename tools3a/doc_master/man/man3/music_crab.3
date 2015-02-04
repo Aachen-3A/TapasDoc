@@ -1,0 +1,531 @@
+.TH "music_crab" 3 "Wed Feb 4 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+music_crab \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetNumberOfEvents\fP"
+.br
+.ti -1c
+.RI "def \fBparseCrabOutput\fP"
+.br
+.ti -1c
+.RI "def \fBcrabSubmit\fP"
+.br
+.ti -1c
+.RI "def \fBcreateTag\fP"
+.br
+.ti -1c
+.RI "def \fBgetExistingProcesses\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlog\fP = logging\&.getLogger( 'music_crab' )"
+.br
+.ti -1c
+.RI "tuple \fBskimmer_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBconfig_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/configs' )"
+.br
+.ti -1c
+.RI "string \fBCOMMENT_CHAR\fP = '#'"
+.br
+.ti -1c
+.RI "list \fBlog_choices\fP = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+.br
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( description='Submit MUSiCSkimmer jobs for all samples listed in DATASET_FILE', usage='usage: %prog [options] DATASET_FILE' )"
+.br
+.ti -1c
+.RI "string \fBhelp\fP = 'Analyze NUMBER events per job (MC) or lumis per job '"
+.br
+.ti -1c
+.RI "tuple \fBnow\fP = datetime\&.datetime\&.now()"
+.br
+.ti -1c
+.RI "tuple \fBisodatetime\fP = now\&.strftime( '%Y-%m-%d_%H\&.%M\&.%S' )"
+.br
+.ti -1c
+.RI "string \fBdate\fP = '%F %H:%M:%S'"
+.br
+.ti -1c
+.RI "string \fBformat\fP = '%(levelname)s (%(name)s) [%(asctime)s]: %(message)s'"
+.br
+.ti -1c
+.RI "tuple \fBformatter\fP = logging\&.Formatter( \fBformat\fP )"
+.br
+.ti -1c
+.RI "string \fBlog_file_name\fP = 'music_crab_'"
+.br
+.ti -1c
+.RI "tuple \fBhdlr\fP = logging\&.FileHandler( \fBlog_file_name\fP, mode='w' )"
+.br
+.ti -1c
+.RI "\fBoutname\fP = options\&.name"
+.br
+.ti -1c
+.RI "int \fBlumisPerJob\fP = 20"
+.br
+.ti -1c
+.RI "int \fBeventsPerJob\fP = 10000"
+.br
+.ti -1c
+.RI "int \fBmaxNumJobs\fP = 500"
+.br
+.ti -1c
+.RI "int \fBmaxNumJobsRG\fP = 5000"
+.br
+.ti -1c
+.RI "\fBrunOnData\fP = False"
+.br
+.ti -1c
+.RI "\fBrunOnMC\fP = False"
+.br
+.ti -1c
+.RI "tuple \fBsample_file\fP = open( args[0] )"
+.br
+.ti -1c
+.RI "\fBpset\fP = options\&.config"
+.br
+.ti -1c
+.RI "tuple \fBline\fP = line\&.strip()"
+.br
+.ti -1c
+.RI "tuple \fBgenerator\fP = line\&.split( '=' )"
+.br
+.ti -1c
+.RI "tuple \fBenergy\fP = line\&.split( '=' )"
+.br
+.ti -1c
+.RI "tuple \fBDCSOnly_json\fP = line\&.split( '=' )"
+.br
+.ti -1c
+.RI "tuple \fBfile\fP = open( \fBpset\fP )"
+.br
+.ti -1c
+.RI "tuple \fBcfo\fP = imp\&.load_source('pycfg', pset, \fBfile\fP )"
+.br
+.ti -1c
+.RI "\fBprocess\fP = cfo\&.process"
+.br
+.ti -1c
+.RI "tuple \fBuser\fP = os\&.getenv( 'LOGNAME' )"
+.br
+.ti -1c
+.RI "list \fBdcms_blacklist\fP = [ 'malhotra' ]"
+.br
+.ti -1c
+.RI "\fBallow_dcms\fP = notuserindcms_blacklist"
+.br
+.ti -1c
+.RI "tuple \fBgitTag\fP = \fBcreateTag\fP( options, \fBskimmer_dir\fP )"
+.br
+.ti -1c
+.RI "tuple \fBexisting\fP = \fBgetExistingProcesses\fP()"
+.br
+.ti -1c
+.RI "tuple \fBdblink\fP = aix3adb\&.aix3adb()"
+.br
+.ti -1c
+.RI "dictionary \fBskipped\fP = {}"
+.br
+.ti -1c
+.RI "\fBskip\fP = False"
+.br
+.ti -1c
+.RI "tuple \fBsplit_line\fP = line\&.split( ';' )"
+.br
+.ti -1c
+.RI "list \fBfirst_part\fP = \fBsplit_line\fP[ 0 ]"
+.br
+.ti -1c
+.RI "tuple \fBlumi_mask\fP = os\&.path\&.join( options\&.lumi_dir, \fBsplit_line\fP[ 1 ] )"
+.br
+.ti -1c
+.RI "\fBsetJobsNumber\fP = False"
+.br
+.ti -1c
+.RI "tuple \fBnumEvents\fP = \fBgetNumberOfEvents\fP( sample )"
+.br
+.ti -1c
+.RI "string \fBwall_filename\fP = 'wallLimit'"
+.br
+.ti -1c
+.RI "string \fBcpu_filename\fP = 'cpuLimit'"
+.br
+.ti -1c
+.RI "float \fBmax_time\fP = 259200\&.0"
+.br
+.ti -1c
+.RI "tuple \fBwall_file\fP = open( \fBwall_filename\fP, 'wb' )"
+.br
+.ti -1c
+.RI "tuple \fBcpu_file\fP = open( \fBcpu_filename\fP, 'wb' )"
+.br
+.ti -1c
+.RI "string \fBcrab_dir\fP = 'crab_'"
+.br
+.ti -1c
+.RI "tuple \fBconfig\fP = ConfigParser\&.RawConfigParser()"
+.br
+.ti -1c
+.RI "tuple \fBcfg_file\fP = open(name+'\&.cfg', 'wb')"
+.br
+.ti -1c
+.RI "tuple \fBpset_file\fP = open( name+'_cfg\&.py', 'w' )"
+.br
+.ti -1c
+.RI "list \fBcommand_create\fP = [ 'crab', '-create', '-cfg', name + '\&.cfg' ]"
+.br
+.ti -1c
+.RI "list \fBcommand_submit\fP = [ 'crab', '-submit', '-c', \fBcrab_dir\fP ]"
+.br
+.ti -1c
+.RI "tuple \fBproc\fP = subprocess\&.Popen( \fBcommand_create\fP, stdout=subprocess\&.PIPE, stderr=subprocess\&.STDOUT )"
+.br
+.ti -1c
+.RI "tuple \fBoutput\fP = proc\&.communicate()"
+.br
+.ti -1c
+.RI "int \fBstart\fP = 1"
+.br
+.ti -1c
+.RI "tuple \fBdatasetInfos\fP = dict()"
+.br
+.ti -1c
+.RI "tuple \fBdatasetTags\fP = dict()"
+.br
+.ti -1c
+.RI "tuple \fBDBconfig\fP = ConfigParser\&.SafeConfigParser()"
+.br
+.ti -1c
+.RI "tuple \fBDBentry\fP = dblink\&.registerMCSample( \fBdatasetInfos\fP )"
+.br
+.ti -1c
+.RI "tuple \fBDBcfg_path\fP = os\&.path\&.join( \fBcrab_dir\fP, 'aix3adb\&.cfg' )"
+.br
+.ti -1c
+.RI "tuple \fBDBcfg_file\fP = open( \fBDBcfg_path\fP, 'w+' )"
+.br
+.ti -1c
+.RI "tuple \fBlongest_process\fP = max( map( len, skipped\&.keys() ) )"
+.br
+.ti -1c
+.RI "tuple \fBlongest_sample\fP = max( map( len, skipped\&.values() ) )"
+.br
+.ti -1c
+.RI "string \fBinfo\fP = 'Not submitted the following samples:'"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def music_crab\&.crabSubmit (options, workDir, first = \fCNone\fP, last = \fCNone\fP, numRetry = \fC10\fP)"
+
+.PP
+Definition at line 58 of file music_crab\&.py\&.
+.SS "def music_crab\&.createTag (options, skimmer_dir)"
+
+.PP
+Definition at line 93 of file music_crab\&.py\&.
+.PP
+References gitTag\&.
+.SS "def music_crab\&.getExistingProcesses ()"
+
+.PP
+Definition at line 190 of file music_crab\&.py\&.
+.SS "def music_crab\&.getNumberOfEvents (dataset)"
+
+.PP
+Definition at line 19 of file music_crab\&.py\&.
+.SS "def music_crab\&.parseCrabOutput (output)"
+
+.PP
+Definition at line 35 of file music_crab\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "music_crab\&.allow_dcms = notuserindcms_blacklist"
+
+.PP
+Definition at line 353 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.cfg_file = open(name+'\&.cfg', 'wb')"
+
+.PP
+Definition at line 520 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.cfo = imp\&.load_source('pycfg', pset, \fBfile\fP )"
+
+.PP
+Definition at line 344 of file music_crab\&.py\&.
+.SS "list music_crab\&.command_create = [ 'crab', '-create', '-cfg', name + '\&.cfg' ]"
+
+.PP
+Definition at line 537 of file music_crab\&.py\&.
+.SS "list music_crab\&.command_submit = [ 'crab', '-submit', '-c', \fBcrab_dir\fP ]"
+
+.PP
+Definition at line 539 of file music_crab\&.py\&.
+.SS "string music_crab\&.COMMENT_CHAR = '#'"
+
+.PP
+Definition at line 217 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.config = ConfigParser\&.RawConfigParser()"
+
+.PP
+Definition at line 461 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.config_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/configs' )"
+
+.PP
+Definition at line 215 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.cpu_file = open( \fBcpu_filename\fP, 'wb' )"
+
+.PP
+Definition at line 454 of file music_crab\&.py\&.
+.SS "string music_crab\&.cpu_filename = 'cpuLimit'"
+
+.PP
+Definition at line 439 of file music_crab\&.py\&.
+.SS "string music_crab\&.crab_dir = 'crab_'"
+
+.PP
+Definition at line 460 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.datasetInfos = dict()"
+
+.PP
+Definition at line 573 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.datasetTags = dict()"
+
+.PP
+Definition at line 586 of file music_crab\&.py\&.
+.SS "string music_crab\&.date = '%F %H:%M:%S'"
+
+.PP
+Definition at line 262 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.DBcfg_file = open( \fBDBcfg_path\fP, 'w+' )"
+
+.PP
+Definition at line 631 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.DBcfg_path = os\&.path\&.join( \fBcrab_dir\fP, 'aix3adb\&.cfg' )"
+
+.PP
+Definition at line 630 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.DBconfig = ConfigParser\&.SafeConfigParser()"
+
+.PP
+Definition at line 594 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.DBentry = dblink\&.registerMCSample( \fBdatasetInfos\fP )"
+
+.PP
+Definition at line 603 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.dblink = aix3adb\&.aix3adb()"
+
+.PP
+Definition at line 370 of file music_crab\&.py\&.
+.SS "list music_crab\&.dcms_blacklist = [ 'malhotra' ]"
+
+.PP
+Definition at line 352 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.DCSOnly_json = line\&.split( '=' )"
+
+.PP
+Definition at line 331 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.energy = line\&.split( '=' )"
+
+.PP
+Definition at line 329 of file music_crab\&.py\&.
+.SS "music_crab\&.eventsPerJob = 10000"
+
+.PP
+Definition at line 292 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.existing = \fBgetExistingProcesses\fP()"
+
+.PP
+Definition at line 364 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.file = open( \fBpset\fP )"
+
+.PP
+Definition at line 343 of file music_crab\&.py\&.
+.SS "music_crab\&.first_part = \fBsplit_line\fP[ 0 ]"
+
+.PP
+Definition at line 401 of file music_crab\&.py\&.
+.SS "string music_crab\&.format = '%(levelname)s (%(name)s) [%(asctime)s]: %(message)s'"
+
+.PP
+Definition at line 263 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.formatter = logging\&.Formatter( \fBformat\fP )"
+
+.PP
+Definition at line 267 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.generator = line\&.split( '=' )"
+
+.PP
+Definition at line 326 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.gitTag = \fBcreateTag\fP( options, \fBskimmer_dir\fP )"
+
+.PP
+Definition at line 357 of file music_crab\&.py\&.
+.PP
+Referenced by createTag(), and music_crab3\&.createTag()\&.
+.SS "tuple music_crab\&.hdlr = logging\&.FileHandler( \fBlog_file_name\fP, mode='w' )"
+
+.PP
+Definition at line 269 of file music_crab\&.py\&.
+.SS "string music_crab\&.help = 'Analyze NUMBER events per job (MC) or lumis per job '"
+
+.PP
+Definition at line 229 of file music_crab\&.py\&.
+.SS "string music_crab\&.info = 'Not submitted the following samples:'"
+
+.PP
+Definition at line 648 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.isodatetime = now\&.strftime( '%Y-%m-%d_%H\&.%M\&.%S' )"
+
+.PP
+Definition at line 259 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.line = line\&.strip()"
+
+.PP
+Definition at line 321 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.log = logging\&.getLogger( 'music_crab' )"
+
+.PP
+Definition at line 17 of file music_crab\&.py\&.
+.SS "list music_crab\&.log_choices = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+
+.PP
+Definition at line 219 of file music_crab\&.py\&.
+.SS "string music_crab\&.log_file_name = 'music_crab_'"
+
+.PP
+Definition at line 268 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.longest_process = max( map( len, skipped\&.keys() ) )"
+
+.PP
+Definition at line 645 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.longest_sample = max( map( len, skipped\&.values() ) )"
+
+.PP
+Definition at line 646 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.lumi_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/lumi' )"
+
+.PP
+Definition at line 214 of file music_crab\&.py\&.
+.SS "music_crab\&.lumi_mask = os\&.path\&.join( options\&.lumi_dir, \fBsplit_line\fP[ 1 ] )"
+
+.PP
+Definition at line 402 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.lumisPerJob = 20"
+
+.PP
+Definition at line 291 of file music_crab\&.py\&.
+.SS "float music_crab\&.max_time = 259200\&.0"
+
+.PP
+Definition at line 442 of file music_crab\&.py\&.
+.SS "int music_crab\&.maxNumJobs = 500"
+
+.PP
+Definition at line 293 of file music_crab\&.py\&.
+.SS "int music_crab\&.maxNumJobsRG = 5000"
+
+.PP
+Definition at line 294 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.now = datetime\&.datetime\&.now()"
+
+.PP
+Definition at line 258 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.numEvents = \fBgetNumberOfEvents\fP( sample )"
+
+.PP
+Definition at line 424 of file music_crab\&.py\&.
+.SS "string music_crab\&.outname = options\&.name"
+
+.PP
+Definition at line 282 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.output = proc\&.communicate()"
+
+.PP
+Definition at line 552 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.parser = optparse\&.OptionParser( description='Submit MUSiCSkimmer jobs for all samples listed in DATASET_FILE', usage='usage: %prog [options] DATASET_FILE' )"
+
+.PP
+Definition at line 220 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.proc = subprocess\&.Popen( \fBcommand_create\fP, stdout=subprocess\&.PIPE, stderr=subprocess\&.STDOUT )"
+
+.PP
+Definition at line 551 of file music_crab\&.py\&.
+.SS "music_crab\&.process = cfo\&.process"
+
+.PP
+Definition at line 346 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.pset = options\&.config"
+
+.PP
+Definition at line 318 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.pset_file = open( name+'_cfg\&.py', 'w' )"
+
+.PP
+Definition at line 530 of file music_crab\&.py\&.
+.SS "music_crab\&.runOnData = False"
+
+.PP
+Definition at line 313 of file music_crab\&.py\&.
+.SS "music_crab\&.runOnMC = False"
+
+.PP
+Definition at line 314 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.sample_file = open( args[0] )"
+
+.PP
+Definition at line 316 of file music_crab\&.py\&.
+.SS "music_crab\&.setJobsNumber = False"
+
+.PP
+Definition at line 421 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.skimmer_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject' )"
+
+.PP
+Definition at line 213 of file music_crab\&.py\&.
+.SS "music_crab\&.skip = False"
+
+.PP
+Definition at line 385 of file music_crab\&.py\&.
+.SS "dictionary music_crab\&.skipped = {}"
+
+.PP
+Definition at line 378 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.split_line = line\&.split( ';' )"
+
+.PP
+Definition at line 400 of file music_crab\&.py\&.
+.SS "int music_crab\&.start = 1"
+
+.PP
+Definition at line 563 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.user = os\&.getenv( 'LOGNAME' )"
+
+.PP
+Definition at line 351 of file music_crab\&.py\&.
+.SS "tuple music_crab\&.wall_file = open( \fBwall_filename\fP, 'wb' )"
+
+.PP
+Definition at line 447 of file music_crab\&.py\&.
+.SS "string music_crab\&.wall_filename = 'wallLimit'"
+
+.PP
+Definition at line 438 of file music_crab\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

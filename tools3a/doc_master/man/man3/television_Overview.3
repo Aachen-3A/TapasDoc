@@ -1,0 +1,178 @@
+.TH "television.Overview" 3 "Wed Feb 4 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+television.Overview \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBupdate\fP"
+.br
+.ti -1c
+.RI "def \fBcurrentTask\fP"
+.br
+.ti -1c
+.RI "def \fBcurrentJob\fP"
+.br
+.ti -1c
+.RI "def \fBup\fP"
+.br
+.ti -1c
+.RI "def \fBdown\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlevel\fP"
+.br
+.ti -1c
+.RI "\fBtaskId\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBstdscr\fP"
+.br
+.ti -1c
+.RI "\fBtaskOverviews\fP"
+.br
+.ti -1c
+.RI "\fBheight\fP"
+.br
+.ti -1c
+.RI "\fBoverview\fP"
+.br
+.ti -1c
+.RI "\fBtasks\fP"
+.br
+.ti -1c
+.RI "\fBcurrentView\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_refresh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class incorporates the 'graphical' overviews of tasks, jobs and jobinfo.
+Tasks and jobs overviews are stored persistantly in order to be aware of the selected task/job.
+Jobinfo is created on the fly.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 124 of file television\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def television\&.Overview\&.__init__ (self, stdscr, tasks, resubmitList, killList, nextTaskId)"
+
+.PP
+Definition at line 129 of file television\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def television\&.Overview\&._refresh (self)\fC [private]\fP"
+
+.PP
+Definition at line 244 of file television\&.py\&.
+.PP
+References television\&.Overview\&.level\&.
+.PP
+Referenced by television\&.Overview\&.down(), watchfrog\&.Overview\&.down(), television\&.Overview\&.up(), watchfrog\&.Overview\&.up(), television\&.Overview\&.update(), and watchfrog\&.Overview\&.update()\&.
+.SS "def television\&.Overview\&.currentJob (self)"
+
+.PP
+Definition at line 236 of file television\&.py\&.
+.PP
+References television\&.Overview\&.currentTask(), and television\&.Overview\&.taskOverviews\&.
+.SS "def television\&.Overview\&.currentTask (self)"
+
+.PP
+Definition at line 233 of file television\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh(), and television\&.Overview\&.currentJob()\&.
+.SS "def television\&.Overview\&.down (self)"
+
+.PP
+Definition at line 241 of file television\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), and television\&.Overview\&.level\&.
+.SS "def television\&.Overview\&.up (self)"
+
+.PP
+Definition at line 238 of file television\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), and television\&.Overview\&.level\&.
+.SS "def television\&.Overview\&.update (self, tasks, resubmitList, killList, nextTaskId)"
+
+.PP
+Definition at line 146 of file television\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), lumi\&.format, television\&.getRunTimeFromHistory(), television\&.Overview\&.taskOverviews, and television\&.Overview\&.tasks\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "television\&.Overview\&.currentView"
+
+.PP
+Definition at line 246 of file television\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh()\&.
+.SS "television\&.Overview\&.cursor"
+
+.PP
+Definition at line 132 of file television\&.py\&.
+.SS "television\&.Overview\&.height"
+
+.PP
+Definition at line 135 of file television\&.py\&.
+.SS "television\&.Overview\&.level"
+
+.PP
+Definition at line 130 of file television\&.py\&.
+.PP
+Referenced by television\&.Overview\&._refresh(), watchfrog\&.Overview\&._refresh(), television\&.Overview\&.down(), watchfrog\&.Overview\&.down(), television\&.Overview\&.up(), and watchfrog\&.Overview\&.up()\&.
+.SS "television\&.Overview\&.overview"
+
+.PP
+Definition at line 136 of file television\&.py\&.
+.SS "television\&.Overview\&.stdscr"
+
+.PP
+Definition at line 133 of file television\&.py\&.
+.SS "television\&.Overview\&.taskId"
+
+.PP
+Definition at line 131 of file television\&.py\&.
+.SS "television\&.Overview\&.taskOverviews"
+
+.PP
+Definition at line 134 of file television\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh(), television\&.Overview\&.currentJob(), television\&.Overview\&.update(), and watchfrog\&.Overview\&.update()\&.
+.SS "television\&.Overview\&.tasks"
+
+.PP
+Definition at line 145 of file television\&.py\&.
+.PP
+Referenced by television\&.Overview\&.update(), and watchfrog\&.Overview\&.update()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.
