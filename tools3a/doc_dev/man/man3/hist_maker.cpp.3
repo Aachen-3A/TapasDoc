@@ -1,0 +1,438 @@
+.TH "RATA_PDF/src/hist_maker.cpp" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RATA_PDF/src/hist_maker.cpp \- 
+.PP
+Functions to calculate the PDF uncertainties\&. The functions will be called by tha \fBRATA_PDF\fP package\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'hist_maker\&.h'\fP
+.br
+\fC#include 'LHAPDF/LHAPDF\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBraw_input\fP (TString question)"
+.br
+.RI "\fIFunction to simulate raw_input from python\&. \fP"
+.ti -1c
+.RI "TTree * \fBread_tree\fP (char *filename, char *tree_name, char *tree_cuts)"
+.br
+.RI "\fIFunction to read and cut a tree from a \&.root file\&. \fP"
+.ti -1c
+.RI "double \fBget_scalefactor\fP (char *f_name, double lumi, double data_mc_scf, double xs)"
+.br
+.RI "\fIFunction to read the MC scale factor from the number of events\&. \fP"
+.ti -1c
+.RI "void \fBinit_bg\fP (char *PDFpath, int n_pdfs, char **PDFsets, int loglevel)"
+.br
+.RI "\fIFunction to initialze the necessary PDF sets\&. \fP"
+.ti -1c
+.RI "bool \fBanalyser\fP (TTree *tree, char **branches, char *histname, int n_pdfs, char **PDFsets, double scalefactor)"
+.br
+.RI "\fIFunction to create for a given TTree the reweighted histograms\&. \fP"
+.ti -1c
+.RI "bool \fBwriter\fP (char *histname, int n_pdfs, char **PDFsets)"
+.br
+.RI "\fIFunction to write the histograms in an output file\&. \fP"
+.ti -1c
+.RI "void \fBmake_hists\fP (char *input_file, char *tree_name, char *tree_cuts, char **branches, double lumi, double cross_section, int n_pdfs, char **PDFsets, char *PDFnorm, char *histname, char *output_file, int n_binning, double *binning)"
+.br
+.RI "\fIFunction to coordinate the creation of the reweighted histograms\&. \fP"
+.ti -1c
+.RI "vector< vector< Float_t > > \fBhessian_pdf_asErr\fP (vector< vector< TH1D * > > hist_scaled, double pdf_correction, double as_plus_correction, double as_minus_correction, int *as_plus_number, int *as_minus_number)"
+.br
+.RI "\fIFunction to calculate the overall uncertainty for a hessian PDF set\&. \fP"
+.ti -1c
+.RI "void \fBpdf_calcer_hessian\fP (int n_pdfSet, char **pdf_sets, char *outfile, char *out_par, char *infile, char *main_hist, char *shortname, double pdf_correction, double as_plus_correction, double as_minus_correction, int *as_plus_number, int *as_minus_number)"
+.br
+.RI "\fIFunction to get the final uncertainty histograms for a hessian PDF set\&. \fP"
+.ti -1c
+.RI "vector< vector< Float_t > > \fBNNPDF_weighted_mean\fP (vector< vector< TH1D * > > hist_scaled)"
+.br
+.RI "\fIFunction to calculate the overall uncertainty for a MC PDF set\&. \fP"
+.ti -1c
+.RI "void \fBpdf_calcer_MC\fP (int n_pdfSet, char **pdf_sets, char *outfile, char *out_par, char *infile, char *main_hist, char *shortname)"
+.br
+.RI "\fIFunction to get the final uncertainty histograms for a MC PDF set\&. \fP"
+.ti -1c
+.RI "void \fBtest_TString\fP (TString test)"
+.br
+.ti -1c
+.RI "void \fBtest_string\fP (string test)"
+.br
+.ti -1c
+.RI "void \fBtest_double\fP (double test)"
+.br
+.ti -1c
+.RI "void \fBtest_double_array\fP (int size, double *test)"
+.br
+.ti -1c
+.RI "void \fBtest_int\fP (int test)"
+.br
+.ti -1c
+.RI "void \fBtest_char\fP (char *test)"
+.br
+.ti -1c
+.RI "void \fBtest_string_array\fP (int size, char **test)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions to calculate the PDF uncertainties\&. The functions will be called by tha \fBRATA_PDF\fP package\&. 
+
+
+.PP
+Definition in file \fBhist_maker\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "bool analyser (TTree *tree, char **branches, char *histname, intn_pdfs, char **PDFsets, doublescalefactor)"
+
+.PP
+Function to create for a given TTree the reweighted histograms\&. This function reads the necessary information from a given TTree and reweights all event according to the specified PDF sets\&. This events are then filled in histograms fro further processing\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP TTree that should be analyzed 
+.br
+\fIbranches\fP Array with the name of the branches in the tree 
+.br
+\fIhistname\fP Name that all filled histograms should get 
+.br
+\fIn_pdfs\fP Number of PDF sets to be analyzed 
+.br
+\fIPDFsets\fP Array with the name of the PDF sets to be analyzed 
+.br
+\fIscalefactor\fP Scalefactor that should be applied to the histograms 
+.br
+\fIbool\fP Either true(successfull loop) or false(something failed) 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file hist_maker\&.cpp\&.
+.PP
+References allPdfsets, DEBUG, ERROR, HistClass::Fill(), INFO, info, and Mainpdf\&.
+.PP
+Referenced by make_hists()\&.
+.SS "double get_scalefactor (char *f_name, doublelumi, doubledata_mc_scf, doublexs)"
+
+.PP
+Function to read the MC scale factor from the number of events\&. This function takes the luminosity, data/MC scale factor and the cross section for the process, reads the number of events from a given files and returns the scale factor for this sample\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIf_name\fP Name of the file from which the number of events should be read 
+.br
+\fIlumi\fP Luminosity 
+.br
+\fIdata_mc_scf\fP Optional scale factor between MC and data 
+.br
+\fIxs\fP Cross section of the process 
+.br
+\fIscf\fP Scale factor for the given sample 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file hist_maker\&.cpp\&.
+.PP
+References DEBUG, datasets::file, and signal_mover::scf\&.
+.PP
+Referenced by make_hists()\&.
+.SS "vector< vector<Float_t> > hessian_pdf_asErr (vector< vector< TH1D * > >hist_scaled, doublepdf_correction, doubleas_plus_correction, doubleas_minus_correction, int *as_plus_number, int *as_minus_number)"
+
+.PP
+Function to calculate the overall uncertainty for a hessian PDF set\&. This function calculates the overall uncertainty for a hessian PDF set\&. It also calculates the uncertainties due to the alpha_S and adds this two uncertainties in quadrature\&. The whole procedure follows the PDF4LHC recommendation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhist_scaled\fP Vector of Vector of all histograms necessary 
+.br
+\fIpdf_correction\fP Global correction factor for this PDF set 
+.br
+\fIas_plus_correction\fP Correction factor for the alpha_S plus uncertainties 
+.br
+\fIas_minus_correction\fP Correction factor for the alpha_S minus uncertainties 
+.br
+\fIas_plus_number\fP Number of the alpha_S plus member, defined by the PDF config 
+.br
+\fIas_minus_number\fP Number of the alpha_S minus member, defined by the PDF config 
+.br
+\fIv_as_errors\fP Vector of Vector with the resulting uncertainties for each bin 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file hist_maker\&.cpp\&.
+.PP
+Referenced by pdf_calcer_hessian()\&.
+.SS "void init_bg (char *PDFpath, intn_pdfs, char **PDFsets, intloglevel)"
+
+.PP
+Function to initialze the necessary PDF sets\&. This function is called by \fBRATA_PDF\fP to initiate the PDF sets, used later for the calculation of the PDF uncertainties\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIPDFpath\fP Path to where the PDF sets are installed 
+.br
+\fIn_pdfs\fP Number of PDF sets that should be initialized 
+.br
+\fIPDFsets\fP Array of the PDF set names that should be initialized 
+.br
+\fIloglevel\fP Coded logging level 
+.RE
+.PP
+reference PDF set which is used to produce the Monte Carlos 
+.PP
+Definition at line 51 of file hist_maker\&.cpp\&.
+.PP
+References allPdfsets, ERROR, gLogLevel, and INFO\&.
+.SS "void make_hists (char *input_file, char *tree_name, char *tree_cuts, char **branches, doublelumi, doublecross_section, intn_pdfs, char **PDFsets, char *PDFnorm, char *histname, char *output_file, intn_binning, double *binning)"
+
+.PP
+Function to coordinate the creation of the reweighted histograms\&. This function prints if necessary the most important information on the reweighting process\&. It creates the output file an initialzes the necessary histograms with the user defined binning\&. It calls the analyser and the writer and cleans all histograms and files in the end\&. This function is also called by \fBRATA_PDF\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput_file\fP Name of the file from which the tree should be read 
+.br
+\fItree_name\fP Name of the TTree that should be read 
+.br
+\fItree_cuts\fP String of cuts that should be applied to the tree 
+.br
+\fIbranches\fP Array with the name of the branches in the tree 
+.br
+\fIlumi\fP Luminosity 
+.br
+\fIcross_section\fP Cross section of the process 
+.br
+\fIn_pdfs\fP Number of PDF sets to be analyzed 
+.br
+\fIPDFsets\fP Array with the name of the PDF sets to be analyzed 
+.br
+\fIPDFnorm\fP Name of the PDF set which should be used for the normalization 
+.br
+\fIhistname\fP Name that all filled histograms should have 
+.br
+\fIoutput_file\fP Name that the output file should get 
+.br
+\fIn_binning\fP Number of bins that each histogram should have 
+.br
+\fIbinning\fP Array with the bin edges for the histograms 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file hist_maker\&.cpp\&.
+.PP
+References allPdfsets, analyser(), HistClass::CreateHisto(), DEBUG, HistClass::DeleteHisto(), get_scalefactor(), gLogLevel, INFO, info, Mainpdf, read_tree(), HistClass::RebinHisto(), and writer()\&.
+.SS "vector< vector<Float_t> > NNPDF_weighted_mean (vector< vector< TH1D * > >hist_scaled)"
+
+.PP
+Function to calculate the overall uncertainty for a MC PDF set\&. This function calculates the overall uncertainty for a MC PDF set directly combined with the uncertainties due to alpha_S\&. The whole procedure follows the PDF4LHC recommendation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhist_scaled\fP Vector of Vector of all histograms necessary 
+.br
+\fIv_as_errors\fP Vector of Vector with the resulting uncertainties for each bin 
+.RE
+.PP
+Validate the number of replicas used from each set The number of replicas that are to be used from each set, (0,4,25,71,100,71,25,4,0) as mentioned in the PDF4LHC Interim Report, are assumed to be gaussianly distributed around a central value of alpha_s = 0\&.119\&. The following part of code varrifies the choosen number of replicas\&.
+.PP
+Combined PDF & alpha_s weighted mean value & standard deviation = PDF uncertainty Instead of randomly selecting which of the 100 replicas from each of the 7 sets to use, the following code uses all replicas from all sets (=100*7=700 replicas) and estimates a weighted mean\&. The weights are set to suit the gaussian assumption made above\&.
+.PP
+alpha_s = 0\&.116 -> file [5]
+.PP
+alpha_s = 0\&.117 -> file [6]
+.PP
+alpha_s = 0\&.118 -> file [7]
+.PP
+alpha_s = 0\&.119 -> file [8]
+.PP
+alpha_s = 0\&.120 -> file [9]
+.PP
+alpha_s = 0\&.121 -> file [10]
+.PP
+alpha_s = 0\&.122 -> file [11]
+.PP
+[replicas][bins]
+.PP
+sum over all 7 sets
+.PP
+sum over all 100 replicas in one set (1 to 100)
+.PP
+should be 300*100=30000 in this case
+.PP
+--> weighted mean
+.PP
+--> standard deviation 
+.PP
+Definition at line 435 of file hist_maker\&.cpp\&.
+.PP
+Referenced by pdf_calcer_MC()\&.
+.SS "void pdf_calcer_hessian (intn_pdfSet, char **pdf_sets, char *outfile, char *out_par, char *infile, char *main_hist, char *shortname, doublepdf_correction, doubleas_plus_correction, doubleas_minus_correction, int *as_plus_number, int *as_minus_number)"
+
+.PP
+Function to get the final uncertainty histograms for a hessian PDF set\&. This function reads in the necessary reweighted histograms, calls hessian_pdf_asErr and structures the output in a nice histogram format\&. This function is called by \fBRATA_PDF\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_pdfSet\fP Number of PDF sets to be analyzed 
+.br
+\fIpdf_sets\fP Array with the name of the PDF sets to be analyzed 
+.br
+\fIoutfile\fP Name that the output file should get 
+.br
+\fIout_par\fP How to handle the output file (RECREATE, UPDATE, \&.\&.\&.) 
+.br
+\fIinfile\fP Name of the input file 
+.br
+\fImain_hist\fP Base name of all histograms 
+.br
+\fIshortname\fP Short name that the output histograms should get 
+.br
+\fIpdf_correction\fP Global correction factor for this PDF set 
+.br
+\fIas_plus_correction\fP Correction factor for the alpha_S plus uncertainties 
+.br
+\fIas_minus_correction\fP Correction factor for the alpha_S minus uncertainties 
+.br
+\fIas_plus_number\fP Number of the alpha_S plus member, defined by the PDF config 
+.br
+\fIas_minus_number\fP Number of the alpha_S minus member, defined by the PDF config 
+.RE
+.PP
+Calculate uncertainty envelopes for CTEQ & MSTW, both with the scaling factors (C_90, C_59, C_79) and without
+.PP
+for upper & lower uncertainty histograms 
+.PP
+Definition at line 350 of file hist_maker\&.cpp\&.
+.PP
+References hessian_pdf_asErr(), and HistClass::Write()\&.
+.SS "void pdf_calcer_MC (intn_pdfSet, char **pdf_sets, char *outfile, char *out_par, char *infile, char *main_hist, char *shortname)"
+
+.PP
+Function to get the final uncertainty histograms for a MC PDF set\&. This function reads in the necessary reweighted histograms, calls NNPDF_weighted_mean and structures the output in a nice histogram format\&. This function is called by \fBRATA_PDF\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_pdfSet\fP Number of PDF sets to be analyzed 
+.br
+\fIpdf_sets\fP Array with the name of the PDF sets to be analyzed 
+.br
+\fIoutfile\fP Name that the output file should get 
+.br
+\fIout_par\fP How to handle the output file (RECREATE, UPDATE, \&.\&.\&.) 
+.br
+\fIinfile\fP Name of the input file 
+.br
+\fImain_hist\fP Base name of all histograms 
+.br
+\fIshortname\fP Short name that the output histograms should get 
+.RE
+.PP
+for upper & lower uncertainty histograms 
+.PP
+Definition at line 506 of file hist_maker\&.cpp\&.
+.PP
+References NNPDF_weighted_mean(), and HistClass::Write()\&.
+.SS "void raw_input (TStringquestion)"
+
+.PP
+Function to simulate raw_input from python\&. This function prints a message and waits for user input\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIquestion\fP TString of the message that should be printed 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file hist_maker\&.cpp\&.
+.PP
+Referenced by helper::farewell_output(), and pdf_plotter::main()\&.
+.SS "TTree* read_tree (char *filename, char *tree_name, char *tree_cuts)"
+
+.PP
+Function to read and cut a tree from a \&.root file\&. This function reads in a TTree from a given \&.root files, applies given cuts and stores the cutted tree in the memory 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Name of the file from which the tree should be read 
+.br
+\fItree_name\fP Name of the TTree that should be read 
+.br
+\fItree_cuts\fP String of cuts that should be applied 
+.br
+\fIsmallerTree\fP Final read in and cutted tree 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file hist_maker\&.cpp\&.
+.PP
+References DEBUG, and datasets::file\&.
+.PP
+Referenced by make_hists()\&.
+.SS "void test_char (char *test)"
+
+.PP
+Definition at line 618 of file hist_maker\&.cpp\&.
+.SS "void test_double (doubletest)"
+
+.PP
+Definition at line 599 of file hist_maker\&.cpp\&.
+.SS "void test_double_array (intsize, double *test)"
+
+.PP
+Definition at line 604 of file hist_maker\&.cpp\&.
+.SS "void test_int (inttest)"
+
+.PP
+Definition at line 613 of file hist_maker\&.cpp\&.
+.SS "void test_string (stringtest)"
+
+.PP
+Definition at line 594 of file hist_maker\&.cpp\&.
+.SS "void test_string_array (intsize, char **test)"
+
+.PP
+Definition at line 623 of file hist_maker\&.cpp\&.
+.SS "void test_TString (TStringtest)"
+//////////////////////////////////////////////////// from here on: only test functions, that are not necessary for the PDF uncertainties 
+.PP
+Definition at line 589 of file hist_maker\&.cpp\&.
+.SS "bool writer (char *histname, intn_pdfs, char **PDFsets)"
+
+.PP
+Function to write the histograms in an output file\&. This function writes the histograms in an output files, and checks the bin content of each histogram, negative bin contents are set to zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhistname\fP Name that all filled histograms have 
+.br
+\fIn_pdfs\fP Number of PDF sets to be analyzed 
+.br
+\fIPDFsets\fP Array with the name of the PDF sets to be analyzed 
+.br
+\fIbool\fP Either true(successfull writing) or false(something failed) 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file hist_maker\&.cpp\&.
+.PP
+References allPdfsets, ERROR, HistClass::SetToZero(), and HistClass::Write()\&.
+.PP
+Referenced by make_hists()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

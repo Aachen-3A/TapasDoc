@@ -1,0 +1,208 @@
+.TH "lumi" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lumi \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlog\fP = logging\&.getLogger( 'lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi_map_file\fP = os\&.path\&.join( \fBlumi_dir\fP, 'lumi-map\&.txt' )"
+.br
+.ti -1c
+.RI "tuple \fBdate\fP = datetime\&.datetime\&.today()"
+.br
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( description='Calculate the integrated luminosity of CRAB tasks after applying additional luminosity-masks', usage='usage: %prog [options] CRAB_TASKS\&.\&.\&.' )"
+.br
+.ti -1c
+.RI "string \fBhelp\fP = 'Use lumiCalc\&.py instead of pixelLumiCalc\&.py\&. [default: %default]'"
+.br
+.ti -1c
+.RI "string \fBformat\fP = '%(levelname)s at %(asctime)s: %(message)s'"
+.br
+.ti -1c
+.RI "tuple \fBunits\fP = dict( [ ['/\\xce\\xbcb', 1e-6 ], [ '/ub', 1e-6 ], [ '/nb', 1e-3 ], [ '/pb', 1 ], [ '/fb', 1e3 ] ] )"
+.br
+.ti -1c
+.RI "tuple \fBc2aix3adb\fP = crab2aix3adb\&.Crab2aix3adb()"
+.br
+.ti -1c
+.RI "list \fBlumi_map\fP = []"
+.br
+.ti -1c
+.RI "tuple \fBline\fP = line\&.split( '#' )"
+.br
+.ti -1c
+.RI "tuple \fBlumis\fP = LumiList( os\&.path\&.join( options\&.lumi_dir, file ) )"
+.br
+.ti -1c
+.RI "list \fBjsons_to_read\fP = []"
+.br
+.ti -1c
+.RI "tuple \fBinfosForDB_by_json\fP = defaultdict( list )"
+.br
+.ti -1c
+.RI "tuple \fBcrabCfgPath\fP = os\&.path\&.join( task, 'share/crab\&.cfg' )"
+.br
+.ti -1c
+.RI "tuple \fBoutput_file_name\fP = os\&.path\&.splitext( os\&.path\&.basename( parser\&.get( 'CMSSW', 'output_file' ) ) )"
+.br
+.ti -1c
+.RI "tuple \fBdatasetpath\fP = parser\&.get( 'CMSSW', 'datasetpath' )"
+.br
+.ti -1c
+.RI "tuple \fBana_lumis\fP = LumiList( os\&.path\&.join( task, 'res/lumiSummary\&.json' ) )"
+.br
+.ti -1c
+.RI "\fBoutput_lumis\fP = cert_lumis&\fBana_lumis\fP"
+.br
+.ti -1c
+.RI "tuple \fBtee\fP = subprocess\&.Popen( [ 'tee', options\&.output ], stdin = subprocess\&.PIPE )"
+.br
+.ti -1c
+.RI "list \fBargs\fP = [ options\&.lumi, 'overview', '-i', json ]"
+.br
+.ti -1c
+.RI "tuple \fBproc\fP = subprocess\&.Popen( \fBargs\fP, stdout=subprocess\&.PIPE, stderr=subprocess\&.STDOUT )"
+.br
+.ti -1c
+.RI "tuple \fBoutput\fP = proc\&.communicate()"
+.br
+.ti -1c
+.RI "tuple \fBlines\fP = output\&.splitlines()"
+.br
+.ti -1c
+.RI "tuple \fBunit_line\fP = line\&.next()"
+.br
+.ti -1c
+.RI "list \fBrecorded\fP = \fBunit_line\fP[4]"
+.br
+.ti -1c
+.RI "tuple \fBunit\fP = re\&.compile('\\(([^)]*)\\)"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "tuple lumi\&.ana_lumis = LumiList( os\&.path\&.join( task, 'res/lumiSummary\&.json' ) )"
+
+.PP
+Definition at line 105 of file lumi\&.py\&.
+.SS "list lumi\&.args = [ options\&.lumi, 'overview', '-i', json ]"
+
+.PP
+Definition at line 145 of file lumi\&.py\&.
+.SS "tuple lumi\&.c2aix3adb = crab2aix3adb\&.Crab2aix3adb()"
+
+.PP
+Definition at line 73 of file lumi\&.py\&.
+.SS "tuple lumi\&.crabCfgPath = os\&.path\&.join( task, 'share/crab\&.cfg' )"
+
+.PP
+Definition at line 94 of file lumi\&.py\&.
+.SS "tuple lumi\&.datasetpath = parser\&.get( 'CMSSW', 'datasetpath' )"
+
+.PP
+Definition at line 103 of file lumi\&.py\&.
+.SS "tuple lumi\&.date = datetime\&.datetime\&.today()"
+
+.PP
+Definition at line 20 of file lumi\&.py\&.
+.SS "string lumi\&.format = '%(levelname)s at %(asctime)s: %(message)s'"
+
+.PP
+Definition at line 45 of file lumi\&.py\&.
+.PP
+Referenced by watchfrog\&.addInfoHeader(), television\&.main(), githookcontroller\&.GitHookController\&.parse_pre_push(), television\&.timerepr(), watchfrog\&.timerepr(), television\&.Overview\&.update(), and helper\&.update_progress()\&.
+.SS "string lumi\&.help = 'Use lumiCalc\&.py instead of pixelLumiCalc\&.py\&. [default: %default]'"
+
+.PP
+Definition at line 27 of file lumi\&.py\&.
+.SS "tuple lumi\&.infosForDB_by_json = defaultdict( list )"
+
+.PP
+Definition at line 89 of file lumi\&.py\&.
+.SS "list lumi\&.jsons_to_read = []"
+
+.PP
+Definition at line 87 of file lumi\&.py\&.
+.SS "tuple lumi\&.line = line\&.split( '#' )"
+
+.PP
+Definition at line 81 of file lumi\&.py\&.
+.SS "tuple lumi\&.lines = output\&.splitlines()"
+
+.PP
+Definition at line 158 of file lumi\&.py\&.
+.SS "tuple lumi\&.log = logging\&.getLogger( 'lumi' )"
+
+.PP
+Definition at line 15 of file lumi\&.py\&.
+.SS "tuple lumi\&.lumi_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/MUSiCProject/Skimming/test/lumi' )"
+
+.PP
+Definition at line 17 of file lumi\&.py\&.
+.SS "list lumi\&.lumi_map = []"
+
+.PP
+Definition at line 77 of file lumi\&.py\&.
+.SS "tuple lumi\&.lumi_map_file = os\&.path\&.join( \fBlumi_dir\fP, 'lumi-map\&.txt' )"
+
+.PP
+Definition at line 18 of file lumi\&.py\&.
+.SS "tuple lumi\&.lumis = LumiList( os\&.path\&.join( options\&.lumi_dir, file ) )"
+
+.PP
+Definition at line 84 of file lumi\&.py\&.
+.SS "tuple lumi\&.output = proc\&.communicate()"
+
+.PP
+Definition at line 152 of file lumi\&.py\&.
+.SS "tuple lumi\&.output_file_name = os\&.path\&.splitext( os\&.path\&.basename( parser\&.get( 'CMSSW', 'output_file' ) ) )"
+
+.PP
+Definition at line 102 of file lumi\&.py\&.
+.SS "lumi\&.output_lumis = cert_lumis&\fBana_lumis\fP"
+
+.PP
+Definition at line 113 of file lumi\&.py\&.
+.SS "tuple lumi\&.parser = optparse\&.OptionParser( description='Calculate the integrated luminosity of CRAB tasks after applying additional luminosity-masks', usage='usage: %prog [options] CRAB_TASKS\&.\&.\&.' )"
+
+.PP
+Definition at line 22 of file lumi\&.py\&.
+.SS "tuple lumi\&.proc = subprocess\&.Popen( \fBargs\fP, stdout=subprocess\&.PIPE, stderr=subprocess\&.STDOUT )"
+
+.PP
+Definition at line 150 of file lumi\&.py\&.
+.SS "list lumi\&.recorded = \fBunit_line\fP[4]"
+
+.PP
+Definition at line 171 of file lumi\&.py\&.
+.SS "tuple lumi\&.tee = subprocess\&.Popen( [ 'tee', options\&.output ], stdin = subprocess\&.PIPE )"
+
+.PP
+Definition at line 135 of file lumi\&.py\&.
+.SS "tuple lumi\&.unit = re\&.compile('\\(([^)]*)\\)"
+
+.PP
+Definition at line 172 of file lumi\&.py\&.
+.SS "tuple lumi\&.unit_line = line\&.next()"
+
+.PP
+Definition at line 170 of file lumi\&.py\&.
+.SS "tuple lumi\&.units = dict( [ ['/\\xce\\xbcb', 1e-6 ], [ '/ub', 1e-6 ], [ '/nb', 1e-3 ], [ '/pb', 1 ], [ '/fb', 1e3 ] ] )"
+
+.PP
+Definition at line 49 of file lumi\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

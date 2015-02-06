@@ -1,0 +1,73 @@
+.TH "fakeCondor" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fakeCondor \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBid_generator\fP"
+.br
+.ti -1c
+.RI "def \fBjdlreplace\fP"
+.br
+.ti -1c
+.RI "def \fBparseSplit\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.ti -1c
+.RI "def \fBparseJDL\fP"
+.br
+.ti -1c
+.RI "def \fBworker\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def fakeCondor\&.id_generator (size = \fC3\fP, chars = \fCstring\&.ascii_letters + string\&.digits\fP)"
+
+.PP
+Definition at line 12 of file fakeCondor\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def fakeCondor\&.jdlreplace (value, cluster, process)"
+
+.PP
+Definition at line 15 of file fakeCondor\&.py\&.
+.PP
+Referenced by worker()\&.
+.SS "def fakeCondor\&.main ()"
+
+.PP
+Definition at line 31 of file fakeCondor\&.py\&.
+.PP
+References id_generator(), parseJDL(), and parseSplit()\&.
+.PP
+Referenced by worker()\&.
+.SS "def fakeCondor\&.parseJDL (filename, clustername)"
+
+.PP
+Definition at line 62 of file fakeCondor\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def fakeCondor\&.parseSplit (splitstring, nprocesses)"
+
+.PP
+Definition at line 20 of file fakeCondor\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def fakeCondor\&.worker (item)"
+
+.PP
+Definition at line 86 of file fakeCondor\&.py\&.
+.PP
+References jdlreplace(), and main()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

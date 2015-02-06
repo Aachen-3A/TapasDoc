@@ -1,0 +1,169 @@
+.TH "watchfrog" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+watchfrog \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBOverview\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBrunserver\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.ti -1c
+.RI "def \fBrunGui\fP"
+.br
+.ti -1c
+.RI "def \fBprintFrogArt\fP"
+.br
+.ti -1c
+.RI "def \fBmp_crab_worker\fP"
+.br
+.ti -1c
+.RI "def \fBcrab_worker\fP"
+.br
+.ti -1c
+.RI "def \fBgetAllCrabFolders\fP"
+.br
+.ti -1c
+.RI "def \fBaddInfoHeader\fP"
+.br
+.ti -1c
+.RI "def \fBtimerepr\fP"
+.br
+.ti -1c
+.RI "def \fBformatedUnixTimestamp\fP"
+.br
+.ti -1c
+.RI "def \fBcommandline_parsing\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBserverLock\fP = threading\&.Lock()"
+.br
+.ti -1c
+.RI "tuple \fBoptionsLock\fP = threading\&.Lock()"
+.br
+.ti -1c
+.RI "tuple \fBmylogger\fP = logging\&.getLogger('watchfrog')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def watchfrog\&.addInfoHeader (stdscr, options)"
+
+.PP
+Definition at line 352 of file watchfrog\&.py\&.
+.PP
+References lumi\&.format\&.
+.SS "def watchfrog\&.commandline_parsing ()"
+
+.PP
+Definition at line 374 of file watchfrog\&.py\&.
+.PP
+References main()\&.
+.SS "def watchfrog\&.crab_worker (job_q, result_q, log_q)"
+
+.PP
+.nf
+A worker function to be launched in a separate process. Takes jobs from
+    job_q - each job a list of numbers to factorize. When the job is done,
+    the result (dict mapping number -> list of factors) is placed into
+    result_q. Runs until job_q is empty.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 224 of file watchfrog\&.py\&.
+.SS "def watchfrog\&.formatedUnixTimestamp (unixTimeStamp)"
+
+.PP
+Definition at line 370 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&.update()\&.
+.SS "def watchfrog\&.getAllCrabFolders (options)"
+
+.PP
+Definition at line 241 of file watchfrog\&.py\&.
+.SS "def watchfrog\&.main (options, args)"
+
+.PP
+Definition at line 45 of file watchfrog\&.py\&.
+.PP
+Referenced by commandline_parsing()\&.
+.SS "def watchfrog\&.mp_crab_worker (shared_job_q, shared_result_q, shared_log_q, nprocs)"
+
+.PP
+.nf
+Split the work with jobs in shared_job_q and results in
+    shared_result_q into several processes. Launch each process with
+    factorizer_worker as the worker function, and wait until all are
+    finished.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 206 of file watchfrog\&.py\&.
+.PP
+Referenced by runserver()\&.
+.SS "def watchfrog\&.printFrogArt ()"
+
+.PP
+Definition at line 194 of file watchfrog\&.py\&.
+.SS "def watchfrog\&.runGui (stdscr, options, args)"
+
+.PP
+Definition at line 49 of file watchfrog\&.py\&.
+.SS "def watchfrog\&.runserver (options, args)"
+
+.PP
+Definition at line 29 of file watchfrog\&.py\&.
+.PP
+References mp_crab_worker()\&.
+.SS "def watchfrog\&.timerepr (deltat)"
+
+.PP
+.nf
+Return formatted time interval
+
+.fi
+.PP
+ 
+.PP
+Definition at line 358 of file watchfrog\&.py\&.
+.PP
+References lumi\&.format\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple watchfrog\&.mylogger = logging\&.getLogger('watchfrog')"
+
+.PP
+Definition at line 27 of file watchfrog\&.py\&.
+.SS "tuple watchfrog\&.optionsLock = threading\&.Lock()"
+
+.PP
+Definition at line 26 of file watchfrog\&.py\&.
+.SS "tuple watchfrog\&.serverLock = threading\&.Lock()"
+
+.PP
+Definition at line 25 of file watchfrog\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.
