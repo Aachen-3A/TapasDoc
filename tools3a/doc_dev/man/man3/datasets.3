@@ -1,0 +1,105 @@
+.TH "datasets" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datasets \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBdatastreams\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBusage\fP = '%prog RECO DCSFILES'"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBdescription\fP = 'This script helps to create a \&.txt \fBfile\fP with information needed '"
+.br
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( \fBusage\fP = \fBusage\fP, \fBdescription\fP = \fBdescription\fP )"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBhelp\fP = 'Set the filename where the results shall be stored\&. [default = %default]'"
+.br
+.ti -1c
+.RI "list \fBreco\fP = args[0]"
+.br
+.ti -1c
+.RI "tuple \fBfile\fP = open( options\&.output , 'w' )"
+.br
+.ti -1c
+.RI "tuple \fBrun_min\fP = filename\&.split( '-' )"
+.br
+.ti -1c
+.RI "tuple \fBrun_max\fP = filename\&.split( '-' )"
+.br
+.ti -1c
+.RI "string \fBstring\fP = 'Data'"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "list datasets\&.datastreams"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2                'SingleMu',
+3                'SingleElectron',
+4                'Tau',
+5                'TauPlusX',
+6                'Photon',
+7                'Jet',
+8                'MET',
+9                'METBTag',
+10                'DoubleMu',
+11                'DoubleElectron',
+12                'MuEG',
+13                ]
+.fi
+.PP
+Definition at line 5 of file datasets\&.py\&.
+.SS "\fBstring\fP datasets\&.description = 'This script helps to create a \&.txt \fBfile\fP with information needed '"
+
+.PP
+Definition at line 21 of file datasets\&.py\&.
+.SS "tuple datasets\&.file = open( options\&.output , 'w' )"
+
+.PP
+Definition at line 48 of file datasets\&.py\&.
+.PP
+Referenced by get_scalefactor(), and read_tree()\&.
+.SS "\fBstring\fP datasets\&.help = 'Set the filename where the results shall be stored\&. [default = %default]'"
+
+.PP
+Definition at line 29 of file datasets\&.py\&.
+.SS "tuple datasets\&.parser = optparse\&.OptionParser( \fBusage\fP = \fBusage\fP, \fBdescription\fP = \fBdescription\fP )"
+
+.PP
+Definition at line 27 of file datasets\&.py\&.
+.SS "list datasets\&.reco = args[0]"
+
+.PP
+Definition at line 40 of file datasets\&.py\&.
+.SS "tuple datasets\&.run_max = filename\&.split( '-' )"
+
+.PP
+Definition at line 56 of file datasets\&.py\&.
+.SS "tuple datasets\&.run_min = filename\&.split( '-' )"
+
+.PP
+Definition at line 55 of file datasets\&.py\&.
+.SS "string datasets\&.string = 'Data'"
+
+.PP
+Definition at line 62 of file datasets\&.py\&.
+.SS "\fBstring\fP datasets\&.usage = '%prog RECO DCSFILES'"
+
+.PP
+Definition at line 19 of file datasets\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

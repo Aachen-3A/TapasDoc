@@ -1,0 +1,223 @@
+.TH "HistClass" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HistClass \- 
+.PP
+Functions to have easy histogram handling\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBCreateHisto\fP (Int_t n_histos, const char *name, const char *title, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBClearHisto\fP (Int_t n_histos, const char *name)"
+.br
+.RI "\fIFunction to clear histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBRebinHisto\fP (Int_t n_histos, const char *name, Int_t n_rebin, Double_t *bins)"
+.br
+.RI "\fIFunction to rebin histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBFill\fP (Int_t n_histo, const char *name, double value, double weight)"
+.br
+.RI "\fIFunction to fille events in a histogram in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBWrite\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to write a histogram from the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBSetToZero\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to set every negative bin content to zero\&. \fP"
+.ti -1c
+.RI "static TH1D * \fBReturnHist\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to get a histogram from the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBDeleteHisto\fP (Int_t n_histos, const char *name)"
+.br
+.RI "\fIFunction to delete a histogram from the histo map\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions to have easy histogram handling\&. 
+
+In this namespace different functions to interact with the histogram map are included, to create, fill and write histograms in a convinient way\&. 
+.SH "Function Documentation"
+.PP 
+.SS "static void HistClass::ClearHisto (Int_tn_histos, const char *name)\fC [static]\fP"
+
+.PP
+Function to clear histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms with the same name 
+.br
+\fIname\fP Name of the histograms that should be cleared 
+.RE
+.PP
+
+.PP
+Definition at line 249 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.SS "static void HistClass::CreateHisto (Int_tn_histos, const char *name, const char *title, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms that should be created with different numbers 
+.br
+\fIname\fP Name of the histograms that should be created 
+.br
+\fItitle\fP Title of the histograms that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by make_hists()\&.
+.SS "static void HistClass::DeleteHisto (Int_tn_histos, const char *name)\fC [static]\fP"
+
+.PP
+Function to delete a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be deleted 
+.br
+\fIname\fP Name of the histogram to be deleted 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by make_hists()\&.
+.SS "static void HistClass::Fill (Int_tn_histo, const char *name, doublevalue, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fille events in a histogram in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of the histograms to be filled 
+.br
+\fIname\fP Name of the histogram to be filled 
+.br
+\fIvalue\fP Value that should be filled in the histogram 
+.br
+\fIweight\fP Weight the the event should get 
+.RE
+.PP
+
+.PP
+Definition at line 280 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by analyser()\&.
+.SS "static void HistClass::RebinHisto (Int_tn_histos, const char *name, Int_tn_rebin, Double_t *bins)\fC [static]\fP"
+
+.PP
+Function to rebin histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms with the same name 
+.br
+\fIname\fP Name of the histograms that should be rebinned 
+.br
+\fIn_rebin\fP Number of bins that the rebinned histogram should have 
+.br
+\fIbins\fP Array of bin edges that the rebinned histogram should have 
+.RE
+.PP
+
+.PP
+Definition at line 264 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by make_hists()\&.
+.SS "static TH1D* HistClass::ReturnHist (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to get a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be read 
+.br
+\fIname\fP Name of the histogram to be read 
+.RE
+.PP
+
+.PP
+Definition at line 320 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.SS "static void HistClass::SetToZero (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to set every negative bin content to zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be adapted 
+.br
+\fIname\fP Name of the histogram to be adapted 
+.RE
+.PP
+
+.PP
+Definition at line 302 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by writer()\&.
+.SS "static void HistClass::Write (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to write a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be written 
+.br
+\fIname\fP Name of the histogram to be written 
+.RE
+.PP
+
+.PP
+Definition at line 291 of file hist_maker\&.h\&.
+.PP
+References histo\&.
+.PP
+Referenced by pdf_calcer_hessian(), pdf_calcer_MC(), and writer()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

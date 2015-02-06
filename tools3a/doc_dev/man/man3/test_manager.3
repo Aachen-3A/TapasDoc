@@ -1,0 +1,95 @@
+.TH "test_manager" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+test_manager \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmp_crab_worker\fP"
+.br
+.ti -1c
+.RI "def \fBcrab_worker\fP"
+.br
+.ti -1c
+.RI "def \fBcommandline_parsing\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBserverLock\fP = threading\&.Lock()"
+.br
+.ti -1c
+.RI "tuple \fBoptionsLock\fP = threading\&.Lock()"
+.br
+.ti -1c
+.RI "tuple \fBmylogger\fP = logging\&.getLogger('watchfrog')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def test_manager\&.commandline_parsing ()"
+
+.PP
+Definition at line 75 of file test_manager\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def test_manager\&.crab_worker (job_q, result_q, log_q)"
+
+.PP
+.nf
+A worker function to be launched in a separate process. Takes jobs from
+    job_q -. When the job is done,
+    the result is placed into result_q. Runs until job_q is empty.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 45 of file test_manager\&.py\&.
+.SS "def test_manager\&.main ()"
+
+.PP
+Definition at line 116 of file test_manager\&.py\&.
+.PP
+References commandline_parsing()\&.
+.SS "def test_manager\&.mp_crab_worker (shared_job_q, shared_result_q, shared_log_q, nprocs)"
+
+.PP
+.nf
+Split the work with jobs in shared_job_q and results in
+    shared_result_q into several processes. Launch each process with
+    factorizer_worker as the worker function, and wait until all are
+    finished.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 27 of file test_manager\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple test_manager\&.mylogger = logging\&.getLogger('watchfrog')"
+
+.PP
+Definition at line 25 of file test_manager\&.py\&.
+.SS "tuple test_manager\&.optionsLock = threading\&.Lock()"
+
+.PP
+Definition at line 24 of file test_manager\&.py\&.
+.SS "tuple test_manager\&.serverLock = threading\&.Lock()"
+
+.PP
+Definition at line 23 of file test_manager\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

@@ -1,0 +1,241 @@
+.TH "music_crab3" 3 "Fri Feb 6 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+music_crab3 \- 
+.PP
+MUSiC wrapper for crab3\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.ti -1c
+.RI "def \fBcreateCrabConfig\fP"
+.br
+.ti -1c
+.RI "def \fBpreloadProcess\fP"
+.br
+.ti -1c
+.RI "def \fBwriteCrabConfig\fP"
+.br
+.ti -1c
+.RI "def \fBgetRunRange\fP"
+.br
+.ti -1c
+.RI "def \fBreadSampleFile\fP"
+.br
+.ti -1c
+.RI "def \fBgetExistingProcesses\fP"
+.br
+.ti -1c
+.RI "def \fBgetGlobalTag\fP"
+.br
+.ti -1c
+.RI "def \fBcreateDBlink\fP"
+.br
+.ti -1c
+.RI "def \fBsubmitSample2db_dump_csv\fP"
+.br
+.ti -1c
+.RI "def \fBsubmitSample2db\fP"
+.br
+.ti -1c
+.RI "def \fBsubmitSample2dbOld\fP"
+.br
+.ti -1c
+.RI "def \fBcreateTag\fP"
+.br
+.ti -1c
+.RI "def \fBsetupLogging\fP"
+.br
+.ti -1c
+.RI "def \fBcommandline_parsing\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBCOMMENT_CHAR\fP = '#'"
+.br
+.ti -1c
+.RI "list \fBlog_choices\fP = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+.br
+.ti -1c
+.RI "string \fBdate\fP = '%F %H:%M:%S'"
+.br
+.ti -1c
+.RI "tuple \fBskimmer_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer' )"
+.br
+.ti -1c
+.RI "tuple \fBlumi_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer/Skimming/test/lumi' )"
+.br
+.ti -1c
+.RI "tuple \fBconfig_dir\fP = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer/Skimming/test/configs' )"
+.br
+.ti -1c
+.RI "tuple \fBlog\fP = logging\&.getLogger( 'music_crab' )"
+.br
+.ti -1c
+.RI "\fBrunOnMC\fP = False"
+.br
+.ti -1c
+.RI "\fBrunOnData\fP = False"
+.br
+.ti -1c
+.RI "\fBrunOnGen\fP = False"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+MUSiC wrapper for crab3\&. 
+
+\fBmusic_crab\fP is a wrapper script that has been developed to submit the large number of tasks (more or less) automatically, needed to get all data and MC\&. The script automatically creates CRAB config files according to the dataset file provided\&. crab3 rebuilds the previous crab2 functionality and relies on the work in the previous version 
+.PP
+\fBAuthor:\fP
+.RS 4
+Tobias Pook 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "def music_crab3\&.commandline_parsing (parsingController)"
+
+.PP
+Definition at line 695 of file music_crab3\&.py\&.
+.PP
+References main()\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.createCrabConfig (SampleFileInfoDict, sampleinfo, options)"
+
+.PP
+Definition at line 125 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.createDBlink (options)"
+
+.PP
+Definition at line 446 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.createTag (options, skimmer_dir)"
+
+.PP
+Definition at line 589 of file music_crab3\&.py\&.
+.PP
+References music_crab\&.gitTag\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.getExistingProcesses ()"
+
+.PP
+Definition at line 397 of file music_crab3\&.py\&.
+.SS "def music_crab3\&.getGlobalTag (options)"
+
+.PP
+Definition at line 430 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.getRunRange ()"
+
+.PP
+Definition at line 289 of file music_crab3\&.py\&.
+.SS "def music_crab3\&.main ()"
+
+.PP
+Definition at line 52 of file music_crab3\&.py\&.
+.PP
+References commandline_parsing(), createCrabConfig(), createDBlink(), createTag(), getGlobalTag(), readSampleFile(), setupLogging(), submitSample2db(), submitSample2db_dump_csv(), and writeCrabConfig()\&.
+.PP
+Referenced by commandline_parsing()\&.
+.SS "def music_crab3\&.preloadProcess (name, sample, SampleFileInfoDict)"
+
+.PP
+Definition at line 253 of file music_crab3\&.py\&.
+.SS "def music_crab3\&.readSampleFile (filename, options)"
+
+.PP
+Definition at line 292 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.setupLogging (options)"
+
+.PP
+Definition at line 685 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.submitSample2db (samplename, datasetpath, SampleFileInfoDict, options, dblink)"
+
+.PP
+Definition at line 478 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.submitSample2db_dump_csv (samplename, datasetpath, SampleFileInfoDict, options)"
+
+.PP
+Definition at line 458 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def music_crab3\&.submitSample2dbOld (name, sample, SampleFileInfoDict, dblink)"
+
+.PP
+Definition at line 531 of file music_crab3\&.py\&.
+.SS "def music_crab3\&.writeCrabConfig (name, config, options)"
+
+.PP
+Definition at line 272 of file music_crab3\&.py\&.
+.PP
+Referenced by main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "string music_crab3\&.COMMENT_CHAR = '#'"
+
+.PP
+Definition at line 34 of file music_crab3\&.py\&.
+.SS "tuple music_crab3\&.config_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer/Skimming/test/configs' )"
+
+.PP
+Definition at line 40 of file music_crab3\&.py\&.
+.SS "string music_crab3\&.date = '%F %H:%M:%S'"
+
+.PP
+Definition at line 36 of file music_crab3\&.py\&.
+.SS "tuple music_crab3\&.log = logging\&.getLogger( 'music_crab' )"
+
+.PP
+Definition at line 43 of file music_crab3\&.py\&.
+.SS "list music_crab3\&.log_choices = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+
+.PP
+Definition at line 35 of file music_crab3\&.py\&.
+.SS "tuple music_crab3\&.lumi_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer/Skimming/test/lumi' )"
+
+.PP
+Definition at line 39 of file music_crab3\&.py\&.
+.SS "music_crab3\&.runOnData = False"
+
+.PP
+Definition at line 47 of file music_crab3\&.py\&.
+.SS "music_crab3\&.runOnGen = False"
+
+.PP
+Definition at line 48 of file music_crab3\&.py\&.
+.SS "music_crab3\&.runOnMC = False"
+
+.PP
+Definition at line 46 of file music_crab3\&.py\&.
+.SS "tuple music_crab3\&.skimmer_dir = os\&.path\&.join( os\&.environ[ 'CMSSW_BASE' ], 'src/PxlSkimmer' )"
+
+.PP
+Definition at line 38 of file music_crab3\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.
