@@ -1,0 +1,78 @@
+.TH "lib.configobj.SimpleVal" 3 "Wed Feb 11 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj.SimpleVal \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBcheck\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbaseErrorClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A simple validator.
+Can be used to check that all members expected are present.
+
+To use it, provide a configspec with all your members in (the value given
+will be ignored). Pass an instance of ``SimpleVal`` to the ``validate``
+method of your ``ConfigObj``. ``validate`` will return ``True`` if all
+members are present, or a dictionary with True/False meaning
+present/missing. (Whole missing sections will be replaced with ``False``)
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2360 of file configobj\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.configobj\&.SimpleVal\&.__init__ (self)"
+
+.PP
+Definition at line 2372 of file configobj\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.SimpleVal\&.check (self, check, member, missing = \fCFalse\fP)"
+
+.PP
+.nf
+A dummy check method, always returns the value unchanged.
+.fi
+.PP
+ 
+.PP
+Definition at line 2375 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.SimpleVal\&.baseErrorClass\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.configobj\&.SimpleVal\&.baseErrorClass"
+
+.PP
+Definition at line 2373 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.SimpleVal\&.check()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

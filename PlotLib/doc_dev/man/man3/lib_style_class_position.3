@@ -1,0 +1,216 @@
+.TH "lib.style_class.position" 3 "Wed Feb 11 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.style_class.position \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fB__eq__\fP"
+.br
+.ti -1c
+.RI "def \fBaddYspace\fP"
+.br
+.ti -1c
+.RI "def \fBaddXspace\fP"
+.br
+.ti -1c
+.RI "def \fBsetPosition\fP"
+.br
+.ti -1c
+.RI "def \fBgetText\fP"
+.br
+.ti -1c
+.RI "def \fBgetX\fP"
+.br
+.ti -1c
+.RI "def \fBget_positiontext\fP"
+.br
+.ti -1c
+.RI "def \fBgetY\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBaddY\fP"
+.br
+.ti -1c
+.RI "\fBaddX\fP"
+.br
+.ti -1c
+.RI "\fBvalign\fP"
+.br
+.ti -1c
+.RI "\fBalign\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_positiontext\fP"
+.br
+.ti -1c
+.RI "\fB_definedCoorinates\fP"
+.br
+.ti -1c
+.RI "\fB_valign\fP"
+.br
+.ti -1c
+.RI "\fB_align\fP"
+.br
+.ti -1c
+.RI "\fB_isText\fP"
+.br
+.ti -1c
+.RI "\fB_correctcms\fP"
+.br
+.ti -1c
+.RI "\fB_x\fP"
+.br
+.ti -1c
+.RI "\fB_y\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 315 of file style_class\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.style_class\&.position\&.__init__ (self, positiontext = \fC'upper right'\fP, refference = \fC''\fP, isText = \fCFalse\fP)"
+
+.PP
+Definition at line 316 of file style_class\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.style_class\&.position\&.__eq__ (self, other)"
+
+.PP
+Definition at line 341 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._positiontext\&.
+.SS "def lib\&.style_class\&.position\&.addXspace (self, x)"
+
+.PP
+Definition at line 350 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&.addX\&.
+.SS "def lib\&.style_class\&.position\&.addYspace (self, y)"
+
+.PP
+Definition at line 344 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._valign, lib\&.style_class\&.position\&.addY, and lib\&.style_class\&.position\&.getY()\&.
+.SS "def lib\&.style_class\&.position\&.get_positiontext (self)"
+
+.PP
+Definition at line 373 of file style_class\&.py\&.
+.SS "def lib\&.style_class\&.position\&.getText (self)"
+
+.PP
+Definition at line 358 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._positiontext\&.
+.SS "def lib\&.style_class\&.position\&.getX (self)"
+
+.PP
+Definition at line 361 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._align, lib\&.style_class\&.position\&._correctcms, lib\&.style_class\&.position\&._definedCoorinates, lib\&.style_class\&.position\&._isText, lib\&.style_class\&.position\&._x, and lib\&.style_class\&.position\&.addX\&.
+.SS "def lib\&.style_class\&.position\&.getY (self)"
+
+.PP
+Definition at line 376 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._correctcms, lib\&.style_class\&.position\&._definedCoorinates, lib\&.style_class\&.position\&._isText, lib\&.style_class\&.position\&._valign, lib\&.style_class\&.position\&._y, and lib\&.style_class\&.position\&.addY\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.addYspace()\&.
+.SS "def lib\&.style_class\&.position\&.setPosition (self, positiontext)"
+
+.PP
+Definition at line 353 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.position\&._positiontext\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.style_class\&.position\&._align\fC [private]\fP"
+
+.PP
+Definition at line 322 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getX()\&.
+.SS "lib\&.style_class\&.position\&._correctcms\fC [private]\fP"
+
+.PP
+Definition at line 330 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getX(), and lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&._definedCoorinates\fC [private]\fP"
+
+.PP
+Definition at line 320 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getX(), and lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&._isText\fC [private]\fP"
+
+.PP
+Definition at line 329 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getX(), and lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&._positiontext\fC [private]\fP"
+
+.PP
+Definition at line 318 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.__eq__(), lib\&.style_class\&.position\&.getText(), and lib\&.style_class\&.position\&.setPosition()\&.
+.SS "lib\&.style_class\&.position\&._valign\fC [private]\fP"
+
+.PP
+Definition at line 321 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.addYspace(), and lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&._x\fC [private]\fP"
+
+.PP
+Definition at line 338 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getX()\&.
+.SS "lib\&.style_class\&.position\&._y\fC [private]\fP"
+
+.PP
+Definition at line 339 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&.addX"
+
+.PP
+Definition at line 328 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.addXspace(), and lib\&.style_class\&.position\&.getX()\&.
+.SS "lib\&.style_class\&.position\&.addY"
+
+.PP
+Definition at line 327 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.position\&.addYspace(), and lib\&.style_class\&.position\&.getY()\&.
+.SS "lib\&.style_class\&.position\&.align"
+
+.PP
+Definition at line 356 of file style_class\&.py\&.
+.SS "lib\&.style_class\&.position\&.valign"
+
+.PP
+Definition at line 355 of file style_class\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.
