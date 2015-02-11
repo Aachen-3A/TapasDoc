@@ -37,7 +37,11 @@ var NAVTREEINDEX =
 [
 "RATA__PDF_8py.html",
 "lumi_8py.html#aa8c7454c3c2077ee295b790526ef73ff",
+<<<<<<< HEAD
 "watchfrog_8py.html#a483d6c6047b431bb05fe61cd06cb9a67"
+=======
+"test__manager_8py.html#a3ce1d8a173e7ce49ded85b5fc0f09d62"
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

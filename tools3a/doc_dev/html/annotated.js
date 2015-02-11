@@ -21,5 +21,9 @@ var annotated =
     [ "RATA_PDF", "namespaceRATA__PDF.html", null ],
     [ "signal_mover", "namespacesignal__mover.html", null ],
     [ "television", "namespacetelevision.html", "namespacetelevision" ],
+<<<<<<< HEAD
+=======
+    [ "test_manager", "namespacetest__manager.html", null ],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
     [ "watchfrog", "namespacewatchfrog.html", "namespacewatchfrog" ]
 ];

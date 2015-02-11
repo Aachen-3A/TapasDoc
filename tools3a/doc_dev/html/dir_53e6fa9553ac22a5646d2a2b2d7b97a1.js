@@ -13,5 +13,9 @@ var dir_53e6fa9553ac22a5646d2a2b2d7b97a1 =
     [ "music_crab3.py", "music__crab3_8py.html", "music__crab3_8py" ],
     [ "parseSampleList.py", "parseSampleList_8py.html", "parseSampleList_8py" ],
     [ "television.py", "television_8py.html", "television_8py" ],
+<<<<<<< HEAD
+=======
+    [ "test_manager.py", "test__manager_8py.html", "test__manager_8py" ],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
     [ "watchfrog.py", "watchfrog_8py.html", "watchfrog_8py" ]
 ];

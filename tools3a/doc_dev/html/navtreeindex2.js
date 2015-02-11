@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+<<<<<<< HEAD
 "watchfrog_8py.html#a483d6c6047b431bb05fe61cd06cb9a67":[4,0,2,11,13],
 "watchfrog_8py.html#a4bba7e85fcca22c987dd8e30b0158801":[4,0,2,11,8],
 "watchfrog_8py.html#a5077e24c6f76485f88f7f4a8580f750d":[4,0,2,11,6],
@@ -13,4 +14,30 @@ var NAVTREEINDEX2 =
 "watchfrog_8py.html#adcd38581d682adcdaf6cfc4b1021062a":[4,0,2,11,10],
 "watchfrog_8py.html#aed671f22ee1700799efd0e0e1d318978":[4,0,2,11,12],
 "watchfrog_8py_source.html":[4,0,2,11]
+=======
+"test__manager_8py.html#a3ce1d8a173e7ce49ded85b5fc0f09d62":[4,0,2,11,6],
+"test__manager_8py.html#a94fb547692242cd59ae9e1b7247e6d15":[4,0,2,11,1],
+"test__manager_8py.html#a998f3086ccfb732bd9cf19552e2918ab":[4,0,2,11,2],
+"test__manager_8py.html#ab05194c3054c7fd02822e2ebc1f068a3":[4,0,2,11,3],
+"test__manager_8py.html#af6cc0be0d4b43c9050bfc8c009ad886a":[4,0,2,11,0],
+"test__manager_8py.html#aff6fb29e6b8ff5bce79136475b4d90f3":[4,0,2,11,4],
+"test__manager_8py_source.html":[4,0,2,11],
+"todo.html":[1],
+"watchfrog_8py.html":[4,0,2,12],
+"watchfrog_8py.html#a06142b3b81a345ad25acfed4cb7376d2":[4,0,2,12,2],
+"watchfrog_8py.html#a0b0011e725f8af3483db97609de8e8b6":[4,0,2,12,11],
+"watchfrog_8py.html#a483d6c6047b431bb05fe61cd06cb9a67":[4,0,2,12,13],
+"watchfrog_8py.html#a4bba7e85fcca22c987dd8e30b0158801":[4,0,2,12,8],
+"watchfrog_8py.html#a5077e24c6f76485f88f7f4a8580f750d":[4,0,2,12,6],
+"watchfrog_8py.html#a81334b120cdb448ef23c1eab9ce09049":[4,0,2,12,3],
+"watchfrog_8py.html#a876af9232532e7c55db082dedd7ed64d":[4,0,2,12,14],
+"watchfrog_8py.html#a92e8bc2762274ef5a415003dd2cb38a5":[4,0,2,12,7],
+"watchfrog_8py.html#a9c88c4561e72de9cf2a6184ab000ed1b":[4,0,2,12,1],
+"watchfrog_8py.html#aaf5f72b7784bfa831d7f4e70b38b9cb9":[4,0,2,12,9],
+"watchfrog_8py.html#ab9d8cbb9efec0aaae0bb52712744ec1b":[4,0,2,12,4],
+"watchfrog_8py.html#adaa75882e7acc28d853442a55df8b842":[4,0,2,12,5],
+"watchfrog_8py.html#adcd38581d682adcdaf6cfc4b1021062a":[4,0,2,12,10],
+"watchfrog_8py.html#aed671f22ee1700799efd0e0e1d318978":[4,0,2,12,12],
+"watchfrog_8py_source.html":[4,0,2,12]
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 };

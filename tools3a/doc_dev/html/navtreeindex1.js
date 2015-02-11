@@ -112,26 +112,47 @@ var NAVTREEINDEX1 =
 "music__crab_8py.html#afeda98646b7184f74433eeefef8a8a98":[4,0,2,7,1],
 "music__crab_8py.html#aff5eecba0d01e2338ffb28ca2fb49db5":[4,0,2,7,9],
 "music__crab_8py_source.html":[4,0,2,7],
+<<<<<<< HEAD
 "namespaceCrabConfigParser.html":[2,0,1],
 "namespaceCrabConfigParser.html":[3,0,1],
 "namespaceHistClass.html":[2,0,8],
 "namespaceHistClass.html":[3,0,8],
+=======
+"namespaceCrabConfigParser.html":[3,0,1],
+"namespaceCrabConfigParser.html":[2,0,1],
+"namespaceHistClass.html":[3,0,8],
+"namespaceHistClass.html":[2,0,8],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 "namespaceRATA__PDF.html":[2,0,18],
 "namespaceRATA__PDF.html":[3,0,18],
 "namespacecleanProcessNames.html":[3,0,0],
 "namespacecleanProcessNames.html":[2,0,0],
+<<<<<<< HEAD
 "namespacecrabConfigParser.html":[2,0,2],
 "namespacecrabConfigParser.html":[3,0,2],
+=======
+"namespacecrabConfigParser.html":[3,0,2],
+"namespacecrabConfigParser.html":[2,0,2],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 "namespacecrabConfigParserTester.html":[2,0,3],
 "namespacecrabConfigParserTester.html":[3,0,3],
 "namespacedatasets.html":[2,0,4],
 "namespacedatasets.html":[3,0,4],
+<<<<<<< HEAD
 "namespacefakeCondor.html":[2,0,5],
 "namespacefakeCondor.html":[3,0,5],
 "namespacegithookcontroller.html":[3,0,6],
 "namespacegithookcontroller.html":[2,0,6],
 "namespacehelper.html":[2,0,7],
 "namespacehelper.html":[3,0,7],
+=======
+"namespacefakeCondor.html":[3,0,5],
+"namespacefakeCondor.html":[2,0,5],
+"namespacegithookcontroller.html":[3,0,6],
+"namespacegithookcontroller.html":[2,0,6],
+"namespacehelper.html":[3,0,7],
+"namespacehelper.html":[2,0,7],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 "namespaceletHerFly.html":[3,0,9],
 "namespaceletHerFly.html":[2,0,9],
 "namespacelumi.html":[2,0,10],
@@ -162,6 +183,7 @@ var NAVTREEINDEX1 =
 "namespacemembers_vars.html":[2,1,2],
 "namespacemusic__crab.html":[2,0,11],
 "namespacemusic__crab.html":[3,0,11],
+<<<<<<< HEAD
 "namespacemusic__crab3.html":[2,0,12],
 "namespacemusic__crab3.html":[3,0,12],
 "namespaceparseSampleList.html":[2,0,13],
@@ -174,13 +196,34 @@ var NAVTREEINDEX1 =
 "namespacepre-commit.html":[2,0,16],
 "namespacepre-push.html":[3,0,17],
 "namespacepre-push.html":[2,0,17],
+=======
+"namespacemusic__crab3.html":[3,0,12],
+"namespacemusic__crab3.html":[2,0,12],
+"namespaceparseSampleList.html":[2,0,13],
+"namespaceparseSampleList.html":[3,0,13],
+"namespacepdf__plotter.html":[3,0,14],
+"namespacepdf__plotter.html":[2,0,14],
+"namespacepost-commit.html":[2,0,15],
+"namespacepost-commit.html":[3,0,15],
+"namespacepre-commit.html":[2,0,16],
+"namespacepre-commit.html":[3,0,16],
+"namespacepre-push.html":[2,0,17],
+"namespacepre-push.html":[3,0,17],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 "namespaces.html":[2,0],
 "namespacesignal__mover.html":[2,0,19],
 "namespacesignal__mover.html":[3,0,19],
 "namespacetelevision.html":[2,0,20],
 "namespacetelevision.html":[3,0,20],
+<<<<<<< HEAD
 "namespacewatchfrog.html":[2,0,21],
 "namespacewatchfrog.html":[3,0,21],
+=======
+"namespacetest__manager.html":[2,0,21],
+"namespacetest__manager.html":[3,0,21],
+"namespacewatchfrog.html":[3,0,22],
+"namespacewatchfrog.html":[2,0,22],
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 "pages.html":[],
 "parseSampleList_8py.html":[4,0,2,9],
 "parseSampleList_8py.html#ab7e88727c5022e31a827b8a58758d64b":[4,0,2,9,0],
@@ -246,8 +289,13 @@ var NAVTREEINDEX1 =
 "television_8py.html#aaf21b38d245db8faccee7987077ce63e":[4,0,2,10,8],
 "television_8py.html#af711a597bd3d390131c14acf7d47cc50":[4,0,2,10,14],
 "television_8py_source.html":[4,0,2,10],
+<<<<<<< HEAD
 "todo.html":[1],
 "watchfrog_8py.html":[4,0,2,11],
 "watchfrog_8py.html#a06142b3b81a345ad25acfed4cb7376d2":[4,0,2,11,2],
 "watchfrog_8py.html#a0b0011e725f8af3483db97609de8e8b6":[4,0,2,11,11]
+=======
+"test__manager_8py.html":[4,0,2,11],
+"test__manager_8py.html#a30e61de1ae53768de59889c2683d3a97":[4,0,2,11,5]
+>>>>>>> 528653e9c62ed191b3ff377396d3754c59626d00
 };
