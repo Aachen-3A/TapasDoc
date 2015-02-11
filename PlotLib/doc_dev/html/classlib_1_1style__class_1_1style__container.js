@@ -48,6 +48,7 @@ var classlib_1_1style__class_1_1style__container =
     [ "Get_ymax", "classlib_1_1style__class_1_1style__container.html#a408ec5b4d3f84626a73c24997754d6da", null ],
     [ "Get_ymin", "classlib_1_1style__class_1_1style__container.html#ac2134515d077435ae899a06cc2def654", null ],
     [ "InitStyle", "classlib_1_1style__class_1_1style__container.html#aeec4e912be3a6f648402e1a3c9706755", null ],
+    [ "Set_additional_text", "classlib_1_1style__class_1_1style__container.html#a6900923f0d8f75b735e4796568312b8c", null ],
     [ "Set_axis", "classlib_1_1style__class_1_1style__container.html#ade682de62ebcf1a41fcd38baae1560ac", null ],
     [ "Set_error_bands_center", "classlib_1_1style__class_1_1style__container.html#a1628ea53c69e2eba423eb2f3c482c281", null ],
     [ "Set_error_bands_labl", "classlib_1_1style__class_1_1style__container.html#ae28b7bdbf1a1aa4e26a48e2477463b75", null ],
