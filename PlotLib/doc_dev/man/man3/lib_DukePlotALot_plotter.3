@@ -1,4 +1,4 @@
-.TH "lib.DukePlotALot.plotter" 3 "Wed Feb 11 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.DukePlotALot.plotter" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -75,6 +75,9 @@ Function to make the complete plot, after all definitions are set \fP"
 
 .in +1c
 .ti -1c
+.RI "\fBadditionalPad\fP"
+.br
+.ti -1c
 .RI "\fBleg\fP"
 .br
 .in -1c
@@ -129,6 +132,9 @@ Function to make the complete plot, after all definitions are set \fP"
 .RI "def \fB_Draw_main\fP"
 .br
 .ti -1c
+.RI "def \fB_Draw_main_axis\fP"
+.br
+.ti -1c
 .RI "def \fB_Draw_2\fP"
 .br
 .ti -1c
@@ -178,6 +184,10 @@ Function to make the complete plot, after all definitions are set \fP"
 .RI "\fB_data_hist\fP"
 .br
 .ti -1c
+.RI "\fB_hist_axis\fP"
+.br
+.RI "\fISecond axis histograms\&. \fP"
+.ti -1c
 .RI "\fB_add_plots\fP"
 .br
 .RI "\fIAdditional plots\&. \fP"
@@ -204,12 +214,6 @@ Function to make the complete plot, after all definitions are set \fP"
 .br
 .RI "\fICreate the figure for all subplots\&. \fP"
 .ti -1c
-.RI "\fB_cms_val\fP"
-.br
-.ti -1c
-.RI "\fB_lumi_val\fP"
-.br
-.ti -1c
 .RI "\fB_allHists\fP"
 .br
 .ti -1c
@@ -218,6 +222,10 @@ Function to make the complete plot, after all definitions are set \fP"
 .ti -1c
 .RI "\fB_useRoot\fP"
 .br
+.ti -1c
+.RI "\fB_mainPad\fP"
+.br
+.RI "\fIsetup the window and pads to draw a ratio \fP"
 .ti -1c
 .RI "\fB_canvas\fP"
 .br
@@ -238,15 +246,13 @@ written by Soeren Erdweg 2014-2015
 Definition at line 39 of file DukePlotALot\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "def lib\&.DukePlotALot\&.plotter\&.__init__ (self, hist = \fC[]\fP, sig = \fC[]\fP, data_hist = \fCNone\fP, data = \fCFalse\fP, cms = \fC13\fP, lumi = \fC42000\fP, style = \fCsc\&.style_container()\fP, kwargs)"
+.SS "def lib\&.DukePlotALot\&.plotter\&.__init__ (self, hist = \fC[]\fP, sig = \fC[]\fP, hist_axis = \fC[]\fP, data_hist = \fCNone\fP, data = \fCFalse\fP, style = \fCsc\&.style_container()\fP, kwargs)"
 
 .PP
 Init function\&. In this function the default variables are set\&. Also the style can be defined and the histogram input can be given\&. 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIstyle\fP String of which style should be used (default = 'Plain') 
-.br
 \fIhist\fP List of background histograms (default = []) 
 .br
 \fIsig\fP List of signal histograms (default = []) 
@@ -255,46 +261,42 @@ Init function\&. In this function the default variables are set\&. Also the styl
 .br
 \fIdata\fP Bool if data should be plotted (default = False) 
 .br
-\fIcms\fP double to specify displayed center of mass energy (default = 13 (TeV)) 
-.br
-\fIlumi\fP double to specify displayed luminosity value (default = 42000 (pb-1)) 
-.br
-\fIdata\fP Bool if data should be plotted (default = False) 
+\fIstyle\fP Style container that should be used for the plot 
 .br
 \fIkwargs\fP dict of key word arguments that will be passed to style 
 .RE
 .PP
 
 .PP
-Definition at line 53 of file DukePlotALot\&.py\&.
+Definition at line 50 of file DukePlotALot\&.py\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.__del__ (self)"
 
 .PP
 del function This deletes the main objects nedded to not get a crash at the end! 
 .PP
-Definition at line 85 of file DukePlotALot\&.py\&.
+Definition at line 88 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._fig, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
+References lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._fig, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_axis, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def lib\&.DukePlotALot\&.plotter\&._Add_legend (self)\fC [private]\fP"
 
 .PP
-Definition at line 242 of file DukePlotALot\&.py\&.
+Definition at line 252 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
+References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_axis, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
-.SS "def lib\&.DukePlotALot\&.plotter\&._AddPlotBelow (self, pos = \fC2\fP)\fC [private]\fP"
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_axis()\&.
+.SS "def lib\&.DukePlotALot\&.plotter\&._AddPlotBelow (self)\fC [private]\fP"
 
 .PP
-Definition at line 929 of file DukePlotALot\&.py\&.
+Definition at line 1094 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), and lib\&.style_class\&.style_container\&._ratio_pad\&.
+References lib\&.DukePlotALot\&.plotter\&._add_plots, and lib\&.DukePlotALot\&.plotter\&._add_plots_height\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._AddRootLegend (self)\fC [private]\fP"
 
 .PP
-Definition at line 910 of file DukePlotALot\&.py\&.
+Definition at line 1075 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._referenceHeight, lib\&.DukePlotALot\&.plotter\&._sig_hist, and lib\&.DukePlotALot\&.plotter\&.leg\&.
 .PP
@@ -302,15 +304,15 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot (self, plot, pos)\fC [private]\fP"
 
 .PP
-Definition at line 372 of file DukePlotALot\&.py\&.
+Definition at line 399 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_plots_labels, lib\&.DukePlotALot\&.plotter\&._add_plots_ref_line, lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Calc_signi(), and lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB()\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._AddPlotBelow(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), and lib\&.DukePlotALot\&.plotter\&._Draw_3()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), and lib\&.DukePlotALot\&.plotter\&._Draw_3()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_diff (self)\fC [private]\fP"
 
 .PP
-Definition at line 426 of file DukePlotALot\&.py\&.
+Definition at line 453 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&.cleanUnwantedBins()\&.
 .PP
@@ -318,7 +320,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_diffratio (self)\fC [private]\fP"
 
 .PP
-Definition at line 456 of file DukePlotALot\&.py\&.
+Definition at line 483 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&.cleanUnwantedBins()\&.
 .PP
@@ -326,7 +328,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_ratio (self)\fC [private]\fP"
 
 .PP
-Definition at line 396 of file DukePlotALot\&.py\&.
+Definition at line 423 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&.cleanUnwantedBins()\&.
 .PP
@@ -334,7 +336,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_signi (self)\fC [private]\fP"
 
 .PP
-Definition at line 492 of file DukePlotALot\&.py\&.
+Definition at line 519 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._error_hist, and lib\&.DukePlotALot\&.plotter\&._hist\&.
 .PP
@@ -342,7 +344,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB (self)\fC [private]\fP"
 
 .PP
-Definition at line 534 of file DukePlotALot\&.py\&.
+Definition at line 561 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
 .PP
@@ -350,13 +352,13 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._checker (self)\fC [private]\fP"
 
 .PP
-Definition at line 1048 of file DukePlotALot\&.py\&.
+Definition at line 1250 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&.create_plot(), and lib\&.DukePlotALot\&.plotter\&.make_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Compiler (self)\fC [private]\fP"
 
 .PP
-Definition at line 330 of file DukePlotALot\&.py\&.
+Definition at line 357 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._error_hist, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_height, and lib\&.DukePlotALot\&.plotter\&._hist_start\&.
 .PP
@@ -364,15 +366,15 @@ Referenced by lib\&.DukePlotALot\&.plotter\&.create_plot(), and lib\&.DukePlotAL
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw (self)\fC [private]\fP"
 
 .PP
-Definition at line 877 of file DukePlotALot\&.py\&.
+Definition at line 1035 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._useRoot, lib\&.DukePlotALot\&.plotter\&._Write_additional_text(), and lib\&.DukePlotALot\&.plotter\&.DrawRoot()\&.
+References lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), lib\&.DukePlotALot\&.plotter\&._hist_axis, lib\&.DukePlotALot\&.plotter\&._useRoot, lib\&.DukePlotALot\&.plotter\&._Write_additional_text(), and lib\&.DukePlotALot\&.plotter\&.DrawRoot()\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&.create_plot(), and lib\&.DukePlotALot\&.plotter\&.make_plot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_0 (self, axis1)\fC [private]\fP"
 
 .PP
-Definition at line 641 of file DukePlotALot\&.py\&.
+Definition at line 668 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_labels, lib\&.DukePlotALot\&.plotter\&._add_plots_ref_line, lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band(), lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_start, and lib\&.plotlib\&.duke_errorbar()\&.
 .PP
@@ -380,7 +382,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_2 (self, axis1)\fC [private]\fP"
 
 .PP
-Definition at line 791 of file DukePlotALot\&.py\&.
+Definition at line 949 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._add_plots_labels, lib\&.DukePlotALot\&.plotter\&._add_plots_ref_line, lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band(), lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_height, lib\&.DukePlotALot\&.plotter\&._hist_start, and lib\&.plotlib\&.duke_errorbar()\&.
 .PP
@@ -388,7 +390,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_3 (self, axis1)\fC [private]\fP"
 
 .PP
-Definition at line 837 of file DukePlotALot\&.py\&.
+Definition at line 995 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, lib\&.DukePlotALot\&.plotter\&._add_plots_labels, lib\&.DukePlotALot\&.plotter\&._add_plots_ref_line, lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band(), lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.plotlib\&.duke_errorbar()\&.
 .PP
@@ -396,7 +398,7 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band (self, axis, x, y, err)\fC [private]\fP"
 
 .PP
-Definition at line 604 of file DukePlotALot\&.py\&.
+Definition at line 631 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._error_hist\&.
 .PP
@@ -404,29 +406,37 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plo
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands (self, axis1)\fC [private]\fP"
 
 .PP
-Definition at line 581 of file DukePlotALot\&.py\&.
+Definition at line 608 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band(), lib\&.DukePlotALot\&.plotter\&._error_hist, and lib\&.DukePlotALot\&.plotter\&._hist\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_axis()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_main (self)\fC [private]\fP"
 
 .PP
-Definition at line 679 of file DukePlotALot\&.py\&.
+Definition at line 706 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands(), lib\&.DukePlotALot\&.plotter\&._fig, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_height, lib\&.DukePlotALot\&.plotter\&._hist_start, lib\&.DukePlotALot\&.plotter\&._show_only_some(), and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
+.PP
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
+.SS "def lib\&.DukePlotALot\&.plotter\&._Draw_main_axis (self)\fC [private]\fP"
+
+.PP
+Definition at line 818 of file DukePlotALot\&.py\&.
+.PP
+References lib\&.DukePlotALot\&.plotter\&._add_error_bands, lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands(), lib\&.DukePlotALot\&.plotter\&._fig, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._hist_axis, lib\&.DukePlotALot\&.plotter\&._hist_height, lib\&.DukePlotALot\&.plotter\&._hist_start, lib\&.DukePlotALot\&.plotter\&._show_only_some(), and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Draw_main_root (self)\fC [private]\fP"
 
 .PP
-Definition at line 996 of file DukePlotALot\&.py\&.
+Definition at line 1186 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._hist, lib\&.DukePlotALot\&.plotter\&._referenceHeight, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
+References lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._data, lib\&.DukePlotALot\&.plotter\&._data_hist, lib\&.DukePlotALot\&.plotter\&._hist, and lib\&.DukePlotALot\&.plotter\&._sig_hist\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._SavePlot (self, out_name)\fC [private]\fP"
 
 .PP
-Definition at line 892 of file DukePlotALot\&.py\&.
+Definition at line 1057 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._useRoot\&.
 .PP
@@ -434,9 +444,9 @@ Referenced by lib\&.DukePlotALot\&.plotter\&.make_plot(), and lib\&.DukePlotALot
 .SS "def lib\&.DukePlotALot\&.plotter\&._show_only_some (self, x, pos)\fC [private]\fP"
 
 .PP
-Definition at line 575 of file DukePlotALot\&.py\&.
+Definition at line 602 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_axis()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&._Write_additional_text (self)\fC [private]\fP"
 
 .PP
@@ -446,9 +456,9 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
 .SS "Private functions "
 
 .PP
-Definition at line 225 of file DukePlotALot\&.py\&.
+Definition at line 229 of file DukePlotALot\&.py\&.
 .PP
-References lib\&.DukePlotALot\&.plotter\&._cms_val, and lib\&.DukePlotALot\&.plotter\&._lumi_val\&.
+References lib\&.DukePlotALot\&.plotter\&._hist_axis\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Add_data (self, data_hist, doData = \fCTrue\fP)"
@@ -465,7 +475,7 @@ Function to add the data histogram\&. This function is used to add a data histog
 .PP
 
 .PP
-Definition at line 133 of file DukePlotALot\&.py\&.
+Definition at line 137 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data, and lib\&.DukePlotALot\&.plotter\&._data_hist\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Add_error_hist (self, histo = \fC[]\fP, labels = \fC[]\fP, band_center = \fC'ref'\fP, stacking = \fC'No'\fP)"
@@ -486,7 +496,7 @@ Function to set the uncertainty histograms\&. This function is used to add the s
 .PP
 
 .PP
-Definition at line 185 of file DukePlotALot\&.py\&.
+Definition at line 189 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_error_bands, and lib\&.DukePlotALot\&.plotter\&._error_hist\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Add_histo (self, histo)"
@@ -501,11 +511,11 @@ Function to add a histogram to the background list\&. This function is used to a
 .PP
 
 .PP
-Definition at line 173 of file DukePlotALot\&.py\&.
+Definition at line 177 of file DukePlotALot\&.py\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Add_plot (self, plot = \fC'Ratio'\fP, pos = \fC0\fP, height = \fC15\fP, label = \fC''\fP)"
 
 .PP
-Function to add a analysis plot to the figure\&. This function is called to add an additional plot to the figure and define its properties, like where it should be placed and how much space of the figure should be taken by this plot\&. At the moment 'Ratio', 'Diff', 'Signi' and 'DiffRatio' are available as additional plots\&. 
+Function to add a analysis plot to the figure\&. This function is called to add an additional plot to the figure and define its properties, like where it should be placed and how much space of the figure should be taken by this plot\&. At the moment 'Ratio', 'Diff', 'Signi', 'DiffRatio' and 'SoverSplusB' are available as additional plots\&. 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -520,17 +530,17 @@ Function to add a analysis plot to the figure\&. This function is called to add 
 .PP
 
 .PP
-Definition at line 155 of file DukePlotALot\&.py\&.
+Definition at line 159 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._add_plots, lib\&.DukePlotALot\&.plotter\&._add_plots_height, and lib\&.DukePlotALot\&.plotter\&._add_plots_labels\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.ChangeStyle (self, kwargs)"
 
 .PP
-Definition at line 213 of file DukePlotALot\&.py\&.
+Definition at line 217 of file DukePlotALot\&.py\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.cleanUnwantedBins (self, hist, toCleanHists)"
 
 .PP
-Definition at line 360 of file DukePlotALot\&.py\&.
+Definition at line 387 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), and lib\&.DukePlotALot\&.plotter\&._Calc_ratio()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.create_plot (self)"
@@ -545,7 +555,7 @@ Function to create the complete plot, after all definitions are set\&. This func
 .PP
 
 .PP
-Definition at line 112 of file DukePlotALot\&.py\&.
+Definition at line 116 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._checker(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw(), and lib\&.DukePlotALot\&.plotter\&._fig\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Draw_data (self, doData = \fCTrue\fP)"
@@ -560,13 +570,13 @@ Function to decide if you want to draw the data\&. This function is used to set 
 .PP
 
 .PP
-Definition at line 141 of file DukePlotALot\&.py\&.
+Definition at line 145 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._data\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.DrawRoot (self)"
 
 .PP
-Definition at line 974 of file DukePlotALot\&.py\&.
+Definition at line 1164 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Draw()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.make_plot (self, out_name)"
@@ -586,7 +596,7 @@ Function to make the complete plot, after all definitions are set This function 
 .PP
 
 .PP
-Definition at line 101 of file DukePlotALot\&.py\&.
+Definition at line 105 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._checker(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw(), and lib\&.DukePlotALot\&.plotter\&._SavePlot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.SavePlot (self, out_name)"
@@ -601,7 +611,7 @@ Function to save the complete plot\&. This function saves the plot you which is 
 .PP
 
 .PP
-Definition at line 210 of file DukePlotALot\&.py\&.
+Definition at line 214 of file DukePlotALot\&.py\&.
 .PP
 References lib\&.DukePlotALot\&.plotter\&._SavePlot()\&.
 .SS "def lib\&.DukePlotALot\&.plotter\&.Set_axis (self, logx = \fCFalse\fP, logy = \fCTrue\fP, ymin = \fC-1\fP, ymax = \fC-1\fP, xmin = \fC-1\fP, xmax = \fC-1\fP, grid = \fCFalse\fP)"
@@ -626,77 +636,71 @@ Function to set properties of the plotting axis\&. This function sets axis prope
 .PP
 
 .PP
-Definition at line 203 of file DukePlotALot\&.py\&.
+Definition at line 207 of file DukePlotALot\&.py\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "lib\&.DukePlotALot\&.plotter\&._add_error_bands\fC [private]\fP"
 
 .PP
-Definition at line 71 of file DukePlotALot\&.py\&.
+Definition at line 70 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&.Add_error_hist()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&.Add_error_hist()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._add_plots\fC [private]\fP"
 
 .PP
 Additional plots\&. 
 .PP
-Definition at line 66 of file DukePlotALot\&.py\&.
+Definition at line 65 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddPlotBelow(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&.Add_plot()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddPlotBelow(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&.Add_plot()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._add_plots_height\fC [private]\fP"
 
 .PP
-Definition at line 67 of file DukePlotALot\&.py\&.
+Definition at line 66 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddPlotBelow(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), and lib\&.DukePlotALot\&.plotter\&.Add_plot()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._add_plots_labels\fC [private]\fP"
 
 .PP
-Definition at line 68 of file DukePlotALot\&.py\&.
+Definition at line 67 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), and lib\&.DukePlotALot\&.plotter\&.Add_plot()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._add_plots_ref_line\fC [private]\fP"
 
 .PP
-Definition at line 69 of file DukePlotALot\&.py\&.
+Definition at line 68 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Calc_additional_plot(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), and lib\&.DukePlotALot\&.plotter\&._Draw_3()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._allHists\fC [private]\fP"
 
 .PP
-Definition at line 76 of file DukePlotALot\&.py\&.
+Definition at line 73 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._annotations_modified\fC [private]\fP"
 
 .PP
-Definition at line 70 of file DukePlotALot\&.py\&.
+Definition at line 69 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._canvas\fC [private]\fP"
 
 .PP
-Definition at line 979 of file DukePlotALot\&.py\&.
-.SS "lib\&.DukePlotALot\&.plotter\&._cms_val\fC [private]\fP"
-
-.PP
-Definition at line 74 of file DukePlotALot\&.py\&.
-.PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Write_additional_text()\&.
+Definition at line 1169 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._data\fC [private]\fP"
 
 .PP
 Data histograms\&. 
 .PP
-Definition at line 63 of file DukePlotALot\&.py\&.
+Definition at line 60 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_root(), lib\&.DukePlotALot\&.plotter\&.Add_data(), and lib\&.DukePlotALot\&.plotter\&.Draw_data()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), lib\&.DukePlotALot\&.plotter\&._Draw_main_root(), lib\&.DukePlotALot\&.plotter\&.Add_data(), and lib\&.DukePlotALot\&.plotter\&.Draw_data()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._data_hist\fC [private]\fP"
 
 .PP
-Definition at line 64 of file DukePlotALot\&.py\&.
+Definition at line 61 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_root(), and lib\&.DukePlotALot\&.plotter\&.Add_data()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), lib\&.DukePlotALot\&.plotter\&._Draw_main_root(), and lib\&.DukePlotALot\&.plotter\&.Add_data()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._error_hist\fC [private]\fP"
 
 .PP
-Definition at line 72 of file DukePlotALot\&.py\&.
+Definition at line 71 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Calc_signi(), lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_Any_uncertainty_band(), lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands(), and lib\&.DukePlotALot\&.plotter\&.Add_error_hist()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._fig\fC [private]\fP"
@@ -704,63 +708,75 @@ Referenced by lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&
 .PP
 Create the figure for all subplots\&. 
 .PP
-Definition at line 73 of file DukePlotALot\&.py\&.
+Definition at line 72 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&.create_plot()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&.create_plot()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._hist\fC [private]\fP"
 
 .PP
 style variables self\&._style = style BG histograms 
 .PP
-Definition at line 57 of file DukePlotALot\&.py\&.
+Definition at line 54 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Calc_signi(), lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_diff(), lib\&.DukePlotALot\&.plotter\&._Calc_diffratio(), lib\&.DukePlotALot\&.plotter\&._Calc_ratio(), lib\&.DukePlotALot\&.plotter\&._Calc_signi(), lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB(), lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), lib\&.DukePlotALot\&.plotter\&._Draw_Error_Bands(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
+.SS "lib\&.DukePlotALot\&.plotter\&._hist_axis\fC [private]\fP"
+
+.PP
+Second axis histograms\&. 
+.PP
+Definition at line 63 of file DukePlotALot\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._Draw(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&._Write_additional_text()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._hist_height\fC [private]\fP"
 
 .PP
-Definition at line 58 of file DukePlotALot\&.py\&.
+Definition at line 55 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), and lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_axis()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._hist_start\fC [private]\fP"
 
 .PP
-Definition at line 59 of file DukePlotALot\&.py\&.
+Definition at line 56 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), and lib\&.DukePlotALot\&.plotter\&._Draw_main()\&.
-.SS "lib\&.DukePlotALot\&.plotter\&._lumi_val\fC [private]\fP"
+Referenced by lib\&.DukePlotALot\&.plotter\&._Compiler(), lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_axis()\&.
+.SS "lib\&.DukePlotALot\&.plotter\&._mainPad\fC [private]\fP"
 
 .PP
-Definition at line 75 of file DukePlotALot\&.py\&.
+setup the window and pads to draw a ratio set all the margins correct this can be imporved perhaps 
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Write_additional_text()\&.
+Definition at line 1114 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._referenceHeight\fC [private]\fP"
 
 .PP
-Definition at line 980 of file DukePlotALot\&.py\&.
+Definition at line 1170 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&._AddRootLegend()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._sig_hist\fC [private]\fP"
 
 .PP
 SG histograms\&. 
 .PP
-Definition at line 61 of file DukePlotALot\&.py\&.
+Definition at line 58 of file DukePlotALot\&.py\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
+Referenced by lib\&.DukePlotALot\&.plotter\&.__del__(), lib\&.DukePlotALot\&.plotter\&._Add_legend(), lib\&.DukePlotALot\&.plotter\&._AddRootLegend(), lib\&.DukePlotALot\&.plotter\&._Calc_SoverSpB(), lib\&.DukePlotALot\&.plotter\&._Draw_main(), lib\&.DukePlotALot\&.plotter\&._Draw_main_axis(), and lib\&.DukePlotALot\&.plotter\&._Draw_main_root()\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._Style_cont\fC [private]\fP"
 
 .PP
-Definition at line 77 of file DukePlotALot\&.py\&.
+Definition at line 74 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&._useRoot\fC [private]\fP"
 
 .PP
-Definition at line 78 of file DukePlotALot\&.py\&.
+Definition at line 75 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._Draw(), lib\&.DukePlotALot\&.plotter\&._SavePlot(), and lib\&.style_class\&.style_container\&.Get_useRoot()\&.
+.SS "lib\&.DukePlotALot\&.plotter\&.additionalPad"
+
+.PP
+Definition at line 83 of file DukePlotALot\&.py\&.
 .SS "lib\&.DukePlotALot\&.plotter\&.leg"
 
 .PP
-Definition at line 319 of file DukePlotALot\&.py\&.
+Definition at line 346 of file DukePlotALot\&.py\&.
 .PP
 Referenced by lib\&.DukePlotALot\&.plotter\&._AddRootLegend()\&.
 

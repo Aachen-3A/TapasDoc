@@ -132,10 +132,10 @@ $(document).ready(function(){initNavTree('plotlib_8py_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">from</span> colorsys <span class="keyword">import</span> hls_to_rgb,rgb_to_hls</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">from</span> math <span class="keyword">import</span> pi</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">from</span> random <span class="keyword">import</span> random</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">from</span> random <span class="keyword">import</span> uniform</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    colors=[]</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> <a class="code" href="namespacelib_1_1plotlib.html#a020873c7a1f981b475a2841f1e434ccc">xfrange</a>(0,2.*pi,(2.*pi)/ncolors):</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        colors.append(hls_to_rgb(i, random() , random() ))</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        colors.append(hls_to_rgb(i, uniform(0.25,0.75) ,uniform(0.,1.) ))</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> colors</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"># helper to search if a hist contains a key</span></div>

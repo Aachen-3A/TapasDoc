@@ -30,6 +30,7 @@ var hierarchy =
       [ "lib.rootplotlib.Legend", "classlib_1_1rootplotlib_1_1Legend.html", null ]
     ] ],
     [ "lib.DukePlotALot.plotter", "classlib_1_1DukePlotALot_1_1plotter.html", null ],
+    [ "lib.DukePlotALot2D.plotter2D", "classlib_1_1DukePlotALot2D_1_1plotter2D.html", null ],
     [ "lib.style_class.position", "classlib_1_1style__class_1_1position.html", null ],
     [ "lib.rounding.rounding", "classlib_1_1rounding_1_1rounding.html", null ],
     [ "lib.style_class.style_container", "classlib_1_1style__class_1_1style__container.html", null ],

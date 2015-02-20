@@ -1,4 +1,4 @@
-.TH "lib.rootplotlib.CmsDecoration" 3 "Wed Feb 11 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.rootplotlib.CmsDecoration" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,39 +22,6 @@ Inherits object\&.
 
 .in +1c
 .ti -1c
-.RI "\fBcmsTextFont\fP"
-.br
-.ti -1c
-.RI "\fBlumiTextFont\fP"
-.br
-.ti -1c
-.RI "\fBextraTextFont\fP"
-.br
-.ti -1c
-.RI "\fBadditionalTextFont\fP"
-.br
-.ti -1c
-.RI "\fBcmsTextSize\fP"
-.br
-.ti -1c
-.RI "\fBlumiTextSize\fP"
-.br
-.ti -1c
-.RI "\fBextraTextSize\fP"
-.br
-.ti -1c
-.RI "\fBadditionalTextSize\fP"
-.br
-.ti -1c
-.RI "\fBadditionalTextVspace\fP"
-.br
-.ti -1c
-.RI "\fBlumiTextOffset\fP"
-.br
-.ti -1c
-.RI "\fBextraTextOffset\fP"
-.br
-.ti -1c
 .RI "\fBrelPosX\fP"
 .br
 .ti -1c
@@ -67,120 +34,104 @@ Inherits object\&.
 .RI "\fBlumiText\fP"
 .br
 .ti -1c
-.RI "\fBhspace\fP"
+.RI "\fBlumiTextOffset\fP"
+.br
+.ti -1c
+.RI "\fBextraTextOffset\fP"
+.br
+.ti -1c
+.RI "\fBextraText\fP"
+.br
+.ti -1c
+.RI "\fBadditionalText\fP"
 .br
 .ti -1c
 .RI "\fBpad\fP"
 .br
 .ti -1c
-.RI "\fBreferenceHeight\fP"
+.RI "\fBalign_\fP"
 .br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
 .ti -1c
-.RI "\fBalign\fP"
-.br
-.ti -1c
-.RI "\fBvalign\fP"
+.RI "\fB_style\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 18 of file rootplotlib\&.py\&.
+Definition at line 19 of file rootplotlib\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "def lib\&.rootplotlib\&.CmsDecoration\&.__init__ (self, extraText = \fCNone\fP, additionalText = \fCNone\fP, lumiText = \fC'19\&.7 fb^{-1} (8 TeV)'\fP, align = \fC'left'\fP, valign = \fC'top'\fP, vspace = \fC0\fP, hspace = \fC0\fP, referenceHeight = \fCNone\fP, pad = \fCNone\fP)"
+.SS "def lib\&.rootplotlib\&.CmsDecoration\&.__init__ (self, sc_obj = \fCsc\&.style_container()\fP, extraText = \fCNone\fP, additionalText = \fCNone\fP, lumiText = \fC'19\&.7 fb^{-1} (8 TeV)'\fP, align = \fCNone\fP, valign = \fCNone\fP, vspace = \fC0\fP, hspace = \fC0\fP, referenceHeight = \fCNone\fP, pad = \fCNone\fP)"
 
 .PP
-Definition at line 19 of file rootplotlib\&.py\&.
+Definition at line 21 of file rootplotlib\&.py\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def lib\&.rootplotlib\&.CmsDecoration\&.Draw (self)"
 
 .PP
-Definition at line 52 of file rootplotlib\&.py\&.
+Definition at line 65 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.CmsDecoration\&.additionalText, lib\&.rootplotlib\&.CmsDecoration\&.align_, lib\&.rootplotlib\&.CmsDecoration\&.extraText, lib\&.rootplotlib\&.CmsDecoration\&.lumiText, and lib\&.rootplotlib\&.CmsDecoration\&.lumiTextOffset\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.additionalTextFont"
-
-.PP
-Definition at line 23 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.additionalTextSize"
-
-.PP
-Definition at line 27 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.additionalTextVspace"
-
-.PP
-Definition at line 28 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.align"
-
-.PP
-Definition at line 58 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.cmsTextFont"
-
-.PP
-Definition at line 20 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.cmsTextSize"
-
-.PP
-Definition at line 24 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.extraTextFont"
+.SS "lib\&.rootplotlib\&.CmsDecoration\&._style\fC [private]\fP"
 
 .PP
 Definition at line 22 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.CmsDecoration\&.additionalText"
+
+.PP
+Definition at line 37 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.CmsDecoration\&.Draw()\&.
+.SS "lib\&.rootplotlib\&.CmsDecoration\&.align_"
+
+.PP
+Definition at line 56 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.CmsDecoration\&.Draw()\&.
+.SS "lib\&.rootplotlib\&.CmsDecoration\&.extraText"
+
+.PP
+Definition at line 33 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.CmsDecoration\&.Draw()\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.extraTextOffset"
 
 .PP
 Definition at line 30 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.extraTextSize"
-
-.PP
-Definition at line 26 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.hspace"
-
-.PP
-Definition at line 36 of file rootplotlib\&.py\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.lumiText"
 
 .PP
-Definition at line 35 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.lumiTextFont"
-
+Definition at line 28 of file rootplotlib\&.py\&.
 .PP
-Definition at line 21 of file rootplotlib\&.py\&.
+Referenced by lib\&.rootplotlib\&.CmsDecoration\&.Draw()\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.lumiTextOffset"
 
 .PP
 Definition at line 29 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.lumiTextSize"
-
 .PP
-Definition at line 25 of file rootplotlib\&.py\&.
+Referenced by lib\&.rootplotlib\&.CmsDecoration\&.Draw()\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.pad"
 
 .PP
-Definition at line 39 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.referenceHeight"
-
-.PP
-Definition at line 46 of file rootplotlib\&.py\&.
-.PP
-Referenced by lib\&.rootplotlib\&.Legend\&.getTextWidth()\&.
+Definition at line 43 of file rootplotlib\&.py\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.relExtraDY"
 
 .PP
-Definition at line 34 of file rootplotlib\&.py\&.
+Definition at line 25 of file rootplotlib\&.py\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.relPosX"
 
 .PP
-Definition at line 32 of file rootplotlib\&.py\&.
+Definition at line 23 of file rootplotlib\&.py\&.
 .SS "lib\&.rootplotlib\&.CmsDecoration\&.relPosY"
 
 .PP
-Definition at line 33 of file rootplotlib\&.py\&.
-.SS "lib\&.rootplotlib\&.CmsDecoration\&.valign"
-
-.PP
-Definition at line 79 of file rootplotlib\&.py\&.
+Definition at line 24 of file rootplotlib\&.py\&.
 
 .SH "Author"
 .PP 
