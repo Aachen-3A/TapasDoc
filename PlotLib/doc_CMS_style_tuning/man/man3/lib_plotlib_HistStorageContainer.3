@@ -1,0 +1,223 @@
+.TH "lib.plotlib.HistStorageContainer" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.plotlib.HistStorageContainer \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.RI "\fIInit function\&. \fP"
+.ti -1c
+.RI "def \fBgetHist\fP"
+.br
+.RI "\fIFunction to clear hists\&. \fP"
+.ti -1c
+.RI "def \fBgetHistFromTree\fP"
+.br
+.ti -1c
+.RI "def \fBrebin\fP"
+.br
+.RI "\fIFunction rebin the all hists\&. \fP"
+.ti -1c
+.RI "def \fBsetStyle\fP"
+.br
+.RI "\fIFunction to set the style of the histograms\&. \fP"
+.ti -1c
+.RI "def \fBgetBGList\fP"
+.br
+.RI "\fIFunction getbg\&. \fP"
+.ti -1c
+.RI "def \fBgetSGList\fP"
+.br
+.RI "\fIFunction getsg\&. \fP"
+.ti -1c
+.RI "def \fBgetData\fP"
+.br
+.RI "\fIFunction getData\&. \fP"
+.ti -1c
+.RI "def \fBmakeCumulative\fP"
+.br
+.RI "\fIFunction makeCumulative\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbg\fP"
+.br
+.ti -1c
+.RI "\fBsg\fP"
+.br
+.ti -1c
+.RI "\fBdata\fP"
+.br
+.ti -1c
+.RI "\fBallStored\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 210 of file plotlib\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.__init__ (self, bg = \fCFalse\fP, sg = \fCFalse\fP, data = \fCFalse\fP)"
+
+.PP
+Init function\&. In this function the default variables are set and initialized\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbg\fP HistSorage for bg (default=False) 
+.br
+\fIsg\fP HistSorage for sg (default=False) 
+.br
+\fIdata\fP HistSorage for data (default=False) 
+.RE
+.PP
+
+.PP
+Definition at line 217 of file plotlib\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getBGList (self)"
+
+.PP
+Function getbg\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbg\&.getHistList()\fP list of bg hists 
+.RE
+.PP
+
+.PP
+Definition at line 282 of file plotlib\&.py\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getData (self)"
+
+.PP
+Function getData\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\&.getHistList()[0]\fP hist of Data 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file plotlib\&.py\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getHist (self, hist)"
+
+.PP
+Function to clear hists\&. use this if you want to plot a new set of hists def clearHists(self): for stored in self\&.allStored: stored\&.clearHists() Function get hists from files
+.PP
+the hists ate added to \&.hists and joined if a joinList exist the hist will be put in the corresponding \fBHistStorage\fP class 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhist\fP string name of the hist 
+.RE
+.PP
+
+.PP
+Definition at line 244 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree (self, binns, xmin, xmax, xtitle, cut, value, tree)"
+
+.PP
+Definition at line 248 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getSGList (self)"
+
+.PP
+Function getsg\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsg\&.getHistList()\fP list of sg hists 
+.RE
+.PP
+
+.PP
+Definition at line 288 of file plotlib\&.py\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.makeCumulative (self, width = \fCFalse\fP)"
+
+.PP
+Function makeCumulative\&. make the distribution cumulative 
+.PP
+Definition at line 300 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.rebin (self, width = \fC0\fP, factor = \fC0\fP, vector = \fCNone\fP)"
+
+.PP
+Function rebin the all hists\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP try to rebin to a specific width 
+.br
+\fIfactor\fP rebin to with a factor if both are given the width is used 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.setStyle (self, bgcolors = \fCNone\fP, sgcolors = \fCNone\fP)"
+
+.PP
+Function to set the style of the histograms\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbgcolors\fP a list/dict of colors that the hists should have if colors is not specified the internal colorListis used if set 
+.br
+\fIsgcolors\fP a list/dict of colors that the hists should have if colors is not specified the internal colorListis used if set 
+.RE
+.PP
+
+.PP
+Definition at line 267 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.bg, lib\&.plotlib\&.HistStorageContainer\&.data, and lib\&.plotlib\&.HistStorageContainer\&.sg\&.
+.PP
+Referenced by lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getAllAdded(), and lib\&.plotlib\&.HistStorage\&.getHistList()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.plotlib\&.HistStorageContainer\&.allStored"
+
+.PP
+Definition at line 221 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.HistStorageContainer\&.getHist(), lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree(), lib\&.plotlib\&.HistStorageContainer\&.makeCumulative(), and lib\&.plotlib\&.HistStorageContainer\&.rebin()\&.
+.SS "lib\&.plotlib\&.HistStorageContainer\&.bg"
+
+.PP
+Definition at line 218 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
+.SS "lib\&.plotlib\&.HistStorageContainer\&.data"
+
+.PP
+Definition at line 220 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
+.SS "lib\&.plotlib\&.HistStorageContainer\&.sg"
+
+.PP
+Definition at line 219 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

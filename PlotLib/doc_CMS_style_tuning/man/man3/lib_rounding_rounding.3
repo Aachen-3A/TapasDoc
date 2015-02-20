@@ -1,0 +1,145 @@
+.TH "lib.rounding.rounding" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.rounding.rounding \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBlatex\fP"
+.br
+.ti -1c
+.RI "def \fBhtml\fP"
+.br
+.ti -1c
+.RI "def \fBlatexValue\fP"
+.br
+.ti -1c
+.RI "def \fBlatexValueError\fP"
+.br
+.ti -1c
+.RI "def \fBlatexValueUpDownError\fP"
+.br
+.ti -1c
+.RI "def \fBhtmlValue\fP"
+.br
+.ti -1c
+.RI "def \fBhtmlValueError\fP"
+.br
+.ti -1c
+.RI "def \fBhtmlValueUpDownError\fP"
+.br
+.ti -1c
+.RI "def \fBsdr\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBposdigits\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+significant digits rounder
+
+.fi
+.PP
+ 
+.PP
+Definition at line 3 of file rounding\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.rounding\&.rounding\&.__init__ (self, sigdigits = \fC2\fP, negdigits = \fC3\fP, posdigits = \fC3\fP)"
+
+.PP
+Definition at line 7 of file rounding\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.rounding\&.rounding\&.html (self, n, err1 = \fCNone\fP, err2 = \fCNone\fP)"
+
+.PP
+Definition at line 18 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.htmlValue(), and lib\&.rounding\&.rounding\&.htmlValueError()\&.
+.SS "def lib\&.rounding\&.rounding\&.htmlValue (self, n)"
+
+.PP
+Definition at line 47 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.html()\&.
+.SS "def lib\&.rounding\&.rounding\&.htmlValueError (self, n, error)"
+
+.PP
+Definition at line 54 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.html()\&.
+.SS "def lib\&.rounding\&.rounding\&.htmlValueUpDownError (self, n, up, down)"
+
+.PP
+Definition at line 61 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.SS "def lib\&.rounding\&.rounding\&.latex (self, n, err1 = \fCNone\fP, err2 = \fCNone\fP)"
+
+.PP
+Definition at line 10 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.latexValue(), and lib\&.rounding\&.rounding\&.latexValueError()\&.
+.SS "def lib\&.rounding\&.rounding\&.latexValue (self, n)"
+
+.PP
+Definition at line 26 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.latex()\&.
+.SS "def lib\&.rounding\&.rounding\&.latexValueError (self, n, error)"
+
+.PP
+Definition at line 33 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.latex()\&.
+.SS "def lib\&.rounding\&.rounding\&.latexValueUpDownError (self, n, up, down)"
+
+.PP
+Definition at line 40 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
+.SS "def lib\&.rounding\&.rounding\&.sdr (self, numbers)"
+
+.PP
+Definition at line 68 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.posdigits\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.htmlValue(), lib\&.rounding\&.rounding\&.htmlValueError(), lib\&.rounding\&.rounding\&.htmlValueUpDownError(), lib\&.rounding\&.rounding\&.latexValue(), lib\&.rounding\&.rounding\&.latexValueError(), and lib\&.rounding\&.rounding\&.latexValueUpDownError()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.rounding\&.rounding\&.posdigits"
+
+.PP
+Definition at line 8 of file rounding\&.py\&.
+.PP
+Referenced by lib\&.rounding\&.rounding\&.sdr()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

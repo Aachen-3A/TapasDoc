@@ -1,0 +1,83 @@
+.TH "lib.plotlib" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.plotlib \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNoDictMessagesFilter\fP"
+.br
+.ti -1c
+.RI "class \fBHistStorageContainer\fP"
+.br
+.ti -1c
+.RI "class \fBHistStorage\fP"
+.br
+.RI "\fIClass to handle histograms functions\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBxfrange\fP"
+.br
+.RI "\fIhelper methods \fP"
+.ti -1c
+.RI "def \fBgetColorList\fP"
+.br
+.ti -1c
+.RI "def \fBgetDictValue\fP"
+.br
+.ti -1c
+.RI "def \fBduke_errorbar\fP"
+.br
+.ti -1c
+.RI "def \fB_duke__errorbar\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def lib\&.plotlib\&._duke__errorbar (h, xerr, yerr, axes = \fCNone\fP, emptybins = \fCTrue\fP, ignore_binns = \fCNone\fP, zorder = \fCNone\fP, kwargs)\fC [private]\fP"
+
+.PP
+Definition at line 165 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.duke_errorbar()\&.
+.SS "def lib\&.plotlib\&.duke_errorbar (hists, xerr = \fCTrue\fP, yerr = \fCTrue\fP, xpadding = \fC0\fP, ypadding = \fC\&.1\fP, xerror_in_padding = \fCTrue\fP, yerror_in_padding = \fCTrue\fP, emptybins = \fCTrue\fP, snap = \fCTrue\fP, axes = \fCNone\fP, ignore_binns = \fCNone\fP, kwargs)"
+
+.PP
+Definition at line 67 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&._duke__errorbar()\&.
+.PP
+Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), and lib\&.plotlib\&.getDictValue()\&.
+.SS "def lib\&.plotlib\&.getColorList (ncolors)"
+
+.PP
+Definition at line 33 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.xfrange()\&.
+.SS "def lib\&.plotlib\&.getDictValue (hist, parmDict)"
+
+.PP
+Definition at line 44 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.duke_errorbar()\&.
+.PP
+Referenced by DukePlotALot_tester_realPlotRoot\&.main(), and DukePlotALot_tester_realPlot\&.main()\&.
+.SS "def lib\&.plotlib\&.xfrange (start, stop, step)"
+
+.PP
+helper methods some times one needs float lists 
+.PP
+Definition at line 27 of file plotlib\&.py\&.
+.PP
+Referenced by lib\&.plotlib\&.getColorList()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.
