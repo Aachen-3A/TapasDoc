@@ -1,0 +1,143 @@
+.TH "lib.configobj.InterpolationEngine" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj.InterpolationEngine \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBlib\&.configobj\&.ConfigParserInterpolation\fP, and \fBlib\&.configobj\&.TemplateInterpolation\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBinterpolate\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsection\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_fetch\fP"
+.br
+.ti -1c
+.RI "def \fB_parse_match\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_KEYCRE\fP = re\&.compile(r'%\\(([^)]*)\\)s')"
+.br
+.ti -1c
+.RI "string \fB_cookie\fP = '%'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A helper class to help perform string interpolation.
+
+This class is an abstract base class; its descendants perform
+the actual work.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 299 of file configobj\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.configobj\&.InterpolationEngine\&.__init__ (self, section)"
+
+.PP
+Definition at line 311 of file configobj\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.InterpolationEngine\&._fetch (self, key)\fC [private]\fP"
+
+.PP
+.nf
+Helper function to fetch values from owning section.
+
+Returns a 2-tuple: the value, and the section where it was found.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 369 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.InterpolationEngine\&.section\&.
+.PP
+Referenced by lib\&.configobj\&.ConfigParserInterpolation\&._parse_match(), and lib\&.configobj\&.TemplateInterpolation\&._parse_match()\&.
+.SS "def lib\&.configobj\&.InterpolationEngine\&._parse_match (self, match)\fC [private]\fP"
+
+.PP
+.nf
+Implementation-dependent helper function.
+
+Will be passed a match object corresponding to the interpolation
+key we just found (e.g., "%(foo)s" or "$foo"). Should look up that
+key in the appropriate config file section (using the ``_fetch()``
+helper function) and return a 3-tuple: (key, value, section)
+
+``key`` is the name of the key we're looking for
+``value`` is the value found for that key
+``section`` is a reference to the section where it was found
+
+``key`` and ``section`` should be None if no further
+interpolation should be performed on the resulting value
+(e.g., if we interpolated "$$" and returned "$").
+
+.fi
+.PP
+ 
+.PP
+Definition at line 403 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.InterpolationEngine\&.interpolate()\&.
+.SS "def lib\&.configobj\&.InterpolationEngine\&.interpolate (self, key, value)"
+
+.PP
+Definition at line 316 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.InterpolationEngine\&._cookie, lib\&.configobj\&.InterpolationEngine\&._parse_match(), and lib\&.configobj\&.InterpolationEngine\&.section\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string lib\&.configobj\&.InterpolationEngine\&._cookie = '%'\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 309 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.InterpolationEngine\&.interpolate()\&.
+.SS "tuple lib\&.configobj\&.InterpolationEngine\&._KEYCRE = re\&.compile(r'%\\(([^)]*)\\)s')\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 308 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.InterpolationEngine\&.section"
+
+.PP
+Definition at line 313 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.InterpolationEngine\&._fetch(), and lib\&.configobj\&.InterpolationEngine\&.interpolate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

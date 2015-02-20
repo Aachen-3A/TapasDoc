@@ -1,0 +1,1003 @@
+.TH "lib.configobj.ConfigObj" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj.ConfigObj \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlib\&.configobj\&.Section\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBwrite\fP"
+.br
+.ti -1c
+.RI "def \fBvalidate\fP"
+.br
+.ti -1c
+.RI "def \fBreset\fP"
+.br
+.ti -1c
+.RI "def \fBreload\fP"
+.br
+.ti -1c
+.RI "def \fB__setstate__\fP"
+.br
+.ti -1c
+.RI "def \fB__reduce__\fP"
+.br
+.ti -1c
+.RI "def \fB__getitem__\fP"
+.br
+.ti -1c
+.RI "def \fB__setitem__\fP"
+.br
+.ti -1c
+.RI "def \fB__delitem__\fP"
+.br
+.ti -1c
+.RI "def \fBget\fP"
+.br
+.ti -1c
+.RI "def \fBupdate\fP"
+.br
+.ti -1c
+.RI "def \fBpop\fP"
+.br
+.ti -1c
+.RI "def \fBpopitem\fP"
+.br
+.ti -1c
+.RI "def \fBclear\fP"
+.br
+.ti -1c
+.RI "def \fBsetdefault\fP"
+.br
+.ti -1c
+.RI "def \fBitems\fP"
+.br
+.ti -1c
+.RI "def \fBkeys\fP"
+.br
+.ti -1c
+.RI "def \fBvalues\fP"
+.br
+.ti -1c
+.RI "def \fBiteritems\fP"
+.br
+.ti -1c
+.RI "def \fBiterkeys\fP"
+.br
+.ti -1c
+.RI "def \fBitervalues\fP"
+.br
+.ti -1c
+.RI "def \fB__repr__\fP"
+.br
+.ti -1c
+.RI "def \fBdict\fP"
+.br
+.ti -1c
+.RI "def \fBmerge\fP"
+.br
+.ti -1c
+.RI "def \fBrename\fP"
+.br
+.ti -1c
+.RI "def \fBwalk\fP"
+.br
+.ti -1c
+.RI "def \fBas_bool\fP"
+.br
+.ti -1c
+.RI "def \fBas_int\fP"
+.br
+.ti -1c
+.RI "def \fBas_float\fP"
+.br
+.ti -1c
+.RI "def \fBas_list\fP"
+.br
+.ti -1c
+.RI "def \fBrestore_default\fP"
+.br
+.ti -1c
+.RI "def \fBrestore_defaults\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBconfigspec\fP"
+.br
+.ti -1c
+.RI "\fBindent_type\fP"
+.br
+.ti -1c
+.RI "\fBinterpolation\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBmain\fP"
+.br
+.ti -1c
+.RI "\fBdepth\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBscalars\fP"
+.br
+.ti -1c
+.RI "\fBsections\fP"
+.br
+.ti -1c
+.RI "\fBcomments\fP"
+.br
+.ti -1c
+.RI "\fBinline_comments\fP"
+.br
+.ti -1c
+.RI "\fBdefaults\fP"
+.br
+.ti -1c
+.RI "\fBdefault_values\fP"
+.br
+.ti -1c
+.RI "\fBextra_values\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBquot\fP = \fBtdquot\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_handle_value\fP"
+.br
+.ti -1c
+.RI "def \fB_multiline\fP"
+.br
+.ti -1c
+.RI "def \fB_handle_configspec\fP"
+.br
+.ti -1c
+.RI "def \fB_set_configspec\fP"
+.br
+.ti -1c
+.RI "def \fB_write_line\fP"
+.br
+.ti -1c
+.RI "def \fB_write_marker\fP"
+.br
+.ti -1c
+.RI "def \fB_handle_comment\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_vdtMissingValue\fP"
+.br
+.ti -1c
+.RI "\fB_original_configspec\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_keyword\fP"
+.br
+.ti -1c
+.RI "tuple \fB_valueexp\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An object to read, create, and write config files.
+.fi
+.PP
+ 
+.PP
+Definition at line 1084 of file configobj\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.Section\&.__delitem__ (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+Remove items from the sequence when deleting.
+.fi
+.PP
+ 
+.PP
+Definition at line 641 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.comments, lib\&.configobj\&.Section\&.inline_comments, and lib\&.configobj\&.Section\&.scalars\&.
+.SS "def lib\&.configobj\&.Section\&.__getitem__ (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+Fetch the item and do string interpolation.
+.fi
+.PP
+ 
+.PP
+Definition at line 565 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&._interpolate()\&.
+.SS "def lib\&.configobj\&.Section\&.__reduce__ (self)\fC [inherited]\fP"
+
+.PP
+Definition at line 494 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.dict()\&.
+.SS "def lib\&.configobj\&.Section\&.__repr__ (self)\fC [inherited]\fP"
+
+.PP
+.nf
+x.__repr__() <==> repr(x)
+.fi
+.PP
+ 
+.PP
+Definition at line 754 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.SS "def lib\&.configobj\&.Section\&.__setitem__ (self, key, value, unrepr = \fCFalse\fP)\fC [inherited]\fP"
+
+.PP
+.nf
+Correctly set a value.
+
+Making dictionary values Section instances.
+(We have to special case 'Section' instances - which are also dicts)
+
+Keys must be strings.
+Values need only be strings (or lists of strings) if
+``main.stringify`` is set.
+
+``unrepr`` must be set when setting a value to a dictionary, without
+creating a new sub-section.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 582 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.comments, lib\&.configobj\&.Section\&.defaults, lib\&.configobj\&.Section\&.depth, lib\&.configobj\&.Section\&.inline_comments, and lib\&.configobj\&.Section\&.main\&.
+.SS "def lib\&.configobj\&.Section\&.__setstate__ (self, state)\fC [inherited]\fP"
+
+.PP
+Definition at line 490 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._handle_comment (self, comment)\fC [private]\fP"
+
+.PP
+.nf
+Deal with a comment.
+.fi
+.PP
+ 
+.PP
+Definition at line 1994 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.ConfigObj\&.indent_type\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._handle_configspec (self, configspec)\fC [private]\fP"
+
+.PP
+.nf
+Parse the configspec.
+.fi
+.PP
+ 
+.PP
+Definition at line 1922 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._handle_value (self, value)\fC [private]\fP"
+
+.PP
+.nf
+Given a value string, unquote, remove comment,
+handle lists. (including empty and single member lists)
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1838 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._multiline (self, value, infile, cur_index, maxline)\fC [private]\fP"
+
+.PP
+.nf
+Extract the value, where we are in a multiline situation.
+.fi
+.PP
+ 
+.PP
+Definition at line 1887 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._set_configspec (self, section, copy)\fC [private]\fP"
+
+.PP
+.nf
+Called by validate. Handles setting the configspec on subsections
+including sections to be validated by __many__
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1943 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._write_line (self, indent_string, entry, this_entry, comment)\fC [private]\fP"
+
+.PP
+.nf
+Write an individual line, for the write method
+.fi
+.PP
+ 
+.PP
+Definition at line 1971 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&._write_marker (self, indent_string, depth, entry, comment)\fC [private]\fP"
+
+.PP
+.nf
+Write a section marker line
+.fi
+.PP
+ 
+.PP
+Definition at line 1985 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.as_bool (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+Accepts a key as input. The corresponding value must be a string or
+the objects (``True`` or 1) or (``False`` or 0). We allow 0 and 1 to
+retain compatibility with Python 2.2.
+
+If the string is one of  ``True``, ``On``, ``Yes``, or ``1`` it returns 
+``True``.
+
+If the string is one of  ``False``, ``Off``, ``No``, or ``0`` it returns 
+``False``.
+
+``as_bool`` is not case sensitive.
+
+Any other input will raise a ``ValueError``.
+
+>>> a = ConfigObj()
+>>> a['a'] = 'fish'
+>>> a.as_bool('a')
+Traceback (most recent call last):
+ValueError: Value "fish" is neither True nor False
+>>> a['b'] = 'True'
+>>> a.as_bool('b')
+1
+>>> a['b'] = 'off'
+>>> a.as_bool('b')
+0
+
+.fi
+.PP
+ 
+.PP
+Definition at line 940 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.as_float (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+A convenience method which coerces the specified value to a float.
+
+If the value is an invalid literal for ``float``, a ``ValueError`` will
+be raised.
+
+>>> a = ConfigObj()
+>>> a['a'] = 'fish'
+>>> a.as_float('a')
+Traceback (most recent call last):
+ValueError: invalid literal for float(): fish
+>>> a['b'] = '1'
+>>> a.as_float('b')
+1.0
+>>> a['b'] = '3.2'
+>>> a.as_float('b')
+3.2000000000000002
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1007 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.as_int (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+A convenience method which coerces the specified value to an integer.
+
+If the value is an invalid literal for ``int``, a ``ValueError`` will
+be raised.
+
+>>> a = ConfigObj()
+>>> a['a'] = 'fish'
+>>> a.as_int('a')
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'fish'
+>>> a['b'] = '1'
+>>> a.as_int('b')
+1
+>>> a['b'] = '3.2'
+>>> a.as_int('b')
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: '3.2'
+
+.fi
+.PP
+ 
+.PP
+Definition at line 984 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.as_list (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+A convenience method which fetches the specified value, guaranteeing
+that it is a list.
+
+>>> a = ConfigObj()
+>>> a['a'] = 1
+>>> a.as_list('a')
+[1]
+>>> a['a'] = (1,)
+>>> a.as_list('a')
+[1]
+>>> a['a'] = [1]
+>>> a.as_list('a')
+[1]
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1029 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.clear (self)\fC [inherited]\fP"
+
+.PP
+.nf
+A version of clear that also affects scalars/sections
+Also clears comments and configspec.
+
+Leaves other attributes alone :
+    depth/main/parent are not affected
+
+.fi
+.PP
+ 
+.PP
+Definition at line 695 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.comments, lib\&.configobj\&.Section\&.configspec, lib\&.configobj\&.Section\&.defaults, lib\&.configobj\&.Section\&.extra_values, lib\&.configobj\&.Section\&.inline_comments, lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.PP
+Referenced by lib\&.configobj\&.ConfigObj\&.reload(), and lib\&.configobj\&.ConfigObj\&.reset()\&.
+.SS "def lib\&.configobj\&.Section\&.dict (self)\fC [inherited]\fP"
+
+.PP
+.nf
+Return a deepcopy of self as a dictionary.
+
+All members that are ``Section`` instances are recursively turned to
+ordinary dictionaries - by calling their ``dict`` method.
+
+>>> n = a.dict()
+>>> n == a
+1
+>>> n is a
+0
+
+.fi
+.PP
+ 
+.PP
+Definition at line 770 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__reduce__()\&.
+.SS "def lib\&.configobj\&.Section\&.get (self, key, default = \fCNone\fP)\fC [inherited]\fP"
+
+.PP
+.nf
+A version of ``get`` that doesn't bypass string interpolation.
+.fi
+.PP
+ 
+.PP
+Definition at line 652 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.items (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.items() -> list of D's (key, value) pairs, as 2-tuples
+.fi
+.PP
+ 
+.PP
+Definition at line 722 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, lib\&.configobj\&.Section\&.sections, and lib\&.configobj\&.Section\&.values()\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.__eq__(), lib\&.ordered\&.OrderedDict\&.__repr__(), and lib\&.configobj\&.Section\&.iteritems()\&.
+.SS "def lib\&.configobj\&.Section\&.iteritems (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.iteritems() -> an iterator over the (key, value) items of D
+.fi
+.PP
+ 
+.PP
+Definition at line 737 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.items()\&.
+.SS "def lib\&.configobj\&.Section\&.iterkeys (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.iterkeys() -> an iterator over the keys of D
+.fi
+.PP
+ 
+.PP
+Definition at line 742 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.SS "def lib\&.configobj\&.Section\&.itervalues (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.itervalues() -> an iterator over the values of D
+.fi
+.PP
+ 
+.PP
+Definition at line 749 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.values()\&.
+.SS "def lib\&.configobj\&.Section\&.keys (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.keys() -> list of D's keys
+.fi
+.PP
+ 
+.PP
+Definition at line 727 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.SS "def lib\&.configobj\&.Section\&.merge (self, indict)\fC [inherited]\fP"
+
+.PP
+.nf
+A recursive update - useful for merging config files.
+
+>>> a = '''[section1]
+...     option1 = True
+...     [[subsection]]
+...     more_options = False
+...     # end of file'''.splitlines()
+>>> b = '''# File is user.ini
+...     [section1]
+...     option1 = False
+...     # end of file'''.splitlines()
+>>> c1 = ConfigObj(b)
+>>> c2 = ConfigObj(a)
+>>> c2.merge(c1)
+>>> c2
+ConfigObj({'section1': {'option1': 'False', 'subsection': {'more_options': 'False'}}})
+
+.fi
+.PP
+ 
+.PP
+Definition at line 798 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.pop (self, key, default = \fC\fBMISSING\fP\fP)\fC [inherited]\fP"
+
+.PP
+.nf
+'D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised'
+
+.fi
+.PP
+ 
+.PP
+Definition at line 668 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.popitem (self)\fC [inherited]\fP"
+
+.PP
+.nf
+Pops the first (key,val)
+.fi
+.PP
+ 
+.PP
+Definition at line 684 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.SS "def lib\&.configobj\&.ConfigObj\&.reload (self)"
+
+.PP
+.nf
+Reload a ConfigObj from file.
+
+This method raises a ``ReloadError`` if the ConfigObj doesn't have
+a filename attribute pointing to a file.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2334 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&._initialise(), lib\&.configobj\&.ConfigObj\&._original_configspec, and lib\&.configobj\&.Section\&.clear()\&.
+.SS "def lib\&.configobj\&.Section\&.rename (self, oldkey, newkey)\fC [inherited]\fP"
+
+.PP
+.nf
+Change a keyname to another, without changing position in sequence.
+
+Implemented so that transformations can be made on keys,
+as well as on values. (used by encode and decode)
+
+Also renames comments.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 825 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.comments, lib\&.configobj\&.Section\&.inline_comments, lib\&.configobj\&.Section\&.scalars, lib\&.configobj\&.Section\&.sections, and lib\&.configobj\&.Section\&.walk()\&.
+.SS "def lib\&.configobj\&.ConfigObj\&.reset (self)"
+
+.PP
+.nf
+Clear ConfigObj instance and restore to 'freshly created' state.
+.fi
+.PP
+ 
+.PP
+Definition at line 2323 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&._initialise(), lib\&.configobj\&.Section\&.clear(), and lib\&.configobj\&.Section\&.configspec\&.
+.SS "def lib\&.configobj\&.Section\&.restore_default (self, key)\fC [inherited]\fP"
+
+.PP
+.nf
+Restore (and return) default value for the specified key.
+
+This method will only work for a ConfigObj that was created
+with a configspec and has been validated.
+
+If there is no default value for this key, ``KeyError`` is raised.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1051 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.default_values, and lib\&.configobj\&.Section\&.defaults\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.restore_defaults()\&.
+.SS "def lib\&.configobj\&.Section\&.restore_defaults (self)\fC [inherited]\fP"
+
+.PP
+.nf
+Recursively restore default values to all members
+that have them.
+
+This method will only work for a ConfigObj that was created
+with a configspec and has been validated.
+
+It doesn't delete or modify entries without default values.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1067 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.default_values, lib\&.configobj\&.Section\&.restore_default(), and lib\&.configobj\&.Section\&.sections\&.
+.SS "def lib\&.configobj\&.Section\&.setdefault (self, key, default = \fCNone\fP)\fC [inherited]\fP"
+
+.PP
+.nf
+A version of setdefault that sets sequence if appropriate.
+.fi
+.PP
+ 
+.PP
+Definition at line 713 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Section\&.update (self, indict)\fC [inherited]\fP"
+
+.PP
+.nf
+A version of update that uses our ``__setitem__``.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 660 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.ConfigObj\&.validate (self, validator, preserve_errors = \fCFalse\fP, copy = \fCFalse\fP, section = \fCNone\fP)"
+
+.PP
+.nf
+Test the ConfigObj against a configspec.
+
+It uses the ``validator`` object from *validate.py*.
+
+To run ``validate`` on the current ConfigObj, call: ::
+
+    test = config.validate(validator)
+
+(Normally having previously passed in the configspec when the ConfigObj
+was created - you can dynamically assign a dictionary of checks to the
+``configspec`` attribute of a section though).
+
+It returns ``True`` if everything passes, or a dictionary of
+pass/fails (True/False). If every member of a subsection passes, it
+will just have the value ``True``. (It also returns ``False`` if all
+members fail).
+
+In addition, it converts the values from strings to their native
+types if their checks pass (and ``stringify`` is set).
+
+If ``preserve_errors`` is ``True`` (``False`` is default) then instead
+of a marking a fail with a ``False``, it will preserve the actual
+exception object. This can contain info about the reason for failure.
+For example the ``VdtValueTooSmallError`` indicates that the value
+supplied was too small. If a value (or section) is missing it will
+still be marked as ``False``.
+
+You must have the validate module to use ``preserve_errors=True``.
+
+You can then use the ``flatten_errors`` function to turn your nested
+results dictionary into a flattened list of failures - useful for
+displaying meaningful error messages.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2117 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.configspec\&.
+.SS "def lib\&.configobj\&.Section\&.values (self)\fC [inherited]\fP"
+
+.PP
+.nf
+D.values() -> list of D's values
+.fi
+.PP
+ 
+.PP
+Definition at line 732 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.items(), and lib\&.configobj\&.Section\&.itervalues()\&.
+.SS "def lib\&.configobj\&.Section\&.walk (self, function, raise_errors = \fCTrue\fP, call_on_sections = \fCFalse\fP, keywargs)\fC [inherited]\fP"
+
+.PP
+.nf
+Walk every member and call a function on the keyword and value.
+
+Return a dictionary of the return values
+
+If the function raises an exception, raise the errror
+unless ``raise_errors=False``, in which case set the return value to
+``False``.
+
+Any unrecognised keyword arguments you pass to walk, will be pased on
+to the function you pass in.
+
+Note: if ``call_on_sections`` is ``True`` then - on encountering a
+subsection, *first* the function is called for the *whole* subsection,
+and then recurses into it's members. This means your function must be
+able to handle strings, dictionaries and lists. This allows you
+to change the key of subsections as well as for ordinary members. The
+return value when called on the whole subsection has to be discarded.
+
+See  the encode and decode methods for examples, including functions.
+
+.. admonition:: caution
+
+    You can use ``walk`` to transform the names of members of a section
+    but you mustn't add or delete members.
+
+>>> config = '''[XXXXsection]
+... XXXXkey = XXXXvalue'''.splitlines()
+>>> cfg = ConfigObj(config)
+>>> cfg
+ConfigObj({'XXXXsection': {'XXXXkey': 'XXXXvalue'}})
+>>> def transform(section, key):
+...     val = section[key]
+...     newkey = key.replace('XXXX', 'CLIENT1')
+...     section.rename(key, newkey)
+...     if isinstance(val, (tuple, list, dict)):
+...         pass
+...     else:
+...         val = val.replace('XXXX', 'CLIENT1')
+...         section[newkey] = val
+>>> cfg.walk(transform, call_on_sections=True)
+{'CLIENT1section': {'CLIENT1key': None}}
+>>> cfg
+ConfigObj({'CLIENT1section': {'CLIENT1key': 'CLIENT1value'}})
+
+.fi
+.PP
+ 
+.PP
+Definition at line 856 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Section\&.scalars, and lib\&.configobj\&.Section\&.sections\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.rename()\&.
+.SS "def lib\&.configobj\&.ConfigObj\&.write (self, outfile = \fCNone\fP, section = \fCNone\fP)"
+
+.PP
+.nf
+Write the current ConfigObj as a file
+
+tekNico: FIXME: use StringIO instead of real files
+
+>>> filename = a.filename
+>>> a.filename = 'test.ini'
+>>> a.write()
+>>> a.filename = filename
+>>> a == ConfigObj('test.ini', raise_errors=True)
+1
+>>> import os
+>>> os.remove('test.ini')
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2006 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.ConfigObj\&.indent_type\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple lib\&.configobj\&.ConfigObj\&._keyword\fC [static]\fP, \fC [private]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+1 = re\&.compile(r'''^ # line start
+2     (\s*)                   # indentation
+3     (                       # keyword
+4         (?:"\&.*?")|          # double quotes
+5         (?:'\&.*?')|          # single quotes
+6         (?:[^'"=]\&.*?)       # no quotes    )    \s*=\s*                 # divider    (\&.*)                    # value (including list values and comments)    $   # line end    ''',        re\&.VERBOSE)    _sectionmarker = re\&.compile(r'''^    (\s*)                     # 1: indentation    ((?:\[\s*)+)              # 2: section marker open    (                         # 3: section name open        (?:"\s*\S\&.*?\s*")|    # at least one non-space with double quotes        (?:'\s*\S\&.*?\s*')|    # at least one non-space with single quotes        (?:[^'"\s]\&.*?)        # at least one non-space unquoted
+7     )                         # section name close
+8     ((?:\s*\])+)              # 4: section marker close
+9     \s*(\#\&.*)?                # 5: optional comment
+10     $''',
+11         re\&.VERBOSE)
+.fi
+.PP
+Definition at line 1087 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.ConfigObj\&._original_configspec\fC [private]\fP"
+
+.PP
+Definition at line 2331 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.ConfigObj\&.reload()\&.
+.SS "tuple lib\&.configobj\&.ConfigObj\&._valueexp\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 1117 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.ConfigObj\&._vdtMissingValue\fC [private]\fP"
+
+.PP
+Definition at line 2159 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.Section\&.comments\fC [inherited]\fP"
+
+.PP
+Definition at line 531 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__delitem__(), lib\&.configobj\&.Section\&.__setitem__(), lib\&.configobj\&.Section\&.clear(), and lib\&.configobj\&.Section\&.rename()\&.
+.SS "lib\&.configobj\&.ConfigObj\&.configspec"
+
+.PP
+Definition at line 1939 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.Section\&.default_values\fC [inherited]\fP"
+
+.PP
+Definition at line 537 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.restore_default(), and lib\&.configobj\&.Section\&.restore_defaults()\&.
+.SS "lib\&.configobj\&.Section\&.defaults\fC [inherited]\fP"
+
+.PP
+Definition at line 536 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__setitem__(), lib\&.configobj\&.Section\&.clear(), and lib\&.configobj\&.Section\&.restore_default()\&.
+.SS "lib\&.configobj\&.Section\&.depth\fC [inherited]\fP"
+
+.PP
+Definition at line 514 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__setitem__()\&.
+.SS "lib\&.configobj\&.Section\&.extra_values\fC [inherited]\fP"
+
+.PP
+Definition at line 538 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.clear()\&.
+.SS "lib\&.configobj\&.ConfigObj\&.indent_type"
+
+.PP
+Definition at line 2023 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.ConfigObj\&._handle_comment(), and lib\&.configobj\&.ConfigObj\&.write()\&.
+.SS "lib\&.configobj\&.Section\&.inline_comments\fC [inherited]\fP"
+
+.PP
+Definition at line 532 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__delitem__(), lib\&.configobj\&.Section\&.__setitem__(), lib\&.configobj\&.Section\&.clear(), and lib\&.configobj\&.Section\&.rename()\&.
+.SS "lib\&.configobj\&.ConfigObj\&.interpolation"
+
+.PP
+Definition at line 2030 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.Section\&.main\fC [inherited]\fP"
+
+.PP
+Definition at line 512 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__setitem__()\&.
+.SS "lib\&.configobj\&.Section\&.name\fC [inherited]\fP"
+
+.PP
+Definition at line 516 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.Section\&.parent\fC [inherited]\fP"
+
+.PP
+Definition at line 510 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.ConfigObj\&.quot = \fBtdquot\fP\fC [static]\fP"
+
+.PP
+Definition at line 1832 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.Section\&.scalars\fC [inherited]\fP"
+
+.PP
+Definition at line 527 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__delitem__(), lib\&.configobj\&.Section\&.__repr__(), lib\&.configobj\&.Section\&.clear(), lib\&.configobj\&.Section\&.items(), lib\&.configobj\&.Section\&.iterkeys(), lib\&.configobj\&.Section\&.keys(), lib\&.configobj\&.Section\&.popitem(), lib\&.configobj\&.Section\&.rename(), lib\&.configobj\&.Section\&.values(), and lib\&.configobj\&.Section\&.walk()\&.
+.SS "lib\&.configobj\&.Section\&.sections\fC [inherited]\fP"
+
+.PP
+Definition at line 529 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Section\&.__repr__(), lib\&.configobj\&.Section\&.clear(), lib\&.configobj\&.Section\&.items(), lib\&.configobj\&.Section\&.iterkeys(), lib\&.configobj\&.Section\&.keys(), lib\&.configobj\&.Section\&.popitem(), lib\&.configobj\&.Section\&.rename(), lib\&.configobj\&.Section\&.restore_defaults(), lib\&.configobj\&.Section\&.values(), and lib\&.configobj\&.Section\&.walk()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.
