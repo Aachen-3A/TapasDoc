@@ -1,0 +1,415 @@
+.TH "lib.configobj" 3 "Mon Feb 23 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBUnknownType\fP"
+.br
+.ti -1c
+.RI "class \fBBuilder\fP"
+.br
+.ti -1c
+.RI "class \fBConfigObjError\fP"
+.br
+.ti -1c
+.RI "class \fBNestingError\fP"
+.br
+.ti -1c
+.RI "class \fBParseError\fP"
+.br
+.ti -1c
+.RI "class \fBReloadError\fP"
+.br
+.ti -1c
+.RI "class \fBDuplicateError\fP"
+.br
+.ti -1c
+.RI "class \fBConfigspecError\fP"
+.br
+.ti -1c
+.RI "class \fBInterpolationError\fP"
+.br
+.ti -1c
+.RI "class \fBInterpolationLoopError\fP"
+.br
+.ti -1c
+.RI "class \fBRepeatSectionError\fP"
+.br
+.ti -1c
+.RI "class \fBMissingInterpolationOption\fP"
+.br
+.ti -1c
+.RI "class \fBUnreprError\fP"
+.br
+.ti -1c
+.RI "class \fBInterpolationEngine\fP"
+.br
+.ti -1c
+.RI "class \fBConfigParserInterpolation\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateInterpolation\fP"
+.br
+.ti -1c
+.RI "class \fBSection\fP"
+.br
+.ti -1c
+.RI "class \fBConfigObj\fP"
+.br
+.ti -1c
+.RI "class \fBSimpleVal\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmatch_utf8\fP"
+.br
+.ti -1c
+.RI "def \fBany\fP"
+.br
+.ti -1c
+.RI "def \fBgetObj\fP"
+.br
+.ti -1c
+.RI "def \fBunrepr\fP"
+.br
+.ti -1c
+.RI "def \fB__newobj__\fP"
+.br
+.ti -1c
+.RI "def \fBflatten_errors\fP"
+.br
+.ti -1c
+.RI "def \fBget_extra_values\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcompiler\fP = None"
+.br
+.ti -1c
+.RI "dictionary \fBBOMS\fP"
+.br
+.ti -1c
+.RI "dictionary \fBBOM_LIST\fP"
+.br
+.ti -1c
+.RI "dictionary \fBBOM_SET\fP"
+.br
+.ti -1c
+.RI "string \fBsquot\fP = ''%s''"
+.br
+.ti -1c
+.RI "string \fBdquot\fP = ''%s''"
+.br
+.ti -1c
+.RI "string \fBnoquot\fP = '%s'"
+.br
+.ti -1c
+.RI "string \fBwspace_plus\fP = ' \\r\\n\\v\\t\\'''"
+.br
+.ti -1c
+.RI "string \fBtsquot\fP = ''''%s''''"
+.br
+.ti -1c
+.RI "string \fBtdquot\fP = ''''%s''''"
+.br
+.ti -1c
+.RI "tuple \fBMISSING\fP = object()"
+.br
+.ti -1c
+.RI "string \fB__version__\fP = '4\&.7\&.2'"
+.br
+.ti -1c
+.RI "tuple \fB__all__\fP"
+.br
+.ti -1c
+.RI "string \fBDEFAULT_INTERPOLATION\fP = 'configparser'"
+.br
+.ti -1c
+.RI "string \fBDEFAULT_INDENT_TYPE\fP = ' '"
+.br
+.ti -1c
+.RI "int \fBMAX_INTERPOL_DEPTH\fP = 10"
+.br
+.ti -1c
+.RI "dictionary \fBOPTION_DEFAULTS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_builder\fP = \fBBuilder\fP()"
+.br
+.ti -1c
+.RI "dictionary \fBinterpolation_engines\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.__newobj__ (cls, args)"
+
+.PP
+Definition at line 467 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.any (iterable)"
+
+.PP
+Definition at line 91 of file configobj\&.py\&.
+.PP
+Referenced by githookcontroller\&.GitHookController\&.update_doxygen()\&.
+.SS "def lib\&.configobj\&.flatten_errors (cfg, res, levels = \fCNone\fP, results = \fCNone\fP)"
+
+.PP
+.nf
+An example function that will turn a nested dictionary of results
+(as returned by ``ConfigObj.validate``) into a flat list.
+
+``cfg`` is the ConfigObj instance being checked, ``res`` is the results
+dictionary returned by ``validate``.
+
+(This is a recursive function, so you shouldn't use the ``levels`` or
+``results`` arguments - they are used by the function.)
+
+Returns a list of keys that failed. Each member of the list is a tuple::
+
+    ([list of sections...], key, result)
+
+If ``validate`` was called with ``preserve_errors=False`` (the default)
+then ``result`` will always be ``False``.
+
+*list of sections* is a flattened list of sections that the key was found
+in.
+
+If the section was missing (or a section was expected and a scalar provided
+- or vice-versa) then key will be ``None``.
+
+If the value (or section) was missing then ``result`` will be ``False``.
+
+If ``validate`` was called with ``preserve_errors=True`` and a value
+was present, but failed the check, then ``result`` will be the exception
+object returned. You can use this as a string that describes the failure.
+
+For example *The value "3" is of the wrong type*.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2382 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.get_extra_values (conf, _prepend = \fC()\fP)"
+
+.PP
+.nf
+Find all the values and sections not in the configspec from a validated
+ConfigObj.
+
+``get_extra_values`` returns a list of tuples where each tuple represents
+either an extra section, or an extra value.
+
+The tuples contain two values, a tuple representing the section the value 
+is in and the name of the extra values. For extra values in the top level
+section the first member will be an empty tuple. For values in the 'foo'
+section the first member will be ``('foo',)``. For members in the 'bar'
+subsection of the 'foo' section the first member will be ``('foo', 'bar')``.
+
+NOTE: If you call ``get_extra_values`` on a ConfigObj instance that hasn't
+been validated it will return an empty list.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 2442 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.getObj (s)"
+
+.PP
+Definition at line 142 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.unrepr()\&.
+.SS "def lib\&.configobj\&.match_utf8 (encoding)"
+
+.PP
+Definition at line 71 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.unrepr (s)"
+
+.PP
+Definition at line 214 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.getObj()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple lib\&.configobj\&.__all__"
+\fBInitial value:\fP
+.PP
+.nf
+1 = (
+2     '__version__',
+3     'DEFAULT_INDENT_TYPE',
+4     'DEFAULT_INTERPOLATION',
+5     'ConfigObjError',
+6     'NestingError',
+7     'ParseError',
+8     'DuplicateError',
+9     'ConfigspecError',
+10     'ConfigObj',
+11     'SimpleVal',
+12     'InterpolationError',
+13     'InterpolationLoopError',
+14     'MissingInterpolationOption',
+15     'RepeatSectionError',
+16     'ReloadError',
+17     'UnreprError',
+18     'UnknownType',
+19     'flatten_errors',
+20     'get_extra_values'
+21 )
+.fi
+.PP
+Definition at line 98 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.__version__ = '4\&.7\&.2'"
+
+.PP
+Definition at line 86 of file configobj\&.py\&.
+.SS "tuple lib\&.configobj\&._builder = \fBBuilder\fP()"
+
+.PP
+Definition at line 211 of file configobj\&.py\&.
+.SS "dictionary lib\&.configobj\&.BOM_LIST"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     'utf_16': 'utf_16',
+3     'u16': 'utf_16',
+4     'utf16': 'utf_16',
+5     'utf-16': 'utf_16',
+6     'utf16_be': 'utf16_be',
+7     'utf_16_be': 'utf16_be',
+8     'utf-16be': 'utf16_be',
+9     'utf16_le': 'utf16_le',
+10     'utf_16_le': 'utf16_le',
+11     'utf-16le': 'utf16_le',
+12     'utf_8': 'utf_8',
+13     'u8': 'utf_8',
+14     'utf': 'utf_8',
+15     'utf8': 'utf_8',
+16     'utf-8': 'utf_8',
+17     }
+.fi
+.PP
+Definition at line 43 of file configobj\&.py\&.
+.SS "dictionary lib\&.configobj\&.BOM_SET"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     'utf_8': BOM_UTF8,
+3     'utf_16': BOM_UTF16,
+4     'utf16_be': BOM_UTF16_BE,
+5     'utf16_le': BOM_UTF16_LE,
+6     None: BOM_UTF8
+7     }
+.fi
+.PP
+Definition at line 62 of file configobj\&.py\&.
+.SS "dictionary lib\&.configobj\&.BOMS"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     BOM_UTF8: ('utf_8', None),
+3     BOM_UTF16_BE: ('utf16_be', 'utf_16'),
+4     BOM_UTF16_LE: ('utf16_le', 'utf_16'),
+5     BOM_UTF16: ('utf_16', 'utf_16'),
+6     }
+.fi
+.PP
+Definition at line 34 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.compiler = None"
+
+.PP
+Definition at line 29 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.DEFAULT_INDENT_TYPE = ' '"
+
+.PP
+Definition at line 121 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.DEFAULT_INTERPOLATION = 'configparser'"
+
+.PP
+Definition at line 120 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.dquot = ''%s''"
+
+.PP
+Definition at line 77 of file configobj\&.py\&.
+.SS "dictionary lib\&.configobj\&.interpolation_engines"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     'configparser': ConfigParserInterpolation,
+3     'template': TemplateInterpolation,
+4 }
+.fi
+.PP
+Definition at line 461 of file configobj\&.py\&.
+.SS "int lib\&.configobj\&.MAX_INTERPOL_DEPTH = 10"
+
+.PP
+Definition at line 122 of file configobj\&.py\&.
+.SS "tuple lib\&.configobj\&.MISSING = object()"
+
+.PP
+Definition at line 84 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.noquot = '%s'"
+
+.PP
+Definition at line 78 of file configobj\&.py\&.
+.SS "dictionary lib\&.configobj\&.OPTION_DEFAULTS"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     'interpolation': True,
+3     'raise_errors': False,
+4     'list_values': True,
+5     'create_empty': False,
+6     'file_error': False,
+7     'configspec': None,
+8     'stringify': True,
+9     # option may be set to one of ('', ' ', '\t')
+10     'indent_type': None,
+11     'encoding': None,
+12     'default_encoding': None,
+13     'unrepr': False,
+14     'write_empty_values': False,
+15 }
+.fi
+.PP
+Definition at line 124 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.squot = ''%s''"
+
+.PP
+Definition at line 76 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.tdquot = ''''%s''''"
+
+.PP
+Definition at line 81 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.tsquot = ''''%s''''"
+
+.PP
+Definition at line 80 of file configobj\&.py\&.
+.SS "string lib\&.configobj\&.wspace_plus = ' \\r\\n\\v\\t\\'''"
+
+.PP
+Definition at line 79 of file configobj\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

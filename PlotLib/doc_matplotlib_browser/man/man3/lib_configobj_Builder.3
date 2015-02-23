@@ -1,0 +1,113 @@
+.TH "lib.configobj.Builder" 3 "Mon Feb 23 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj.Builder \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBbuild\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_List\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Const\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Dict\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Tuple\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Name\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Add\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_Getattr\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_UnarySub\fP"
+.br
+.ti -1c
+.RI "def \fBbuild_UnaryAdd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 155 of file configobj\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.Builder\&.build (self, o)"
+
+.PP
+Definition at line 157 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Builder\&.build_Dict(), lib\&.configobj\&.Builder\&.build_Getattr(), and lib\&.configobj\&.Builder\&.build_List()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Add (self, o)"
+
+.PP
+Definition at line 190 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build_Const()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Const (self, o)"
+
+.PP
+Definition at line 166 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.Builder\&.build_Add(), lib\&.configobj\&.Builder\&.build_UnaryAdd(), and lib\&.configobj\&.Builder\&.build_UnarySub()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Dict (self, o)"
+
+.PP
+Definition at line 169 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Getattr (self, o)"
+
+.PP
+Definition at line 200 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_List (self, o)"
+
+.PP
+Definition at line 163 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build()\&.
+.PP
+Referenced by lib\&.configobj\&.Builder\&.build_Tuple()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Name (self, o)"
+
+.PP
+Definition at line 179 of file configobj\&.py\&.
+.SS "def lib\&.configobj\&.Builder\&.build_Tuple (self, o)"
+
+.PP
+Definition at line 176 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build_List()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_UnaryAdd (self, o)"
+
+.PP
+Definition at line 207 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build_Const()\&.
+.SS "def lib\&.configobj\&.Builder\&.build_UnarySub (self, o)"
+
+.PP
+Definition at line 204 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.Builder\&.build_Const()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

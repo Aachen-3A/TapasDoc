@@ -1,0 +1,86 @@
+.TH "lib.configobj.ConfigParserInterpolation" 3 "Mon Feb 23 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.configobj.ConfigParserInterpolation \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlib\&.configobj\&.InterpolationEngine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBinterpolate\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsection\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_parse_match\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fB_cookie\fP = '%'"
+.br
+.ti -1c
+.RI "tuple \fB_KEYCRE\fP = re\&.compile(r'%\\(([^)]*)\\)s')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Behaves like ConfigParser.
+.fi
+.PP
+ 
+.PP
+Definition at line 423 of file configobj\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.configobj\&.ConfigParserInterpolation\&._parse_match (self, match)\fC [private]\fP"
+
+.PP
+Definition at line 428 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.InterpolationEngine\&._fetch()\&.
+.SS "def lib\&.configobj\&.InterpolationEngine\&.interpolate (self, key, value)\fC [inherited]\fP"
+
+.PP
+Definition at line 316 of file configobj\&.py\&.
+.PP
+References lib\&.configobj\&.InterpolationEngine\&._cookie, lib\&.configobj\&.InterpolationEngine\&._parse_match(), and lib\&.configobj\&.InterpolationEngine\&.section\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string lib\&.configobj\&.ConfigParserInterpolation\&._cookie = '%'\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 425 of file configobj\&.py\&.
+.SS "tuple lib\&.configobj\&.ConfigParserInterpolation\&._KEYCRE = re\&.compile(r'%\\(([^)]*)\\)s')\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 426 of file configobj\&.py\&.
+.SS "lib\&.configobj\&.InterpolationEngine\&.section\fC [inherited]\fP"
+
+.PP
+Definition at line 313 of file configobj\&.py\&.
+.PP
+Referenced by lib\&.configobj\&.InterpolationEngine\&._fetch(), and lib\&.configobj\&.InterpolationEngine\&.interpolate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

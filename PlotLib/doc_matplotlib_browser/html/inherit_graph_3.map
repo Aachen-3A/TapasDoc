@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" href="$classlib_1_1configobj_1_1ConfigObjError.html" title="lib.configobj.ConfigObjError" alt="" coords="147,189,331,216"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1ConfigspecError.html" title="lib.configobj.Configspec\lError" alt="" coords="389,5,552,48"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1DuplicateError.html" title="lib.configobj.DuplicateError" alt="" coords="381,72,560,98"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1InterpolationError.html" title="lib.configobj.Interpolation\lError" alt="" coords="387,122,555,165"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1NestingError.html" title="lib.configobj.NestingError" alt="" coords="385,189,556,216"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1ParseError.html" title="lib.configobj.ParseError" alt="" coords="391,240,551,266"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1RepeatSectionError.html" title="lib.configobj.RepeatSection\lError" alt="" coords="380,290,561,333"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1UnreprError.html" title="lib.configobj.UnreprError" alt="" coords="388,357,553,384"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1InterpolationLoopError.html" title="lib.configobj.Interpolation\lLoopError" alt="" coords="633,89,801,132"/>
+<area shape="rect" href="$classlib_1_1configobj_1_1MissingInterpolationOption.html" title="lib.configobj.MissingInterpolation\lOption" alt="" coords="611,156,824,198"/>
+</map>
