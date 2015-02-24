@@ -1,0 +1,315 @@
+.TH "lib.ordered.OrderedDict" 3 "Tue Feb 24 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.ordered.OrderedDict \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits dict\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fB__setitem__\fP"
+.br
+.ti -1c
+.RI "def \fB__delitem__\fP"
+.br
+.ti -1c
+.RI "def \fB__iter__\fP"
+.br
+.ti -1c
+.RI "def \fB__reversed__\fP"
+.br
+.ti -1c
+.RI "def \fBclear\fP"
+.br
+.ti -1c
+.RI "def \fBpopitem\fP"
+.br
+.ti -1c
+.RI "def \fBkeys\fP"
+.br
+.ti -1c
+.RI "def \fBvalues\fP"
+.br
+.ti -1c
+.RI "def \fBitems\fP"
+.br
+.ti -1c
+.RI "def \fBiterkeys\fP"
+.br
+.ti -1c
+.RI "def \fBitervalues\fP"
+.br
+.ti -1c
+.RI "def \fBiteritems\fP"
+.br
+.ti -1c
+.RI "def \fBupdate\fP"
+.br
+.ti -1c
+.RI "def \fBpop\fP"
+.br
+.ti -1c
+.RI "def \fBsetdefault\fP"
+.br
+.ti -1c
+.RI "def \fB__repr__\fP"
+.br
+.ti -1c
+.RI "def \fB__reduce__\fP"
+.br
+.ti -1c
+.RI "def \fBcopy\fP"
+.br
+.ti -1c
+.RI "def \fBfromkeys\fP"
+.br
+.ti -1c
+.RI "def \fB__eq__\fP"
+.br
+.ti -1c
+.RI "def \fB__ne__\fP"
+.br
+.ti -1c
+.RI "def \fBviewkeys\fP"
+.br
+.ti -1c
+.RI "def \fBviewvalues\fP"
+.br
+.ti -1c
+.RI "def \fBviewitems\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB__root\fP"
+.br
+.ti -1c
+.RI "\fB__map\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB__update\fP = \fBupdate\fP"
+.br
+.ti -1c
+.RI "tuple \fB__marker\fP = object()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file ordered\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.ordered\&.OrderedDict\&.__init__ (self, args, kwds)"
+
+.PP
+.nf
+Initialize an ordered dictionary.  Signature is the same as for
+regular dictionaries, but keyword arguments are not recommended
+because their insertion order is arbitrary.
+.fi
+.PP
+ 
+.PP
+Definition at line 27 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__root\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.ordered\&.OrderedDict\&.__delitem__ (self, key, dict_delitem = \fCdict\&.__delitem__\fP)"
+
+.PP
+Definition at line 53 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__eq__ (self, other)"
+
+.PP
+.nf
+od.__eq__(y) <==> od==y.  Comparison to another OD is order-sensitive
+while comparison to a regular mapping is order-insensitive.
+.fi
+.PP
+ 
+.PP
+Definition at line 234 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.items(), and lib\&.configobj\&.Section\&.items()\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__iter__ (self)"
+
+.PP
+Definition at line 62 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__root\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__ne__ (self, other)"
+
+.PP
+Definition at line 243 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__reduce__ (self)"
+
+.PP
+Definition at line 209 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.copy()\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__repr__ (self, _repr_running = \fC{}\fP)"
+
+.PP
+Definition at line 196 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.items(), and lib\&.configobj\&.Section\&.items()\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__reversed__ (self)"
+
+.PP
+Definition at line 70 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__root\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.__setitem__ (self, key, value, dict_setitem = \fCdict\&.__setitem__\fP)"
+
+.PP
+Definition at line 43 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__map, and lib\&.ordered\&.OrderedDict\&.__root\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.clear (self)"
+
+.PP
+Definition at line 78 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__root\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.copy (self)"
+
+.PP
+Definition at line 219 of file ordered\&.py\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.__reduce__()\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.fromkeys (cls, iterable, value = \fCNone\fP)"
+
+.PP
+.nf
+OD.fromkeys(S[, v]) -> New ordered dictionary with keys from S
+and values equal to v (which defaults to None).
+.fi
+.PP
+ 
+.PP
+Definition at line 224 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.items (self)"
+
+.PP
+Definition at line 123 of file ordered\&.py\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.__eq__(), and lib\&.ordered\&.OrderedDict\&.__repr__()\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.iteritems (self)"
+
+.PP
+Definition at line 136 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.iterkeys (self)"
+
+.PP
+Definition at line 127 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.itervalues (self)"
+
+.PP
+Definition at line 131 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.keys (self)"
+
+.PP
+Definition at line 115 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.pop (self, key, default = \fC\fB__marker\fP\fP)"
+
+.PP
+.nf
+od.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised.
+.fi
+.PP
+ 
+.PP
+Definition at line 176 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__marker\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.popitem (self, last = \fCTrue\fP)"
+
+.PP
+.nf
+od.popitem() -> (k, v), return and remove a (key, value) pair.
+Pairs are returned in LIFO order if last is true or FIFO order if false.
+.fi
+.PP
+ 
+.PP
+Definition at line 90 of file ordered\&.py\&.
+.PP
+References lib\&.ordered\&.OrderedDict\&.__map, and lib\&.ordered\&.OrderedDict\&.__root\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.setdefault (self, key, default = \fCNone\fP)"
+
+.PP
+Definition at line 189 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.update (args, kwds)"
+
+.PP
+.nf
+od.update(E, **F) -> None.  Update od from dict/iterable E and F.
+
+If E is a dict instance, does:           for k in E: od[k] = E[k]
+If E has a .keys() method, does:         for k in E.keys(): od[k] = E[k]
+Or if E is an iterable of items, does:   for k, v in E: od[k] = v
+In either case, this is followed by:     for k, v in F.items(): od[k] = v
+.fi
+.PP
+ 
+.PP
+Definition at line 141 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.values (self)"
+
+.PP
+Definition at line 119 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.viewitems (self)"
+
+.PP
+Definition at line 256 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.viewkeys (self)"
+
+.PP
+Definition at line 248 of file ordered\&.py\&.
+.SS "def lib\&.ordered\&.OrderedDict\&.viewvalues (self)"
+
+.PP
+Definition at line 252 of file ordered\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.ordered\&.OrderedDict\&.__map\fC [private]\fP"
+
+.PP
+Definition at line 40 of file ordered\&.py\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.__setitem__(), and lib\&.ordered\&.OrderedDict\&.popitem()\&.
+.SS "tuple lib\&.ordered\&.OrderedDict\&.__marker = object()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 174 of file ordered\&.py\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.pop()\&.
+.SS "lib\&.ordered\&.OrderedDict\&.__root\fC [private]\fP"
+
+.PP
+Definition at line 38 of file ordered\&.py\&.
+.PP
+Referenced by lib\&.ordered\&.OrderedDict\&.__init__(), lib\&.ordered\&.OrderedDict\&.__iter__(), lib\&.ordered\&.OrderedDict\&.__reversed__(), lib\&.ordered\&.OrderedDict\&.__setitem__(), lib\&.ordered\&.OrderedDict\&.clear(), and lib\&.ordered\&.OrderedDict\&.popitem()\&.
+.SS "lib\&.ordered\&.OrderedDict\&.__update = \fBupdate\fP\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 172 of file ordered\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.

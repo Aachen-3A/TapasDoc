@@ -1,0 +1,232 @@
+.TH "lib.DukePlotALot2D.plotter2D" 3 "Tue Feb 24 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.DukePlotALot2D.plotter2D \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fB__del__\fP"
+.br
+.ti -1c
+.RI "def \fBmake_plot\fP"
+.br
+.ti -1c
+.RI "def \fBAdd_x_projection\fP"
+.br
+.ti -1c
+.RI "def \fBAdd_y_projection\fP"
+.br
+.ti -1c
+.RI "def \fBSet_axis\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_Write_additional_text\fP"
+.br
+.ti -1c
+.RI "def \fB_SavePlot\fP"
+.br
+.ti -1c
+.RI "def \fB_Draw_main\fP"
+.br
+.ti -1c
+.RI "def \fB_Calc_x_projection\fP"
+.br
+.ti -1c
+.RI "def \fB_Draw_x_projection\fP"
+.br
+.ti -1c
+.RI "def \fB_Calc_y_projection\fP"
+.br
+.ti -1c
+.RI "def \fB_Draw_y_projection\fP"
+.br
+.ti -1c
+.RI "def \fB_Get_rootpy_hist2d\fP"
+.br
+.ti -1c
+.RI "def \fB_Get_rootpy_hist1d\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_hist\fP"
+.br
+.ti -1c
+.RI "\fB_x_projection_size\fP"
+.br
+.ti -1c
+.RI "\fB_y_projection_size\fP"
+.br
+.ti -1c
+.RI "\fB_x_starting_point\fP"
+.br
+.ti -1c
+.RI "\fB_y_starting_point\fP"
+.br
+.ti -1c
+.RI "\fB_Style_cont\fP"
+.br
+.ti -1c
+.RI "\fB_fig\fP"
+.br
+.ti -1c
+.RI "\fB_plotted_hist\fP"
+.br
+.ti -1c
+.RI "\fB_x_projection\fP"
+.br
+.ti -1c
+.RI "\fB_y_projection\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file DukePlotALot2D\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.__init__ (self, hist = \fCNone\fP, style = \fCsc\&.style_container()\fP)"
+
+.PP
+Definition at line 26 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.__del__ (self)"
+
+.PP
+Definition at line 37 of file DukePlotALot2D\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Calc_x_projection (self)\fC [private]\fP"
+
+.PP
+Definition at line 142 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection()\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Calc_y_projection (self)\fC [private]\fP"
+
+.PP
+Definition at line 170 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_y_projection()\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Draw_main (self)\fC [private]\fP"
+
+.PP
+Definition at line 94 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection (self, axis1)\fC [private]\fP"
+
+.PP
+Definition at line 148 of file DukePlotALot2D\&.py\&.
+.PP
+References lib\&.DukePlotALot2D\&.plotter2D\&._Calc_x_projection(), lib\&.DukePlotALot2D\&.plotter2D\&._Get_rootpy_hist1d(), lib\&.DukePlotALot2D\&.plotter2D\&._x_projection, lib\&.DukePlotALot2D\&.plotter2D\&._x_projection_size, lib\&.DukePlotALot2D\&.plotter2D\&._y_projection_size, and lib\&.DukePlotALot2D\&.plotter2D\&._y_starting_point\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Draw_y_projection (self, axis1)\fC [private]\fP"
+
+.PP
+Definition at line 176 of file DukePlotALot2D\&.py\&.
+.PP
+References lib\&.DukePlotALot2D\&.plotter2D\&._Calc_y_projection(), lib\&.DukePlotALot2D\&.plotter2D\&._x_projection_size, and lib\&.DukePlotALot2D\&.plotter2D\&._y_projection_size\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Get_rootpy_hist1d (self, temp_hist)\fC [private]\fP"
+
+.PP
+Definition at line 226 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection()\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Get_rootpy_hist2d (self)\fC [private]\fP"
+
+.PP
+Definition at line 206 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._SavePlot (self, out_name)\fC [private]\fP"
+
+.PP
+Definition at line 79 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&._Write_additional_text (self)\fC [private]\fP"
+
+.PP
+Definition at line 68 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.Add_x_projection (self, size = \fC15\fP)"
+
+.PP
+Definition at line 57 of file DukePlotALot2D\&.py\&.
+.PP
+References lib\&.DukePlotALot2D\&.plotter2D\&._x_projection_size, and lib\&.DukePlotALot2D\&.plotter2D\&._x_starting_point\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.Add_y_projection (self, size = \fC15\fP)"
+
+.PP
+Definition at line 61 of file DukePlotALot2D\&.py\&.
+.PP
+References lib\&.DukePlotALot2D\&.plotter2D\&._y_projection_size, and lib\&.DukePlotALot2D\&.plotter2D\&._y_starting_point\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.make_plot (self, out_name, individual = \fCFalse\fP)"
+
+.PP
+Definition at line 40 of file DukePlotALot2D\&.py\&.
+.SS "def lib\&.DukePlotALot2D\&.plotter2D\&.Set_axis (self, logx = \fCFalse\fP, logy = \fCFalse\fP, ymin = \fC-1\fP, ymax = \fC-1\fP, xmin = \fC-1\fP, xmax = \fC-1\fP, zmin = \fC-1\fP, zmax = \fC-1\fP, grid = \fCFalse\fP)"
+
+.PP
+Definition at line 65 of file DukePlotALot2D\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._fig\fC [private]\fP"
+
+.PP
+Definition at line 95 of file DukePlotALot2D\&.py\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._hist\fC [private]\fP"
+
+.PP
+Definition at line 27 of file DukePlotALot2D\&.py\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._plotted_hist\fC [private]\fP"
+
+.PP
+Definition at line 105 of file DukePlotALot2D\&.py\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._Style_cont\fC [private]\fP"
+
+.PP
+Definition at line 34 of file DukePlotALot2D\&.py\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._x_projection\fC [private]\fP"
+
+.PP
+Definition at line 146 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection()\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._x_projection_size\fC [private]\fP"
+
+.PP
+Definition at line 29 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection(), lib\&.DukePlotALot2D\&.plotter2D\&._Draw_y_projection(), and lib\&.DukePlotALot2D\&.plotter2D\&.Add_x_projection()\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._x_starting_point\fC [private]\fP"
+
+.PP
+Definition at line 31 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&.Add_x_projection()\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._y_projection\fC [private]\fP"
+
+.PP
+Definition at line 174 of file DukePlotALot2D\&.py\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._y_projection_size\fC [private]\fP"
+
+.PP
+Definition at line 30 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection(), lib\&.DukePlotALot2D\&.plotter2D\&._Draw_y_projection(), and lib\&.DukePlotALot2D\&.plotter2D\&.Add_y_projection()\&.
+.SS "lib\&.DukePlotALot2D\&.plotter2D\&._y_starting_point\fC [private]\fP"
+
+.PP
+Definition at line 32 of file DukePlotALot2D\&.py\&.
+.PP
+Referenced by lib\&.DukePlotALot2D\&.plotter2D\&._Draw_x_projection(), and lib\&.DukePlotALot2D\&.plotter2D\&.Add_y_projection()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.
