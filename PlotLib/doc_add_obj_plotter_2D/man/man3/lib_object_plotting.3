@@ -1,0 +1,62 @@
+.TH "lib.object_plotting" 3 "Thu Feb 26 2015" "PlotLib" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.object_plotting \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBplot_upper_cut\fP"
+.br
+.ti -1c
+.RI "def \fBplot_lower_cut\fP"
+.br
+.ti -1c
+.RI "def \fBplot_both_cuts\fP"
+.br
+.ti -1c
+.RI "def \fBgaussian\fP"
+.br
+.ti -1c
+.RI "def \fBplot_gauss_fit\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def lib\&.object_plotting\&.gaussian (x, norm, mu, sig)"
+
+.PP
+Definition at line 58 of file object_plotting\&.py\&.
+.PP
+Referenced by lib\&.object_plotting\&.plot_gauss_fit()\&.
+.SS "def lib\&.object_plotting\&.plot_both_cuts (axis1, value1, value2, include = \fCTrue\fP, cut_arrow_position = \fC0\&.5\fP)"
+
+.PP
+Definition at line 42 of file object_plotting\&.py\&.
+.PP
+References lib\&.object_plotting\&.plot_lower_cut(), and lib\&.object_plotting\&.plot_upper_cut()\&.
+.SS "def lib\&.object_plotting\&.plot_gauss_fit (axis1, histo, xmin = \fC0\fP, xmax = \fC0\fP)"
+
+.PP
+Definition at line 61 of file object_plotting\&.py\&.
+.PP
+References lib\&.object_plotting\&.gaussian()\&.
+.SS "def lib\&.object_plotting\&.plot_lower_cut (axis1, value, cut_arrow_position = \fC0\&.5\fP)"
+
+.PP
+Definition at line 27 of file object_plotting\&.py\&.
+.PP
+Referenced by lib\&.object_plotting\&.plot_both_cuts()\&.
+.SS "def lib\&.object_plotting\&.plot_upper_cut (axis1, value, cut_arrow_position = \fC0\&.5\fP)"
+
+.PP
+Definition at line 12 of file object_plotting\&.py\&.
+.PP
+Referenced by lib\&.object_plotting\&.plot_both_cuts()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PlotLib from the source code\&.
