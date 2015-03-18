@@ -6,6 +6,7 @@ var dir_97aefd0d527b934f1d99a682da8fe6a9 =
       [ "plotter", "classlib_1_1DukePlotALot_1_1plotter.html", "classlib_1_1DukePlotALot_1_1plotter" ]
     ] ],
     [ "DukePlotALot2D.py", "DukePlotALot2D_8py.html", "DukePlotALot2D_8py" ],
+    [ "object_plotting.py", "object__plotting_8py.html", "object__plotting_8py" ],
     [ "ordered.py", "ordered_8py.html", [
       [ "OrderedDict", "classlib_1_1ordered_1_1OrderedDict.html", "classlib_1_1ordered_1_1OrderedDict" ]
     ] ],

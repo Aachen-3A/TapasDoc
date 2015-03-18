@@ -1,4 +1,4 @@
-.TH "lib.plotlib" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib" 3 "Wed Mar 18 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -39,6 +39,9 @@ lib.plotlib \-
 .ti -1c
 .RI "def \fB_duke__errorbar\fP"
 .br
+.ti -1c
+.RI "def \fBgetRGBTColor\fP"
+.br
 .in -1c
 .SH "Function Documentation"
 .PP 
@@ -55,7 +58,7 @@ Definition at line 67 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&._duke__errorbar()\&.
 .PP
-Referenced by lib\&.DukePlotALot\&.plotter\&._Draw_0(), lib\&.DukePlotALot\&.plotter\&._Draw_2(), lib\&.DukePlotALot\&.plotter\&._Draw_3(), and lib\&.plotlib\&.getDictValue()\&.
+Referenced by lib\&.plotlib\&.getDictValue()\&.
 .SS "def lib\&.plotlib\&.getColorList (ncolors)"
 
 .PP
@@ -69,7 +72,13 @@ Definition at line 44 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.duke_errorbar()\&.
 .PP
-Referenced by DukePlotALot_tester_realPlotRoot\&.main(), and DukePlotALot_tester_realPlot\&.main()\&.
+Referenced by DukePlotALot_tester_realPlot\&.main(), and DukePlotALot_tester_realPlotRoot\&.main()\&.
+.SS "def lib\&.plotlib\&.getRGBTColor (color)"
+
+.PP
+Definition at line 206 of file plotlib\&.py\&.
+.PP
+Referenced by DukePlotALot_tester_realPlotRoot\&.main()\&.
 .SS "def lib\&.plotlib\&.xfrange (start, stop, step)"
 
 .PP

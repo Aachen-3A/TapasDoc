@@ -1,4 +1,4 @@
-.TH "lib.plotlib.HistStorageContainer" 3 "Fri Feb 20 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib.HistStorageContainer" 3 "Wed Mar 18 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -63,7 +63,7 @@ lib.plotlib.HistStorageContainer \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 210 of file plotlib\&.py\&.
+Definition at line 225 of file plotlib\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.__init__ (self, bg = \fCFalse\fP, sg = \fCFalse\fP, data = \fCFalse\fP)"
@@ -82,7 +82,7 @@ Init function\&. In this function the default variables are set and initialized\
 .PP
 
 .PP
-Definition at line 217 of file plotlib\&.py\&.
+Definition at line 232 of file plotlib\&.py\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getBGList (self)"
@@ -97,7 +97,7 @@ Function getbg\&.
 .PP
 
 .PP
-Definition at line 282 of file plotlib\&.py\&.
+Definition at line 297 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getData (self)"
 
 .PP
@@ -110,7 +110,7 @@ Function getData\&.
 .PP
 
 .PP
-Definition at line 294 of file plotlib\&.py\&.
+Definition at line 309 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getHist (self, hist)"
 
 .PP
@@ -125,13 +125,13 @@ the hists ate added to \&.hists and joined if a joinList exist the hist will be 
 .PP
 
 .PP
-Definition at line 244 of file plotlib\&.py\&.
+Definition at line 259 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree (self, binns, xmin, xmax, xtitle, cut, value, tree)"
 
 .PP
-Definition at line 248 of file plotlib\&.py\&.
+Definition at line 263 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getSGList (self)"
@@ -146,13 +146,13 @@ Function getsg\&.
 .PP
 
 .PP
-Definition at line 288 of file plotlib\&.py\&.
+Definition at line 303 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.makeCumulative (self, width = \fCFalse\fP)"
 
 .PP
 Function makeCumulative\&. make the distribution cumulative 
 .PP
-Definition at line 300 of file plotlib\&.py\&.
+Definition at line 315 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.rebin (self, width = \fC0\fP, factor = \fC0\fP, vector = \fCNone\fP)"
@@ -169,7 +169,7 @@ Function rebin the all hists\&.
 .PP
 
 .PP
-Definition at line 257 of file plotlib\&.py\&.
+Definition at line 272 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.setStyle (self, bgcolors = \fCNone\fP, sgcolors = \fCNone\fP)"
@@ -186,7 +186,7 @@ Function to set the style of the histograms\&.
 .PP
 
 .PP
-Definition at line 267 of file plotlib\&.py\&.
+Definition at line 282 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.bg, lib\&.plotlib\&.HistStorageContainer\&.data, and lib\&.plotlib\&.HistStorageContainer\&.sg\&.
 .PP
@@ -196,25 +196,25 @@ Referenced by lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStor
 .SS "lib\&.plotlib\&.HistStorageContainer\&.allStored"
 
 .PP
-Definition at line 221 of file plotlib\&.py\&.
+Definition at line 236 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorageContainer\&.getHist(), lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree(), lib\&.plotlib\&.HistStorageContainer\&.makeCumulative(), and lib\&.plotlib\&.HistStorageContainer\&.rebin()\&.
 .SS "lib\&.plotlib\&.HistStorageContainer\&.bg"
 
 .PP
-Definition at line 218 of file plotlib\&.py\&.
+Definition at line 233 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorageContainer\&.data"
 
 .PP
-Definition at line 220 of file plotlib\&.py\&.
+Definition at line 235 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorageContainer\&.sg"
 
 .PP
-Definition at line 219 of file plotlib\&.py\&.
+Definition at line 234 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorageContainer\&.setStyle()\&.
 

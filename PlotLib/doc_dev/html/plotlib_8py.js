@@ -7,5 +7,6 @@ var plotlib_8py =
     [ "duke_errorbar", "plotlib_8py.html#a0ef172af56c7b192ceec3d3e0969813e", null ],
     [ "getColorList", "plotlib_8py.html#ad3e331b4e081e6cf6b8ea1406035e501", null ],
     [ "getDictValue", "plotlib_8py.html#a438a093fadbcbe8b267990548ae5cbea", null ],
+    [ "getRGBTColor", "plotlib_8py.html#ad2c9ffe7e9d8546704c8a27e12e59eb9", null ],
     [ "xfrange", "plotlib_8py.html#a020873c7a1f981b475a2841f1e434ccc", null ]
 ];

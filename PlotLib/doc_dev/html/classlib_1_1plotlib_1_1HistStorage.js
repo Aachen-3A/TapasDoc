@@ -2,6 +2,7 @@ var classlib_1_1plotlib_1_1HistStorage =
 [
     [ "__init__", "classlib_1_1plotlib_1_1HistStorage.html#ae19930e611b54cebfcd7cf60cbbb8281", null ],
     [ "__del__", "classlib_1_1plotlib_1_1HistStorage.html#ac8ae59b9be8ecd14c6672f7a49a06a53", null ],
+    [ "__getitem__", "classlib_1_1plotlib_1_1HistStorage.html#a9873c8ac46a2d9f26fb7697d1d0c1a1c", null ],
     [ "_addToScaledView", "classlib_1_1plotlib_1_1HistStorage.html#a025fefce24414632c9743089eeeb08bb", null ],
     [ "_getGenNumbers", "classlib_1_1plotlib_1_1HistStorage.html#a3c790c160beefd9acbf3cd57ddc37a1e", null ],
     [ "_getUnit", "classlib_1_1plotlib_1_1HistStorage.html#a7a2b087d498fb402c199108180836745", null ],
