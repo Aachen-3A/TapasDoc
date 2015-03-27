@@ -1,4 +1,4 @@
-.TH "HistClass" 3 "Thu Mar 5 2015" "libs3a" \" -*- nroff -*-
+.TH "HistClass" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -177,9 +177,17 @@ TH1D * \fBReturnHist\fP (const char *name)"
 .br
 .RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels without number\&. \fP"
 .ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBNameBins\fP (const char *name, const uint n_bins_x, TString *x_bin_names, const uint n_bins_y, TString *y_bin_names)"
+.br
+.RI "\fIFunction to give one 2D histogram from the map alphanumeric bin labels without number\&. \fP"
+.ti -1c
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBNameBins\fP (Int_t n_histo, const char *name, const uint n_bins, TString *d_mydisc)"
 .br
 .RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCleanUp\fP ()"
+.br
+.RI "\fIFunction to clean up the memory usage of the \fBHistClass\fP\&. \fP"
 .in -1c
 .SS "Variables"
 
@@ -222,6 +230,14 @@ Functions to have easy histogram handling\&.
 In this namespace different functions to interact with the histogram map are included, to create, fill and write histograms in a convinient way\&. 
 .SH "Function Documentation"
 .PP 
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CleanUp ()\fC [static]\fP"
+
+.PP
+Function to clean up the memory usage of the \fBHistClass\fP\&. 
+.PP
+Definition at line 802 of file HistClass\&.hh\&.
+.PP
+References effs, histo, histo2, histon, trees, and ttupple\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, Int_tnbinsx, Double_txlow, Double_txup, const char *xtitle = \fC''\fP)\fC [static]\fP"
 
 .PP
@@ -771,6 +787,29 @@ Function to give one 1D histogram from the map alphanumeric bin labels without n
 Definition at line 758 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (const char *name, const uintn_bins_x, TString *x_bin_names, const uintn_bins_y, TString *y_bin_names)\fC [static]\fP"
+
+.PP
+Function to give one 2D histogram from the map alphanumeric bin labels without number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should get bin names 
+.br
+\fIn_bins_x\fP Number of x-bins that should be renamed 
+.br
+\fIx_bin_names\fP Array with the names that the x-bins should get 
+.br
+\fIn_bins_y\fP Number of y-bins that should be renamed 
+.br
+\fIy_bin_names\fP Array with the names that the y-bins should get 
+.RE
+.PP
+
+.PP
+Definition at line 773 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo2\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (Int_tn_histo, const char *name, const uintn_bins, TString *d_mydisc)\fC [static]\fP"
 
 .PP
@@ -789,7 +828,7 @@ Function to give one 1D histogram from the map alphanumeric bin labels\&.
 .PP
 
 .PP
-Definition at line 772 of file HistClass\&.hh\&.
+Definition at line 790 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP TH1D* HistClass::ReturnHist (const char *name)\fC [static]\fP"
@@ -1069,37 +1108,37 @@ Map of a string and a TEfficiency container\&.
 .PP
 Definition at line 41 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateEff(), FillEff(), and WriteAllEff()\&.
+Referenced by CleanUp(), CreateEff(), FillEff(), and WriteAllEff()\&.
 .SS "std::map<std::string, TH1D * > HistClass::histo\fC [static]\fP"
 Map of a string and a TH1D histogram, for easy 1D histogram handling\&. 
 .PP
 Definition at line 36 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateHisto(), CreateHistoUnchangedName(), Fill(), NameBins(), ReturnHist(), SetToZero(), Write(), and WriteAll()\&.
+Referenced by CleanUp(), CreateHisto(), CreateHistoUnchangedName(), Fill(), NameBins(), ReturnHist(), SetToZero(), Write(), and WriteAll()\&.
 .SS "std::map<std::string, TH2D * > HistClass::histo2\fC [static]\fP"
 Map of a string and a TH2D histogram, for easy 2D histogram handling\&. 
 .PP
 Definition at line 37 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateHisto(), Fill(), Write2(), and WriteAll2()\&.
+Referenced by CleanUp(), CreateHisto(), Fill(), NameBins(), Write2(), and WriteAll2()\&.
 .SS "std::map<std::string, THnSparseD * > HistClass::histon\fC [static]\fP"
 Map of a string and a THnSparseD histogram, for easy nSparse handling\&. 
 .PP
 Definition at line 38 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateNSparse(), FillSparse(), and WriteN()\&.
+Referenced by CleanUp(), CreateNSparse(), FillSparse(), and WriteN()\&.
 .SS "std::map<std::string, TTree * > HistClass::trees\fC [static]\fP"
 Map of a string and a TTree histogram, for easy tree handling\&. 
 .PP
 Definition at line 40 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateTree(), FillTree(), and WriteAllTrees()\&.
+Referenced by CleanUp(), CreateTree(), FillTree(), and WriteAllTrees()\&.
 .SS "std::map<std::string, TNtupleD * > HistClass::ttupple\fC [static]\fP"
 Map of a string and a TNtupleD histogram, for easy Ntuple handling\&. 
 .PP
 Definition at line 39 of file HistClass\&.hh\&.
 .PP
-Referenced by CreateTree(), FillTree(), and WriteAllTrees()\&.
+Referenced by CleanUp(), CreateTree(), FillTree(), and WriteAllTrees()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for libs3a from the source code\&.

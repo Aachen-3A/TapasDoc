@@ -1,9 +1,10 @@
 var classcrabFunctions_1_1CrabTask =
 [
     [ "__init__", "classcrabFunctions_1_1CrabTask.html#aef5968057e988666f6614eefc2e1dd79", null ],
+    [ "resubmit_failed", "classcrabFunctions_1_1CrabTask.html#a2bb84bbd071a9966a544f2425b23a249", null ],
+    [ "test_print", "classcrabFunctions_1_1CrabTask.html#a34c73dd241a4f6fec889334070e99e7e", null ],
     [ "update", "classcrabFunctions_1_1CrabTask.html#a8892a90d9bfa0914ec82668386d01547", null ],
     [ "updateJobStats", "classcrabFunctions_1_1CrabTask.html#ada8f4221987d8cb4f48843e4f46fbee6", null ],
-    [ "controller", "classcrabFunctions_1_1CrabTask.html#a653cc1b50b00d31ecae424bb7f301800", null ],
     [ "isUpdating", "classcrabFunctions_1_1CrabTask.html#a67ffd96ff5dea4a166810258109f85cc", null ],
     [ "jobs", "classcrabFunctions_1_1CrabTask.html#a746a99ff156515200f1d0d82aa223262", null ],
     [ "lastUpdate", "classcrabFunctions_1_1CrabTask.html#ad4158ae02f09d137a6f2725316f97d29", null ],
@@ -22,5 +23,6 @@ var classcrabFunctions_1_1CrabTask =
     [ "outlfn", "classcrabFunctions_1_1CrabTask.html#a38bd8487c57f35cdd6ae501f5b33c017", null ],
     [ "state", "classcrabFunctions_1_1CrabTask.html#abf88207404f21e51baeb63cd2696a441", null ],
     [ "StorageFileList", "classcrabFunctions_1_1CrabTask.html#a015df9b7234b765d870a734689470f4d", null ],
+    [ "taskId", "classcrabFunctions_1_1CrabTask.html#a873db649e663ee8aae7daa249f325e9c", null ],
     [ "uuid", "classcrabFunctions_1_1CrabTask.html#affbe775c3b27516558abe99c944a0b99", null ]
 ];

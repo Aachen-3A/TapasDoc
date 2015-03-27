@@ -1,4 +1,4 @@
-.TH "cesubmit.Task" 3 "Thu Mar 5 2015" "libs3a" \" -*- nroff -*-
+.TH "cesubmit.Task" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -117,7 +117,7 @@ Referenced by cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.resubmit(), and cesubm
 .PP
 Definition at line 305 of file cesubmit\&.py\&.
 .PP
-References cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, and cesubmit\&.parseStatusMultipleL1()\&.
+References cesubmit\&.chunks(), cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, and cesubmit\&.parseStatusMultipleL1()\&.
 .PP
 Referenced by cesubmit\&.Task\&.getStatus()\&.
 .SS "def cesubmit\&.Task\&.addJob (self, job)"
@@ -127,7 +127,7 @@ Definition at line 209 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.Task\&.cleanUp (self)"
 
 .PP
-Definition at line 398 of file cesubmit\&.py\&.
+Definition at line 402 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.directory, cesubmit\&.Task\&.jobs, and cesubmit\&.Task\&.name\&.
 .PP
@@ -143,19 +143,19 @@ Referenced by cesubmit\&.Task\&.submit()\&.
 .SS "def cesubmit\&.Task\&.getOutput (self, connections = \fC1\fP)"
 
 .PP
-Definition at line 350 of file cesubmit\&.py\&.
+Definition at line 354 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.chunks(), cesubmit\&.Task\&.directory, cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, cesubmit\&.parseGetOutput(), and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.getStatus (self)"
 
 .PP
-Definition at line 327 of file cesubmit\&.py\&.
+Definition at line 331 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Task\&.frontEndStatus, cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.jobStatusNumbers (self)"
 
 .PP
-Definition at line 377 of file cesubmit\&.py\&.
+Definition at line 381 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.jobs\&.
 .SS "def cesubmit\&.Task\&.kill (self, nodeids, processes = \fC0\fP)"
@@ -245,7 +245,7 @@ Referenced by cesubmit\&.Task\&.createdir()\&.
 .PP
 Definition at line 184 of file cesubmit\&.py\&.
 .PP
-Referenced by cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.resubmit(), cesubmit\&.Task\&.save(), cesubmit\&.Task\&.submit(), and crabFunctions\&.CrabTask\&.update()\&.
+Referenced by cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.resubmit(), crabFunctions\&.CrabTask\&.resubmit_failed(), cesubmit\&.Task\&.save(), cesubmit\&.Task\&.submit(), and crabFunctions\&.CrabTask\&.update()\&.
 .SS "cesubmit\&.Task\&.scramArch"
 
 .PP

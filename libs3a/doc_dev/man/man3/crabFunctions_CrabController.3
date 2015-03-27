@@ -1,4 +1,4 @@
-.TH "crabFunctions.CrabController" 3 "Thu Mar 5 2015" "libs3a" \" -*- nroff -*-
+.TH "crabFunctions.CrabController" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -103,7 +103,7 @@ users hypernews name
 .PP
 
 .PP
-Definition at line 137 of file crabFunctions\&.py\&.
+Definition at line 149 of file crabFunctions\&.py\&.
 .PP
 References crabFunctions\&.CrabController\&.username, and crabFunctions\&.CrabController\&.workingArea\&.
 .PP
@@ -129,7 +129,7 @@ boolean which is True if user can write to site and False otherwise
 .PP
 
 .PP
-Definition at line 75 of file crabFunctions\&.py\&.
+Definition at line 86 of file crabFunctions\&.py\&.
 .PP
 References crabFunctions\&.CrabController\&.checkusername(), crabFunctions\&.CrabController\&.username, crabFunctions\&.CrabController\&.voGroup, and crabFunctions\&.CrabController\&.workingArea\&.
 .SS "def crabFunctions\&.CrabController\&.commandlineOptions (self, parser = \fCoptparse\&.OptionParser( 'usage: %prog' )\fP)"
@@ -157,7 +157,7 @@ A new or extenden optparse parser instance
 .PP
 
 .PP
-Definition at line 212 of file crabFunctions\&.py\&.
+Definition at line 238 of file crabFunctions\&.py\&.
 .SS "def crabFunctions\&.CrabController\&.resubmit (self, name, joblist = \fCNone\fP)"
 
 .PP
@@ -174,7 +174,7 @@ Resubmit all failed tasks in job or specified list of jobs in task\&. self: \fBC
 .PP
 
 .PP
-Definition at line 118 of file crabFunctions\&.py\&.
+Definition at line 129 of file crabFunctions\&.py\&.
 .PP
 References crabFunctions\&.CrabController\&.dry_run, and crabFunctions\&.CrabController\&.workingArea\&.
 .SS "def crabFunctions\&.CrabController\&.status (self, name)"
@@ -191,9 +191,11 @@ Check crab status\&. self: \fBCrabController\fP
 .PP
 
 .PP
-Definition at line 157 of file crabFunctions\&.py\&.
+Definition at line 169 of file crabFunctions\&.py\&.
 .PP
-References crabFunctions\&.CrabController\&.dry_run, and crabFunctions\&.CrabController\&.workingArea\&.
+References crabFunctions\&.CrabController\&.dry_run, cesubmit\&.Job\&.status(), crabFunctions\&.CrabController\&.status(), and crabFunctions\&.CrabController\&.workingArea\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.status()\&.
 .SS "def crabFunctions\&.CrabController\&.submit (self, name)"
 
 .PP
@@ -208,7 +210,7 @@ Check if crab can write to specified site\&. self: \fBCrabController\fP
 .PP
 
 .PP
-Definition at line 100 of file crabFunctions\&.py\&.
+Definition at line 111 of file crabFunctions\&.py\&.
 .PP
 References crabFunctions\&.CrabController\&.dry_run, crabFunctions\&.CrabController\&.voGroup, and crabFunctions\&.CrabController\&.workingArea\&.
 .SH "Member Data Documentation"

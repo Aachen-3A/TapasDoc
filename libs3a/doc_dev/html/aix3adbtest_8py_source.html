@@ -99,26 +99,91 @@ $(document).ready(function(){initNavTree('aix3adbtest_8py_source.html','');});
 <div class="contents">
 <a href="aix3adbtest_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceaix3adbtest.html">    1</a></span>&#160;<span class="keyword">import</span> aix3adb</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> pprint</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">    3</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">main</a>():</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    pp = pprint.PrettyPrinter(indent=4)</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="comment"># Ein Datenbank-Objekt erstellen</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    dblink=<a class="code" href="classaix3adb_1_1aix3adbAuth.html">aix3adb.aix3adbAuth</a>(username=<span class="stringliteral">&quot;olschew&quot;</span>)</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    altessample = dblink.getMCSample(1)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Get sample&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    pp.pprint(altessample.__dict__)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">##Ein Sample erstellen</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Write sample&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    sample = <a class="code" href="classaix3adb_1_1MCSample.html">aix3adb.MCSample</a>()</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    sample.name = <span class="stringliteral">&quot;test&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    neuessample = dblink.registerMCSample(sample)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    pp.pprint(neuessample)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">main</a>()</div>
-<div class="ttc" id="classaix3adb_1_1aix3adbAuth_html"><div class="ttname"><a href="classaix3adb_1_1aix3adbAuth.html">aix3adb.aix3adbAuth</a></div><div class="ttdef"><b>Definition:</b> <a href="aix3adb_8py_source.html#l00155">aix3adb.py:155</a></div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> string</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> random</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceaix3adbtest.html#a96768f9eea8227b15f66d85737334956">    6</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceaix3adbtest.html#a96768f9eea8227b15f66d85737334956">id_generator</a>(size=6, chars=string.ascii_uppercase + string.digits):</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>.join(random.choice(chars) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> range(size))</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">   10</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">main</a>():</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    pp = pprint.PrettyPrinter(indent=4)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment"># Ein Datenbank-Objekt erstellen</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    dblink=<a class="code" href="classaix3adb_1_1aix3adbAuth.html">aix3adb.aix3adbAuth</a>(username=<span class="stringliteral">&quot;olschew&quot;</span>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment"># Insert a sample</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Insert a sample&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    sample0 = <a class="code" href="classaix3adb_1_1MCSample.html">aix3adb.MCSample</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    sample0.name=<a class="code" href="namespaceaix3adbtest.html#a96768f9eea8227b15f66d85737334956">id_generator</a>()</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    sample1 = dblink.insertMCSample(sample0)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">print</span> sample1.__dict__</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment"># Insert a skim</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Insert a skim&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    skim0 = <a class="code" href="classaix3adb_1_1MCSkim.html">aix3adb.MCSkim</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    file1={<span class="stringliteral">&quot;path&quot;</span>:<span class="stringliteral">&quot;blub1&quot;</span>,<span class="stringliteral">&quot;nevents&quot;</span>:19999}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    file2={<span class="stringliteral">&quot;path&quot;</span>:<span class="stringliteral">&quot;blub2&quot;</span>,<span class="stringliteral">&quot;nevents&quot;</span>:1}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    files=[file1,file2]</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    skim0.files = files</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    skim0.datasetpath=<a class="code" href="namespaceaix3adbtest.html#a96768f9eea8227b15f66d85737334956">id_generator</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    skim0.sampleid=sample1.id</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    skim1 = dblink.insertMCSkim(skim0)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">print</span> skim1.__dict__</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment"># Request Sample</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Sample&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sample2 = dblink.getMCSample(sample1.name)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">print</span> sample2.__dict__</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment"># Request Skim</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Skim&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    skim2 = dblink.getMCSkim(skim1.id)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">print</span> skim2.__dict__</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment"># Edit sample</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Edit sample - set energy to 99&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    sample2.energy=<span class="stringliteral">&quot;99&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    sample3 = dblink.editMCSample(sample2)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">print</span> sample3.__dict__</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment"># Edit skim</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Edit skim - change files and set to finished&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    skim2.isfinished=<span class="stringliteral">&quot;1&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    file1={<span class="stringliteral">&quot;path&quot;</span>:<span class="stringliteral">&quot;neuerpath&quot;</span>,<span class="stringliteral">&quot;nevents&quot;</span>:5}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    file2={<span class="stringliteral">&quot;path&quot;</span>:<span class="stringliteral">&quot;neuerpath2&quot;</span>,<span class="stringliteral">&quot;nevents&quot;</span>:5}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    files=[file1,file2]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    skim2.files = files</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    skim3 = dblink.editMCSkim(skim2)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">print</span> skim3.__dict__</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment"># Request Sample and skim with skimid and samplename</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Sample and skim with skimid and samplename&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    skim4, sample4 = dblink.getMCSkimAndSample(skim3.id, sample3.name)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">print</span> skim4.__dict__, sample4.__dict__</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment"># Request Sample and skim with samplename only</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Sample and skim with samplename only&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    skim5, sample5 = dblink.getMCSkimAndSample(<span class="keywordtype">None</span>, sample3.name)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">print</span> skim5.__dict__, sample5.__dict__</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment"># Request Sample and skim with skimid only</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Sample and skim with skimid only&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    skim6, sample6 = dblink.getMCSkimAndSample(skim3.id, <span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">print</span> skim6.__dict__, sample6.__dict__</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment"># Request Sample and skim with not skimid and samplename not matching</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;Request Sample and skim with not skimid and samplename not matching&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    skim7, sample7 = dblink.getMCSkimAndSample(skim3.id, <span class="stringliteral">&quot;das ist der falsche sample name&quot;</span>)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">print</span> skim7.__dict__, sample7.__dict__</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">main</a>()</div>
+<div class="ttc" id="classaix3adb_1_1MCSkim_html"><div class="ttname"><a href="classaix3adb_1_1MCSkim.html">aix3adb.MCSkim</a></div><div class="ttdef"><b>Definition:</b> <a href="aix3adb_8py_source.html#l00036">aix3adb.py:36</a></div></div>
+<div class="ttc" id="classaix3adb_1_1aix3adbAuth_html"><div class="ttname"><a href="classaix3adb_1_1aix3adbAuth.html">aix3adb.aix3adbAuth</a></div><div class="ttdef"><b>Definition:</b> <a href="aix3adb_8py_source.html#l00154">aix3adb.py:154</a></div></div>
 <div class="ttc" id="classaix3adb_1_1MCSample_html"><div class="ttname"><a href="classaix3adb_1_1MCSample.html">aix3adb.MCSample</a></div><div class="ttdef"><b>Definition:</b> <a href="aix3adb_8py_source.html#l00030">aix3adb.py:30</a></div></div>
-<div class="ttc" id="namespaceaix3adbtest_html_a1f94dcb0d2f45832feb5111516fb685d"><div class="ttname"><a href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">aix3adbtest.main</a></div><div class="ttdeci">def main</div><div class="ttdef"><b>Definition:</b> <a href="aix3adbtest_8py_source.html#l00003">aix3adbtest.py:3</a></div></div>
+<div class="ttc" id="namespaceaix3adbtest_html_a96768f9eea8227b15f66d85737334956"><div class="ttname"><a href="namespaceaix3adbtest.html#a96768f9eea8227b15f66d85737334956">aix3adbtest.id_generator</a></div><div class="ttdeci">def id_generator</div><div class="ttdef"><b>Definition:</b> <a href="aix3adbtest_8py_source.html#l00006">aix3adbtest.py:6</a></div></div>
+<div class="ttc" id="namespaceaix3adbtest_html_a1f94dcb0d2f45832feb5111516fb685d"><div class="ttname"><a href="namespaceaix3adbtest.html#a1f94dcb0d2f45832feb5111516fb685d">aix3adbtest.main</a></div><div class="ttdeci">def main</div><div class="ttdef"><b>Definition:</b> <a href="aix3adbtest_8py_source.html#l00010">aix3adbtest.py:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.5-->

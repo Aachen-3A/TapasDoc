@@ -1,4 +1,4 @@
-.TH "include/HistClass.hh" 3 "Thu Mar 5 2015" "libs3a" \" -*- nroff -*-
+.TH "include/HistClass.hh" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -214,9 +214,17 @@ TH1D * \fBHistClass::ReturnHist\fP (const char *name)"
 .br
 .RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels without number\&. \fP"
 .ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::NameBins\fP (const char *name, const uint n_bins_x, TString *x_bin_names, const uint n_bins_y, TString *y_bin_names)"
+.br
+.RI "\fIFunction to give one 2D histogram from the map alphanumeric bin labels without number\&. \fP"
+.ti -1c
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::NameBins\fP (Int_t n_histo, const char *name, const uint n_bins, TString *d_mydisc)"
 .br
 .RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::CleanUp\fP ()"
+.br
+.RI "\fIFunction to clean up the memory usage of the \fBHistClass\fP\&. \fP"
 .in -1c
 .SS "Variables"
 

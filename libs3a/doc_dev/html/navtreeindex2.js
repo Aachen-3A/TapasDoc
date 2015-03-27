@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"classcurseshelpers_1_1Text.html#a35b8e8038798bc92d3d529cc9f9a98e6":[5,0,7,4,21],
+"classcurseshelpers_1_1Text.html#a35d7c4f3277e3b6ac5c778ffffb6a9be":[5,0,7,4,20],
+"classcurseshelpers_1_1Text.html#a3c7a028abba3c66e668f81e03b2d4553":[5,0,7,4,9],
+"classcurseshelpers_1_1Text.html#a54907ebaeb319b047d9b91ff92db743d":[5,0,7,4,18],
+"classcurseshelpers_1_1Text.html#a626a74ea0e8fab759016547bac3f683a":[5,0,7,4,4],
 "classcurseshelpers_1_1Text.html#a6efc6c11f25be153a47e366aaef42345":[5,0,7,4,16],
 "classcurseshelpers_1_1Text.html#a73b690b81848ec0d22a90c55263ff765":[5,0,7,4,14],
 "classcurseshelpers_1_1Text.html#a8d172eeb38523f21420dc2e8b04fc614":[5,0,7,4,0],
@@ -242,12 +247,7 @@ var NAVTREEINDEX2 =
 "doc__definitions_8py.html":[6,0,4],
 "doc__definitions_8py_source.html":[6,0,4],
 "files.html":[6,0],
-"functions.html":[5,3,0,0],
 "functions.html":[5,3,0],
-"functions_0x61.html":[5,3,0,1],
-"functions_0x62.html":[5,3,0,2],
-"functions_0x63.html":[5,3,0,3],
-"functions_0x64.html":[5,3,0,4],
-"functions_0x65.html":[5,3,0,5],
-"functions_0x66.html":[5,3,0,6]
+"functions.html":[5,3,0,0],
+"functions_0x61.html":[5,3,0,1]
 };

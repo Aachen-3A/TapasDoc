@@ -1,6 +1,7 @@
 var HistClass_8hh =
 [
     [ "SUPPRESS_NOT_USED_WARN", "HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c", null ],
+    [ "CleanUp", "HistClass_8hh.html#a4a7a1765dd4cd2b6caf6264873a3ba95", null ],
     [ "CreateEff", "HistClass_8hh.html#ac5cb97fb82e3182d3d4f65ff42d704b9", null ],
     [ "CreateEff", "HistClass_8hh.html#ab128d2941ec00095c476efba82422f99", null ],
     [ "CreateHisto", "HistClass_8hh.html#afe4c53f5990fecb7acf800a1677632fd", null ],
@@ -25,6 +26,7 @@ var HistClass_8hh =
     [ "FillTree", "HistClass_8hh.html#a8956f590d0bf5e1b2ed5e9dda454b46a", null ],
     [ "FillTree", "HistClass_8hh.html#ab5bdb8590d6f7406c36ec2d02006ef4b", null ],
     [ "NameBins", "HistClass_8hh.html#acb93f9b104c1f0f129109190caaf447b", null ],
+    [ "NameBins", "HistClass_8hh.html#a12f7ad0bf689698e6c9c6e4fceafda30", null ],
     [ "NameBins", "HistClass_8hh.html#a618a4e823e746a518833b35d2992619a", null ],
     [ "ReturnHist", "HistClass_8hh.html#adfd24a84c12f9e51ec06bbeba6b83c39", null ],
     [ "SetToZero", "HistClass_8hh.html#a24772b9dfe740281c6f265d735544bef", null ],

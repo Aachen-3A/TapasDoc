@@ -1,4 +1,4 @@
-.TH "crabFunctions.CrabTask" 3 "Thu Mar 5 2015" "libs3a" \" -*- nroff -*-
+.TH "crabFunctions.CrabTask" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,9 +17,16 @@ Class for a single CrabRequest\&.
 .br
 .RI "\fIThe object constructor\&. \fP"
 .ti -1c
+.RI "def \fBresubmit_failed\fP"
+.br
+.RI "\fIFunction to resubmit failed jobs in tasks\&. \fP"
+.ti -1c
 .RI "def \fBupdate\fP"
 .br
 .RI "\fIFunction to update Task in associated Jobs\&. \fP"
+.ti -1c
+.RI "def \fBtest_print\fP"
+.br
 .ti -1c
 .RI "def \fBupdateJobStats\fP"
 .br
@@ -35,9 +42,6 @@ Class for a single CrabRequest\&.
 .RI "\fBuuid\fP"
 .br
 .ti -1c
-.RI "\fBcontroller\fP"
-.br
-.ti -1c
 .RI "\fBjobs\fP"
 .br
 .ti -1c
@@ -51,6 +55,9 @@ Class for a single CrabRequest\&.
 .br
 .ti -1c
 .RI "\fBisUpdating\fP"
+.br
+.ti -1c
+.RI "\fBtaskId\fP"
 .br
 .ti -1c
 .RI "\fBnJobs\fP"
@@ -95,7 +102,7 @@ Class for a single CrabRequest\&.
 
 This class represents one crab3 task/request 
 .PP
-Definition at line 252 of file crabFunctions\&.py\&.
+Definition at line 278 of file crabFunctions\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "def crabFunctions\&.CrabTask\&.__init__ (self, taskname, crabController = \fCNone\fP, initUpdate = \fCTrue\fP, localDir = \fC''\fP, outlfn = \fC''\fP, StorageFileList = \fC[]\fP)"
@@ -114,24 +121,45 @@ The object constructor\&. self: \fBCrabTask\fP
 .PP
 
 .PP
-Definition at line 262 of file crabFunctions\&.py\&.
+Definition at line 288 of file crabFunctions\&.py\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "def crabFunctions\&.CrabTask\&.update (self)"
+.SS "def crabFunctions\&.CrabTask\&.resubmit_failed (self)"
 
 .PP
-Function to update Task in associated Jobs\&. self: \fBCrabTask\fP 
+Function to resubmit failed jobs in tasks\&. 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIself,:\fP The object pointer\&. 
+\fIself,:\fP \fBCrabTask\fP The object pointer\&. 
 .RE
 .PP
 
 .PP
-Definition at line 297 of file crabFunctions\&.py\&.
+Definition at line 319 of file crabFunctions\&.py\&.
 .PP
-References crabFunctions\&.CrabTask\&.isUpdating, cesubmit\&.Task\&.jobs, crabFunctions\&.CrabTask\&.jobs, cesubmit\&.Task\&.name, crabFunctions\&.CrabTask\&.name, crabFunctions\&.CrabTask\&.nJobs, crabFunctions\&.CrabTask\&.state, and crabFunctions\&.CrabTask\&.updateJobStats()\&.
+References crabFunctions\&.CrabTask\&.lastUpdate, cesubmit\&.Task\&.name, and crabFunctions\&.CrabTask\&.name\&.
+.SS "def crabFunctions\&.CrabTask\&.test_print (self)"
+
+.PP
+Definition at line 351 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabTask\&.uuid\&.
+.SS "def crabFunctions\&.CrabTask\&.update (self)"
+
+.PP
+Function to update Task in associated Jobs\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP \fBCrabTask\fP The object pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabTask\&.isUpdating, cesubmit\&.Task\&.jobs, crabFunctions\&.CrabTask\&.jobs, crabFunctions\&.CrabTask\&.lastUpdate, cesubmit\&.Task\&.name, crabFunctions\&.CrabTask\&.name, crabFunctions\&.CrabTask\&.nComplete, crabFunctions\&.CrabTask\&.nJobs, crabFunctions\&.CrabTask\&.state, and crabFunctions\&.CrabTask\&.updateJobStats()\&.
 .SS "def crabFunctions\&.CrabTask\&.updateJobStats (self, dCacheFileList = \fCNone\fP)"
 
 .PP
@@ -146,105 +174,109 @@ Function to update JobStatistics\&. self: \fBCrabTask\fP
 .PP
 
 .PP
-Definition at line 318 of file crabFunctions\&.py\&.
+Definition at line 359 of file crabFunctions\&.py\&.
 .PP
 References cesubmit\&.Task\&.jobs, crabFunctions\&.CrabTask\&.jobs, and crabFunctions\&.CrabTask\&.nComplete\&.
 .PP
 Referenced by crabFunctions\&.CrabTask\&.update()\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "crabFunctions\&.CrabTask\&.controller"
-
-.PP
-Definition at line 267 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.isUpdating"
 
 .PP
-Definition at line 274 of file crabFunctions\&.py\&.
+Definition at line 296 of file crabFunctions\&.py\&.
 .PP
 Referenced by crabFunctions\&.CrabTask\&.update()\&.
 .SS "crabFunctions\&.CrabTask\&.jobs"
 
 .PP
-Definition at line 270 of file crabFunctions\&.py\&.
+Definition at line 292 of file crabFunctions\&.py\&.
 .PP
 Referenced by crabFunctions\&.CrabTask\&.update(), and crabFunctions\&.CrabTask\&.updateJobStats()\&.
 .SS "crabFunctions\&.CrabTask\&.lastUpdate"
 
 .PP
-Definition at line 305 of file crabFunctions\&.py\&.
+Definition at line 310 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabTask\&.resubmit_failed(), and crabFunctions\&.CrabTask\&.update()\&.
 .SS "crabFunctions\&.CrabTask\&.localDir"
 
 .PP
-Definition at line 271 of file crabFunctions\&.py\&.
+Definition at line 293 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.maxjobnumber"
 
 .PP
-Definition at line 278 of file crabFunctions\&.py\&.
+Definition at line 301 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.name"
 
 .PP
-Definition at line 263 of file crabFunctions\&.py\&.
+Definition at line 289 of file crabFunctions\&.py\&.
 .PP
-Referenced by crabFunctions\&.CrabTask\&.update()\&.
+Referenced by crabFunctions\&.CrabTask\&.resubmit_failed(), and crabFunctions\&.CrabTask\&.update()\&.
 .SS "crabFunctions\&.CrabTask\&.nComplete"
 
 .PP
-Definition at line 286 of file crabFunctions\&.py\&.
+Definition at line 309 of file crabFunctions\&.py\&.
 .PP
-Referenced by crabFunctions\&.CrabTask\&.updateJobStats()\&.
+Referenced by crabFunctions\&.CrabTask\&.update(), and crabFunctions\&.CrabTask\&.updateJobStats()\&.
 .SS "crabFunctions\&.CrabTask\&.nCooloff"
 
 .PP
-Definition at line 283 of file crabFunctions\&.py\&.
+Definition at line 306 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nFailed"
 
 .PP
-Definition at line 284 of file crabFunctions\&.py\&.
+Definition at line 307 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nFinished"
 
 .PP
-Definition at line 285 of file crabFunctions\&.py\&.
+Definition at line 308 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nIdle"
 
 .PP
-Definition at line 280 of file crabFunctions\&.py\&.
+Definition at line 303 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nJobs"
 
 .PP
-Definition at line 276 of file crabFunctions\&.py\&.
+Definition at line 299 of file crabFunctions\&.py\&.
 .PP
 Referenced by crabFunctions\&.CrabTask\&.update()\&.
 .SS "crabFunctions\&.CrabTask\&.nRunning"
 
 .PP
-Definition at line 281 of file crabFunctions\&.py\&.
+Definition at line 304 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nTransferring"
 
 .PP
-Definition at line 282 of file crabFunctions\&.py\&.
+Definition at line 305 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.nUnsubmitted"
 
 .PP
-Definition at line 279 of file crabFunctions\&.py\&.
+Definition at line 302 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.outlfn"
 
 .PP
-Definition at line 272 of file crabFunctions\&.py\&.
+Definition at line 294 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.state"
 
 .PP
-Definition at line 277 of file crabFunctions\&.py\&.
+Definition at line 300 of file crabFunctions\&.py\&.
 .PP
 Referenced by crabFunctions\&.CrabTask\&.update()\&.
 .SS "crabFunctions\&.CrabTask\&.StorageFileList"
 
 .PP
-Definition at line 273 of file crabFunctions\&.py\&.
+Definition at line 295 of file crabFunctions\&.py\&.
+.SS "crabFunctions\&.CrabTask\&.taskId"
+
+.PP
+Definition at line 297 of file crabFunctions\&.py\&.
 .SS "crabFunctions\&.CrabTask\&.uuid"
 
 .PP
-Definition at line 264 of file crabFunctions\&.py\&.
+Definition at line 290 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabTask\&.test_print()\&.
 
 .SH "Author"
 .PP 
