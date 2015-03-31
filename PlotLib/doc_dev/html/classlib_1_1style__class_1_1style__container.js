@@ -73,6 +73,7 @@ var classlib_1_1style__class_1_1style__container =
     [ "Set_error_stacking", "classlib_1_1style__class_1_1style__container.html#a4796f533b99546e03762e58298c18663", null ],
     [ "Set_lumi_val", "classlib_1_1style__class_1_1style__container.html#a0041b01e2435411af44a34d66018be46", null ],
     [ "Set_no_legend", "classlib_1_1style__class_1_1style__container.html#acb212bea58c1b41bc4735a723a364951", null ],
+    [ "Set_y_label_offset", "classlib_1_1style__class_1_1style__container.html#a063c236408006f9f377767091145d98e", null ],
     [ "SetBatchMode", "classlib_1_1style__class_1_1style__container.html#a4237eb2192cd3b18d00e646127847115", null ],
     [ "_add_cms_text", "classlib_1_1style__class_1_1style__container.html#ab385de81534943a2b1e565ba6f75d987", null ],
     [ "_add_lumi_text", "classlib_1_1style__class_1_1style__container.html#a0f81965d108331227628ccb2513af586", null ],

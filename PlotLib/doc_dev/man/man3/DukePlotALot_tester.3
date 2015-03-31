@@ -1,4 +1,4 @@
-.TH "DukePlotALot_tester" 3 "Wed Mar 18 2015" "PlotLib" \" -*- nroff -*-
+.TH "DukePlotALot_tester" 3 "Tue Mar 31 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,27 +13,74 @@ DukePlotALot_tester \-
 .RI "def \fBmain\fP"
 .br
 .ti -1c
+.RI "def \fBCreat_standard_plot\fP"
+.br
+.ti -1c
+.RI "def \fBcreate_xs_file\fP"
+.br
+.ti -1c
 .RI "def \fBcreate_test_histos\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBroot_directory\fP = os\&.getcwd()"
+.br
+.ti -1c
+.RI "string \fBxs_file_name\fP = 'xs_test\&.cfg'"
+.br
+.ti -1c
+.RI "int \fBlumi\fP = 1"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
+.SS "def DukePlotALot_tester\&.Creat_standard_plot ()"
+
+.PP
+Definition at line 39 of file DukePlotALot_tester\&.py\&.
+.PP
+References create_test_histos(), create_xs_file(), and lib\&.plotlib\&.getDictValue()\&.
+.PP
+Referenced by main()\&.
 .SS "def DukePlotALot_tester\&.create_test_histos ()"
 
 .PP
-Definition at line 43 of file DukePlotALot_tester\&.py\&.
+Definition at line 179 of file DukePlotALot_tester\&.py\&.
 .PP
 References main()\&.
 .PP
-Referenced by main()\&.
+Referenced by Creat_standard_plot()\&.
+.SS "def DukePlotALot_tester\&.create_xs_file ()"
+
+.PP
+Definition at line 160 of file DukePlotALot_tester\&.py\&.
+.PP
+Referenced by Creat_standard_plot()\&.
 .SS "def DukePlotALot_tester\&.main ()"
 
 .PP
-Definition at line 6 of file DukePlotALot_tester\&.py\&.
+Definition at line 27 of file DukePlotALot_tester\&.py\&.
 .PP
-References create_test_histos()\&.
+References Creat_standard_plot()\&.
 .PP
 Referenced by create_test_histos()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int DukePlotALot_tester\&.lumi = 1"
+
+.PP
+Definition at line 24 of file DukePlotALot_tester\&.py\&.
+.SS "tuple DukePlotALot_tester\&.root_directory = os\&.getcwd()"
+
+.PP
+Definition at line 22 of file DukePlotALot_tester\&.py\&.
+.SS "string DukePlotALot_tester\&.xs_file_name = 'xs_test\&.cfg'"
+
+.PP
+Definition at line 23 of file DukePlotALot_tester\&.py\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for PlotLib from the source code\&.

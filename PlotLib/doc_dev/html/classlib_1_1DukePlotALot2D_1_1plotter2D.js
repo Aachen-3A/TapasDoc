@@ -19,6 +19,7 @@ var classlib_1_1DukePlotALot2D_1_1plotter2D =
     [ "Get_x_projection_hist", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#aa356ee9765744e214a60dc239c516dfc", null ],
     [ "Get_y_projection_axis", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#ad5339069b0aa1d0b341185015fe90eca", null ],
     [ "Get_y_projection_hist", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#af6555861712470dc828901b0e4c5bd7f", null ],
+    [ "Get_z_axis", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a6d5235ef9f3850d8f44e4743d31759b0", null ],
     [ "make_plot", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a00a22a2b7b9e567bf696fc3944dc9aa1", null ],
     [ "save_plot", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#ad8e1c2c8aa38eff75e28f36af8c2fcb5", null ],
     [ "Set_axis", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a6a91a52cdab2e3d19380e8f8dc9d5ce9", null ],
@@ -35,5 +36,6 @@ var classlib_1_1DukePlotALot2D_1_1plotter2D =
     [ "_x_starting_point", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#ae76e21a8bdb684768a0d59304be2fdd6", null ],
     [ "_y_projection", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a29430d453a69bdca15e3cec930e39105", null ],
     [ "_y_projection_size", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#acad1e508ad838384af42a970ddb5964c", null ],
-    [ "_y_starting_point", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a9fe02b7561935111aaa2f30eadc98365", null ]
+    [ "_y_starting_point", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#a9fe02b7561935111aaa2f30eadc98365", null ],
+    [ "_z_axis", "classlib_1_1DukePlotALot2D_1_1plotter2D.html#aec281cac90e3e1647c9ec7faa780daf7", null ]
 ];

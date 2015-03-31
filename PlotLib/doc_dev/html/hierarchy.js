@@ -47,5 +47,8 @@ var hierarchy =
         [ "lib.configobj.RepeatSectionError", "classlib_1_1configobj_1_1RepeatSectionError.html", null ],
         [ "lib.configobj.UnreprError", "classlib_1_1configobj_1_1UnreprError.html", null ]
       ] ]
+    ] ],
+    [ "ScalarFormatter", null, [
+      [ "lib.DukePlotALot2D.FixedOrderFormatter", "classlib_1_1DukePlotALot2D_1_1FixedOrderFormatter.html", null ]
     ] ]
 ];
