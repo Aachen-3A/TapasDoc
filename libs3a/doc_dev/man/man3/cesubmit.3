@@ -1,4 +1,4 @@
-.TH "cesubmit" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "cesubmit" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,6 +30,15 @@ cesubmit \-
 .br
 .ti -1c
 .RI "def \fBkillWorker\fP"
+.br
+.ti -1c
+.RI "def \fBgetCernUserName\fP"
+.br
+.ti -1c
+.RI "def \fBcreateAndUploadGridPack\fP"
+.br
+.ti -1c
+.RI "def \fBuploadGridPack\fP"
 .br
 .ti -1c
 .RI "def \fBparseGetOutput\fP"
@@ -71,7 +80,7 @@ cesubmit \-
 .SS "def cesubmit\&.checkAndRenewVomsProxy (time = \fC604800\fP, voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
 
 .PP
-Definition at line 520 of file cesubmit\&.py\&.
+Definition at line 599 of file cesubmit\&.py\&.
 .PP
 References checkVomsProxy(), and renewVomsProxy()\&.
 .PP
@@ -85,7 +94,7 @@ Returns True if the proxy is valid longer than time, False otherwise.
 .PP
  
 .PP
-Definition at line 502 of file cesubmit\&.py\&.
+Definition at line 581 of file cesubmit\&.py\&.
 .PP
 References timeLeftVomsProxy()\&.
 .PP
@@ -100,31 +109,45 @@ Yield successive n-sized chunks from l.
 .PP
  
 .PP
-Definition at line 482 of file cesubmit\&.py\&.
+Definition at line 561 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&._getStatusMultiple(), and cesubmit\&.Task\&.getOutput()\&.
+.SS "def cesubmit\&.createAndUploadGridPack (localfiles, uploadurl, tarfile = \fC'gridpacktemp\&.tar\&.gz'\fP, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP)"
+
+.PP
+Definition at line 36 of file cesubmit\&.py\&.
+.PP
+References uploadGridPack()\&.
+.PP
+Referenced by submit\&.main()\&.
+.SS "def cesubmit\&.getCernUserName ()"
+
+.PP
+Definition at line 29 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&.makePrologue(), and uploadGridPack()\&.
 .SS "def cesubmit\&.killWorker (job)"
 
 .PP
-Definition at line 25 of file cesubmit\&.py\&.
+Definition at line 26 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.parseGetOutput (stdout)"
 
 .PP
-Definition at line 416 of file cesubmit\&.py\&.
+Definition at line 495 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.getOutput()\&.
 .SS "def cesubmit\&.parseStatus (stdout)"
 
 .PP
-Definition at line 430 of file cesubmit\&.py\&.
+Definition at line 509 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.parseStatusMultiple (stdout)"
 
 .PP
-Definition at line 442 of file cesubmit\&.py\&.
+Definition at line 521 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.parseStatusMultipleL1 (stdout)"
 
 .PP
-Definition at line 458 of file cesubmit\&.py\&.
+Definition at line 537 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&._getStatusMultiple()\&.
 .SS "def cesubmit\&.renewVomsProxy (voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
@@ -136,29 +159,37 @@ Make a new proxy with a lifetime of one week.
 .PP
  
 .PP
-Definition at line 507 of file cesubmit\&.py\&.
+Definition at line 586 of file cesubmit\&.py\&.
 .PP
 Referenced by checkAndRenewVomsProxy()\&.
 .SS "def cesubmit\&.resubmitWorker (job)"
 
 .PP
-Definition at line 21 of file cesubmit\&.py\&.
+Definition at line 22 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.submitWorker (job)"
 
 .PP
-Definition at line 17 of file cesubmit\&.py\&.
+Definition at line 18 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.timeLeftVomsProxy ()"
 
 .PP
-Definition at line 491 of file cesubmit\&.py\&.
+Definition at line 570 of file cesubmit\&.py\&.
 .PP
 Referenced by checkVomsProxy()\&.
+.SS "def cesubmit\&.uploadGridPack (tarfile, uploadurl, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP)"
+
+.PP
+Definition at line 45 of file cesubmit\&.py\&.
+.PP
+References getCernUserName()\&.
+.PP
+Referenced by createAndUploadGridPack()\&.
 .SH "Variable Documentation"
 .PP 
 .SS "tuple cesubmit\&.log = logging\&.getLogger(__name__)"
 
 .PP
-Definition at line 14 of file cesubmit\&.py\&.
+Definition at line 15 of file cesubmit\&.py\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for libs3a from the source code\&.

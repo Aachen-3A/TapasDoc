@@ -1,4 +1,4 @@
-.TH "HistClass" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "HistClass" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -60,6 +60,10 @@ Functions to have easy histogram handling\&.
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, const char *xtitle='')"
 .br
 .RI "\fIFunction to create one 1D Efficiency container in the eff map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, TH1D *hist_all, TH1D *hist_pass)"
+.br
+.RI "\fIFunction to create one 1D Efficiency container in the eff map from two histograms\&. \fP"
 .ti -1c
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, const char *xtitle='', const char *ytitle='')"
 .br
@@ -235,7 +239,7 @@ In this namespace different functions to interact with the histogram map are inc
 .PP
 Function to clean up the memory usage of the \fBHistClass\fP\&. 
 .PP
-Definition at line 802 of file HistClass\&.hh\&.
+Definition at line 815 of file HistClass\&.hh\&.
 .PP
 References effs, histo, histo2, histon, trees, and ttupple\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, Int_tnbinsx, Double_txlow, Double_txup, const char *xtitle = \fC''\fP)\fC [static]\fP"
@@ -259,6 +263,27 @@ Function to create one 1D Efficiency container in the eff map\&.
 
 .PP
 Definition at line 230 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, TH1D *hist_all, TH1D *hist_pass)\fC [static]\fP"
+
+.PP
+Function to create one 1D Efficiency container in the eff map from two histograms\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the Efficiency container that should be created 
+.br
+\fIhist_all\fP Histogram of all events 
+.br
+\fIhist_pass\fP Histogram of all passed events 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 242 of file HistClass\&.hh\&.
 .PP
 References effs\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, Int_tnbinsx, Double_txlow, Double_txup, Int_tnbinsy, Double_tylow, Double_tyup, const char *xtitle = \fC''\fP, const char *ytitle = \fC''\fP)\fC [static]\fP"
@@ -289,7 +314,7 @@ Function to create one 2D Efficiency container in the eff map\&.
 .PP
 
 .PP
-Definition at line 247 of file HistClass\&.hh\&.
+Definition at line 260 of file HistClass\&.hh\&.
 .PP
 References effs\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (Int_tn_histos, const char *name, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
@@ -583,7 +608,7 @@ Function to fill an event in a 1D histogram of the map\&. This function fills on
 .PP
 
 .PP
-Definition at line 262 of file HistClass\&.hh\&.
+Definition at line 275 of file HistClass\&.hh\&.
 .PP
 References histo\&.
 .PP
@@ -606,7 +631,7 @@ Function to fill an event in a 1D histogram of the map with a string as histo na
 .PP
 
 .PP
-Definition at line 278 of file HistClass\&.hh\&.
+Definition at line 291 of file HistClass\&.hh\&.
 .PP
 References Fill()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (const char *name, doublevalue, doubleweight)\fC [static]\fP"
@@ -625,7 +650,7 @@ Function to fill an event in a 1D histogram of the map without histo number\&. T
 .PP
 
 .PP
-Definition at line 291 of file HistClass\&.hh\&.
+Definition at line 304 of file HistClass\&.hh\&.
 .PP
 References histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (const char *name, doublevaluex, doublevaluey, doubleweight)\fC [static]\fP"
@@ -646,7 +671,7 @@ Function to fill an event in a 2D histogram of the map\&.
 .PP
 
 .PP
-Definition at line 313 of file HistClass\&.hh\&.
+Definition at line 326 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo2\&.
 .SS "static void HistClass::Fill (Int_tn_histo, const char *name, doublevaluex, doublevaluey, doubleweight)\fC [static]\fP"
@@ -669,7 +694,7 @@ Function to fill an event in a 2D histogram of the map\&. This function fills on
 .PP
 
 .PP
-Definition at line 329 of file HistClass\&.hh\&.
+Definition at line 342 of file HistClass\&.hh\&.
 .PP
 References histo2\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillEff (const char *name, doublevaluex, boolpassed)\fC [static]\fP"
@@ -688,7 +713,7 @@ Function to fill an event in a efficiency container of the map\&.
 .PP
 
 .PP
-Definition at line 388 of file HistClass\&.hh\&.
+Definition at line 401 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and effs\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillEff (const char *name, doublevaluex, doublevaluey, boolpassed)\fC [static]\fP"
@@ -709,7 +734,7 @@ Function to fill an event in a 2D efficiency container of the map\&.
 .PP
 
 .PP
-Definition at line 400 of file HistClass\&.hh\&.
+Definition at line 413 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and effs\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillSparse (const char *name, intn, \&.\&.\&.)\fC [static]\fP"
@@ -733,7 +758,7 @@ complete the function
 .PP
 
 .PP
-Definition at line 348 of file HistClass\&.hh\&.
+Definition at line 361 of file HistClass\&.hh\&.
 .PP
 References histon\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillTree (const char *name, double *values)\fC [static]\fP"
@@ -750,7 +775,7 @@ Function to fill an event in a NTupleD of the map\&.
 .PP
 
 .PP
-Definition at line 369 of file HistClass\&.hh\&.
+Definition at line 382 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and ttupple\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillTree (const char *name)\fC [static]\fP"
@@ -765,7 +790,7 @@ Function to fill an event in a TTree of the map\&.
 .PP
 
 .PP
-Definition at line 378 of file HistClass\&.hh\&.
+Definition at line 391 of file HistClass\&.hh\&.
 .PP
 References trees\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (const char *name, const uintn_bins, TString *d_mydisc)\fC [static]\fP"
@@ -784,7 +809,7 @@ Function to give one 1D histogram from the map alphanumeric bin labels without n
 .PP
 
 .PP
-Definition at line 758 of file HistClass\&.hh\&.
+Definition at line 771 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (const char *name, const uintn_bins_x, TString *x_bin_names, const uintn_bins_y, TString *y_bin_names)\fC [static]\fP"
@@ -807,7 +832,7 @@ Function to give one 2D histogram from the map alphanumeric bin labels without n
 .PP
 
 .PP
-Definition at line 773 of file HistClass\&.hh\&.
+Definition at line 786 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo2\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (Int_tn_histo, const char *name, const uintn_bins, TString *d_mydisc)\fC [static]\fP"
@@ -828,7 +853,7 @@ Function to give one 1D histogram from the map alphanumeric bin labels\&.
 .PP
 
 .PP
-Definition at line 790 of file HistClass\&.hh\&.
+Definition at line 803 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP TH1D* HistClass::ReturnHist (const char *name)\fC [static]\fP"
@@ -845,7 +870,7 @@ Function to get one 1D histogram from the map without number\&.
 .PP
 
 .PP
-Definition at line 742 of file HistClass\&.hh\&.
+Definition at line 755 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::SetToZero (Int_tn_histo, const char *name)\fC [static]\fP"
@@ -862,7 +887,7 @@ Function to set all negative bin contents to zero for a 1D histogram\&.
 .PP
 
 .PP
-Definition at line 726 of file HistClass\&.hh\&.
+Definition at line 739 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "\fBSUPPRESS_NOT_USED_WARN\fP void HistClass::split (const std::string &s, chardelim, std::vector< std::string > *elems)"
@@ -883,7 +908,7 @@ This function splits a given string at a given delimineter, and pushes the resul
 .PP
 
 .PP
-Definition at line 486 of file HistClass\&.hh\&.
+Definition at line 499 of file HistClass\&.hh\&.
 .PP
 Referenced by githookcontroller\&.GitHookController::doc_remote_root_name(), gridFunctions::getdcachelist(), githookcontroller\&.GitHookController::parse_pre_commit(), githookcontroller\&.GitHookController::parse_pre_push(), githookcontroller\&.GitHookController::remote_branches(), githookcontroller\&.GitHookController::remote_root_name(), githookcontroller\&.GitHookController::remote_url(), split(), WriteAll(), and WriteAll2()\&.
 .SS "\fBSUPPRESS_NOT_USED_WARN\fP std::vector<std::string> HistClass::split (const std::string &s, chardelim)"
@@ -902,7 +927,7 @@ Function split a string at a delimiter and return the results\&. This function s
 .PP
 
 .PP
-Definition at line 502 of file HistClass\&.hh\&.
+Definition at line 515 of file HistClass\&.hh\&.
 .PP
 References split()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Write (Int_tn_histo, const char *name)\fC [static]\fP"
@@ -919,7 +944,7 @@ Function to write one 1D histogram of the map\&.
 .PP
 
 .PP
-Definition at line 410 of file HistClass\&.hh\&.
+Definition at line 423 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .PP
@@ -936,7 +961,7 @@ Function to write one 1D histogram of the map without number\&.
 .PP
 
 .PP
-Definition at line 419 of file HistClass\&.hh\&.
+Definition at line 432 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Write2 (const char *name)\fC [static]\fP"
@@ -951,7 +976,7 @@ Function to write one 2D histogram of the map\&.
 .PP
 
 .PP
-Definition at line 698 of file HistClass\&.hh\&.
+Definition at line 711 of file HistClass\&.hh\&.
 .PP
 References html_to_bash_ascii_converter::dummy, and histo2\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name = \fC''\fP)\fC [static]\fP"
@@ -966,7 +991,7 @@ Function to write many 1D histograms of the map\&. This function writes all hist
 .PP
 
 .PP
-Definition at line 431 of file HistClass\&.hh\&.
+Definition at line 444 of file HistClass\&.hh\&.
 .PP
 References histo, and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name, const char *contains_i)\fC [static]\fP"
@@ -983,7 +1008,7 @@ Function to write many 1D histograms which contain specific strings of the map\&
 .PP
 
 .PP
-Definition at line 517 of file HistClass\&.hh\&.
+Definition at line 530 of file HistClass\&.hh\&.
 .PP
 References histo, split(), and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name, const char *contains_i, const char *vetos_i)\fC [static]\fP"
@@ -1002,7 +1027,7 @@ Function to write many 1D histograms which (not) contain specific strings of the
 .PP
 
 .PP
-Definition at line 581 of file HistClass\&.hh\&.
+Definition at line 594 of file HistClass\&.hh\&.
 .PP
 References histo, split(), and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name = \fC''\fP)\fC [static]\fP"
@@ -1017,7 +1042,7 @@ Function to write many 2D histograms of the map\&. This function writes all hist
 .PP
 
 .PP
-Definition at line 449 of file HistClass\&.hh\&.
+Definition at line 462 of file HistClass\&.hh\&.
 .PP
 References histo2, and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name, const char *contains_i)\fC [static]\fP"
@@ -1034,7 +1059,7 @@ Function to write many 2D histograms which contain specific strings of the map\&
 .PP
 
 .PP
-Definition at line 548 of file HistClass\&.hh\&.
+Definition at line 561 of file HistClass\&.hh\&.
 .PP
 References histo2, split(), and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name, const char *contains_i, const char *vetos_i)\fC [static]\fP"
@@ -1053,7 +1078,7 @@ Function to write many 2D histograms which (not) contain specific strings of the
 .PP
 
 .PP
-Definition at line 622 of file HistClass\&.hh\&.
+Definition at line 635 of file HistClass\&.hh\&.
 .PP
 References histo2, split(), and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllEff (const char *name = \fC''\fP)\fC [static]\fP"
@@ -1068,7 +1093,7 @@ Function to write many efficiency containers of the map\&. This function writes 
 .PP
 
 .PP
-Definition at line 710 of file HistClass\&.hh\&.
+Definition at line 723 of file HistClass\&.hh\&.
 .PP
 References effs, and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllTrees (const char *name = \fC''\fP)\fC [static]\fP"
@@ -1083,7 +1108,7 @@ Function to write many TTrees and TNtupleDs of the maps\&. This function writes 
 .PP
 
 .PP
-Definition at line 659 of file HistClass\&.hh\&.
+Definition at line 672 of file HistClass\&.hh\&.
 .PP
 References trees, ttupple, and Write()\&.
 .SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteN (const char *name = \fC''\fP)\fC [static]\fP"
@@ -1098,7 +1123,7 @@ Function to write many TNsparses of the map\&. This function writes all nSparses
 .PP
 
 .PP
-Definition at line 683 of file HistClass\&.hh\&.
+Definition at line 696 of file HistClass\&.hh\&.
 .PP
 References histon, and Write()\&.
 .SH "Variable Documentation"

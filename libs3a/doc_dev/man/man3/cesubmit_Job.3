@@ -1,4 +1,4 @@
-.TH "cesubmit.Job" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "cesubmit.Job" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -67,19 +67,19 @@ cesubmit.Job \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 29 of file cesubmit\&.py\&.
+Definition at line 60 of file cesubmit\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "def cesubmit\&.Job\&.__init__ (self)"
 
 .PP
-Definition at line 30 of file cesubmit\&.py\&.
+Definition at line 61 of file cesubmit\&.py\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def cesubmit\&.Job\&.cancel (self)"
 
 .PP
-Definition at line 133 of file cesubmit\&.py\&.
+Definition at line 166 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
 .PP
@@ -87,31 +87,31 @@ Referenced by cesubmit\&.Job\&.kill(), and cesubmit\&.Job\&.resubmit()\&.
 .SS "def cesubmit\&.Job\&.getOutput (self)"
 
 .PP
-Definition at line 121 of file cesubmit\&.py\&.
+Definition at line 154 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Job\&.jobid, and cesubmit\&.Job\&.purge()\&.
 .SS "def cesubmit\&.Job\&.getStatus (self)"
 
 .PP
-Definition at line 109 of file cesubmit\&.py\&.
+Definition at line 142 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
 .SS "def cesubmit\&.Job\&.kill (self)"
 
 .PP
-Definition at line 155 of file cesubmit\&.py\&.
+Definition at line 188 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.infos, and cesubmit\&.Job\&.purge()\&.
 .SS "def cesubmit\&.Job\&.outputSubDirectory (self)"
 
 .PP
-Definition at line 167 of file cesubmit\&.py\&.
+Definition at line 200 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.jobid\&.
 .SS "def cesubmit\&.Job\&.purge (self)"
 
 .PP
-Definition at line 144 of file cesubmit\&.py\&.
+Definition at line 177 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
 .PP
@@ -119,13 +119,13 @@ Referenced by cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.kill(), and cesubmi
 .SS "def cesubmit\&.Job\&.resubmit (self)"
 
 .PP
-Definition at line 160 of file cesubmit\&.py\&.
+Definition at line 193 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.infos, cesubmit\&.Job\&.purge(), cesubmit\&.Job\&.status(), and cesubmit\&.Job\&.submit()\&.
 .SS "def cesubmit\&.Job\&.status (self)"
 
 .PP
-Definition at line 35 of file cesubmit\&.py\&.
+Definition at line 66 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.infos\&.
 .PP
@@ -133,7 +133,7 @@ Referenced by cesubmit\&.Job\&.resubmit(), and crabFunctions\&.CrabController\&.
 .SS "def cesubmit\&.Job\&.submit (self)"
 
 .PP
-Definition at line 67 of file cesubmit\&.py\&.
+Definition at line 100 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.checkAndRenewVomsProxy(), and cesubmit\&.Job\&.jdlfilename\&.
 .PP
@@ -141,7 +141,7 @@ Referenced by cesubmit\&.Job\&.resubmit()\&.
 .SS "def cesubmit\&.Job\&.writeJdl (self)"
 
 .PP
-Definition at line 41 of file cesubmit\&.py\&.
+Definition at line 72 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Job\&.executable\&.
 .SH "Member Data Documentation"
@@ -149,35 +149,35 @@ References cesubmit\&.Job\&.executable\&.
 .SS "cesubmit\&.Job\&.error"
 
 .PP
-Definition at line 98 of file cesubmit\&.py\&.
+Definition at line 131 of file cesubmit\&.py\&.
 .SS "cesubmit\&.Job\&.executable"
 
 .PP
-Definition at line 31 of file cesubmit\&.py\&.
+Definition at line 62 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Job\&.writeJdl()\&.
 .SS "cesubmit\&.Job\&.frontEndStatus"
 
 .PP
-Definition at line 32 of file cesubmit\&.py\&.
+Definition at line 63 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.getStatus(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Job\&.purge(), cesubmit\&.Task\&.resubmit(), and cesubmit\&.Task\&.submit()\&.
 .SS "cesubmit\&.Job\&.infos"
 
 .PP
-Definition at line 120 of file cesubmit\&.py\&.
+Definition at line 153 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Job\&.kill(), cesubmit\&.Job\&.resubmit(), and cesubmit\&.Job\&.status()\&.
 .SS "cesubmit\&.Job\&.jdlfilename"
 
 .PP
-Definition at line 62 of file cesubmit\&.py\&.
+Definition at line 95 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Job\&.submit()\&.
 .SS "cesubmit\&.Job\&.jobid"
 
 .PP
-Definition at line 33 of file cesubmit\&.py\&.
+Definition at line 64 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.getStatus(), cesubmit\&.Job\&.outputSubDirectory(), and cesubmit\&.Job\&.purge()\&.
 

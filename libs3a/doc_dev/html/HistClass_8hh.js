@@ -3,6 +3,7 @@ var HistClass_8hh =
     [ "SUPPRESS_NOT_USED_WARN", "HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c", null ],
     [ "CleanUp", "HistClass_8hh.html#a4a7a1765dd4cd2b6caf6264873a3ba95", null ],
     [ "CreateEff", "HistClass_8hh.html#ac5cb97fb82e3182d3d4f65ff42d704b9", null ],
+    [ "CreateEff", "HistClass_8hh.html#a5ae7ed0fa13c1e9105ef397244e286e0", null ],
     [ "CreateEff", "HistClass_8hh.html#ab128d2941ec00095c476efba82422f99", null ],
     [ "CreateHisto", "HistClass_8hh.html#afe4c53f5990fecb7acf800a1677632fd", null ],
     [ "CreateHisto", "HistClass_8hh.html#ad978c86aade850ac341be3e75c4cfcf6", null ],

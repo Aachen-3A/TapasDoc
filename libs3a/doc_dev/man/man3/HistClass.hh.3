@@ -1,4 +1,4 @@
-.TH "include/HistClass.hh" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "include/HistClass.hh" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -97,6 +97,10 @@ include/HistClass.hh \-
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::CreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, const char *xtitle='')"
 .br
 .RI "\fIFunction to create one 1D Efficiency container in the eff map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::CreateEff\fP (const char *name, TH1D *hist_all, TH1D *hist_pass)"
+.br
+.RI "\fIFunction to create one 1D Efficiency container in the eff map from two histograms\&. \fP"
 .ti -1c
 .RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBHistClass::CreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, const char *xtitle='', const char *ytitle='')"
 .br

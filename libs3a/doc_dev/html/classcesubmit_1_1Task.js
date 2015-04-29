@@ -3,8 +3,10 @@ var classcesubmit_1_1Task =
     [ "__init__", "classcesubmit_1_1Task.html#aff828e186b899e217ee4f60987576e59", null ],
     [ "_dosubmit", "classcesubmit_1_1Task.html#a1e06547f3c97e443e99d9e500287d46f", null ],
     [ "_getStatusMultiple", "classcesubmit_1_1Task.html#a7ae331d7f15eb5bb2b43a6055d2cb7ae", null ],
+    [ "addGridPack", "classcesubmit_1_1Task.html#a25662d34c192b43c7d91341e41a48d09", null ],
     [ "addJob", "classcesubmit_1_1Task.html#af83f9793281dcbd6e6ab011e3fd6c465", null ],
     [ "cleanUp", "classcesubmit_1_1Task.html#a3a7d1994bc5941930ac6981a55423ef5", null ],
+    [ "copyResultsToDCache", "classcesubmit_1_1Task.html#a8e81633b27735f945b67fde2503e4c51", null ],
     [ "createdir", "classcesubmit_1_1Task.html#a0fa513308849221894249562aa0c6be4", null ],
     [ "getOutput", "classcesubmit_1_1Task.html#a2730e4477f76eace94644b3e54e85b14", null ],
     [ "getStatus", "classcesubmit_1_1Task.html#abbb49773518082b0c314107191470eb2", null ],
@@ -20,9 +22,12 @@ var classcesubmit_1_1Task =
     [ "directory", "classcesubmit_1_1Task.html#a2cfde474eb274595ca1cce02f1e0b632", null ],
     [ "executable", "classcesubmit_1_1Task.html#a5c27809386cdeaffd495829a3f346431", null ],
     [ "frontEndStatus", "classcesubmit_1_1Task.html#a659e4563ce34de5c1e9d5203a2e6851f", null ],
+    [ "gridPacks", "classcesubmit_1_1Task.html#ab34c806d39527f0f765ed2c93ed3c5c4", null ],
     [ "jdlfilename", "classcesubmit_1_1Task.html#a7163d12ce0e40c4479b05288f6d53411", null ],
     [ "jobs", "classcesubmit_1_1Task.html#acbe8ce4419b6f1b0106adc365b9b48a2", null ],
     [ "mode", "classcesubmit_1_1Task.html#a19285f65074058f8dcd56a7b3feb9e20", null ],
     [ "name", "classcesubmit_1_1Task.html#a05a05a652fe678e897ec90fb3c9a4da6", null ],
-    [ "scramArch", "classcesubmit_1_1Task.html#a56c50586fa3366ae571fce3dd62d84a8", null ]
+    [ "replacedict", "classcesubmit_1_1Task.html#a3e01a256fd9b460deeca46049fa67ff0", null ],
+    [ "scramArch", "classcesubmit_1_1Task.html#a56c50586fa3366ae571fce3dd62d84a8", null ],
+    [ "uploadexecutable", "classcesubmit_1_1Task.html#a5068d5ee895ba0710dd70cb2f015a9c1", null ]
 ];

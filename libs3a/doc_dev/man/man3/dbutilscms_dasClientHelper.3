@@ -1,0 +1,116 @@
+.TH "dbutilscms.dasClientHelper" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dbutilscms.dasClientHelper \- 
+.PP
+The \fBdasClientHelper\fP Class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.RI "\fIThe constructor\&. \fP"
+.ti -1c
+.RI "def \fBget_data\fP"
+.br
+.RI "\fIReimplementation of get_data from das_client\&. \fP"
+.ti -1c
+.RI "def \fBgetDatasetSummary\fP"
+.br
+.RI "\fIGet a dict containing most common dataset infos\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdatasetJSON\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBdasClientHelper\fP Class\&. 
+
+This is a helper class for the das_client cli 
+.PP
+Definition at line 116 of file dbutilscms\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def dbutilscms\&.dasClientHelper\&.__init__ (self)"
+
+.PP
+The constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file dbutilscms\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def dbutilscms\&.dasClientHelper\&.get_data (self, dataset, queryobject = \fCNone\fP, query_aggregation = \fCNone\fP)"
+
+.PP
+Reimplementation of get_data from das_client\&. This function is used to send a general query to das The query is seperated i 3 parts (see arguments) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&. 
+.br
+\fIdataset,:\fP String containing the dataset name 
+.br
+\fIqueryobject,:\fP String which specifies the object you want to query (file, block etc\&.) 
+.br
+\fIquery_aggregation,:\fP additional aggregation query parts at the end\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+json dictionary containing the das query response 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file dbutilscms\&.py\&.
+.PP
+Referenced by dbutilscms\&.dasClientHelper\&.getDatasetSummary()\&.
+.SS "def dbutilscms\&.dasClientHelper\&.getDatasetSummary (self, dataset)"
+
+.PP
+Get a dict containing most common dataset infos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdataset,:\fP String containing the dataset name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A dictionary containing the infos: name, nevents, nfiles, nlumis, nblocks, size (byte) 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file dbutilscms\&.py\&.
+.PP
+References dbutilscms\&.dasClientHelper\&.datasetJSON, and dbutilscms\&.dasClientHelper\&.get_data()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "dbutilscms\&.dasClientHelper\&.datasetJSON"
+
+.PP
+Definition at line 128 of file dbutilscms\&.py\&.
+.PP
+Referenced by dbutilscms\&.dasClientHelper\&.getDatasetSummary()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libs3a from the source code\&.

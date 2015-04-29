@@ -142,6 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac5cb97fb82e3182d3d4f65ff42d704b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c">SUPPRESS_NOT_USED_WARN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHistClass.html#ac5cb97fb82e3182d3d4f65ff42d704b9">CreateEff</a> (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, const char *xtitle=&quot;&quot;)</td></tr>
 <tr class="memdesc:ac5cb97fb82e3182d3d4f65ff42d704b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create one 1D Efficiency container in the eff map.  <a href="#ac5cb97fb82e3182d3d4f65ff42d704b9">More...</a><br/></td></tr>
 <tr class="separator:ac5cb97fb82e3182d3d4f65ff42d704b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae7ed0fa13c1e9105ef397244e286e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c">SUPPRESS_NOT_USED_WARN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHistClass.html#a5ae7ed0fa13c1e9105ef397244e286e0">CreateEff</a> (const char *name, TH1D *hist_all, TH1D *hist_pass)</td></tr>
+<tr class="memdesc:a5ae7ed0fa13c1e9105ef397244e286e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create one 1D Efficiency container in the eff map from two histograms.  <a href="#a5ae7ed0fa13c1e9105ef397244e286e0">More...</a><br/></td></tr>
+<tr class="separator:a5ae7ed0fa13c1e9105ef397244e286e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab128d2941ec00095c476efba82422f99"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c">SUPPRESS_NOT_USED_WARN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHistClass.html#ab128d2941ec00095c476efba82422f99">CreateEff</a> (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, const char *xtitle=&quot;&quot;, const char *ytitle=&quot;&quot;)</td></tr>
 <tr class="memdesc:ab128d2941ec00095c476efba82422f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create one 2D Efficiency container in the eff map.  <a href="#ab128d2941ec00095c476efba82422f99">More...</a><br/></td></tr>
 <tr class="separator:ab128d2941ec00095c476efba82422f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -286,7 +289,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Function to clean up the memory usage of the <a class="el" href="namespaceHistClass.html" title="Functions to have easy histogram handling. ">HistClass</a>. </p>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00802">802</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00815">815</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>, <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, <a class="el" href="HistClass_8hh_source.html#l00038">histon</a>, <a class="el" href="HistClass_8hh_source.html#l00040">trees</a>, and <a class="el" href="HistClass_8hh_source.html#l00039">ttupple</a>.</p>
 
@@ -355,6 +358,61 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </dl>
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00230">230</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+
+<p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ae7ed0fa13c1e9105ef397244e286e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="HistClass_8hh.html#a85edd6ac47f5ea2970c76af20855738c">SUPPRESS_NOT_USED_WARN</a> void HistClass::CreateEff </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TH1D *&#160;</td>
+          <td class="paramname"><em>hist_all</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TH1D *&#160;</td>
+          <td class="paramname"><em>hist_pass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to create one 1D Efficiency container in the eff map from two histograms. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the Efficiency container that should be created </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hist_all</td><td>Histogram of all events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hist_pass</td><td>Histogram of all passed events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xtitle</td><td>Optinal title of the x-axis (DEFAULT = "") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00242">242</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>.</p>
 
@@ -450,7 +508,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00247">247</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00260">260</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>.</p>
 
@@ -1325,11 +1383,11 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00262">262</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00275">275</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00278">Fill()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00291">Fill()</a>.</p>
 
 </div>
 </div>
@@ -1388,9 +1446,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00278">278</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00291">291</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00262">Fill()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00275">Fill()</a>.</p>
 
 </div>
 </div>
@@ -1443,7 +1501,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00291">291</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00304">304</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -1504,7 +1562,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00313">313</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00326">326</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>.</p>
 
@@ -1573,7 +1631,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00329">329</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00342">342</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>.</p>
 
@@ -1627,7 +1685,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00388">388</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00401">401</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>.</p>
 
@@ -1688,7 +1746,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00400">400</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00413">413</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>.</p>
 
@@ -1744,7 +1802,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>complete the function </dd></dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00348">348</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00361">361</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00038">histon</a>.</p>
 
@@ -1791,7 +1849,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00369">369</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00382">382</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00039">ttupple</a>.</p>
 
@@ -1827,7 +1885,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00378">378</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00391">391</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="HistClass_8hh_source.html#l00040">trees</a>.</p>
 
@@ -1881,7 +1939,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00758">758</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00771">771</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -1949,7 +2007,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00773">773</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00786">786</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>.</p>
 
@@ -2010,7 +2068,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00790">790</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00803">803</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -2047,7 +2105,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00742">742</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00755">755</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -2094,7 +2152,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00726">726</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00739">739</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -2142,9 +2200,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00486">486</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00499">499</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="githookcontroller_8py_source.html#l00104">githookcontroller.GitHookController::doc_remote_root_name()</a>, <a class="el" href="gridFunctions_8py_source.html#l00014">gridFunctions::getdcachelist()</a>, <a class="el" href="githookcontroller_8py_source.html#l00221">githookcontroller.GitHookController::parse_pre_commit()</a>, <a class="el" href="githookcontroller_8py_source.html#l00239">githookcontroller.GitHookController::parse_pre_push()</a>, <a class="el" href="githookcontroller_8py_source.html#l00177">githookcontroller.GitHookController::remote_branches()</a>, <a class="el" href="githookcontroller_8py_source.html#l00087">githookcontroller.GitHookController::remote_root_name()</a>, <a class="el" href="githookcontroller_8py_source.html#l00134">githookcontroller.GitHookController::remote_url()</a>, <a class="el" href="HistClass_8hh_source.html#l00502">split()</a>, <a class="el" href="HistClass_8hh_source.html#l00517">WriteAll()</a>, and <a class="el" href="HistClass_8hh_source.html#l00548">WriteAll2()</a>.</p>
+<p>Referenced by <a class="el" href="githookcontroller_8py_source.html#l00104">githookcontroller.GitHookController::doc_remote_root_name()</a>, <a class="el" href="gridFunctions_8py_source.html#l00036">gridFunctions::getdcachelist()</a>, <a class="el" href="githookcontroller_8py_source.html#l00221">githookcontroller.GitHookController::parse_pre_commit()</a>, <a class="el" href="githookcontroller_8py_source.html#l00239">githookcontroller.GitHookController::parse_pre_push()</a>, <a class="el" href="githookcontroller_8py_source.html#l00177">githookcontroller.GitHookController::remote_branches()</a>, <a class="el" href="githookcontroller_8py_source.html#l00087">githookcontroller.GitHookController::remote_root_name()</a>, <a class="el" href="githookcontroller_8py_source.html#l00134">githookcontroller.GitHookController::remote_url()</a>, <a class="el" href="HistClass_8hh_source.html#l00515">split()</a>, <a class="el" href="HistClass_8hh_source.html#l00530">WriteAll()</a>, and <a class="el" href="HistClass_8hh_source.html#l00561">WriteAll2()</a>.</p>
 
 </div>
 </div>
@@ -2183,9 +2241,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00502">502</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00515">515</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00486">split()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00499">split()</a>.</p>
 
 </div>
 </div>
@@ -2230,11 +2288,11 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00410">410</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00423">423</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00431">WriteAll()</a>, <a class="el" href="HistClass_8hh_source.html#l00449">WriteAll2()</a>, <a class="el" href="HistClass_8hh_source.html#l00710">WriteAllEff()</a>, <a class="el" href="HistClass_8hh_source.html#l00659">WriteAllTrees()</a>, and <a class="el" href="HistClass_8hh_source.html#l00683">WriteN()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00444">WriteAll()</a>, <a class="el" href="HistClass_8hh_source.html#l00462">WriteAll2()</a>, <a class="el" href="HistClass_8hh_source.html#l00723">WriteAllEff()</a>, <a class="el" href="HistClass_8hh_source.html#l00672">WriteAllTrees()</a>, and <a class="el" href="HistClass_8hh_source.html#l00696">WriteN()</a>.</p>
 
 </div>
 </div>
@@ -2268,7 +2326,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00419">419</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00432">432</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>.</p>
 
@@ -2304,7 +2362,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00698">698</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00711">711</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
 <p>References <a class="el" href="html__to__bash__ascii__converter_8py_source.html#l00380">html_to_bash_ascii_converter::dummy</a>, and <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>.</p>
 
@@ -2341,9 +2399,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00431">431</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00444">444</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2389,9 +2447,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00517">517</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00530">530</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, <a class="el" href="HistClass_8hh_source.html#l00486">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, <a class="el" href="HistClass_8hh_source.html#l00499">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2444,9 +2502,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00581">581</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00594">594</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, <a class="el" href="HistClass_8hh_source.html#l00486">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00036">histo</a>, <a class="el" href="HistClass_8hh_source.html#l00499">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2481,9 +2539,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00449">449</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00462">462</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2529,9 +2587,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00548">548</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00561">561</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, <a class="el" href="HistClass_8hh_source.html#l00486">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, <a class="el" href="HistClass_8hh_source.html#l00499">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2584,9 +2642,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00622">622</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00635">635</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, <a class="el" href="HistClass_8hh_source.html#l00486">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00037">histo2</a>, <a class="el" href="HistClass_8hh_source.html#l00499">split()</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2621,9 +2679,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00710">710</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00723">723</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00041">effs</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2658,9 +2716,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00659">659</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00672">672</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00040">trees</a>, <a class="el" href="HistClass_8hh_source.html#l00039">ttupple</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00040">trees</a>, <a class="el" href="HistClass_8hh_source.html#l00039">ttupple</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2695,9 +2753,9 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00683">683</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
+<p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00696">696</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>References <a class="el" href="HistClass_8hh_source.html#l00038">histon</a>, and <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>.</p>
+<p>References <a class="el" href="HistClass_8hh_source.html#l00038">histon</a>, and <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>.</p>
 
 </div>
 </div>
@@ -2723,7 +2781,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00041">41</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00230">CreateEff()</a>, <a class="el" href="HistClass_8hh_source.html#l00388">FillEff()</a>, and <a class="el" href="HistClass_8hh_source.html#l00710">WriteAllEff()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00230">CreateEff()</a>, <a class="el" href="HistClass_8hh_source.html#l00401">FillEff()</a>, and <a class="el" href="HistClass_8hh_source.html#l00723">WriteAllEff()</a>.</p>
 
 </div>
 </div>
@@ -2748,7 +2806,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00036">36</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00052">CreateHisto()</a>, <a class="el" href="HistClass_8hh_source.html#l00088">CreateHistoUnchangedName()</a>, <a class="el" href="HistClass_8hh_source.html#l00262">Fill()</a>, <a class="el" href="HistClass_8hh_source.html#l00758">NameBins()</a>, <a class="el" href="HistClass_8hh_source.html#l00742">ReturnHist()</a>, <a class="el" href="HistClass_8hh_source.html#l00726">SetToZero()</a>, <a class="el" href="HistClass_8hh_source.html#l00410">Write()</a>, and <a class="el" href="HistClass_8hh_source.html#l00431">WriteAll()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00052">CreateHisto()</a>, <a class="el" href="HistClass_8hh_source.html#l00088">CreateHistoUnchangedName()</a>, <a class="el" href="HistClass_8hh_source.html#l00275">Fill()</a>, <a class="el" href="HistClass_8hh_source.html#l00771">NameBins()</a>, <a class="el" href="HistClass_8hh_source.html#l00755">ReturnHist()</a>, <a class="el" href="HistClass_8hh_source.html#l00739">SetToZero()</a>, <a class="el" href="HistClass_8hh_source.html#l00423">Write()</a>, and <a class="el" href="HistClass_8hh_source.html#l00444">WriteAll()</a>.</p>
 
 </div>
 </div>
@@ -2773,7 +2831,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00037">37</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00150">CreateHisto()</a>, <a class="el" href="HistClass_8hh_source.html#l00313">Fill()</a>, <a class="el" href="HistClass_8hh_source.html#l00773">NameBins()</a>, <a class="el" href="HistClass_8hh_source.html#l00698">Write2()</a>, and <a class="el" href="HistClass_8hh_source.html#l00449">WriteAll2()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00150">CreateHisto()</a>, <a class="el" href="HistClass_8hh_source.html#l00326">Fill()</a>, <a class="el" href="HistClass_8hh_source.html#l00786">NameBins()</a>, <a class="el" href="HistClass_8hh_source.html#l00711">Write2()</a>, and <a class="el" href="HistClass_8hh_source.html#l00462">WriteAll2()</a>.</p>
 
 </div>
 </div>
@@ -2798,7 +2856,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00038">38</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00190">CreateNSparse()</a>, <a class="el" href="HistClass_8hh_source.html#l00348">FillSparse()</a>, and <a class="el" href="HistClass_8hh_source.html#l00683">WriteN()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00190">CreateNSparse()</a>, <a class="el" href="HistClass_8hh_source.html#l00361">FillSparse()</a>, and <a class="el" href="HistClass_8hh_source.html#l00696">WriteN()</a>.</p>
 
 </div>
 </div>
@@ -2823,7 +2881,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00040">40</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00215">CreateTree()</a>, <a class="el" href="HistClass_8hh_source.html#l00378">FillTree()</a>, and <a class="el" href="HistClass_8hh_source.html#l00659">WriteAllTrees()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00215">CreateTree()</a>, <a class="el" href="HistClass_8hh_source.html#l00391">FillTree()</a>, and <a class="el" href="HistClass_8hh_source.html#l00672">WriteAllTrees()</a>.</p>
 
 </div>
 </div>
@@ -2848,7 +2906,7 @@ TEfficiency * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Definition at line <a class="el" href="HistClass_8hh_source.html#l00039">39</a> of file <a class="el" href="HistClass_8hh_source.html">HistClass.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00802">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00205">CreateTree()</a>, <a class="el" href="HistClass_8hh_source.html#l00369">FillTree()</a>, and <a class="el" href="HistClass_8hh_source.html#l00659">WriteAllTrees()</a>.</p>
+<p>Referenced by <a class="el" href="HistClass_8hh_source.html#l00815">CleanUp()</a>, <a class="el" href="HistClass_8hh_source.html#l00205">CreateTree()</a>, <a class="el" href="HistClass_8hh_source.html#l00382">FillTree()</a>, and <a class="el" href="HistClass_8hh_source.html#l00672">WriteAllTrees()</a>.</p>
 
 </div>
 </div>

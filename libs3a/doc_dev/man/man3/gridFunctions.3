@@ -1,4 +1,4 @@
-.TH "gridFunctions" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "gridFunctions" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,6 +12,10 @@ This module provides common functions for interaction with the local Tier2\&.
 .SS "Functions"
 
 .in +1c
+.ti -1c
+.RI "def \fBuberls\fP"
+.br
+.RI "\fIGet list of files and directories in dCap folder  directory: string\&. \fP"
 .ti -1c
 .RI "def \fBgetdcachelist\fP"
 .br
@@ -54,7 +58,7 @@ Checks if the proxy is valid longer than time and renew if needed\&. time: int
 .PP
 
 .PP
-Definition at line 100 of file gridFunctions\&.py\&.
+Definition at line 122 of file gridFunctions\&.py\&.
 .PP
 References checkVomsProxy(), and renewVomsProxy()\&.
 .SS "def gridFunctions\&.checkVomsProxy (time = \fC86400\fP)"
@@ -74,7 +78,7 @@ boolean returns True if the proxy is valid longer than time, False otherwise\&.
 .PP
 
 .PP
-Definition at line 69 of file gridFunctions\&.py\&.
+Definition at line 91 of file gridFunctions\&.py\&.
 .PP
 References timeLeftVomsProxy()\&.
 .PP
@@ -93,7 +97,7 @@ Get list of files with certain file extension in dCap folder recursively  dir: s
 .PP
 
 .PP
-Definition at line 14 of file gridFunctions\&.py\&.
+Definition at line 36 of file gridFunctions\&.py\&.
 .PP
 References HistClass\&.split()\&.
 .PP
@@ -118,7 +122,7 @@ Make a new proxy with a lifetime of one week.
 .PP
 
 .PP
-Definition at line 80 of file gridFunctions\&.py\&.
+Definition at line 102 of file gridFunctions\&.py\&.
 .PP
 Referenced by checkAndRenewVomsProxy()\&.
 .SS "def gridFunctions\&.timeLeftVomsProxy ()"
@@ -133,9 +137,22 @@ int time left for the proxy
 .PP
 
 .PP
-Definition at line 56 of file gridFunctions\&.py\&.
+Definition at line 78 of file gridFunctions\&.py\&.
 .PP
 Referenced by checkVomsProxy()\&.
+.SS "def gridFunctions\&.uberls (directory)"
+
+.PP
+Get list of files and directories in dCap folder  directory: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirectory,:\fP The dCap folder without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/ 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file gridFunctions\&.py\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for libs3a from the source code\&.

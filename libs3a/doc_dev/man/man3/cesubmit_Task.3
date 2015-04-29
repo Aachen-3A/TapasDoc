@@ -1,4 +1,4 @@
-.TH "cesubmit.Task" 3 "Fri Mar 27 2015" "libs3a" \" -*- nroff -*-
+.TH "cesubmit.Task" 3 "Wed Apr 29 2015" "libs3a" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,6 +29,12 @@ cesubmit.Task \-
 .br
 .ti -1c
 .RI "def \fBkill\fP"
+.br
+.ti -1c
+.RI "def \fBcopyResultsToDCache\fP"
+.br
+.ti -1c
+.RI "def \fBaddGridPack\fP"
 .br
 .ti -1c
 .RI "def \fBmakePrologue\fP"
@@ -82,6 +88,15 @@ cesubmit.Task \-
 .ti -1c
 .RI "\fBfrontEndStatus\fP"
 .br
+.ti -1c
+.RI "\fBgridPacks\fP"
+.br
+.ti -1c
+.RI "\fBuploadexecutable\fP"
+.br
+.ti -1c
+.RI "\fBreplacedict\fP"
+.br
 .in -1c
 .SS "Private Member Functions"
 
@@ -95,19 +110,19 @@ cesubmit.Task \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 171 of file cesubmit\&.py\&.
+Definition at line 204 of file cesubmit\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "def cesubmit\&.Task\&.__init__ (self, name, directory = \fCNone\fP, mode = \fC'RECREATE'\fP, scramArch = \fC'slc5_amd64_gcc462'\fP, cmsswVersion = \fC'CMSSW_5_3_14'\fP, ceId = \fC'grid-ce\&.physik\&.rwth-aachen\&.de:8443/cream-pbs-cms'\fP)"
 
 .PP
-Definition at line 183 of file cesubmit\&.py\&.
+Definition at line 216 of file cesubmit\&.py\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def cesubmit\&.Task\&._dosubmit (self, nodeids, processes, worker)\fC [private]\fP"
 
 .PP
-Definition at line 235 of file cesubmit\&.py\&.
+Definition at line 271 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.jobs\&.
 .PP
@@ -115,27 +130,35 @@ Referenced by cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.resubmit(), and cesubm
 .SS "def cesubmit\&.Task\&._getStatusMultiple (self)\fC [private]\fP"
 
 .PP
-Definition at line 305 of file cesubmit\&.py\&.
+Definition at line 384 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.chunks(), cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, and cesubmit\&.parseStatusMultipleL1()\&.
 .PP
 Referenced by cesubmit\&.Task\&.getStatus()\&.
+.SS "def cesubmit\&.Task\&.addGridPack (self, uploadurl, extractdir = \fC'$CMSSW_BASE'\fP, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP)"
+
+.PP
+Definition at line 302 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.Task\&.addJob (self, job)"
 
 .PP
-Definition at line 209 of file cesubmit\&.py\&.
+Definition at line 245 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.Task\&.cleanUp (self)"
 
 .PP
-Definition at line 402 of file cesubmit\&.py\&.
+Definition at line 481 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.directory, cesubmit\&.Task\&.jobs, and cesubmit\&.Task\&.name\&.
 .PP
 Referenced by cesubmit\&.Task\&.kill(), and cesubmit\&.Task\&.resubmit()\&.
+.SS "def cesubmit\&.Task\&.copyResultsToDCache (self, resultfile, uploadurl = \fC'{createdate}/{taskname}/{resultfileprefix}-{nodeid}_{runid}\&.{resultfilesuffix}'\fP, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP)"
+
+.PP
+Definition at line 300 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.Task\&.createdir (self)"
 
 .PP
-Definition at line 299 of file cesubmit\&.py\&.
+Definition at line 378 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.directory, and cesubmit\&.Task\&.mode\&.
 .PP
@@ -143,49 +166,49 @@ Referenced by cesubmit\&.Task\&.submit()\&.
 .SS "def cesubmit\&.Task\&.getOutput (self, connections = \fC1\fP)"
 
 .PP
-Definition at line 354 of file cesubmit\&.py\&.
+Definition at line 433 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.chunks(), cesubmit\&.Task\&.directory, cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, cesubmit\&.parseGetOutput(), and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.getStatus (self)"
 
 .PP
-Definition at line 331 of file cesubmit\&.py\&.
+Definition at line 410 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Task\&.frontEndStatus, cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.name, and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.jobStatusNumbers (self)"
 
 .PP
-Definition at line 381 of file cesubmit\&.py\&.
+Definition at line 460 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.jobs\&.
 .SS "def cesubmit\&.Task\&.kill (self, nodeids, processes = \fC0\fP)"
 
 .PP
-Definition at line 259 of file cesubmit\&.py\&.
+Definition at line 295 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&._dosubmit(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.name, and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.load (cls, directory)"
 
 .PP
-Definition at line 173 of file cesubmit\&.py\&.
+Definition at line 206 of file cesubmit\&.py\&.
 .SS "def cesubmit\&.Task\&.makePrologue (self)"
 
 .PP
-Definition at line 265 of file cesubmit\&.py\&.
+Definition at line 304 of file cesubmit\&.py\&.
 .PP
-References cesubmit\&.Task\&.cmsswVersion, and cesubmit\&.Task\&.scramArch\&.
+References cesubmit\&.Task\&.cmsswVersion, cesubmit\&.getCernUserName(), cesubmit\&.Task\&.gridPacks, cesubmit\&.Task\&.name, cesubmit\&.Task\&.replacedict, and cesubmit\&.Task\&.scramArch\&.
 .PP
 Referenced by cesubmit\&.Task\&.submit()\&.
 .SS "def cesubmit\&.Task\&.resubmit (self, nodeids, processes = \fC0\fP)"
 
 .PP
-Definition at line 252 of file cesubmit\&.py\&.
+Definition at line 288 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&._dosubmit(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Task\&.frontEndStatus, cesubmit\&.Task\&.name, and cesubmit\&.Task\&.save()\&.
 .SS "def cesubmit\&.Task\&.save (self)"
 
 .PP
-Definition at line 197 of file cesubmit\&.py\&.
+Definition at line 233 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&.directory, cesubmit\&.Task\&.jobs, and cesubmit\&.Task\&.name\&.
 .PP
@@ -193,7 +216,7 @@ Referenced by cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesu
 .SS "def cesubmit\&.Task\&.submit (self, processes = \fC0\fP)"
 
 .PP
-Definition at line 212 of file cesubmit\&.py\&.
+Definition at line 248 of file cesubmit\&.py\&.
 .PP
 References cesubmit\&.Task\&._dosubmit(), cesubmit\&.checkAndRenewVomsProxy(), cesubmit\&.Task\&.createdir(), cesubmit\&.Task\&.directory, cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Task\&.frontEndStatus, cesubmit\&.Task\&.jobs, cesubmit\&.Task\&.makePrologue(), cesubmit\&.Task\&.name, and cesubmit\&.Task\&.save()\&.
 .SH "Member Data Documentation"
@@ -201,57 +224,73 @@ References cesubmit\&.Task\&._dosubmit(), cesubmit\&.checkAndRenewVomsProxy(), c
 .SS "cesubmit\&.Task\&.ceId"
 
 .PP
-Definition at line 194 of file cesubmit\&.py\&.
+Definition at line 227 of file cesubmit\&.py\&.
 .SS "cesubmit\&.Task\&.cmsswVersion"
 
 .PP
-Definition at line 193 of file cesubmit\&.py\&.
+Definition at line 226 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.makePrologue()\&.
 .SS "cesubmit\&.Task\&.directory"
 
 .PP
-Definition at line 185 of file cesubmit\&.py\&.
+Definition at line 218 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.createdir(), cesubmit\&.Task\&.getOutput(), dbconfigmanager\&.DBConfigManager\&.latest_abs_file(), dbconfigmanager\&.DBConfigManager\&.latest_revision(), dbconfigmanager\&.DBConfigManager\&.read_config(), cesubmit\&.Task\&.save(), dbconfigmanager\&.DBConfigManager\&.set_directory(), cesubmit\&.Task\&.submit(), and dbconfigmanager\&.DBConfigManager\&.update_config()\&.
 .SS "cesubmit\&.Task\&.executable"
 
 .PP
-Definition at line 190 of file cesubmit\&.py\&.
+Definition at line 223 of file cesubmit\&.py\&.
 .SS "cesubmit\&.Task\&.frontEndStatus"
 
 .PP
-Definition at line 196 of file cesubmit\&.py\&.
+Definition at line 229 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.resubmit(), and cesubmit\&.Task\&.submit()\&.
+.SS "cesubmit\&.Task\&.gridPacks"
+
+.PP
+Definition at line 230 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&.makePrologue()\&.
 .SS "cesubmit\&.Task\&.jdlfilename"
 
 .PP
-Definition at line 189 of file cesubmit\&.py\&.
+Definition at line 222 of file cesubmit\&.py\&.
 .SS "cesubmit\&.Task\&.jobs"
 
 .PP
-Definition at line 195 of file cesubmit\&.py\&.
+Definition at line 228 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&._dosubmit(), cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.jobStatusNumbers(), cesubmit\&.Task\&.save(), cesubmit\&.Task\&.submit(), crabFunctions\&.CrabTask\&.update(), and crabFunctions\&.CrabTask\&.updateJobStats()\&.
 .SS "cesubmit\&.Task\&.mode"
 
 .PP
-Definition at line 191 of file cesubmit\&.py\&.
+Definition at line 224 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.createdir()\&.
 .SS "cesubmit\&.Task\&.name"
 
 .PP
-Definition at line 184 of file cesubmit\&.py\&.
+Definition at line 217 of file cesubmit\&.py\&.
 .PP
-Referenced by cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.resubmit(), crabFunctions\&.CrabTask\&.resubmit_failed(), cesubmit\&.Task\&.save(), cesubmit\&.Task\&.submit(), and crabFunctions\&.CrabTask\&.update()\&.
+Referenced by cesubmit\&.Task\&._getStatusMultiple(), cesubmit\&.Task\&.cleanUp(), cesubmit\&.Task\&.getOutput(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Task\&.kill(), cesubmit\&.Task\&.makePrologue(), cesubmit\&.Task\&.resubmit(), crabFunctions\&.CrabTask\&.resubmit_failed(), cesubmit\&.Task\&.save(), cesubmit\&.Task\&.submit(), and crabFunctions\&.CrabTask\&.update()\&.
+.SS "cesubmit\&.Task\&.replacedict"
+
+.PP
+Definition at line 232 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&.makePrologue()\&.
 .SS "cesubmit\&.Task\&.scramArch"
 
 .PP
-Definition at line 192 of file cesubmit\&.py\&.
+Definition at line 225 of file cesubmit\&.py\&.
 .PP
 Referenced by cesubmit\&.Task\&.makePrologue()\&.
+.SS "cesubmit\&.Task\&.uploadexecutable"
+
+.PP
+Definition at line 231 of file cesubmit\&.py\&.
 
 .SH "Author"
 .PP 

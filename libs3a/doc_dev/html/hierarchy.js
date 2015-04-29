@@ -30,8 +30,8 @@ var hierarchy =
     ] ],
     [ "crabFunctions.CrabController", "classcrabFunctions_1_1CrabController.html", null ],
     [ "crabFunctions.CrabTask", "classcrabFunctions_1_1CrabTask.html", null ],
+    [ "dbutilscms.dasClientHelper", "classdbutilscms_1_1dasClientHelper.html", null ],
     [ "dbconfigmanager.DBConfigManager", "classdbconfigmanager_1_1DBConfigManager.html", null ],
-    [ "dbutilscms.DBSUtilities", "classdbutilscms_1_1DBSUtilities.html", null ],
     [ "lheanalyzer.Event", "classlheanalyzer_1_1Event.html", null ],
     [ "Exception", null, [
       [ "aix3adb.Aix3adbException", "classaix3adb_1_1Aix3adbException.html", null ],
