@@ -1,4 +1,4 @@
-.TH "lib.plotlib.HistStorage" 3 "Tue Mar 31 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib.HistStorage" 3 "Thu Apr 30 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -86,6 +86,10 @@ Inherits object\&.
 .br
 .RI "\fIFunction rebin the all hists\&. \fP"
 .ti -1c
+.RI "def \fBscale_xaxis\fP"
+.br
+.RI "\fIFunction scale xaxis by factor\&. \fP"
+.ti -1c
 .RI "def \fBmakeCumulative\fP"
 .br
 .RI "\fIFunction to make the hist cumulative\&. \fP"
@@ -97,6 +101,10 @@ Inherits object\&.
 .RI "def \fBsetPath\fP"
 .br
 .RI "\fIFunction to set path of the hists\&. \fP"
+.ti -1c
+.RI "def \fBsetTitle\fP"
+.br
+.RI "\fIFunction to set x axis title for all hists\&. \fP"
 .ti -1c
 .RI "def \fBsetStyle\fP"
 .br
@@ -215,7 +223,7 @@ To store a list of hists, which are scaled, joined, rebinned and otherwise manip
 .PP
 written by Klaas Padeken 2015 
 .PP
-Definition at line 333 of file plotlib\&.py\&.
+Definition at line 368 of file plotlib\&.py\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "def lib\&.plotlib\&.HistStorage\&.__init__ (self, xs, lumi, xstype = \fC'pythonConfig'\fP, path = \fCNone\fP, isData = \fCFalse\fP, useRoot = \fCFalse\fP)"
@@ -236,13 +244,13 @@ Init function\&. In this function the default variables are set and initialized\
 .PP
 
 .PP
-Definition at line 341 of file plotlib\&.py\&.
+Definition at line 376 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.__del__ (self)"
 
 .PP
 del function This deletes the main objects nedded to not get a crash at the end! 
 .PP
-Definition at line 369 of file plotlib\&.py\&.
+Definition at line 404 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.files\&.
 .SH "Member Function Documentation"
@@ -250,7 +258,7 @@ References lib\&.plotlib\&.HistStorage\&.files\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.__getitem__ (self, item)"
 
 .PP
-Definition at line 443 of file plotlib\&.py\&.
+Definition at line 484 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.hists\&.
 .SS "def lib\&.plotlib\&.HistStorage\&._addToScaledView (self)\fC [private]\fP"
@@ -258,7 +266,7 @@ References lib\&.plotlib\&.HistStorage\&.hists\&.
 .PP
 Function to add files to a scaled view\&. The scaled view dict 'views' now retruns all histograms scaled! 
 .PP
-Definition at line 414 of file plotlib\&.py\&.
+Definition at line 449 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._getWeight(), lib\&.plotlib\&.HistStorage\&._scaled, lib\&.plotlib\&.HistStorage\&.files, and lib\&.plotlib\&.HistStorage\&.views\&.
 .PP
@@ -273,7 +281,7 @@ Referenced by lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistS
 .PP
 Function to get the event numbers from h_counter in file! The function fills the dict genNumber with the event numbers\&. 
 .PP
-Definition at line 378 of file plotlib\&.py\&.
+Definition at line 413 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.datadrivenHist, lib\&.plotlib\&.HistStorage\&.files, lib\&.plotlib\&.HistStorage\&.genNumber, and lib\&.plotlib\&.HistStorage\&.verbosity\&.
 .PP
@@ -283,7 +291,7 @@ Referenced by lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistS
 .PP
 Function get the unit from xaxis\&. returns the unit of the hist 
 .PP
-Definition at line 395 of file plotlib\&.py\&.
+Definition at line 430 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.Unit\&.
 .PP
@@ -291,7 +299,7 @@ Referenced by lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "def lib\&.plotlib\&.HistStorage\&._getWeight (self, name)\fC [private]\fP"
 
 .PP
-Definition at line 422 of file plotlib\&.py\&.
+Definition at line 457 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.additionalWeight, lib\&.plotlib\&.HistStorage\&.configxs, lib\&.plotlib\&.HistStorage\&.datadrivenHist, lib\&.plotlib\&.HistStorage\&.genNumber, lib\&.plotlib\&.HistStorage\&.isData, lib\&.plotlib\&.HistStorage\&.lumi, lib\&.plotlib\&.HistStorage\&.weight, and lib\&.plotlib\&.HistStorage\&.xs\&.
 .PP
@@ -314,7 +322,7 @@ Function to add all files in the given path\&. Use setPath(path) to set the path
 .PP
 
 .PP
-Definition at line 455 of file plotlib\&.py\&.
+Definition at line 496 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.basepath, and lib\&.plotlib\&.HistStorage\&.files\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.addFile (self, name)"
@@ -329,7 +337,7 @@ Function to add a single file\&. Use setPath(path) to set the path if did not in
 .PP
 
 .PP
-Definition at line 490 of file plotlib\&.py\&.
+Definition at line 531 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&.basepath, and lib\&.plotlib\&.HistStorage\&.files\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.addFileList (self, fileList)"
@@ -344,7 +352,7 @@ Function to add files specified as a list or (ordered)dict\&. Use setPath(path) 
 .PP
 
 .PP
-Definition at line 500 of file plotlib\&.py\&.
+Definition at line 541 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.basepath, and lib\&.plotlib\&.HistStorage\&.files\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.addJoinList (self, joinList)"
@@ -359,7 +367,7 @@ Function to add a dict to join files\&.
 .PP
 
 .PP
-Definition at line 516 of file plotlib\&.py\&.
+Definition at line 557 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._joinList\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.applyStyle (self, name, kwargs)"
@@ -376,7 +384,7 @@ Function to apply a style to a single histogram\&.
 .PP
 
 .PP
-Definition at line 523 of file plotlib\&.py\&.
+Definition at line 564 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.style\&.
 .PP
@@ -393,7 +401,7 @@ Function to apply a style to all histograms\&.
 .PP
 
 .PP
-Definition at line 532 of file plotlib\&.py\&.
+Definition at line 573 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.files, and lib\&.plotlib\&.HistStorage\&.style\&.
 .PP
@@ -403,7 +411,7 @@ Referenced by lib\&.plotlib\&.HistStorage\&.initStyle()\&.
 .PP
 Function to clear hists\&. use this if you want to plot a new set of hists 
 .PP
-Definition at line 546 of file plotlib\&.py\&.
+Definition at line 587 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.forcedWidth, lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorage\&.isCumulative, and lib\&.plotlib\&.HistStorage\&.Unit\&.
 .PP
@@ -424,7 +432,7 @@ Function to get a hist that is the sum of hists in the storage\&. handy if you w
 .PP
 
 .PP
-Definition at line 558 of file plotlib\&.py\&.
+Definition at line 599 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._scaled, lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorageContainer\&.setStyle(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .PP
@@ -443,7 +451,7 @@ Function to get a hist that is the sum of all hists in the storage\&. same as \f
 .PP
 
 .PP
-Definition at line 573 of file plotlib\&.py\&.
+Definition at line 614 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._scaled, lib\&.plotlib\&.HistStorageContainer\&.setStyle(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .PP
@@ -451,7 +459,7 @@ Referenced by lib\&.plotlib\&.HistStorage\&.join()\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.getHist (self, hist)"
 
 .PP
-Function get hists from files\&. the hists ate added to \&.hists and joined if a joinList exist 
+Function get hists from files\&. the hists are added to \&.hists and joined if a joinList exist 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -460,9 +468,9 @@ Function get hists from files\&. the hists ate added to \&.hists and joined if a
 .PP
 
 .PP
-Definition at line 583 of file plotlib\&.py\&.
+Definition at line 624 of file plotlib\&.py\&.
 .PP
-References lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorage\&.joinList(), lib\&.plotlib\&.HistStorage\&.style, and lib\&.plotlib\&.HistStorage\&.views\&.
+References lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.files, lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorage\&.joinList(), lib\&.plotlib\&.HistStorage\&.style, and lib\&.plotlib\&.HistStorage\&.views\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.getHistFromTree (self, binns, xmin, xmax, xtitle, cut, value, tree)"
 
 .PP
@@ -475,7 +483,7 @@ Function get hists via trees from files\&. the hists ate added to \&.hists and j
 .PP
 
 .PP
-Definition at line 598 of file plotlib\&.py\&.
+Definition at line 644 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._getWeight(), lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.files, lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorage\&.joinList(), and lib\&.plotlib\&.HistStorage\&.style\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.getHistList (self)"
@@ -490,7 +498,7 @@ Function to get the hists as a list\&.
 .PP
 
 .PP
-Definition at line 628 of file plotlib\&.py\&.
+Definition at line 674 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.setStyle(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.initStyle (self, style = \fC'bg'\fP, colors = \fCNone\fP)"
@@ -507,7 +515,7 @@ Function to init the style of the histograms\&.
 .PP
 
 .PP
-Definition at line 734 of file plotlib\&.py\&.
+Definition at line 800 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._joinList, lib\&.plotlib\&.HistStorage\&.applyStyle(), lib\&.plotlib\&.HistStorage\&.applyStyleAll(), lib\&.plotlib\&.HistStorage\&.colorList, and lib\&.plotlib\&.HistStorage\&.views\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.join (self, name, label)"
@@ -524,7 +532,7 @@ Function join files containing name to one nameed label\&.
 .PP
 
 .PP
-Definition at line 636 of file plotlib\&.py\&.
+Definition at line 682 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getAllAdded(), and lib\&.plotlib\&.HistStorage\&.hists\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.joinList (self, joinList)"
@@ -539,7 +547,7 @@ Function join files via a (ordered)dict\&.
 .PP
 
 .PP
-Definition at line 653 of file plotlib\&.py\&.
+Definition at line 699 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.hists\&.
 .PP
@@ -556,7 +564,7 @@ Function to make the hist cumulative\&.
 .PP
 
 .PP
-Definition at line 684 of file plotlib\&.py\&.
+Definition at line 739 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.forcedWidth, lib\&.plotlib\&.HistStorage\&.hists, and lib\&.plotlib\&.HistStorage\&.isCumulative\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.rebin (self, width = \fC0\fP, factor = \fC0\fP, vector = \fCNone\fP)"
@@ -575,9 +583,24 @@ Function rebin the all hists\&.
 .PP
 
 .PP
-Definition at line 667 of file plotlib\&.py\&.
+Definition at line 713 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.hists, and lib\&.plotlib\&.HistStorage\&.style\&.
+.SS "def lib\&.plotlib\&.HistStorage\&.scale_xaxis (self, factor)"
+
+.PP
+Function scale xaxis by factor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfactor\fP to rescale 
+.RE
+.PP
+
+.PP
+Definition at line 731 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorage\&.hists\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.setDataDriven (self, ddhist)"
 
 .PP
@@ -590,7 +613,7 @@ Function to set the datadiven name flag\&.
 .PP
 
 .PP
-Definition at line 700 of file plotlib\&.py\&.
+Definition at line 755 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.datadrivenHist\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.setPath (self, path)"
@@ -605,7 +628,7 @@ Function to set path of the hists\&.
 .PP
 
 .PP
-Definition at line 706 of file plotlib\&.py\&.
+Definition at line 761 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&.basepath\&.
 .SS "def lib\&.plotlib\&.HistStorage\&.setStyle (self)"
@@ -613,147 +636,160 @@ References lib\&.plotlib\&.HistStorage\&.basepath\&.
 .PP
 Function to set the style of the histograms\&. sets the axis labels and titles 
 .PP
-Definition at line 712 of file plotlib\&.py\&.
+Definition at line 775 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorage\&._getUnit(), lib\&.plotlib\&.HistStorage\&.eventString, lib\&.plotlib\&.HistStorage\&.forcedWidth, lib\&.plotlib\&.HistStorage\&.hists, lib\&.plotlib\&.HistStorage\&.isCumulative, lib\&.plotlib\&.HistStorage\&.isData, and lib\&.plotlib\&.HistStorage\&.matplotlibStyle\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getAllAdded(), and lib\&.plotlib\&.HistStorage\&.getHistList()\&.
+.SS "def lib\&.plotlib\&.HistStorage\&.setTitle (self, xtitle)"
+
+.PP
+Function to set x axis title for all hists\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxtitle\fP 
+.RE
+.PP
+
+.PP
+Definition at line 767 of file plotlib\&.py\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "lib\&.plotlib\&.HistStorage\&._joinList\fC [private]\fP"
 
 .PP
-Definition at line 356 of file plotlib\&.py\&.
+Definition at line 391 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistStorage\&.addFileList(), lib\&.plotlib\&.HistStorage\&.addJoinList(), lib\&.plotlib\&.HistStorage\&.applyStyleAll(), lib\&.plotlib\&.HistStorage\&.getHist(), lib\&.plotlib\&.HistStorage\&.getHistFromTree(), and lib\&.plotlib\&.HistStorage\&.initStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&._scaled\fC [private]\fP"
 
 .PP
-Definition at line 350 of file plotlib\&.py\&.
+Definition at line 385 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&.getAdded(), and lib\&.plotlib\&.HistStorage\&.getAllAdded()\&.
 .SS "lib\&.plotlib\&.HistStorage\&._style_changed\fC [private]\fP"
 
 .PP
-Definition at line 358 of file plotlib\&.py\&.
+Definition at line 393 of file plotlib\&.py\&.
 .SS "lib\&.plotlib\&.HistStorage\&.additionalWeight"
 
 .PP
-Definition at line 363 of file plotlib\&.py\&.
+Definition at line 398 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.basepath"
 
 .PP
-Definition at line 348 of file plotlib\&.py\&.
+Definition at line 383 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistStorage\&.addFile(), lib\&.plotlib\&.HistStorage\&.addFileList(), and lib\&.plotlib\&.HistStorage\&.setPath()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.colorList"
 
 .PP
-Definition at line 345 of file plotlib\&.py\&.
+Definition at line 380 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.initStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.configxs"
 
 .PP
-Definition at line 353 of file plotlib\&.py\&.
+Definition at line 388 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.datadrivenHist"
 
 .PP
-Definition at line 351 of file plotlib\&.py\&.
+Definition at line 386 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&._getWeight(), and lib\&.plotlib\&.HistStorage\&.setDataDriven()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.eventString"
 
 .PP
-Definition at line 364 of file plotlib\&.py\&.
+Definition at line 399 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.files"
 
 .PP
-Definition at line 344 of file plotlib\&.py\&.
+Definition at line 379 of file plotlib\&.py\&.
 .PP
-Referenced by lib\&.plotlib\&.HistStorage\&.__del__(), lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistStorage\&.addFile(), lib\&.plotlib\&.HistStorage\&.addFileList(), lib\&.plotlib\&.HistStorage\&.applyStyleAll(), and lib\&.plotlib\&.HistStorage\&.getHistFromTree()\&.
+Referenced by lib\&.plotlib\&.HistStorage\&.__del__(), lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&._getGenNumbers(), lib\&.plotlib\&.HistStorage\&.addAllFiles(), lib\&.plotlib\&.HistStorage\&.addFile(), lib\&.plotlib\&.HistStorage\&.addFileList(), lib\&.plotlib\&.HistStorage\&.applyStyleAll(), lib\&.plotlib\&.HistStorage\&.getHist(), and lib\&.plotlib\&.HistStorage\&.getHistFromTree()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.forcedWidth"
 
 .PP
-Definition at line 360 of file plotlib\&.py\&.
+Definition at line 395 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.makeCumulative(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.genNumber"
 
 .PP
-Definition at line 346 of file plotlib\&.py\&.
+Definition at line 381 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getGenNumbers(), and lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.hists"
 
 .PP
-Definition at line 343 of file plotlib\&.py\&.
+Definition at line 378 of file plotlib\&.py\&.
 .PP
-Referenced by lib\&.plotlib\&.HistStorage\&.__getitem__(), lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getHist(), lib\&.plotlib\&.HistStorage\&.getHistFromTree(), lib\&.plotlib\&.HistStorage\&.join(), lib\&.plotlib\&.HistStorage\&.joinList(), lib\&.plotlib\&.HistStorage\&.makeCumulative(), lib\&.plotlib\&.HistStorage\&.rebin(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
+Referenced by lib\&.plotlib\&.HistStorage\&.__getitem__(), lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getHist(), lib\&.plotlib\&.HistStorage\&.getHistFromTree(), lib\&.plotlib\&.HistStorage\&.join(), lib\&.plotlib\&.HistStorage\&.joinList(), lib\&.plotlib\&.HistStorage\&.makeCumulative(), lib\&.plotlib\&.HistStorage\&.rebin(), lib\&.plotlib\&.HistStorage\&.scale_xaxis(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.isCumulative"
 
 .PP
-Definition at line 359 of file plotlib\&.py\&.
+Definition at line 394 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.clearHists(), lib\&.plotlib\&.HistStorage\&.makeCumulative(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.isData"
 
 .PP
-Definition at line 355 of file plotlib\&.py\&.
+Definition at line 390 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight(), and lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.lumi"
 
 .PP
-Definition at line 354 of file plotlib\&.py\&.
+Definition at line 389 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.matplotlibStyle"
 
 .PP
-Definition at line 362 of file plotlib\&.py\&.
+Definition at line 397 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.setStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.style"
 
 .PP
-Definition at line 357 of file plotlib\&.py\&.
+Definition at line 392 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.applyStyle(), lib\&.plotlib\&.HistStorage\&.applyStyleAll(), lib\&.plotlib\&.HistStorage\&.getHist(), lib\&.plotlib\&.HistStorage\&.getHistFromTree(), and lib\&.plotlib\&.HistStorage\&.rebin()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.Unit"
 
 .PP
-Definition at line 361 of file plotlib\&.py\&.
+Definition at line 396 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getUnit(), and lib\&.plotlib\&.HistStorage\&.clearHists()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.verbosity"
 
 .PP
-Definition at line 349 of file plotlib\&.py\&.
+Definition at line 384 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getGenNumbers()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.views"
 
 .PP
-Definition at line 342 of file plotlib\&.py\&.
+Definition at line 377 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._addToScaledView(), lib\&.plotlib\&.HistStorage\&.getHist(), and lib\&.plotlib\&.HistStorage\&.initStyle()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.weight"
 
 .PP
-Definition at line 347 of file plotlib\&.py\&.
+Definition at line 382 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 .SS "lib\&.plotlib\&.HistStorage\&.xs"
 
 .PP
-Definition at line 352 of file plotlib\&.py\&.
+Definition at line 387 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&._getWeight()\&.
 

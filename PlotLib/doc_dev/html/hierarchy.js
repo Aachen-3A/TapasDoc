@@ -10,6 +10,7 @@ var hierarchy =
       [ "lib.configobj.UnknownType", "classlib_1_1configobj_1_1UnknownType.html", null ]
     ] ],
     [ "Filter", null, [
+      [ "lib.plotlib.LayoutMessagesFilter", "classlib_1_1plotlib_1_1LayoutMessagesFilter.html", null ],
       [ "lib.plotlib.NoDictMessagesFilter", "classlib_1_1plotlib_1_1NoDictMessagesFilter.html", null ]
     ] ],
     [ "githookcontroller.GitHookController", "classgithookcontroller_1_1GitHookController.html", null ],
