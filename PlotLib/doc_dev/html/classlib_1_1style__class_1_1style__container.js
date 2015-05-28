@@ -71,6 +71,7 @@ var classlib_1_1style__class_1_1style__container =
     [ "Set_error_bands_center", "classlib_1_1style__class_1_1style__container.html#a1628ea53c69e2eba423eb2f3c482c281", null ],
     [ "Set_error_bands_labl", "classlib_1_1style__class_1_1style__container.html#ae28b7bdbf1a1aa4e26a48e2477463b75", null ],
     [ "Set_error_stacking", "classlib_1_1style__class_1_1style__container.html#a4796f533b99546e03762e58298c18663", null ],
+    [ "Set_legend_font_size", "classlib_1_1style__class_1_1style__container.html#a0aa3faf8d3545ba62f14fb6a8c568a26", null ],
     [ "Set_lumi_val", "classlib_1_1style__class_1_1style__container.html#a0041b01e2435411af44a34d66018be46", null ],
     [ "Set_no_legend", "classlib_1_1style__class_1_1style__container.html#acb212bea58c1b41bc4735a723a364951", null ],
     [ "Set_y_label_offset", "classlib_1_1style__class_1_1style__container.html#a063c236408006f9f377767091145d98e", null ],
