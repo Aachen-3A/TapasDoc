@@ -30,9 +30,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "DukePlotALot2D_8py.html",
-"classlib_1_1configobj_1_1ConfigspecError.html#a84e07a4558c550eff2e10ef36e655187",
-"classlib_1_1rounding_1_1rounding.html#a7aa97308c285fb128ed81e1a0708efa0",
-"functions_func_0x6b.html"
+"classlib_1_1configobj_1_1ConfigParserInterpolation.html#aef3545a396646cba955ab5a68f2008a6",
+"classlib_1_1rounding_1_1rounding.html#a0e2039d1bcd3f57afcdc968873bd884d",
+"functions_0x73.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

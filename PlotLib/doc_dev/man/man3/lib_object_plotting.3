@@ -1,4 +1,4 @@
-.TH "lib.object_plotting" 3 "Thu May 28 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.object_plotting" 3 "Wed Jun 17 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,6 +25,18 @@ lib.object_plotting \-
 .RI "def \fBplot_gauss_fit\fP"
 .br
 .ti -1c
+.RI "def \fBeff_function\fP"
+.br
+.ti -1c
+.RI "def \fBplot_efficiency_fit\fP"
+.br
+.ti -1c
+.RI "def \fBres_function\fP"
+.br
+.ti -1c
+.RI "def \fBplot_resolution_fit\fP"
+.br
+.ti -1c
 .RI "def \fBdraw_lines\fP"
 .br
 .in -1c
@@ -33,37 +45,61 @@ lib.object_plotting \-
 .SS "def lib\&.object_plotting\&.draw_lines (axis)"
 
 .PP
-Definition at line 95 of file object_plotting\&.py\&.
+Definition at line 244 of file object_plotting\&.py\&.
+.SS "def lib\&.object_plotting\&.eff_function (x, par)"
+
+.PP
+Definition at line 112 of file object_plotting\&.py\&.
+.PP
+Referenced by lib\&.object_plotting\&.plot_efficiency_fit()\&.
 .SS "def lib\&.object_plotting\&.gaussian (x, norm, mu, sig)"
 
 .PP
-Definition at line 59 of file object_plotting\&.py\&.
+Definition at line 60 of file object_plotting\&.py\&.
 .PP
 Referenced by lib\&.object_plotting\&.plot_gauss_fit()\&.
 .SS "def lib\&.object_plotting\&.plot_both_cuts (axis1, value1, value2, include = \fCTrue\fP, cut_arrow_position = \fC0\&.5\fP)"
 
 .PP
-Definition at line 43 of file object_plotting\&.py\&.
+Definition at line 44 of file object_plotting\&.py\&.
 .PP
 References lib\&.object_plotting\&.plot_lower_cut(), and lib\&.object_plotting\&.plot_upper_cut()\&.
-.SS "def lib\&.object_plotting\&.plot_gauss_fit (axis1, histo, xmin = \fC0\fP, xmax = \fC0\fP)"
+.SS "def lib\&.object_plotting\&.plot_efficiency_fit (axis1, histo, xmin = \fC0\fP, xmax = \fC0\fP, startvals = \fC[]\fP, plottrange = \fC[]\fP, color = \fC'black'\fP)"
 
 .PP
-Definition at line 62 of file object_plotting\&.py\&.
+Definition at line 115 of file object_plotting\&.py\&.
+.PP
+References lib\&.object_plotting\&.eff_function()\&.
+.SS "def lib\&.object_plotting\&.plot_gauss_fit (axis1, histo, xmin = \fC0\fP, xmax = \fC0\fP, color = \fC'black'\fP, write_results = \fCFalse\fP)"
+
+.PP
+Definition at line 63 of file object_plotting\&.py\&.
 .PP
 References lib\&.object_plotting\&.gaussian()\&.
 .SS "def lib\&.object_plotting\&.plot_lower_cut (axis1, value, cut_arrow_position = \fC0\&.5\fP)"
 
 .PP
-Definition at line 28 of file object_plotting\&.py\&.
+Definition at line 29 of file object_plotting\&.py\&.
 .PP
 Referenced by lib\&.object_plotting\&.plot_both_cuts()\&.
+.SS "def lib\&.object_plotting\&.plot_resolution_fit (axis1, histo, xmin = \fC0\fP, xmax = \fC0\fP, startvals = \fC[]\fP, plottrange = \fC[]\fP, color = \fC'black'\fP)"
+
+.PP
+Definition at line 181 of file object_plotting\&.py\&.
+.PP
+References lib\&.object_plotting\&.res_function()\&.
 .SS "def lib\&.object_plotting\&.plot_upper_cut (axis1, value, cut_arrow_position = \fC0\&.5\fP)"
 
 .PP
-Definition at line 13 of file object_plotting\&.py\&.
+Definition at line 14 of file object_plotting\&.py\&.
 .PP
 Referenced by lib\&.object_plotting\&.plot_both_cuts()\&.
+.SS "def lib\&.object_plotting\&.res_function (x, par)"
+
+.PP
+Definition at line 178 of file object_plotting\&.py\&.
+.PP
+Referenced by lib\&.object_plotting\&.plot_resolution_fit()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for PlotLib from the source code\&.

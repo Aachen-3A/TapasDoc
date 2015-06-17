@@ -1,4 +1,4 @@
-.TH "lib.rounding.rounding" 3 "Thu May 28 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.rounding.rounding" 3 "Wed Jun 17 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,6 +26,9 @@ lib.rounding.rounding \-
 .br
 .ti -1c
 .RI "def \fBlatexValueUpDownError\fP"
+.br
+.ti -1c
+.RI "def \fBlatexValueSignificantly\fP"
 .br
 .ti -1c
 .RI "def \fBhtmlValue\fP"
@@ -76,7 +79,7 @@ References lib\&.rounding\&.rounding\&.htmlValue(), and lib\&.rounding\&.roundin
 .SS "def lib\&.rounding\&.rounding\&.htmlValue (self, n)"
 
 .PP
-Definition at line 47 of file rounding\&.py\&.
+Definition at line 54 of file rounding\&.py\&.
 .PP
 References lib\&.rounding\&.rounding\&.sdr()\&.
 .PP
@@ -84,7 +87,7 @@ Referenced by lib\&.rounding\&.rounding\&.html()\&.
 .SS "def lib\&.rounding\&.rounding\&.htmlValueError (self, n, error)"
 
 .PP
-Definition at line 54 of file rounding\&.py\&.
+Definition at line 61 of file rounding\&.py\&.
 .PP
 References lib\&.rounding\&.rounding\&.sdr()\&.
 .PP
@@ -92,7 +95,7 @@ Referenced by lib\&.rounding\&.rounding\&.html()\&.
 .SS "def lib\&.rounding\&.rounding\&.htmlValueUpDownError (self, n, up, down)"
 
 .PP
-Definition at line 61 of file rounding\&.py\&.
+Definition at line 68 of file rounding\&.py\&.
 .PP
 References lib\&.rounding\&.rounding\&.sdr()\&.
 .SS "def lib\&.rounding\&.rounding\&.latex (self, n, err1 = \fCNone\fP, err2 = \fCNone\fP)"
@@ -117,6 +120,12 @@ Definition at line 33 of file rounding\&.py\&.
 References lib\&.rounding\&.rounding\&.sdr()\&.
 .PP
 Referenced by lib\&.rounding\&.rounding\&.latex()\&.
+.SS "def lib\&.rounding\&.rounding\&.latexValueSignificantly (self, n, error)"
+
+.PP
+Definition at line 47 of file rounding\&.py\&.
+.PP
+References lib\&.rounding\&.rounding\&.sdr()\&.
 .SS "def lib\&.rounding\&.rounding\&.latexValueUpDownError (self, n, up, down)"
 
 .PP
@@ -126,11 +135,11 @@ References lib\&.rounding\&.rounding\&.sdr()\&.
 .SS "def lib\&.rounding\&.rounding\&.sdr (self, numbers)"
 
 .PP
-Definition at line 68 of file rounding\&.py\&.
+Definition at line 75 of file rounding\&.py\&.
 .PP
 References lib\&.rounding\&.rounding\&.posdigits\&.
 .PP
-Referenced by lib\&.rounding\&.rounding\&.htmlValue(), lib\&.rounding\&.rounding\&.htmlValueError(), lib\&.rounding\&.rounding\&.htmlValueUpDownError(), lib\&.rounding\&.rounding\&.latexValue(), lib\&.rounding\&.rounding\&.latexValueError(), and lib\&.rounding\&.rounding\&.latexValueUpDownError()\&.
+Referenced by lib\&.rounding\&.rounding\&.htmlValue(), lib\&.rounding\&.rounding\&.htmlValueError(), lib\&.rounding\&.rounding\&.htmlValueUpDownError(), lib\&.rounding\&.rounding\&.latexValue(), lib\&.rounding\&.rounding\&.latexValueError(), lib\&.rounding\&.rounding\&.latexValueSignificantly(), and lib\&.rounding\&.rounding\&.latexValueUpDownError()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "lib\&.rounding\&.rounding\&.posdigits"

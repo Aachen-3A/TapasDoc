@@ -8,6 +8,7 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_Calc_additional_plot", "classlib_1_1DukePlotALot_1_1plotter.html#a2fbf37a5eddce582fab3d851463de427", null ],
     [ "_Calc_diff", "classlib_1_1DukePlotALot_1_1plotter.html#a06d84f999b06b019f8f4a84304e0f87c", null ],
     [ "_Calc_diffratio", "classlib_1_1DukePlotALot_1_1plotter.html#a8d7ec2df58d4b83f4b753b3e57649a99", null ],
+    [ "_Calc_diffratio_width_increase", "classlib_1_1DukePlotALot_1_1plotter.html#a634bf60ef6c0ad4625bcb1c015091396", null ],
     [ "_Calc_ratio", "classlib_1_1DukePlotALot_1_1plotter.html#a441d18f4d0a90b430fd827005975f6b8", null ],
     [ "_Calc_signi", "classlib_1_1DukePlotALot_1_1plotter.html#ae57f9f06b58b710410798530039500c1", null ],
     [ "_Calc_SoverSpB", "classlib_1_1DukePlotALot_1_1plotter.html#acebd6aa2badf9624cf7e568d3ba2df0b", null ],
@@ -57,6 +58,7 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_data", "classlib_1_1DukePlotALot_1_1plotter.html#ae1069c99cdbb32cc4390112c2eb7a351", null ],
     [ "_data_hist", "classlib_1_1DukePlotALot_1_1plotter.html#ad9ef097c6b910ab94b8249b6e0acb887", null ],
     [ "_error_hist", "classlib_1_1DukePlotALot_1_1plotter.html#a35ce8d8a5b0a5ca144c5f8a588c30cd0", null ],
+    [ "_error_hist_modif_root", "classlib_1_1DukePlotALot_1_1plotter.html#a4d6a9b29eea6735364e225c838cf5125", null ],
     [ "_fig", "classlib_1_1DukePlotALot_1_1plotter.html#a8e03f54cf771027c84b8039a19042e3f", null ],
     [ "_hist", "classlib_1_1DukePlotALot_1_1plotter.html#a8677051704403e7bef47fb1bc441dbcb", null ],
     [ "_hist_axis", "classlib_1_1DukePlotALot_1_1plotter.html#a48b08117bebbed7f5906d2621aabe815", null ],
@@ -68,5 +70,6 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_Style_cont", "classlib_1_1DukePlotALot_1_1plotter.html#a98b9d57186faf1dbe9bde9c0af07f6af", null ],
     [ "_useRoot", "classlib_1_1DukePlotALot_1_1plotter.html#af2a5dd4c74168c1c4b8507d4b3570649", null ],
     [ "additionalPad", "classlib_1_1DukePlotALot_1_1plotter.html#aa2fa04222e26506a541804867dca6423", null ],
-    [ "leg", "classlib_1_1DukePlotALot_1_1plotter.html#a56e7fceace55d72ba81c14e4c5e56e08", null ]
+    [ "leg", "classlib_1_1DukePlotALot_1_1plotter.html#a56e7fceace55d72ba81c14e4c5e56e08", null ],
+    [ "sgleg", "classlib_1_1DukePlotALot_1_1plotter.html#a6447f41d742587870c599afb38b63f71", null ]
 ];
