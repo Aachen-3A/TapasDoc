@@ -57,6 +57,7 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_canvas", "classlib_1_1DukePlotALot_1_1plotter.html#ac783d4a9f32da5283bdd281b1f86f1e3", null ],
     [ "_data", "classlib_1_1DukePlotALot_1_1plotter.html#ae1069c99cdbb32cc4390112c2eb7a351", null ],
     [ "_data_hist", "classlib_1_1DukePlotALot_1_1plotter.html#ad9ef097c6b910ab94b8249b6e0acb887", null ],
+    [ "_data_hist_graph", "classlib_1_1DukePlotALot_1_1plotter.html#aaab9d9f1b92a79c719fedc0f20ef06ec", null ],
     [ "_error_hist", "classlib_1_1DukePlotALot_1_1plotter.html#a35ce8d8a5b0a5ca144c5f8a588c30cd0", null ],
     [ "_error_hist_modif_root", "classlib_1_1DukePlotALot_1_1plotter.html#a4d6a9b29eea6735364e225c838cf5125", null ],
     [ "_fig", "classlib_1_1DukePlotALot_1_1plotter.html#a8e03f54cf771027c84b8039a19042e3f", null ],

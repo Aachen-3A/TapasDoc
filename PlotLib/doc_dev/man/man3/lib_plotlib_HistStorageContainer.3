@@ -1,4 +1,4 @@
-.TH "lib.plotlib.HistStorageContainer" 3 "Wed Jun 17 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib.HistStorageContainer" 3 "Thu Jul 23 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -136,7 +136,7 @@ the hists ate added to \&.hists and joined if a joinList exist the hist will be 
 Definition at line 280 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
-.SS "def lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree (self, binns, xmin, xmax, xtitle, cut, value, tree)"
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree (self, binns, xmin, xmax, xtitle, cut, value, tree, weight = \fCNone\fP)"
 
 .PP
 Definition at line 284 of file plotlib\&.py\&.
@@ -214,7 +214,7 @@ Definition at line 317 of file plotlib\&.py\&.
 References lib\&.plotlib\&.HistStorageContainer\&.bg, lib\&.plotlib\&.HistStorageContainer\&.data, and lib\&.plotlib\&.HistStorageContainer\&.sg\&.
 .PP
 Referenced by lib\&.plotlib\&.HistStorage\&.getAdded(), lib\&.plotlib\&.HistStorage\&.getAllAdded(), and lib\&.plotlib\&.HistStorage\&.getHistList()\&.
-.SS "def lib\&.plotlib\&.HistStorageContainer\&.setTitle (self, xtitle)"
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.setTitle (self, xtitle, ytitle = \fC''\fP)"
 
 .PP
 Function setTitle for the all hists\&. 
