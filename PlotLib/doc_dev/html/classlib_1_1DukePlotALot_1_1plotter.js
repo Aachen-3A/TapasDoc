@@ -22,7 +22,6 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_Draw_Any_uncertainty_band", "classlib_1_1DukePlotALot_1_1plotter.html#ac12429131f25ca8a9c668556c3b8c971", null ],
     [ "_Draw_Error_Bands", "classlib_1_1DukePlotALot_1_1plotter.html#aa458b0fde48b464614ff55ef8a072b07", null ],
     [ "_Draw_main", "classlib_1_1DukePlotALot_1_1plotter.html#a0cc08bf6c1cf6a2d5e5648babdc17ebf", null ],
-    [ "_Draw_main_axis", "classlib_1_1DukePlotALot_1_1plotter.html#a97650c75f740888e76ca844876d5066d", null ],
     [ "_Draw_main_root", "classlib_1_1DukePlotALot_1_1plotter.html#aeacdd34b08ef471495c8d30b9f2fd98b", null ],
     [ "_SavePlot", "classlib_1_1DukePlotALot_1_1plotter.html#af6e5c10d2a24bdaaa13d27cd7c64c744", null ],
     [ "_show_only_some", "classlib_1_1DukePlotALot_1_1plotter.html#a189c0fa12cf8912b60d946be7ace8792", null ],
