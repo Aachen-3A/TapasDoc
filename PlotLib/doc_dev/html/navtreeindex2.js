@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"classlib_1_1rootplotlib_1_1Legend.html#af90244887b04bc086713eeb65d8c68ad":[2,0,4,6,1,12],
+"classlib_1_1rootplotlib_1_1Legend.html#afe9b207c078f2af24d8d25e2df53f3b4":[2,0,4,6,1,9],
 "classlib_1_1rounding_1_1rounding.html":[2,0,4,7,0],
 "classlib_1_1rounding_1_1rounding.html#a0e2039d1bcd3f57afcdc968873bd884d":[2,0,4,7,0,5],
 "classlib_1_1rounding_1_1rounding.html#a5b7f6d3a1f2866fe275765e3e60eaa21":[2,0,4,7,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "functions_0x6a.html":[2,3,0,10],
 "functions_0x6b.html":[2,3,0,11],
 "functions_0x6c.html":[2,3,0,12],
-"functions_0x6d.html":[2,3,0,13],
-"functions_0x6e.html":[2,3,0,14],
-"functions_0x6f.html":[2,3,0,15]
+"functions_0x6d.html":[2,3,0,13]
 };
