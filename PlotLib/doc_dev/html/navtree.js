@@ -32,7 +32,7 @@ var NAVTREEINDEX =
 "DukePlotALot2D_8py.html",
 "classlib_1_1configobj_1_1ConfigParserInterpolation.html#ab2aca7ec193442f4c9f5e8a37d1260da",
 "classlib_1_1rootplotlib_1_1Legend.html#afe9b207c078f2af24d8d25e2df53f3b4",
-"functions_0x6d.html"
+"functions_0x6b.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
