@@ -1,7 +1,6 @@
 var classlib_1_1plotlib_1_1HistStorage =
 [
     [ "__init__", "classlib_1_1plotlib_1_1HistStorage.html#ae19930e611b54cebfcd7cf60cbbb8281", null ],
-    [ "__del__", "classlib_1_1plotlib_1_1HistStorage.html#ac8ae59b9be8ecd14c6672f7a49a06a53", null ],
     [ "__getitem__", "classlib_1_1plotlib_1_1HistStorage.html#a9873c8ac46a2d9f26fb7697d1d0c1a1c", null ],
     [ "_addToScaledView", "classlib_1_1plotlib_1_1HistStorage.html#a025fefce24414632c9743089eeeb08bb", null ],
     [ "_getGenNumbers", "classlib_1_1plotlib_1_1HistStorage.html#a3c790c160beefd9acbf3cd57ddc37a1e", null ],
@@ -24,6 +23,7 @@ var classlib_1_1plotlib_1_1HistStorage =
     [ "joinList", "classlib_1_1plotlib_1_1HistStorage.html#acdebacf1326ccba4de6dff378fa19506", null ],
     [ "makeCumulative", "classlib_1_1plotlib_1_1HistStorage.html#afeddf9122dbb65a8fd511d6183da6dd8", null ],
     [ "rebin", "classlib_1_1plotlib_1_1HistStorage.html#ae0aa98617f3baece09a994691aba199f", null ],
+    [ "removeFile", "classlib_1_1plotlib_1_1HistStorage.html#a01060a435ea27c3535f7eccc47093530", null ],
     [ "scale_xaxis", "classlib_1_1plotlib_1_1HistStorage.html#ad05c80c0f35860c99b18bf8c0b5430e6", null ],
     [ "setDataDriven", "classlib_1_1plotlib_1_1HistStorage.html#a0757beeb2fa80ed9dd34b6d3a733c795", null ],
     [ "setPath", "classlib_1_1plotlib_1_1HistStorage.html#a1064daa03ba9df5efe3b00d311382d6e", null ],

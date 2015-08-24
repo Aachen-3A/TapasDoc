@@ -10,6 +10,7 @@ var classlib_1_1DukePlotALot_1_1plotter =
     [ "_Calc_diff", "classlib_1_1DukePlotALot_1_1plotter.html#a06d84f999b06b019f8f4a84304e0f87c", null ],
     [ "_Calc_diffratio", "classlib_1_1DukePlotALot_1_1plotter.html#a8d7ec2df58d4b83f4b753b3e57649a99", null ],
     [ "_Calc_diffratio_width_increase", "classlib_1_1DukePlotALot_1_1plotter.html#a634bf60ef6c0ad4625bcb1c015091396", null ],
+    [ "_Calc_Empty", "classlib_1_1DukePlotALot_1_1plotter.html#a833cef1372b067c3b8cc9f5ab374262b", null ],
     [ "_Calc_ratio", "classlib_1_1DukePlotALot_1_1plotter.html#a441d18f4d0a90b430fd827005975f6b8", null ],
     [ "_Calc_signi", "classlib_1_1DukePlotALot_1_1plotter.html#ae57f9f06b58b710410798530039500c1", null ],
     [ "_Calc_SoverSpB", "classlib_1_1DukePlotALot_1_1plotter.html#acebd6aa2badf9624cf7e568d3ba2df0b", null ],
