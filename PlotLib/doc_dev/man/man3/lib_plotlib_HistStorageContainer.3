@@ -1,4 +1,4 @@
-.TH "lib.plotlib.HistStorageContainer" 3 "Mon Aug 24 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib.HistStorageContainer" 3 "Mon Sep 14 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,6 +19,9 @@ lib.plotlib.HistStorageContainer \-
 .RI "\fIFunction to clear hists\&. \fP"
 .ti -1c
 .RI "def \fBgetHistFromTree\fP"
+.br
+.ti -1c
+.RI "def \fBgetHistFromTree2d\fP"
 .br
 .ti -1c
 .RI "def \fBrebin\fP"
@@ -105,7 +108,7 @@ Function getbg\&.
 .PP
 
 .PP
-Definition at line 332 of file plotlib\&.py\&.
+Definition at line 337 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getData (self)"
 
 .PP
@@ -118,7 +121,7 @@ Function getData\&.
 .PP
 
 .PP
-Definition at line 344 of file plotlib\&.py\&.
+Definition at line 349 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getHist (self, hist)"
 
 .PP
@@ -142,6 +145,12 @@ References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 Definition at line 284 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
+.SS "def lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree2d (self, xbinns, xmin, xmax, xtitle, ybins, ymin, ymax, ytitle, cut, value, tree, weight = \fCNone\fP)"
+
+.PP
+Definition at line 289 of file plotlib\&.py\&.
+.PP
+References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.getSGList (self)"
 
 .PP
@@ -154,13 +163,13 @@ Function getsg\&.
 .PP
 
 .PP
-Definition at line 338 of file plotlib\&.py\&.
+Definition at line 343 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.makeCumulative (self, width = \fCFalse\fP)"
 
 .PP
 Function makeCumulative\&. make the distribution cumulative 
 .PP
-Definition at line 350 of file plotlib\&.py\&.
+Definition at line 355 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.rebin (self, width = \fC0\fP, factor = \fC0\fP, vector = \fCNone\fP)"
@@ -177,7 +186,7 @@ Function rebin the all hists\&.
 .PP
 
 .PP
-Definition at line 293 of file plotlib\&.py\&.
+Definition at line 298 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.scale_xaxis (self, factor)"
@@ -192,7 +201,7 @@ Function scale xaxis by factor\&.
 .PP
 
 .PP
-Definition at line 300 of file plotlib\&.py\&.
+Definition at line 305 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SS "def lib\&.plotlib\&.HistStorageContainer\&.setStyle (self, bgcolors = \fCNone\fP, sgcolors = \fCNone\fP)"
@@ -209,7 +218,7 @@ Function to set the style of the histograms\&.
 .PP
 
 .PP
-Definition at line 317 of file plotlib\&.py\&.
+Definition at line 322 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.bg, lib\&.plotlib\&.HistStorageContainer\&.data, and lib\&.plotlib\&.HistStorageContainer\&.sg\&.
 .PP
@@ -226,7 +235,7 @@ Function setTitle for the all hists\&.
 .PP
 
 .PP
-Definition at line 307 of file plotlib\&.py\&.
+Definition at line 312 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .SH "Member Data Documentation"
@@ -236,7 +245,7 @@ References lib\&.plotlib\&.HistStorageContainer\&.allStored\&.
 .PP
 Definition at line 257 of file plotlib\&.py\&.
 .PP
-Referenced by lib\&.plotlib\&.HistStorageContainer\&.getHist(), lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree(), lib\&.plotlib\&.HistStorageContainer\&.makeCumulative(), lib\&.plotlib\&.HistStorageContainer\&.rebin(), lib\&.plotlib\&.HistStorageContainer\&.scale_xaxis(), and lib\&.plotlib\&.HistStorageContainer\&.setTitle()\&.
+Referenced by lib\&.plotlib\&.HistStorageContainer\&.getHist(), lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree(), lib\&.plotlib\&.HistStorageContainer\&.getHistFromTree2d(), lib\&.plotlib\&.HistStorageContainer\&.makeCumulative(), lib\&.plotlib\&.HistStorageContainer\&.rebin(), lib\&.plotlib\&.HistStorageContainer\&.scale_xaxis(), and lib\&.plotlib\&.HistStorageContainer\&.setTitle()\&.
 .SS "lib\&.plotlib\&.HistStorageContainer\&.bg"
 
 .PP

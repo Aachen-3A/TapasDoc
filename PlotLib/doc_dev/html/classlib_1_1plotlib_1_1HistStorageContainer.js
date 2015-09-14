@@ -5,6 +5,7 @@ var classlib_1_1plotlib_1_1HistStorageContainer =
     [ "getData", "classlib_1_1plotlib_1_1HistStorageContainer.html#a83ac0b188b56b9dfa88f51721035fd10", null ],
     [ "getHist", "classlib_1_1plotlib_1_1HistStorageContainer.html#aa3fee88361878c2c23d4e084f5e9a678", null ],
     [ "getHistFromTree", "classlib_1_1plotlib_1_1HistStorageContainer.html#a0a0ecb22cdd245b387346ba53f8e01f3", null ],
+    [ "getHistFromTree2d", "classlib_1_1plotlib_1_1HistStorageContainer.html#a26b08900a6bb75fe26a4a4bd0b2a4285", null ],
     [ "getSGList", "classlib_1_1plotlib_1_1HistStorageContainer.html#a4b282c2735a001f5e03eeee76e1ced32", null ],
     [ "makeCumulative", "classlib_1_1plotlib_1_1HistStorageContainer.html#a3af76337078a4fb3047a5d0e5ec8bdc6", null ],
     [ "rebin", "classlib_1_1plotlib_1_1HistStorageContainer.html#afa6ba626ede63baf6935e4537d2a9fd8", null ],

@@ -35,7 +35,7 @@
       <div align=right><select id="choose_branch">
         <option value="">Change branch</option>
         <option value="http://aachen-3a.github.io/TapasDoc/https://github.com/Aachen-3A/PlotLib/doc_master/html/index.html">master</option>
-<option value="http://aachen-3a.github.io/TapasDoc/https://github.com/Aachen-3A/PlotLib/doc_dev/html/index.html">dev</option>
+<option value="http://aachen-3a.github.io/TapasDoc/URLerror url nor found [Errno 110] Connection timed out/doc_dev/html/index.html">dev</option>
         </select>
      </div>   
     <script>
@@ -114,6 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa3fee88361878c2c23d4e084f5e9a678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0ecb22cdd245b387346ba53f8e01f3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_1_1plotlib_1_1HistStorageContainer.html#a0a0ecb22cdd245b387346ba53f8e01f3">getHistFromTree</a></td></tr>
 <tr class="separator:a0a0ecb22cdd245b387346ba53f8e01f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b08900a6bb75fe26a4a4bd0b2a4285"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_1_1plotlib_1_1HistStorageContainer.html#a26b08900a6bb75fe26a4a4bd0b2a4285">getHistFromTree2d</a></td></tr>
+<tr class="separator:a26b08900a6bb75fe26a4a4bd0b2a4285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa6ba626ede63baf6935e4537d2a9fd8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_1_1plotlib_1_1HistStorageContainer.html#afa6ba626ede63baf6935e4537d2a9fd8">rebin</a></td></tr>
 <tr class="memdesc:afa6ba626ede63baf6935e4537d2a9fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function rebin the all hists.  <a href="#afa6ba626ede63baf6935e4537d2a9fd8">More...</a><br/></td></tr>
 <tr class="separator:afa6ba626ede63baf6935e4537d2a9fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,7 +230,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00332">332</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00337">337</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 </div>
 </div>
@@ -254,7 +256,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00344">344</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00349">349</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 </div>
 </div>
@@ -370,6 +372,102 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a26b08900a6bb75fe26a4a4bd0b2a4285"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def lib.plotlib.HistStorageContainer.getHistFromTree2d </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>xbinns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>xmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>xmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>xtitle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ybins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ymin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ymax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ytitle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>weight</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00289">289</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+
+<p>References <a class="el" href="plotlib_8py_source.html#l00257">lib.plotlib.HistStorageContainer.allStored</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4b282c2735a001f5e03eeee76e1ced32"></a>
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +490,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00338">338</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00343">343</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 </div>
 </div>
@@ -423,7 +521,7 @@ Public Attributes</h2></td></tr>
 <p>Function makeCumulative. </p>
 <p>make the distribution cumulative </p>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00350">350</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00355">355</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 <p>References <a class="el" href="plotlib_8py_source.html#l00257">lib.plotlib.HistStorageContainer.allStored</a>.</p>
 
@@ -474,7 +572,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00293">293</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00298">298</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 <p>References <a class="el" href="plotlib_8py_source.html#l00257">lib.plotlib.HistStorageContainer.allStored</a>.</p>
 
@@ -512,7 +610,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00300">300</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00305">305</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 <p>References <a class="el" href="plotlib_8py_source.html#l00257">lib.plotlib.HistStorageContainer.allStored</a>.</p>
 
@@ -557,11 +655,11 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00317">317</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00322">322</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 <p>References <a class="el" href="plotlib_8py_source.html#l00254">lib.plotlib.HistStorageContainer.bg</a>, <a class="el" href="plotlib_8py_source.html#l00256">lib.plotlib.HistStorageContainer.data</a>, and <a class="el" href="plotlib_8py_source.html#l00255">lib.plotlib.HistStorageContainer.sg</a>.</p>
 
-<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00630">lib.plotlib.HistStorage.getAdded()</a>, <a class="el" href="plotlib_8py_source.html#l00645">lib.plotlib.HistStorage.getAllAdded()</a>, and <a class="el" href="plotlib_8py_source.html#l00719">lib.plotlib.HistStorage.getHistList()</a>.</p>
+<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00635">lib.plotlib.HistStorage.getAdded()</a>, <a class="el" href="plotlib_8py_source.html#l00650">lib.plotlib.HistStorage.getAllAdded()</a>, and <a class="el" href="plotlib_8py_source.html#l00766">lib.plotlib.HistStorage.getHistList()</a>.</p>
 
 </div>
 </div>
@@ -603,7 +701,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00307">307</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
+<p>Definition at line <a class="el" href="plotlib_8py_source.html#l00312">312</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
 <p>References <a class="el" href="plotlib_8py_source.html#l00257">lib.plotlib.HistStorageContainer.allStored</a>.</p>
 
@@ -622,7 +720,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="plotlib_8py_source.html#l00257">257</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
-<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00280">lib.plotlib.HistStorageContainer.getHist()</a>, <a class="el" href="plotlib_8py_source.html#l00284">lib.plotlib.HistStorageContainer.getHistFromTree()</a>, <a class="el" href="plotlib_8py_source.html#l00350">lib.plotlib.HistStorageContainer.makeCumulative()</a>, <a class="el" href="plotlib_8py_source.html#l00293">lib.plotlib.HistStorageContainer.rebin()</a>, <a class="el" href="plotlib_8py_source.html#l00300">lib.plotlib.HistStorageContainer.scale_xaxis()</a>, and <a class="el" href="plotlib_8py_source.html#l00307">lib.plotlib.HistStorageContainer.setTitle()</a>.</p>
+<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00280">lib.plotlib.HistStorageContainer.getHist()</a>, <a class="el" href="plotlib_8py_source.html#l00284">lib.plotlib.HistStorageContainer.getHistFromTree()</a>, <a class="el" href="plotlib_8py_source.html#l00289">lib.plotlib.HistStorageContainer.getHistFromTree2d()</a>, <a class="el" href="plotlib_8py_source.html#l00355">lib.plotlib.HistStorageContainer.makeCumulative()</a>, <a class="el" href="plotlib_8py_source.html#l00298">lib.plotlib.HistStorageContainer.rebin()</a>, <a class="el" href="plotlib_8py_source.html#l00305">lib.plotlib.HistStorageContainer.scale_xaxis()</a>, and <a class="el" href="plotlib_8py_source.html#l00312">lib.plotlib.HistStorageContainer.setTitle()</a>.</p>
 
 </div>
 </div>
@@ -638,7 +736,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="plotlib_8py_source.html#l00254">254</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
-<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00317">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
+<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00322">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
 
 </div>
 </div>
@@ -654,7 +752,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="plotlib_8py_source.html#l00256">256</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
-<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00317">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
+<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00322">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
 
 </div>
 </div>
@@ -670,7 +768,7 @@ Public Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="plotlib_8py_source.html#l00255">255</a> of file <a class="el" href="plotlib_8py_source.html">plotlib.py</a>.</p>
 
-<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00317">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
+<p>Referenced by <a class="el" href="plotlib_8py_source.html#l00322">lib.plotlib.HistStorageContainer.setStyle()</a>.</p>
 
 </div>
 </div>

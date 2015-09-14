@@ -17,6 +17,7 @@ var classlib_1_1plotlib_1_1HistStorage =
     [ "getAllAdded", "classlib_1_1plotlib_1_1HistStorage.html#ad56195630a1863bc0d2026d28c9353be", null ],
     [ "getHist", "classlib_1_1plotlib_1_1HistStorage.html#ac36669c64b66504d2304a3bffa714be9", null ],
     [ "getHistFromTree", "classlib_1_1plotlib_1_1HistStorage.html#aff12b3d6338eb93e22c1449ccd37e3d7", null ],
+    [ "getHistFromTree2d", "classlib_1_1plotlib_1_1HistStorage.html#a1664d6b2c9fbe7b5075887768be27df9", null ],
     [ "getHistList", "classlib_1_1plotlib_1_1HistStorage.html#a7e86a5e0b6334a01d13e2a22edd9e4a5", null ],
     [ "initStyle", "classlib_1_1plotlib_1_1HistStorage.html#a1d20efa51696445b0e34460195796476", null ],
     [ "join", "classlib_1_1plotlib_1_1HistStorage.html#a279897fd10f690580d6645130246ca1e", null ],
