@@ -1,0 +1,138 @@
+.TH "watchdog" 3 "Wed Sep 30 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+watchdog \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBcommandline_parsing\fP"
+.br
+.ti -1c
+.RI "def \fBread_crabconfig\fP"
+.br
+.ti -1c
+.RI "def \fBgetdCacheFiles\fP"
+.br
+.ti -1c
+.RI "def \fBreadLogArch\fP"
+.br
+.ti -1c
+.RI "def \fBfinalizeSample\fP"
+.br
+.ti -1c
+.RI "def \fBaddData2db\fP"
+.br
+.ti -1c
+.RI "def \fBaddMC2db\fP"
+.br
+.ti -1c
+.RI "def \fBfillCommonSkimFields\fP"
+.br
+.ti -1c
+.RI "def \fBcreateDBlink\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBrunOnMC\fP = True"
+.br
+.ti -1c
+.RI "\fBrunOnData\fP = False"
+.br
+.ti -1c
+.RI "\fBrunOnGen\fP = False"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def watchdog\&.addData2db (sample, dblink, args, config, finalFiles, totalEvents)"
+
+.PP
+Definition at line 130 of file watchdog\&.py\&.
+.PP
+References fillCommonSkimFields()\&.
+.PP
+Referenced by finalizeSample()\&.
+.SS "def watchdog\&.addMC2db (sample, dblink, args, config, finalFiles, totalEvents)"
+
+.PP
+Definition at line 162 of file watchdog\&.py\&.
+.PP
+References fillCommonSkimFields()\&.
+.PP
+Referenced by finalizeSample()\&.
+.SS "def watchdog\&.commandline_parsing ()"
+
+.PP
+Definition at line 21 of file watchdog\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def watchdog\&.createDBlink ()"
+
+.PP
+Definition at line 236 of file watchdog\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def watchdog\&.fillCommonSkimFields (dbSample, dbSkim, config, finalFiles, totalEvents)"
+
+.PP
+Definition at line 214 of file watchdog\&.py\&.
+.PP
+Referenced by addData2db(), and addMC2db()\&.
+.SS "def watchdog\&.finalizeSample (sample, dblink, args)"
+
+.PP
+Definition at line 69 of file watchdog\&.py\&.
+.PP
+References addData2db(), addMC2db(), read_crabconfig(), and readLogArch()\&.
+.PP
+Referenced by main()\&.
+.SS "def watchdog\&.getdCacheFiles (sample)"
+
+.PP
+Definition at line 47 of file watchdog\&.py\&.
+.SS "def watchdog\&.main ()"
+
+.PP
+Definition at line 246 of file watchdog\&.py\&.
+.PP
+References commandline_parsing(), createDBlink(), finalizeSample(), and lumi\&.format\&.
+.SS "def watchdog\&.read_crabconfig (sample)"
+
+.PP
+Definition at line 39 of file watchdog\&.py\&.
+.PP
+Referenced by finalizeSample()\&.
+.SS "def watchdog\&.readLogArch (logArchName)"
+
+.PP
+Definition at line 50 of file watchdog\&.py\&.
+.PP
+Referenced by finalizeSample()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "watchdog\&.runOnData = False"
+
+.PP
+Definition at line 18 of file watchdog\&.py\&.
+.SS "watchdog\&.runOnGen = False"
+
+.PP
+Definition at line 19 of file watchdog\&.py\&.
+.SS "watchdog\&.runOnMC = True"
+
+.PP
+Definition at line 17 of file watchdog\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

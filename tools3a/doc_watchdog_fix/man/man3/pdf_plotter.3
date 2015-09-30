@@ -1,0 +1,132 @@
+.TH "pdf_plotter" 3 "Wed Sep 30 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pdf_plotter \- 
+.PP
+Small script to plot the uncertainty bands calculated with \fBRATA_PDF\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBsetTDRStyle\fP"
+.br
+.ti -1c
+.RI "def \fBset_palette\fP"
+.br
+.ti -1c
+.RI "def \fBreader\fP"
+.br
+.RI "\fIFunction to read a histogram from a given file in the memory\&. \fP"
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.RI "\fIMain function\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBpath\fP = '/home/home1/institut_3a/erdweg/Desktop/Software/SirPlotAlot/'"
+.br
+.ti -1c
+.RI "tuple \fBtdrStyle\fP = r\&.TStyle('tdrStyle','Style for P-TDR')"
+.br
+.ti -1c
+.RI "tuple \fBtdrStyle2\fP = r\&.TStyle('tdrStyle2','Style for P-TDR')"
+.br
+.ti -1c
+.RI "list \fBcolors\fP = [1, 2, 3, 4, 6, 7, 8, 9, 11]"
+.br
+.ti -1c
+.RI "list \fBmarkers\fP = [20, 21, 22, 23, 24, 25, 26, 27, 28]"
+.br
+.ti -1c
+.RI "list \fBstyles\fP = [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Small script to plot the uncertainty bands calculated with \fBRATA_PDF\fP\&. 
+
+This script can be used to plot the uncertainty bands of different PDF sets which were calculated with the \fBRATA_PDF\fP framework\&. 
+.SH "Function Documentation"
+.PP 
+.SS "def pdf_plotter\&.main ()"
+
+.PP
+Main function\&. In this function the different histograms are read added and plotted together\&. 
+.PP
+Definition at line 217 of file pdf_plotter\&.py\&.
+.PP
+References raw_input(), reader(), and setTDRStyle()\&.
+.SS "def pdf_plotter\&.reader (file, hist)"
+
+.PP
+Function to read a histogram from a given file in the memory\&. In this function the \&.root file is opened and the histogram is read in the memory\&. At the moment also a rebinning with the factor 20 is done\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP String of the file name from which the histogram should be read 
+.br
+\fIhist\fP String of the histogram name to be read 
+.br
+\fIohist\fP TH1F histogram that was read 
+.RE
+.PP
+
+.PP
+Definition at line 203 of file pdf_plotter\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def pdf_plotter\&.set_palette (name, ncontours = \fC999\fP)"
+
+.PP
+.nf
+Set a color palette from a given RGB list
+stops, red, green and blue should all be lists of the same length
+see set_decent_colors for an example
+.fi
+.PP
+ 
+.PP
+Definition at line 167 of file pdf_plotter\&.py\&.
+.SS "def pdf_plotter\&.setTDRStyle (logy)"
+
+.PP
+Definition at line 18 of file pdf_plotter\&.py\&.
+.PP
+Referenced by main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "list pdf_plotter\&.colors = [1, 2, 3, 4, 6, 7, 8, 9, 11]"
+
+.PP
+Definition at line 162 of file pdf_plotter\&.py\&.
+.SS "list pdf_plotter\&.markers = [20, 21, 22, 23, 24, 25, 26, 27, 28]"
+
+.PP
+Definition at line 163 of file pdf_plotter\&.py\&.
+.SS "string pdf_plotter\&.path = '/home/home1/institut_3a/erdweg/Desktop/Software/SirPlotAlot/'"
+
+.PP
+Definition at line 13 of file pdf_plotter\&.py\&.
+.SS "list pdf_plotter\&.styles = [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+
+.PP
+Definition at line 164 of file pdf_plotter\&.py\&.
+.SS "tuple pdf_plotter\&.tdrStyle = r\&.TStyle('tdrStyle','Style for P-TDR')"
+
+.PP
+Definition at line 15 of file pdf_plotter\&.py\&.
+.SS "tuple pdf_plotter\&.tdrStyle2 = r\&.TStyle('tdrStyle2','Style for P-TDR')"
+
+.PP
+Definition at line 16 of file pdf_plotter\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

@@ -1,0 +1,52 @@
+.TH "scripts/datasets.py" 3 "Wed Sep 30 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scripts/datasets.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "\fBdatasets\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBdatasets\&.datastreams\fP"
+.br
+.ti -1c
+.RI "string \fBdatasets\&.usage\fP = '%prog RECO DCSFILES'"
+.br
+.ti -1c
+.RI "string \fBdatasets\&.description\fP = 'This script helps to create a \&.txt file with information needed '"
+.br
+.ti -1c
+.RI "tuple \fBdatasets\&.parser\fP = optparse\&.OptionParser( usage = usage, description = description )"
+.br
+.ti -1c
+.RI "string \fBdatasets\&.help\fP = 'Set the filename where the results shall be stored\&. [default = %default]'"
+.br
+.ti -1c
+.RI "list \fBdatasets\&.reco\fP = args[0]"
+.br
+.ti -1c
+.RI "tuple \fBdatasets\&.file\fP = open( options\&.output , 'w' )"
+.br
+.ti -1c
+.RI "tuple \fBdatasets\&.run_min\fP = filename\&.split( '-' )"
+.br
+.ti -1c
+.RI "tuple \fBdatasets\&.run_max\fP = filename\&.split( '-' )"
+.br
+.ti -1c
+.RI "string \fBdatasets\&.string\fP = 'Data'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

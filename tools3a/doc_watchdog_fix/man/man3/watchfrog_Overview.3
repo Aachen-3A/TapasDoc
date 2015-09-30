@@ -1,0 +1,208 @@
+.TH "watchfrog.Overview" 3 "Wed Sep 30 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+watchfrog.Overview \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fB__del__\fP"
+.br
+.ti -1c
+.RI "def \fBupdate\fP"
+.br
+.ti -1c
+.RI "def \fBgetPrintmode\fP"
+.br
+.ti -1c
+.RI "def \fBcurrentTask\fP"
+.br
+.ti -1c
+.RI "def \fBupdate_currentTask\fP"
+.br
+.ti -1c
+.RI "def \fBresubmit_currentTask\fP"
+.br
+.ti -1c
+.RI "def \fBdown\fP"
+.br
+.ti -1c
+.RI "def \fBup\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlevel\fP"
+.br
+.ti -1c
+.RI "\fBtaskId\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBstdscr\fP"
+.br
+.ti -1c
+.RI "\fBshared_job_q\fP"
+.br
+.ti -1c
+.RI "\fBtaskOverviews\fP"
+.br
+.ti -1c
+.RI "\fBtasks\fP"
+.br
+.ti -1c
+.RI "\fBheight\fP"
+.br
+.ti -1c
+.RI "\fBtasktable\fP"
+.br
+.ti -1c
+.RI "\fBtaskStats\fP"
+.br
+.ti -1c
+.RI "\fBcurrentView\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_refresh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 299 of file watchfrog\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def watchfrog\&.Overview\&.__init__ (self, stdscr, taskNameList, resubmitList, shared_job_q)"
+
+.PP
+Definition at line 300 of file watchfrog\&.py\&.
+.SS "def watchfrog\&.Overview\&.__del__ (self)"
+
+.PP
+Definition at line 328 of file watchfrog\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def watchfrog\&.Overview\&._refresh (self)\fC [private]\fP"
+
+.PP
+Definition at line 410 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&.currentTask(), watchfrog\&.Overview\&.currentTask(), television\&.Overview\&.currentView, watchfrog\&.Overview\&.currentView, television\&.Overview\&.level, watchfrog\&.Overview\&.level, television\&.Overview\&.taskOverviews, watchfrog\&.Overview\&.taskOverviews, and watchfrog\&.Overview\&.tasktable\&.
+.PP
+Referenced by watchfrog\&.Overview\&.down(), watchfrog\&.Overview\&.up(), and watchfrog\&.Overview\&.update()\&.
+.SS "def watchfrog\&.Overview\&.currentTask (self)"
+
+.PP
+Definition at line 389 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh(), watchfrog\&.Overview\&.resubmit_currentTask(), and watchfrog\&.Overview\&.update_currentTask()\&.
+.SS "def watchfrog\&.Overview\&.down (self)"
+
+.PP
+Definition at line 402 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), watchfrog\&.Overview\&._refresh(), television\&.Overview\&.level, and watchfrog\&.Overview\&.level\&.
+.SS "def watchfrog\&.Overview\&.getPrintmode (self, task)"
+
+.PP
+Definition at line 365 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&.update()\&.
+.SS "def watchfrog\&.Overview\&.resubmit_currentTask (self)"
+
+.PP
+Definition at line 397 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&.currentTask(), watchfrog\&.Overview\&.currentTask(), television\&.Overview\&.level, watchfrog\&.Overview\&.level, television\&.Overview\&.tasks, and watchfrog\&.Overview\&.tasks\&.
+.SS "def watchfrog\&.Overview\&.up (self)"
+
+.PP
+Definition at line 406 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), watchfrog\&.Overview\&._refresh(), television\&.Overview\&.level, and watchfrog\&.Overview\&.level\&.
+.SS "def watchfrog\&.Overview\&.update (self)"
+
+.PP
+Definition at line 331 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&._refresh(), watchfrog\&.Overview\&._refresh(), watchfrog\&.formatedUnixTimestamp(), watchfrog\&.Overview\&.getPrintmode(), television\&.Overview\&.taskOverviews, watchfrog\&.Overview\&.taskOverviews, television\&.Overview\&.tasks, and watchfrog\&.Overview\&.tasks\&.
+.SS "def watchfrog\&.Overview\&.update_currentTask (self)"
+
+.PP
+Definition at line 392 of file watchfrog\&.py\&.
+.PP
+References television\&.Overview\&.currentTask(), watchfrog\&.Overview\&.currentTask(), television\&.Overview\&.level, watchfrog\&.Overview\&.level, television\&.Overview\&.tasks, and watchfrog\&.Overview\&.tasks\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "watchfrog\&.Overview\&.currentView"
+
+.PP
+Definition at line 324 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh()\&.
+.SS "watchfrog\&.Overview\&.cursor"
+
+.PP
+Definition at line 303 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.height"
+
+.PP
+Definition at line 312 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.level"
+
+.PP
+Definition at line 301 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh(), watchfrog\&.Overview\&.down(), watchfrog\&.Overview\&.resubmit_currentTask(), watchfrog\&.Overview\&.up(), and watchfrog\&.Overview\&.update_currentTask()\&.
+.SS "watchfrog\&.Overview\&.shared_job_q"
+
+.PP
+Definition at line 305 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.stdscr"
+
+.PP
+Definition at line 304 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.taskId"
+
+.PP
+Definition at line 302 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.taskOverviews"
+
+.PP
+Definition at line 306 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh(), and watchfrog\&.Overview\&.update()\&.
+.SS "watchfrog\&.Overview\&.tasks"
+
+.PP
+Definition at line 307 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&.resubmit_currentTask(), watchfrog\&.Overview\&.update(), and watchfrog\&.Overview\&.update_currentTask()\&.
+.SS "watchfrog\&.Overview\&.taskStats"
+
+.PP
+Definition at line 323 of file watchfrog\&.py\&.
+.SS "watchfrog\&.Overview\&.tasktable"
+
+.PP
+Definition at line 314 of file watchfrog\&.py\&.
+.PP
+Referenced by watchfrog\&.Overview\&._refresh()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.

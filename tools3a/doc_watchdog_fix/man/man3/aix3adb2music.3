@@ -1,0 +1,116 @@
+.TH "aix3adb2music" 3 "Wed Sep 30 2015" "tools3a" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+aix3adb2music \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBcommandline_parsing\fP"
+.br
+.ti -1c
+.RI "def \fBreadSampleFile\fP"
+.br
+.ti -1c
+.RI "def \fBgetSkimAndSampleList\fP"
+.br
+.ti -1c
+.RI "def \fBflattenRemoteSkimDict\fP"
+.br
+.ti -1c
+.RI "def \fBgetConfigDicts\fP"
+.br
+.ti -1c
+.RI "def \fBwriteConfigDicts\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBCOMMENT_CHAR\fP = '#'"
+.br
+.ti -1c
+.RI "list \fBlog_choices\fP = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+.br
+.ti -1c
+.RI "string \fBdate\fP = '%F %H:%M:%S'"
+.br
+.ti -1c
+.RI "tuple \fBlog\fP = logging\&.getLogger( 'aix3a2music' )"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def aix3adb2music\&.commandline_parsing ()"
+
+.PP
+Definition at line 34 of file aix3adb2music\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def aix3adb2music\&.flattenRemoteSkimDict (remoteDict)"
+
+.PP
+Definition at line 101 of file aix3adb2music\&.py\&.
+.PP
+Referenced by remoteAnalysis\&.prepareConfigs()\&.
+.SS "def aix3adb2music\&.getConfigDicts (skimlist)"
+
+.PP
+Definition at line 108 of file aix3adb2music\&.py\&.
+.PP
+Referenced by main(), and remoteAnalysis\&.prepareConfigs()\&.
+.SS "def aix3adb2music\&.getSkimAndSampleList (args)"
+
+.PP
+Definition at line 78 of file aix3adb2music\&.py\&.
+.PP
+References remoteAnalysis\&.readConfig(), and readSampleFile()\&.
+.PP
+Referenced by main()\&.
+.SS "def aix3adb2music\&.main ()"
+
+.PP
+Definition at line 160 of file aix3adb2music\&.py\&.
+.PP
+References commandline_parsing(), getConfigDicts(), getSkimAndSampleList(), and writeConfigDicts()\&.
+.SS "def aix3adb2music\&.readSampleFile (filename)"
+
+.PP
+Definition at line 53 of file aix3adb2music\&.py\&.
+.PP
+Referenced by getSkimAndSampleList()\&.
+.SS "def aix3adb2music\&.writeConfigDicts (scalesdict, playlistdict, configdir = \fC''\fP, lumi = \fC1\fP)"
+
+.PP
+Definition at line 135 of file aix3adb2music\&.py\&.
+.PP
+Referenced by main(), and remoteAnalysis\&.prepareConfigs()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "string aix3adb2music\&.COMMENT_CHAR = '#'"
+
+.PP
+Definition at line 27 of file aix3adb2music\&.py\&.
+.SS "string aix3adb2music\&.date = '%F %H:%M:%S'"
+
+.PP
+Definition at line 29 of file aix3adb2music\&.py\&.
+.SS "tuple aix3adb2music\&.log = logging\&.getLogger( 'aix3a2music' )"
+
+.PP
+Definition at line 32 of file aix3adb2music\&.py\&.
+.SS "list aix3adb2music\&.log_choices = [ '\fBERROR\fP', '\fBWARNING\fP', '\fBINFO\fP', '\fBDEBUG\fP' ]"
+
+.PP
+Definition at line 28 of file aix3adb2music\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tools3a from the source code\&.
