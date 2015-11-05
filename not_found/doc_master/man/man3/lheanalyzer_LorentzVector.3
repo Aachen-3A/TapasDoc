@@ -1,0 +1,107 @@
+.TH "lheanalyzer.LorentzVector" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lheanalyzer.LorentzVector \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBadd\fP"
+.br
+.ti -1c
+.RI "def \fBinvariantMass\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpx\fP"
+.br
+.ti -1c
+.RI "\fBpy\fP"
+.br
+.ti -1c
+.RI "\fBpz\fP"
+.br
+.ti -1c
+.RI "\fBenergy\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBpt\fP = property(lambda self: (self\&.px**2+self\&.py**2)**0\&.5)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 141 of file lheanalyzer\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lheanalyzer\&.LorentzVector\&.__init__ (self, momentum)"
+
+.PP
+Definition at line 142 of file lheanalyzer\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lheanalyzer\&.LorentzVector\&.add (self, p)"
+
+.PP
+Definition at line 147 of file lheanalyzer\&.py\&.
+.PP
+References lheanalyzer\&.Particle\&.energy, lheanalyzer\&.LorentzVector\&.energy, lheanalyzer\&.Particle\&.px, lheanalyzer\&.LorentzVector\&.px, lheanalyzer\&.Particle\&.py, lheanalyzer\&.LorentzVector\&.py, lheanalyzer\&.Particle\&.pz, and lheanalyzer\&.LorentzVector\&.pz\&.
+.PP
+Referenced by rootplotlib\&.Legend\&.AddEntry()\&.
+.SS "def lheanalyzer\&.LorentzVector\&.invariantMass (self)"
+
+.PP
+Definition at line 152 of file lheanalyzer\&.py\&.
+.PP
+References lheanalyzer\&.Particle\&.energy, lheanalyzer\&.LorentzVector\&.energy, lheanalyzer\&.Particle\&.px, lheanalyzer\&.LorentzVector\&.px, lheanalyzer\&.Particle\&.py, lheanalyzer\&.LorentzVector\&.py, lheanalyzer\&.Particle\&.pz, and lheanalyzer\&.LorentzVector\&.pz\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lheanalyzer\&.LorentzVector\&.energy"
+
+.PP
+Definition at line 146 of file lheanalyzer\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), physpic\&.Particle\&.__str__(), lheanalyzer\&.LorentzVector\&.add(), and lheanalyzer\&.LorentzVector\&.invariantMass()\&.
+.SS "lheanalyzer\&.LorentzVector\&.px"
+
+.PP
+Definition at line 143 of file lheanalyzer\&.py\&.
+.PP
+Referenced by lheanalyzer\&.LorentzVector\&.add(), and lheanalyzer\&.LorentzVector\&.invariantMass()\&.
+.SS "lheanalyzer\&.LorentzVector\&.py"
+
+.PP
+Definition at line 144 of file lheanalyzer\&.py\&.
+.PP
+Referenced by lheanalyzer\&.LorentzVector\&.add(), and lheanalyzer\&.LorentzVector\&.invariantMass()\&.
+.SS "lheanalyzer\&.LorentzVector\&.pz"
+
+.PP
+Definition at line 145 of file lheanalyzer\&.py\&.
+.PP
+Referenced by lheanalyzer\&.LorentzVector\&.add(), and lheanalyzer\&.LorentzVector\&.invariantMass()\&.
+.SH "Property Documentation"
+.PP 
+.SS "lheanalyzer\&.LorentzVector\&.pt = property(lambda self: (self\&.px**2+self\&.py**2)**0\&.5)\fC [static]\fP"
+
+.PP
+Definition at line 154 of file lheanalyzer\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

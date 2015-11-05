@@ -1,0 +1,73 @@
+.TH "RATA_PDF/signal_mover.py" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RATA_PDF/signal_mover.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "\fBsignal_mover\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBsignal_mover\&.basedir\fP = '/user/erdweg/out/true_res2/'"
+.br
+.ti -1c
+.RI "string \fBsignal_mover\&.outdir\fP = '/net/scratch_cms/institut_3a/erdweg/public/Corrected_Results/'"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.fileList\fP"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.histList1\fP"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.histList2\fP"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.xs_cfg\fP = ConfigObj('xs\&.cfg')"
+.br
+.ti -1c
+.RI "int \fBsignal_mover\&.lumi\fP = 19700"
+.br
+.ti -1c
+.RI "dictionary \fBsignal_mover\&.bgFiles\fP = {}"
+.br
+.ti -1c
+.RI "string \fBsignal_mover\&.bgFile\fP = basedir+bg+'\&.root'"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.out_file\fP = TFile(outdir+bg+'\&.root','RECREATE')"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.counter\fP = bgFiles[bg]"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.bgtree\fP = bgFiles[bg]"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.newtree\fP = bgtree\&.CloneTree()"
+.br
+.ti -1c
+.RI "list \fBsignal_mover\&.file1\fP = bgFiles[bg]"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.bgmain\fP = file1\&.Get('h1_scaled_mt')"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.scf\fP = lumi*float(xs_cfg[bg]['xs'])"
+.br
+.ti -1c
+.RI "tuple \fBsignal_mover\&.bgtmp\fP = file1\&.Get(histname)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

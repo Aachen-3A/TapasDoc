@@ -1,0 +1,138 @@
+.TH "physpic.Plot" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+physpic.Plot \- 
+.PP
+plotter class  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBaddParticle\fP"
+.br
+.ti -1c
+.RI "def \fBremoveParticle\fP"
+.br
+.ti -1c
+.RI "def \fBdrawPolar\fP"
+.br
+.ti -1c
+.RI "def \fBdraw\fP"
+.br
+.ti -1c
+.RI "def \fBdraw3d\fP"
+.br
+.ti -1c
+.RI "def \fBclear\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBshow\fP"
+.br
+.ti -1c
+.RI "\fBparticles\fP"
+.br
+.ti -1c
+.RI "\fBstyles\fP"
+.br
+.ti -1c
+.RI "\fBfig\fP"
+.br
+.ti -1c
+.RI "\fBax\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+plotter class 
+.PP
+Definition at line 143 of file physpic\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def physpic\&.Plot\&.__init__ (self, show = \fCFalse\fP)"
+
+.PP
+Definition at line 144 of file physpic\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def physpic\&.Plot\&.addParticle (self, particle)"
+
+.PP
+Definition at line 175 of file physpic\&.py\&.
+.SS "def physpic\&.Plot\&.clear (self)"
+
+.PP
+Definition at line 278 of file physpic\&.py\&.
+.PP
+References physpic\&.Plot\&.fig, lheanalyzer\&.Event\&.particles, and physpic\&.Plot\&.particles\&.
+.SS "def physpic\&.Plot\&.draw (self)"
+
+.PP
+Definition at line 219 of file physpic\&.py\&.
+.PP
+References physpic\&.Plot\&.ax, physpic\&.Plot\&.fig, lumi\&.format, lheanalyzer\&.Event\&.particles, physpic\&.Plot\&.particles, physpic\&.Plot\&.show, and physpic\&.Plot\&.styles\&.
+.PP
+Referenced by rootplotlib\&.Legend\&.Draw()\&.
+.SS "def physpic\&.Plot\&.draw3d (self)"
+
+.PP
+Definition at line 249 of file physpic\&.py\&.
+.PP
+References physpic\&.Plot\&.ax, physpic\&.Plot\&.fig, lumi\&.format, lheanalyzer\&.Event\&.particles, physpic\&.Plot\&.particles, physpic\&.Plot\&.show, and physpic\&.Plot\&.styles\&.
+.SS "def physpic\&.Plot\&.drawPolar (self)"
+
+.PP
+Definition at line 186 of file physpic\&.py\&.
+.SS "def physpic\&.Plot\&.removeParticle (self, part)"
+
+.PP
+Definition at line 183 of file physpic\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "physpic\&.Plot\&.ax"
+
+.PP
+Definition at line 188 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Plot\&.draw(), and physpic\&.Plot\&.draw3d()\&.
+.SS "physpic\&.Plot\&.fig"
+
+.PP
+Definition at line 187 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Plot\&.clear(), physpic\&.Plot\&.draw(), and physpic\&.Plot\&.draw3d()\&.
+.SS "physpic\&.Plot\&.particles"
+
+.PP
+Definition at line 147 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Plot\&.clear(), physpic\&.Plot\&.draw(), and physpic\&.Plot\&.draw3d()\&.
+.SS "physpic\&.Plot\&.show"
+
+.PP
+Definition at line 145 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Plot\&.draw(), and physpic\&.Plot\&.draw3d()\&.
+.SS "physpic\&.Plot\&.styles"
+
+.PP
+Definition at line 151 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Plot\&.draw(), and physpic\&.Plot\&.draw3d()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

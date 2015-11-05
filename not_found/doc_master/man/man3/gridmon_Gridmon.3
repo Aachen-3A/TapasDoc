@@ -1,0 +1,152 @@
+.TH "gridmon.Gridmon" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gridmon.Gridmon \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBps\fP"
+.br
+.ti -1c
+.RI "def \fBworkdir\fP"
+.br
+.ti -1c
+.RI "def \fBjobdir\fP"
+.br
+.ti -1c
+.RI "def \fBstdout\fP"
+.br
+.ti -1c
+.RI "def \fBstderr\fP"
+.br
+.ti -1c
+.RI "def \fBtop\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbaseurl\fP"
+.br
+.ti -1c
+.RI "\fBcacert\fP"
+.br
+.ti -1c
+.RI "\fBpassphrase\fP"
+.br
+.ti -1c
+.RI "\fBjid\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_getLocalId\fP"
+.br
+.ti -1c
+.RI "def \fB_request\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file gridmon\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def gridmon\&.Gridmon\&.__init__ (self, jobid, passphrase, baseurl = \fC'https://grid-mon\&.physik\&.rwth-aachen\&.de/cgi-bin/jobmon/rwth-aachen/monitor\&.cgi'\fP, cacert = \fC'/etc/grid-security/certificates/GermanGrid\&.pem'\fP)"
+
+.PP
+Definition at line 9 of file gridmon\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def gridmon\&.Gridmon\&._getLocalId (self, jobid)\fC [private]\fP"
+
+.PP
+Definition at line 14 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request()\&.
+.SS "def gridmon\&.Gridmon\&._request (self, action, jid)\fC [private]\fP"
+
+.PP
+Definition at line 17 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&.baseurl, gridmon\&.Gridmon\&.cacert, lumi\&.format, gridmon\&.Gridmon\&.passphrase, and aix3adb\&.aix3adb\&.passphrase\&.
+.PP
+Referenced by gridmon\&.Gridmon\&._getLocalId(), gridmon\&.Gridmon\&.jobdir(), gridmon\&.Gridmon\&.ps(), gridmon\&.Gridmon\&.stderr(), gridmon\&.Gridmon\&.stdout(), gridmon\&.Gridmon\&.top(), and gridmon\&.Gridmon\&.workdir()\&.
+.SS "def gridmon\&.Gridmon\&.jobdir (self)"
+
+.PP
+Definition at line 41 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.SS "def gridmon\&.Gridmon\&.ps (self)"
+
+.PP
+Definition at line 35 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.SS "def gridmon\&.Gridmon\&.stderr (self)"
+
+.PP
+Definition at line 47 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.SS "def gridmon\&.Gridmon\&.stdout (self)"
+
+.PP
+Definition at line 44 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.SS "def gridmon\&.Gridmon\&.top (self)"
+
+.PP
+Definition at line 50 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.PP
+Referenced by curseshelpers\&.BottomText\&._redraw(), curseshelpers\&.TabbedText\&.height(), curseshelpers\&.BottomText\&.height(), curseshelpers\&.MultiText\&.height(), curseshelpers\&.Text\&.height(), curseshelpers\&.SelectTable\&.height(), curseshelpers\&.TabbedText\&.refresh(), curseshelpers\&.MultiText\&.refresh(), curseshelpers\&.Text\&.refresh(), and curseshelpers\&.SelectTable\&.refresh()\&.
+.SS "def gridmon\&.Gridmon\&.workdir (self)"
+
+.PP
+Definition at line 38 of file gridmon\&.py\&.
+.PP
+References gridmon\&.Gridmon\&._request(), and gridmon\&.Gridmon\&.jid\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "gridmon\&.Gridmon\&.baseurl"
+
+.PP
+Definition at line 10 of file gridmon\&.py\&.
+.PP
+Referenced by gridmon\&.Gridmon\&._request()\&.
+.SS "gridmon\&.Gridmon\&.cacert"
+
+.PP
+Definition at line 11 of file gridmon\&.py\&.
+.PP
+Referenced by gridmon\&.Gridmon\&._request()\&.
+.SS "gridmon\&.Gridmon\&.jid"
+
+.PP
+Definition at line 13 of file gridmon\&.py\&.
+.PP
+Referenced by gridmon\&.Gridmon\&.jobdir(), gridmon\&.Gridmon\&.ps(), gridmon\&.Gridmon\&.stderr(), gridmon\&.Gridmon\&.stdout(), gridmon\&.Gridmon\&.top(), and gridmon\&.Gridmon\&.workdir()\&.
+.SS "gridmon\&.Gridmon\&.passphrase"
+
+.PP
+Definition at line 12 of file gridmon\&.py\&.
+.PP
+Referenced by gridmon\&.Gridmon\&._request()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

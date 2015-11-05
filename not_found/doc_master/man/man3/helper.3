@@ -1,0 +1,340 @@
+.TH "helper" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+helper \- 
+.PP
+helper for \fBRATA_PDF\fP pdf calculator  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBbcolors\fP"
+.br
+.RI "\fIClass for the different bash text colors\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetTerminalSize\fP"
+.br
+.RI "\fIFunction to get the size of the terminal\&. \fP"
+.ti -1c
+.RI "def \fBupdate_progress\fP"
+.br
+.RI "\fIFunction to create and update a progress bar\&. \fP"
+.ti -1c
+.RI "def \fBwelcome_output\fP"
+.br
+.RI "\fIWelcome output function\&. \fP"
+.ti -1c
+.RI "def \fBfarewell_output\fP"
+.br
+.RI "\fIFarewell output function\&. \fP"
+.ti -1c
+.RI "def \fBUsage\fP"
+.br
+.RI "\fIUsage function, prints the usage information\&. \fP"
+.ti -1c
+.RI "def \fBoption_parsing\fP"
+.br
+.RI "\fIFunction to do the options input parsing\&. \fP"
+.ti -1c
+.RI "def \fBconfig_parsing\fP"
+.br
+.RI "\fIFunction to do the config file parsing\&. \fP"
+.ti -1c
+.RI "def \fBcontrol_output\fP"
+.br
+.RI "\fIFunction that does a control output\&. \fP"
+.ti -1c
+.RI "def \fBget_event_number_list\fP"
+.br
+.RI "\fIFunction to get list of event numbers\&. \fP"
+.ti -1c
+.RI "def \fBget_event_number\fP"
+.br
+.RI "\fIFunction to get the number of events in one file\&. \fP"
+.ti -1c
+.RI "def \fBcheck_file\fP"
+.br
+.RI "\fIFunction to check if there is anythin in a file\&. \fP"
+.ti -1c
+.RI "def \fBfinal_file_check\fP"
+.br
+.RI "\fIFunction to check all output files\&. \fP"
+.ti -1c
+.RI "def \fBmake_c_parameters\fP"
+.br
+.RI "\fIFunction to convert the parameters for the C++ library\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBinfo\fP = r\&.ProcInfo_t()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+helper for \fBRATA_PDF\fP pdf calculator 
+
+Important helping functions for the actual PDF uncertainty calculation
+.PP
+written by Soeren Erdweg 2013-2014 
+.SH "Function Documentation"
+.PP 
+.SS "def helper\&.check_file (file_name)"
+
+.PP
+Function to check if there is anythin in a file\&. This function checks if the list of keys for a given file is bigger than zero, to check if the file is usable 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile_name\fP Name of the file to be checked 
+.br
+\fIbool\fP Either true (good file) or False (bad file) 
+.RE
+.PP
+
+.PP
+Definition at line 344 of file helper\&.py\&.
+.PP
+Referenced by final_file_check()\&.
+.SS "def helper\&.config_parsing (options)"
+
+.PP
+Function to do the config file parsing\&. This functions reads in the necessary config files, for the samples that should be analyzed (mc_cfg), which cross section they have (xs_cfg) and which PDF sets should be used how (pdf_cfg)\&. The config files are also checked for sanity\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImc_cfg\fP Config for the samples that should be analyzed 
+.br
+\fIxs_cfg\fP Config for the cross section of the samples 
+.br
+\fIpdf_cfg\fP Config for the PDF sets that should be used 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file helper\&.py\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.control_output (options, mc_cfg, pdf_cfg, xs_cfg)"
+
+.PP
+Function that does a control output\&. To check if all program parameters are correct, the most important ones are printed in this function for a quick cross check\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoptions\fP Options object with all user defined input options 
+.br
+\fImc_cfg\fP Config for the samples that should be analyzed 
+.br
+\fIpdf_cfg\fP Config for the PDF sets that should be used 
+.br
+\fIxs_cfg\fP Config for the cross section of the samples 
+.RE
+.PP
+
+.PP
+Definition at line 268 of file helper\&.py\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.farewell_output (t0, t1)"
+
+.PP
+Farewell output function\&. Function to print the farewell output, consisting out of the local time, the programs run time and memory usage 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt0\fP Total wall time 
+.br
+\fIt1\fP Total CPU time 
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+fix the crash at the end of the program 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file helper\&.py\&.
+.PP
+References raw_input()\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.final_file_check (options, run_samples, pdf_cfg)"
+
+.PP
+Function to check all output files\&. This function calls check_file on every outputfile that should be produced\&. If the PDF calculation is done on background samples the output is also merged\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoptions\fP Options object with all user defined input options 
+.br
+\fIrun_samples\fP List of samples that were analyzed 
+.br
+\fIpdf_cfg\fP Config for the PDF sets that should be used 
+.br
+\fIrun_samples\fP List of samples that were analyzed and pass the check 
+.RE
+.PP
+
+.PP
+Definition at line 364 of file helper\&.py\&.
+.PP
+References check_file()\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.get_event_number (file_name, tree_name, cut_string)"
+
+.PP
+Function to get the number of events in one file\&. This function reads the number of events from a given file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile_name\fP Name of the file that should be analyzed 
+.br
+\fItree_name\fP Name of the tree in the file 
+.br
+\fIcut_string\fP Cuts that should be apllied on the tree 
+.br
+\fInentries\fP Number of events in the file 
+.RE
+.PP
+
+.PP
+Definition at line 322 of file helper\&.py\&.
+.PP
+Referenced by get_event_number_list()\&.
+.SS "def helper\&.get_event_number_list (mc_cfg, pdf_cfg, path)"
+
+.PP
+Function to get list of event numbers\&. This functions calculates the number of total events that should be analyzed and returns a list of the files that should be anlyzed and a list of events in each file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImc_cfg\fP Config for the samples that should be analyzed 
+.br
+\fIpdf_cfg\fP Config for the PDF sets that should be used 
+.br
+\fIpath\fP Path to the files that should be analyzed 
+.br
+\fIfilelist\fP List of files to be analyzed 
+.br
+\fItotal_events\fP Total number of events 
+.br
+\fIeventlist\fP List of number of events for each file 
+.RE
+.PP
+
+.PP
+Definition at line 300 of file helper\&.py\&.
+.PP
+References get_event_number()\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.getTerminalSize ()"
+
+.PP
+Function to get the size of the terminal\&. Reads the width and height of the current terminal and returns this two values\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint(cr[1])\fP Width of the terminal 
+.br
+\fIint(cr[0])\fP Height of the terminal 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file helper\&.py\&.
+.PP
+Referenced by update_progress()\&.
+.SS "def helper\&.make_c_parameters (mc_cfg, pdf_cfg)"
+
+.PP
+Function to convert the parameters for the C++ library\&. To have all parameters readable by the C++ library functions, they need to be converted, this is done by this function\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImc_cfg\fP Config for the samples that should be analyzed 
+.br
+\fIpdf_cfg\fP Config for the PDF sets that should be used 
+.br
+\fIparas\fP Dictionary of the converted parameters 
+.RE
+.PP
+
+.PP
+Definition at line 396 of file helper\&.py\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.option_parsing ()"
+
+.PP
+Function to do the options input parsing\&. In this function the different possible comand line arguments are defined and read from the user input, they are also checked for sanity\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoptions\fP Options object with all user defined input options 
+.br
+\fInumeric_level\fP Numeric value for the logging level 
+.RE
+.PP
+
+.PP
+Definition at line 166 of file helper\&.py\&.
+.PP
+References Usage()\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SS "def helper\&.update_progress (progress)"
+
+.PP
+Function to create and update a progress bar\&. This function displays or updates a console progress bar It accepts a float between 0 and 1\&. Any int will be converted to a float\&. A value under 0 represents a 'halt'\&. A value at 1 or bigger represents 100% 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprogress\fP Relative progress that should be displayed 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file helper\&.py\&.
+.PP
+References lumi\&.format, and getTerminalSize()\&.
+.SS "def helper\&.Usage ()"
+
+.PP
+Usage function, prints the usage information\&. 
+.PP
+Definition at line 157 of file helper\&.py\&.
+.PP
+Referenced by option_parsing()\&.
+.SS "def helper\&.welcome_output ()"
+
+.PP
+Welcome output function\&. Function to print the welcome output, consisting out of the ASCII art, the programs name and the local time 
+.PP
+Definition at line 110 of file helper\&.py\&.
+.PP
+Referenced by RATA_PDF\&.main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple helper\&.info = r\&.ProcInfo_t()"
+
+.PP
+Definition at line 24 of file helper\&.py\&.
+.PP
+Referenced by analyser(), and make_hists()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

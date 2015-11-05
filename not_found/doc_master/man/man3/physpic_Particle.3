@@ -1,0 +1,178 @@
+.TH "physpic.Particle" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+physpic.Particle \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBgetTLorentzVector\fP"
+.br
+.ti -1c
+.RI "def \fBdeltaR\fP"
+.br
+.ti -1c
+.RI "def \fB__repr__\fP"
+.br
+.ti -1c
+.RI "def \fB__str__\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBpdgId\fP = pdgId\&.replace(u'b'',u'')"
+.br
+.ti -1c
+.RI "tuple \fBls\fP = pdgId\&.split()"
+.br
+.ti -1c
+.RI "\fBself\fP = None"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBpx\fP = property(lambda self: self\&.momentum[0])"
+.br
+.ti -1c
+.RI "\fBpy\fP = property(lambda self: self\&.momentum[1])"
+.br
+.ti -1c
+.RI "\fBpz\fP = property(lambda self: self\&.momentum[2])"
+.br
+.ti -1c
+.RI "\fBenergy\fP = property(lambda self: self\&.momentum[3])"
+.br
+.ti -1c
+.RI "\fBmass\fP = property(lambda self: self\&.energy**2 -(self\&.px**2+self\&.py**2+self\&.pz**2))"
+.br
+.ti -1c
+.RI "\fBpt\fP = property(lambda self: (self\&.px**2+self\&.py**2)**0\&.5)"
+.br
+.ti -1c
+.RI "\fBtLorentzVector\fP = property(\fBgetTLorentzVector\fP)"
+.br
+.ti -1c
+.RI "\fBeta\fP = property(lambda self: self\&.tLorentzVector\&.Eta())"
+.br
+.ti -1c
+.RI "\fBphi\fP = property(lambda self: self\&.tLorentzVector\&.Phi())"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 38 of file physpic\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def physpic\&.Particle\&.__init__ (self, pdgId, px = \fC0\fP, py = \fC0\fP, pz = \fC0\fP, energy = \fC0\fP)"
+
+.PP
+Definition at line 45 of file physpic\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def physpic\&.Particle\&.__repr__ (self)"
+
+.PP
+Definition at line 70 of file physpic\&.py\&.
+.PP
+References lheanalyzer\&.Particle\&.energy, physpic\&.Particle\&.energy, lheanalyzer\&.LorentzVector\&.energy, lheanalyzer\&.Particle\&.eta, physpic\&.Particle\&.eta, lheanalyzer\&.Particle\&.mass, physpic\&.Particle\&.mass, physpic\&.Particle\&.pdgId, lheanalyzer\&.Particle\&.phi, physpic\&.Particle\&.phi, lheanalyzer\&.Particle\&.pt, physpic\&.Particle\&.pt, and lheanalyzer\&.LorentzVector\&.pt\&.
+.SS "def physpic\&.Particle\&.__str__ (self)"
+
+.PP
+Definition at line 72 of file physpic\&.py\&.
+.PP
+References lheanalyzer\&.Particle\&.energy, physpic\&.Particle\&.energy, lheanalyzer\&.LorentzVector\&.energy, lheanalyzer\&.Particle\&.eta, physpic\&.Particle\&.eta, lheanalyzer\&.Particle\&.mass, physpic\&.Particle\&.mass, physpic\&.Particle\&.pdgId, lheanalyzer\&.Particle\&.phi, physpic\&.Particle\&.phi, lheanalyzer\&.Particle\&.pt, physpic\&.Particle\&.pt, and lheanalyzer\&.LorentzVector\&.pt\&.
+.SS "def physpic\&.Particle\&.deltaR (self, other)"
+
+.PP
+Definition at line 68 of file physpic\&.py\&.
+.SS "def physpic\&.Particle\&.getTLorentzVector (self)"
+
+.PP
+Definition at line 65 of file physpic\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple physpic\&.Particle\&.ls = pdgId\&.split()\fC [static]\fP"
+
+.PP
+Definition at line 51 of file physpic\&.py\&.
+.SS "tuple physpic\&.Particle\&.pdgId = pdgId\&.replace(u'b'',u'')\fC [static]\fP"
+
+.PP
+.nf
+Constuctor call with line from lhe file
+.fi
+.PP
+ 
+.PP
+Definition at line 50 of file physpic\&.py\&.
+.PP
+Referenced by lheanalyzer\&.Particle\&.__repr__(), physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.self = None\fC [static]\fP"
+
+.PP
+Definition at line 61 of file physpic\&.py\&.
+.SH "Property Documentation"
+.PP 
+.SS "physpic\&.Particle\&.energy = property(lambda self: self\&.momentum[3])\fC [static]\fP"
+
+.PP
+Definition at line 78 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.eta = property(lambda self: self\&.tLorentzVector\&.Eta())\fC [static]\fP"
+
+.PP
+Definition at line 82 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.mass = property(lambda self: self\&.energy**2 -(self\&.px**2+self\&.py**2+self\&.pz**2))\fC [static]\fP"
+
+.PP
+Definition at line 79 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.phi = property(lambda self: self\&.tLorentzVector\&.Phi())\fC [static]\fP"
+
+.PP
+Definition at line 83 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.pt = property(lambda self: (self\&.px**2+self\&.py**2)**0\&.5)\fC [static]\fP"
+
+.PP
+Definition at line 80 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.Particle\&.__repr__(), and physpic\&.Particle\&.__str__()\&.
+.SS "physpic\&.Particle\&.px = property(lambda self: self\&.momentum[0])\fC [static]\fP"
+
+.PP
+Definition at line 75 of file physpic\&.py\&.
+.SS "physpic\&.Particle\&.py = property(lambda self: self\&.momentum[1])\fC [static]\fP"
+
+.PP
+Definition at line 76 of file physpic\&.py\&.
+.SS "physpic\&.Particle\&.pz = property(lambda self: self\&.momentum[2])\fC [static]\fP"
+
+.PP
+Definition at line 77 of file physpic\&.py\&.
+.SS "physpic\&.Particle\&.tLorentzVector = property(\fBgetTLorentzVector\fP)\fC [static]\fP"
+
+.PP
+Definition at line 81 of file physpic\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

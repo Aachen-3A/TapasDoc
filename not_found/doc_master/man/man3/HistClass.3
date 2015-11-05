@@ -1,0 +1,1562 @@
+.TH "HistClass" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HistClass \- 
+.PP
+Functions to have easy histogram handling\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (Int_t n_histos, const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create a number of 1D histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (Int_t n_histos, const char *name, const char *particle, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create a number of 1D histograms in the histo map for a specific particle\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHistoUnchangedName\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create a 1D histogram in the histo map without the standard histogram naming convention (h1_\&.\&.\&.) \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create one 1D histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (const char *name, const char *particle, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create one 1D histogram in the histo map for a specific particle\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (boost::basic_format< char > name, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create one 1D histograms in the histo map with a boost name as input\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, TString xtitle='', TString ytitle='')"
+.br
+.RI "\fIFunction to create one 2D histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateHisto\fP (Int_t n_histos, const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, TString xtitle='', TString ytitle='')"
+.br
+.RI "\fIFunction to create a number of 2D histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateNSparse\fP (const char *name, int dimension, int *bins, double *xmin, double *xmax, std::string axisTitle[])"
+.br
+.RI "\fIFunction to create one NSparse in the nSparse map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateTree\fP (const char *name, const char *varlist, int bufsize)"
+.br
+.RI "\fIFunction to create one NtupleD in the NtupleD map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateTree\fP (std::unordered_map< std::string, float > *m, const char *name)"
+.br
+.RI "\fIFunction to create one Tree in the TTree map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, const char *xtitle='')"
+.br
+.RI "\fIFunction to create one 1D Efficiency container in the eff map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, TH1D *hist_all, TH1D *hist_pass)"
+.br
+.RI "\fIFunction to create one 1D Efficiency container in the eff map from two histograms\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateEff\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, Int_t nbinsy, Double_t ylow, Double_t yup, const char *xtitle='', const char *ytitle='')"
+.br
+.RI "\fIFunction to create one 2D Efficiency container in the eff map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCreateProf\fP (const char *name, Int_t nbinsx, Double_t xlow, Double_t xup, const char *xtitle='', const char *ytitle='')"
+.br
+.RI "\fIFunction to create one 1D Profile container in the eff map\&. \fP"
+.ti -1c
+.RI "static void \fBDeleteHisto\fP (Int_t n_histos, const char *name)"
+.br
+.RI "\fIFunction to delete a histogram from the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBRebinHisto\fP (Int_t n_histos, const char *name, Int_t n_rebin, Double_t *bins)"
+.br
+.RI "\fIFunction to rebin histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBFill\fP (Int_t n_histo, const char *name, double value, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 1D histogram of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFill\fP (Int_t n_histo, std::string name, double value, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 1D histogram of the map with a string as histo name\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFill\fP (const char *name, double value, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 1D histogram of the map without histo number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillStr\fP (const char *name, const char *value, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 1D histogram of the map without histo number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillStr\fP (Int_t n_histo, const char *name, const char *value, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 1D histogram of the map without histo number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFill\fP (const char *name, double valuex, double valuey, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 2D histogram of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFill\fP (Int_t n_histo, const char *name, double valuex, double valuey, double weight)"
+.br
+.RI "\fIFunction to fill an event in a 2D histogram of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillSparse\fP (const char *name, int n,\&.\&.\&.)"
+.br
+.RI "\fIFunction to fill an event in a nSparse of the nSparse map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillTree\fP (const char *name, double *values)"
+.br
+.RI "\fIFunction to fill an event in a NTupleD of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillTree\fP (const char *name)"
+.br
+.RI "\fIFunction to fill an event in a TTree of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillEff\fP (const char *name, double valuex, bool passed)"
+.br
+.RI "\fIFunction to fill an event in a efficiency container of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBFillEff\fP (const char *name, double valuex, double valuey, bool passed)"
+.br
+.RI "\fIFunction to fill an event in a 2D efficiency container of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBProfile\fP (const char *name, double valuex, double valuey)"
+.br
+.RI "\fIFunction to fill an event in a 1D profile container of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWrite\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to write one 1D histogram of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWrite\fP (const char *name)"
+.br
+.RI "\fIFunction to write one 1D histogram of the map without number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many 1D histograms of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll2\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many 2D histograms of the map\&. \fP"
+.ti -1c
+.RI "\fBSUPPRESS_NOT_USED_WARN\fP void \fBsplit\fP (const std::string &s, char delim, std::vector< std::string > *elems)"
+.br
+.RI "\fIFunction split a string at a delimiter\&. \fP"
+.ti -1c
+.RI "\fBSUPPRESS_NOT_USED_WARN\fP 
+.br
+std::vector< std::string > \fBsplit\fP (const std::string &s, char delim)"
+.br
+.RI "\fIFunction split a string at a delimiter and return the results\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll\fP (const char *name, const char *contains_i)"
+.br
+.RI "\fIFunction to write many 1D histograms which contain specific strings of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll2\fP (const char *name, const char *contains_i)"
+.br
+.RI "\fIFunction to write many 2D histograms which contain specific strings of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll\fP (const char *name, const char *contains_i, const char *vetos_i)"
+.br
+.RI "\fIFunction to write many 1D histograms which (not) contain specific strings of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAll2\fP (const char *name, const char *contains_i, const char *vetos_i)"
+.br
+.RI "\fIFunction to write many 2D histograms which (not) contain specific strings of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAllTrees\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many TTrees and TNtupleDs of the maps\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteN\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many TNsparses of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWrite2\fP (const char *name)"
+.br
+.RI "\fIFunction to write one 2D histogram of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAllEff\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many efficiency containers of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAllEff\fP (const char *name, const char *contains_i)"
+.br
+.RI "\fIFunction to write many efficiency containers which contain specific strings of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBWriteAllProf\fP (const char *name='')"
+.br
+.RI "\fIFunction to write many profile containers of the map\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBSetToZero\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to set all negative bin contents to zero for a 1D histogram\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP 
+.br
+TH1D * \fBReturnHist\fP (const char *name)"
+.br
+.RI "\fIFunction to get one 1D histogram from the map without number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBNameBins\fP (const char *name, const uint n_bins, TString *d_mydisc)"
+.br
+.RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels without number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBNameBins\fP (const char *name, const uint n_bins_x, TString *x_bin_names, const uint n_bins_y, TString *y_bin_names)"
+.br
+.RI "\fIFunction to give one 2D histogram from the map alphanumeric bin labels without number\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBNameBins\fP (Int_t n_histo, const char *name, const uint n_bins, TString *d_mydisc)"
+.br
+.RI "\fIFunction to give one 1D histogram from the map alphanumeric bin labels\&. \fP"
+.ti -1c
+.RI "static \fBSUPPRESS_NOT_USED_WARN\fP void \fBCleanUp\fP ()"
+.br
+.RI "\fIFunction to clean up the memory usage of the \fBHistClass\fP\&. \fP"
+.ti -1c
+.RI "static void \fBCreateHisto\fP (Int_t n_histos, const char *name, const char *title, Int_t nbinsx, Double_t xlow, Double_t xup, TString xtitle='')"
+.br
+.RI "\fIFunction to create histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBClearHisto\fP (Int_t n_histos, const char *name)"
+.br
+.RI "\fIFunction to clear histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBRebinHisto\fP (Int_t n_histos, const char *name, Int_t n_rebin, Double_t *bins)"
+.br
+.RI "\fIFunction to rebin histograms in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBFill\fP (Int_t n_histo, const char *name, double value, double weight)"
+.br
+.RI "\fIFunction to fille events in a histogram in the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBWrite\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to write a histogram from the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBSetToZero\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to set every negative bin content to zero\&. \fP"
+.ti -1c
+.RI "static TH1D * \fBReturnHist\fP (Int_t n_histo, const char *name)"
+.br
+.RI "\fIFunction to get a histogram from the histo map\&. \fP"
+.ti -1c
+.RI "static void \fBDeleteHisto\fP (Int_t n_histos, const char *name)"
+.br
+.RI "\fIFunction to delete a histogram from the histo map\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TH1D * > \fBhisto\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TH2D * > \fBhisto2\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, THnSparseD * > \fBhiston\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TNtupleD * > \fBttupple\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TTree * > \fBtrees\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TEfficiency * > \fBeffs\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map
+.br
+< std::string, TProfile * > \fBprof\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions to have easy histogram handling\&. 
+
+In this namespace different functions to interact with the histogram map are included, to create, fill and write histograms in a convinient way\&. 
+.SH "Function Documentation"
+.PP 
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CleanUp ()\fC [static]\fP"
+
+.PP
+Function to clean up the memory usage of the \fBHistClass\fP\&. 
+.PP
+Definition at line 988 of file HistClass\&.hh\&.
+.PP
+References effs, histo, histo2, histon, trees, and ttupple\&.
+.SS "static void HistClass::ClearHisto (Int_tn_histos, const char *name)\fC [static]\fP"
+
+.PP
+Function to clear histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms with the same name 
+.br
+\fIname\fP Name of the histograms that should be cleared 
+.RE
+.PP
+
+.PP
+Definition at line 249 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, Int_tnbinsx, Double_txlow, Double_txup, const char *xtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 1D Efficiency container in the eff map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the Efficiency container that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 233 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, TH1D *hist_all, TH1D *hist_pass)\fC [static]\fP"
+
+.PP
+Function to create one 1D Efficiency container in the eff map from two histograms\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the Efficiency container that should be created 
+.br
+\fIhist_all\fP Histogram of all events 
+.br
+\fIhist_pass\fP Histogram of all passed events 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 245 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateEff (const char *name, Int_tnbinsx, Double_txlow, Double_txup, Int_tnbinsy, Double_tylow, Double_tyup, const char *xtitle = \fC''\fP, const char *ytitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 2D Efficiency container in the eff map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the Efficiency container that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fInbinsy\fP Number of bins on the y-axis 
+.br
+\fIylow\fP Lower edge of the y-axis 
+.br
+\fIyup\fP Upper edge of the y-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.br
+\fIytitle\fP Optinal title of the y-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (Int_tn_histos, const char *name, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create a number of 1D histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms that should be created with different numbers 
+.br
+\fIname\fP Name of the histograms that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.PP
+Referenced by CreateHisto(), and make_hists()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (Int_tn_histos, const char *name, const char *particle, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create a number of 1D histograms in the histo map for a specific particle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms that should be created with different numbers 
+.br
+\fIname\fP Name of the histograms that should be created 
+.br
+\fIparticle\fP Name of the particle for which the histograms are created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (const char *name, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 1D histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (const char *name, const char *particle, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 1D histogram in the histo map for a specific particle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histograms that should be created 
+.br
+\fIparticle\fP Name of the particle for which the histograms are created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (boost::basic_format< char >name, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 1D histograms in the histo map with a boost name as input\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be created (boost::basic_format) 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file HistClass\&.hh\&.
+.PP
+References CreateHisto()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (const char *name, Int_tnbinsx, Double_txlow, Double_txup, Int_tnbinsy, Double_tylow, Double_tyup, TStringxtitle = \fC''\fP, TStringytitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 2D histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fInbinsy\fP Number of bins on the y-axis 
+.br
+\fIylow\fP Lower edge of the y-axis 
+.br
+\fIyup\fP Upper edge of the y-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.br
+\fIytitle\fP Optinal title of the y-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 153 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo2, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHisto (Int_tn_histos, const char *name, Int_tnbinsx, Double_txlow, Double_txup, Int_tnbinsy, Double_tylow, Double_tyup, TStringxtitle = \fC''\fP, TStringytitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create a number of 2D histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms that should be created with different numbers 
+.br
+\fIname\fP Name of the histogram that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fInbinsy\fP Number of bins on the y-axis 
+.br
+\fIylow\fP Lower edge of the y-axis 
+.br
+\fIyup\fP Upper edge of the y-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.br
+\fIytitle\fP Optinal title of the y-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file HistClass\&.hh\&.
+.PP
+References histo2\&.
+.SS "static void HistClass::CreateHisto (Int_tn_histos, const char *name, const char *title, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms that should be created with different numbers 
+.br
+\fIname\fP Name of the histograms that should be created 
+.br
+\fItitle\fP Title of the histograms that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateHistoUnchangedName (const char *name, Int_tnbinsx, Double_txlow, Double_txup, TStringxtitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create a 1D histogram in the histo map without the standard histogram naming convention (h1_\&.\&.\&.) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histograms that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateNSparse (const char *name, intdimension, int *bins, double *xmin, double *xmax, std::stringaxisTitle[])\fC [static]\fP"
+
+.PP
+Function to create one NSparse in the nSparse map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the NSparse that should be created 
+.br
+\fIdimension\fP Number of dimensions that the NSparse should have 
+.br
+\fIbins\fP Array with the number of bins for each dimension 
+.br
+\fIxmin\fP Array of the lower edge of the axis for each dimension 
+.br
+\fIxmax\fP Array of the upper edge of the axis for each dimension 
+.br
+\fIaxisTitle[]\fP Array of the axis title for each dimension 
+.RE
+.PP
+
+.PP
+Definition at line 193 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histon, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateProf (const char *name, Int_tnbinsx, Double_txlow, Double_txup, const char *xtitle = \fC''\fP, const char *ytitle = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to create one 1D Profile container in the eff map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the Profile container that should be created 
+.br
+\fInbinsx\fP Number of bins on the x-axis 
+.br
+\fIxlow\fP Lower edge of the x-axis 
+.br
+\fIxup\fP Upper edge of the x-axis 
+.br
+\fIxtitle\fP Optinal title of the x-axis (DEFAULT = '') 
+.br
+\fIytitle\fP Optinal title of the y-axis (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 278 of file HistClass\&.hh\&.
+.PP
+References prof\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateTree (const char *name, const char *varlist, intbufsize)\fC [static]\fP"
+
+.PP
+Function to create one NtupleD in the NtupleD map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the NSparse that should be created 
+.br
+\fIvarlist\fP Colon sepereated list with the name of the branches that should be created 
+.br
+\fIbufsize\fP Buffer size that the NtupleD should have 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, datasets::string, and ttupple\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::CreateTree (std::unordered_map< std::string, float > *m, const char *name)\fC [static]\fP"
+
+.PP
+Function to create one Tree in the TTree map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP Map of the name and variable that should be matched to each branch 
+.br
+\fIname\fP Name of the TTree that should be created 
+.RE
+.PP
+
+.PP
+Definition at line 218 of file HistClass\&.hh\&.
+.PP
+References B2G-Phys14DR-00002_3_cfg::name, and trees\&.
+.SS "static void HistClass::DeleteHisto (Int_tn_histos, const char *name)\fC [static]\fP"
+
+.PP
+Function to delete a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be deleted 
+.br
+\fIname\fP Name of the histogram to be deleted 
+.RE
+.PP
+
+.PP
+Definition at line 288 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.PP
+Referenced by make_hists()\&.
+.SS "static void HistClass::DeleteHisto (Int_tn_histos, const char *name)\fC [static]\fP"
+
+.PP
+Function to delete a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be deleted 
+.br
+\fIname\fP Name of the histogram to be deleted 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static void HistClass::Fill (Int_tn_histo, const char *name, doublevalue, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fille events in a histogram in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of the histograms to be filled 
+.br
+\fIname\fP Name of the histogram to be filled 
+.br
+\fIvalue\fP Value that should be filled in the histogram 
+.br
+\fIweight\fP Weight the the event should get 
+.RE
+.PP
+
+.PP
+Definition at line 280 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static void HistClass::Fill (Int_tn_histo, const char *name, doublevalue, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D histogram of the map\&. This function fills one value with one weight for one event in one specific histogram\&. The function also checks if the histogram exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should be filled 
+.br
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvalue\fP Value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 334 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.PP
+Referenced by analyser(), and Fill()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (Int_tn_histo, std::stringname, doublevalue, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D histogram of the map with a string as histo name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should be filled 
+.br
+\fIname\fP Name of the histogram which should be filled (std string) 
+.br
+\fIvalue\fP Value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 350 of file HistClass\&.hh\&.
+.PP
+References Fill()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (const char *name, doublevalue, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D histogram of the map without histo number\&. This function fills one value with one weight for one event in one specific histogram\&. The function also checks if the histogram exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvalue\fP Value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 363 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (const char *name, doublevaluex, doublevaluey, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 2D histogram of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvaluex\fP x-value that should be filled 
+.br
+\fIvaluey\fP y-value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 422 of file HistClass\&.hh\&.
+.PP
+References histo2\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Fill (Int_tn_histo, const char *name, doublevaluex, doublevaluey, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 2D histogram of the map\&. This function fills one value with one weight for one event in one specific histogram\&. The function also checks if the histogram exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should be filled 
+.br
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvaluex\fP x-value that should be filled 
+.br
+\fIvaluey\fP y-value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 442 of file HistClass\&.hh\&.
+.PP
+References histo2\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillEff (const char *name, doublevaluex, boolpassed)\fC [static]\fP"
+
+.PP
+Function to fill an event in a efficiency container of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvaluex\fP x-value that should be filled 
+.br
+\fIpassed\fP Boolean if the event passed or not 
+.RE
+.PP
+
+.PP
+Definition at line 501 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillEff (const char *name, doublevaluex, doublevaluey, boolpassed)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 2D efficiency container of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvaluex\fP x-value that should be filled 
+.br
+\fIvaluey\fP y-value that should be filled 
+.br
+\fIpassed\fP Boolean if the event passed or not 
+.RE
+.PP
+
+.PP
+Definition at line 517 of file HistClass\&.hh\&.
+.PP
+References effs\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillSparse (const char *name, intn, \&.\&.\&.)\fC [static]\fP"
+
+.PP
+Function to fill an event in a nSparse of the nSparse map\&. This function fills one value with one event in one specific nSparse\&. The function also checks if the nSparse exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the n which should be filled 
+.br
+\fIn\fP 
+.br
+\fI\&.\&.\&.\fP 
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+complete the function 
+.RE
+.PP
+
+.PP
+Definition at line 461 of file HistClass\&.hh\&.
+.PP
+References histon\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillStr (const char *name, const char *value, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D histogram of the map without histo number\&. This function fills one value with one weight for one event in one specific histogram\&. The function also checks if the histogram exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvalue\fP Value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 387 of file HistClass\&.hh\&.
+.PP
+References histo\&.
+.PP
+Referenced by FillStr()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillStr (Int_tn_histo, const char *name, const char *value, doubleweight)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D histogram of the map without histo number\&. This function fills one value with one weight for one event in one specific histogram\&. The function also checks if the histogram exists in the map, otherwise it will print an error message\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvalue\fP Value that should be filled 
+.br
+\fIweight\fP Weight of the event that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 411 of file HistClass\&.hh\&.
+.PP
+References FillStr()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillTree (const char *name, double *values)\fC [static]\fP"
+
+.PP
+Function to fill an event in a NTupleD of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the NTupleD which should be filled 
+.br
+\fIvalues\fP Array of values that should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 482 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, datasets::string, and ttupple\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::FillTree (const char *name)\fC [static]\fP"
+
+.PP
+Function to fill an event in a TTree of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the TTree which should be filled 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file HistClass\&.hh\&.
+.PP
+References B2G-Phys14DR-00002_3_cfg::name, and trees\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (const char *name, const uintn_bins, TString *d_mydisc)\fC [static]\fP"
+
+.PP
+Function to give one 1D histogram from the map alphanumeric bin labels without number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should get bin names 
+.br
+\fIn_bins\fP of bins that should be renamed 
+.br
+\fId_mydisc\fP Array with the names that th bins should get 
+.RE
+.PP
+
+.PP
+Definition at line 944 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (const char *name, const uintn_bins_x, TString *x_bin_names, const uintn_bins_y, TString *y_bin_names)\fC [static]\fP"
+
+.PP
+Function to give one 2D histogram from the map alphanumeric bin labels without number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should get bin names 
+.br
+\fIn_bins_x\fP Number of x-bins that should be renamed 
+.br
+\fIx_bin_names\fP Array with the names that the x-bins should get 
+.br
+\fIn_bins_y\fP Number of y-bins that should be renamed 
+.br
+\fIy_bin_names\fP Array with the names that the y-bins should get 
+.RE
+.PP
+
+.PP
+Definition at line 959 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo2, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::NameBins (Int_tn_histo, const char *name, const uintn_bins, TString *d_mydisc)\fC [static]\fP"
+
+.PP
+Function to give one 1D histogram from the map alphanumeric bin labels\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should get bin names 
+.br
+\fIname\fP Name of the histogram that should get bin names 
+.br
+\fIn_bins\fP of bins that should be renamed 
+.br
+\fId_mydisc\fP Array with the names that th bins should get 
+.RE
+.PP
+
+.PP
+Definition at line 976 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Profile (const char *name, doublevaluex, doublevaluey)\fC [static]\fP"
+
+.PP
+Function to fill an event in a 1D profile container of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram which should be filled 
+.br
+\fIvaluex\fP x-value that should be filled 
+.br
+\fIvaluey\fP y-value that should be filled 
+.br
+\fIpassed\fP Boolean if the event passed or not 
+.RE
+.PP
+
+.PP
+Definition at line 533 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, prof, and datasets::string\&.
+.SS "static void HistClass::RebinHisto (Int_tn_histos, const char *name, Int_tn_rebin, Double_t *bins)\fC [static]\fP"
+
+.PP
+Function to rebin histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms with the same name 
+.br
+\fIname\fP Name of the histograms that should be rebinned 
+.br
+\fIn_rebin\fP Number of bins that the rebinned histogram should have 
+.br
+\fIbins\fP Array of bin edges that the rebinned histogram should have 
+.RE
+.PP
+
+.PP
+Definition at line 264 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static void HistClass::RebinHisto (Int_tn_histos, const char *name, Int_tn_rebin, Double_t *bins)\fC [static]\fP"
+
+.PP
+Function to rebin histograms in the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histograms with the same name 
+.br
+\fIname\fP Name of the histograms that should be rebinned 
+.br
+\fIn_rebin\fP Number of bins that the rebinned histogram should have 
+.br
+\fIbins\fP Array of bin edges that the rebinned histogram should have 
+.RE
+.PP
+
+.PP
+Definition at line 303 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.PP
+Referenced by make_hists()\&.
+.SS "static TH1D* HistClass::ReturnHist (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to get a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be read 
+.br
+\fIname\fP Name of the histogram to be read 
+.RE
+.PP
+
+.PP
+Definition at line 320 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP TH1D* HistClass::ReturnHist (const char *name)\fC [static]\fP"
+
+.PP
+Function to get one 1D histogram from the map without number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be returned 
+.br
+\fIhisto\fP Returned histogram 
+.RE
+.PP
+
+.PP
+Definition at line 928 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.SS "static void HistClass::SetToZero (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to set every negative bin content to zero\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be adapted 
+.br
+\fIname\fP Name of the histogram to be adapted 
+.RE
+.PP
+
+.PP
+Definition at line 302 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::SetToZero (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to set all negative bin contents to zero for a 1D histogram\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should be modified 
+.br
+\fIname\fP Name of the histogram that should be modified 
+.RE
+.PP
+
+.PP
+Definition at line 912 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.PP
+Referenced by writer()\&.
+.SS "\fBSUPPRESS_NOT_USED_WARN\fP void HistClass::split (const std::string &s, chardelim, std::vector< std::string > *elems)"
+
+.PP
+Function split a string at a delimiter\&. Example to create a nice folder structure in your output folder //void specialAna::channel_writer(TFile* file, const char* channel) { //file1->cd(); //file1->mkdir(channel); //for ( int i = 0; i < channel_stages[channel]; i++) { //char n_satge = (char)(((int)'0')+i); //file1->mkdir(TString::Format('%s/Stage_%c', channel, n_satge)); //file1->cd(TString::Format('%s/Stage_%c/', channel, n_satge)); //HistClass\fBWriteAll\fP(TString::Format('_%s_', channel),TString::Format('%s:_%c_', channel, n_satge),TString::Format('sys')); //file1->cd(); //file1->mkdir(TString::Format('%s/Stage_%c/sys', channel, n_satge)); //file1->cd(TString::Format('%s/Stage_%c/sys/', channel, n_satge)); //HistClass\fBWriteAll\fP(TString::Format('_%s_', channel),TString::Format('_%c_:sys', n_satge)); //} //file1->cd(); //}
+.PP
+This function splits a given string at a given delimineter, and pushes the results in a given vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&s\fP String that should be split 
+.br
+\fIdelim\fP Delimiter where the string should be split 
+.br
+\fI&elems\fP Vector in which the substrings should be pushed 
+.RE
+.PP
+
+.PP
+Definition at line 624 of file HistClass\&.hh\&.
+.PP
+References datasets::string\&.
+.PP
+Referenced by music_crab::createTag(), music_crab3::createTag(), githookcontroller\&.GitHookController::doc_remote_root_name(), crabFunctions\&.CrabTask::finalizeTask(), gridFunctions::getdcachelist(), cesubmit\&.Job::jid(), cleanProcessNames::main(), prepareCMSDIST::main(), aix3adbSampleFinder::main(), githookcontroller\&.GitHookController::parse_pre_commit(), githookcontroller\&.GitHookController::parse_pre_push(), fakeCondor::parseSplit(), remote_example::prepare_teli(), crabFunctions\&.CrabTask::readLogArch(), githookcontroller\&.GitHookController::remote_branches(), githookcontroller\&.GitHookController::remote_root_name(), githookcontroller\&.GitHookController::remote_url(), split(), WriteAll(), WriteAll2(), and WriteAllEff()\&.
+.SS "\fBSUPPRESS_NOT_USED_WARN\fP std::vector<std::string> HistClass::split (const std::string &s, chardelim)"
+
+.PP
+Function split a string at a delimiter and return the results\&. This function splits a given string at a given delimineter, and returns the resulting substrings as a vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&s\fP String that should be split 
+.br
+\fIdelim\fP Delimiter where the string should be split 
+.br
+\fIelems\fP Vector in which the substrings were pushed 
+.RE
+.PP
+
+.PP
+Definition at line 640 of file HistClass\&.hh\&.
+.PP
+References split()\&.
+.SS "static void HistClass::Write (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to write a histogram from the histo map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histos\fP Number of histogram to be written 
+.br
+\fIname\fP Name of the histogram to be written 
+.RE
+.PP
+
+.PP
+Definition at line 291 of file hist_maker\&.h\&.
+.PP
+References html_to_bash_ascii_converter::dummy, and histo\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Write (Int_tn_histo, const char *name)\fC [static]\fP"
+
+.PP
+Function to write one 1D histogram of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn_histo\fP Number of the histogram that should be written 
+.br
+\fIname\fP Name of the histogram that should be written 
+.RE
+.PP
+
+.PP
+Definition at line 548 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.PP
+Referenced by pdf_calcer_hessian(), pdf_calcer_MC(), WriteAll(), WriteAll2(), WriteAllEff(), WriteAllProf(), WriteAllTrees(), WriteN(), and writer()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Write (const char *name)\fC [static]\fP"
+
+.PP
+Function to write one 1D histogram of the map without number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be written 
+.RE
+.PP
+
+.PP
+Definition at line 557 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::Write2 (const char *name)\fC [static]\fP"
+
+.PP
+Function to write one 2D histogram of the map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the histogram that should be written 
+.RE
+.PP
+
+.PP
+Definition at line 836 of file HistClass\&.hh\&.
+.PP
+References html_to_bash_ascii_converter::dummy, histo2, and datasets::string\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many 1D histograms of the map\&. This function writes all histograms of the map with the default options, otherwise it writes all histograms that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all histogram names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 569 of file HistClass\&.hh\&.
+.PP
+References histo, B2G-Phys14DR-00002_3_cfg::name, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name, const char *contains_i)\fC [static]\fP"
+
+.PP
+Function to write many 1D histograms which contain specific strings of the map\&. This function writes all histograms of the map with that contain the given string in there name\&. The written histo- grams also have to contain a list of strings that are sepe- rated by a ':'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP String that all histogram names that should be written contain 
+.br
+\fIcontains_i\fP String that of names (seperated by ':') that the histogram name should contain 
+.RE
+.PP
+
+.PP
+Definition at line 655 of file HistClass\&.hh\&.
+.PP
+References histo, split(), datasets::string, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll (const char *name, const char *contains_i, const char *vetos_i)\fC [static]\fP"
+
+.PP
+Function to write many 1D histograms which (not) contain specific strings of the map\&. This function writes all histograms of the map with that contain the given string in there name\&. The written histo- grams also have to contain a list of strings that are sepe- rated by a ':'\&. In this version also a list of strings that should not be contained in the histogram name can be given\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP String that all histogram names that should be written contain 
+.br
+\fIcontains_i\fP String that of names (seperated by ':') that the histogram name should contain 
+.br
+\fIvetos_i\fP String that of names (seperated by ':') that the histogram name should not contain 
+.RE
+.PP
+
+.PP
+Definition at line 719 of file HistClass\&.hh\&.
+.PP
+References histo, split(), datasets::string, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many 2D histograms of the map\&. This function writes all histograms of the map with the default options, otherwise it writes all histograms that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all histogram names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 587 of file HistClass\&.hh\&.
+.PP
+References histo2, B2G-Phys14DR-00002_3_cfg::name, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name, const char *contains_i)\fC [static]\fP"
+
+.PP
+Function to write many 2D histograms which contain specific strings of the map\&. This function writes all histograms of the map with that contain the given string in there name\&. The written histo- grams also have to contain a list of strings that are sepe- rated by a ':'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP String that all histogram names that should be written contain 
+.br
+\fIcontains_i\fP String that of names (seperated by ':') that the histogram name should contain 
+.RE
+.PP
+
+.PP
+Definition at line 686 of file HistClass\&.hh\&.
+.PP
+References histo2, split(), datasets::string, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAll2 (const char *name, const char *contains_i, const char *vetos_i)\fC [static]\fP"
+
+.PP
+Function to write many 2D histograms which (not) contain specific strings of the map\&. This function writes all histograms of the map with that contain the given string in there name\&. The written histo- grams also have to contain a list of strings that are sepe- rated by a ':'\&. In this version also a list of strings that should not be contained in the histogram name can be given\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP String that all histogram names that should be written contain 
+.br
+\fIcontains_i\fP String that of names (seperated by ':') that the histogram name should contain 
+.br
+\fIvetos_i\fP String that of names (seperated by ':') that the histogram name should not contain 
+.RE
+.PP
+
+.PP
+Definition at line 760 of file HistClass\&.hh\&.
+.PP
+References histo2, split(), datasets::string, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllEff (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many efficiency containers of the map\&. This function writes all efficiency containers of the map with the default options, otherwise it writes all efficiency containers that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all efficiency containers names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 848 of file HistClass\&.hh\&.
+.PP
+References effs, B2G-Phys14DR-00002_3_cfg::name, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllEff (const char *name, const char *contains_i)\fC [static]\fP"
+
+.PP
+Function to write many efficiency containers which contain specific strings of the map\&. This function writes all efficiency containers of the map with that contain the given string in there name\&. The written efficiencies also have to contain a list of strings that are sepe- rated by a ':'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP String that all efficiency names that should be written contain 
+.br
+\fIcontains_i\fP String that of names (seperated by ':') that the efficiency name should contain 
+.RE
+.PP
+
+.PP
+Definition at line 867 of file HistClass\&.hh\&.
+.PP
+References effs, split(), datasets::string, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllProf (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many profile containers of the map\&. This function writes all profile containers of the map with the default options, otherwise it writes all profile containers that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all profile containers names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 896 of file HistClass\&.hh\&.
+.PP
+References B2G-Phys14DR-00002_3_cfg::name, prof, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteAllTrees (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many TTrees and TNtupleDs of the maps\&. This function writes all TTrees and TNtupleDs of the maps with the default options, otherwise it writes all histograms that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all TTrees or TNtupleDs names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 797 of file HistClass\&.hh\&.
+.PP
+References B2G-Phys14DR-00002_3_cfg::name, trees, ttupple, and Write()\&.
+.SS "static \fBSUPPRESS_NOT_USED_WARN\fP void HistClass::WriteN (const char *name = \fC''\fP)\fC [static]\fP"
+
+.PP
+Function to write many TNsparses of the map\&. This function writes all nSparses of the map with the default options, otherwise it writes all histograms that contain the given string in there name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Optional string that all nSparses names that should be written contain (DEFAULT = '') 
+.RE
+.PP
+
+.PP
+Definition at line 821 of file HistClass\&.hh\&.
+.PP
+References histon, B2G-Phys14DR-00002_3_cfg::name, and Write()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "std::unordered_map<std::string, TEfficiency * > HistClass::effs\fC [static]\fP"
+Map of a string and a TEfficiency container\&. 
+.PP
+Definition at line 43 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateEff(), FillEff(), and WriteAllEff()\&.
+.SS "std::unordered_map<std::string, TH1D * > HistClass::histo\fC [static]\fP"
+Map of a string and a TH1D histogram, for easy 1D histogram handling\&. 
+.PP
+Definition at line 38 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateHisto(), CreateHistoUnchangedName(), DeleteHisto(), Fill(), FillStr(), NameBins(), RebinHisto(), ReturnHist(), SetToZero(), Write(), and WriteAll()\&.
+.SS "std::unordered_map<std::string, TH2D * > HistClass::histo2\fC [static]\fP"
+Map of a string and a TH2D histogram, for easy 2D histogram handling\&. 
+.PP
+Definition at line 39 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateHisto(), Fill(), NameBins(), Write2(), and WriteAll2()\&.
+.SS "std::unordered_map<std::string, THnSparseD * > HistClass::histon\fC [static]\fP"
+Map of a string and a THnSparseD histogram, for easy nSparse handling\&. 
+.PP
+Definition at line 40 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateNSparse(), FillSparse(), and WriteN()\&.
+.SS "std::unordered_map<std::string, TProfile * > HistClass::prof\fC [static]\fP"
+Map of a string and a TEfficiency container\&. 
+.PP
+Definition at line 44 of file HistClass\&.hh\&.
+.PP
+Referenced by CreateProf(), Profile(), and WriteAllProf()\&.
+.SS "std::unordered_map<std::string, TTree * > HistClass::trees\fC [static]\fP"
+Map of a string and a TTree histogram, for easy tree handling\&. 
+.PP
+Definition at line 42 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateTree(), FillTree(), and WriteAllTrees()\&.
+.SS "std::unordered_map<std::string, TNtupleD * > HistClass::ttupple\fC [static]\fP"
+Map of a string and a TNtupleD histogram, for easy Ntuple handling\&. 
+.PP
+Definition at line 41 of file HistClass\&.hh\&.
+.PP
+Referenced by CleanUp(), CreateTree(), FillTree(), and WriteAllTrees()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

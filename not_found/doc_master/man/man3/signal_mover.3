@@ -1,0 +1,169 @@
+.TH "signal_mover" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+signal_mover \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBbasedir\fP = '/user/erdweg/out/true_res2/'"
+.br
+.ti -1c
+.RI "string \fBoutdir\fP = '/net/scratch_cms/institut_3a/erdweg/public/Corrected_Results/'"
+.br
+.ti -1c
+.RI "list \fBfileList\fP"
+.br
+.ti -1c
+.RI "list \fBhistList1\fP"
+.br
+.ti -1c
+.RI "list \fBhistList2\fP"
+.br
+.ti -1c
+.RI "tuple \fBxs_cfg\fP = ConfigObj('xs\&.cfg')"
+.br
+.ti -1c
+.RI "int \fBlumi\fP = 19700"
+.br
+.ti -1c
+.RI "dictionary \fBbgFiles\fP = {}"
+.br
+.ti -1c
+.RI "string \fBbgFile\fP = \fBbasedir\fP+bg+'\&.root'"
+.br
+.ti -1c
+.RI "tuple \fBout_file\fP = TFile(\fBoutdir\fP+bg+'\&.root','RECREATE')"
+.br
+.ti -1c
+.RI "list \fBcounter\fP = \fBbgFiles\fP[bg]"
+.br
+.ti -1c
+.RI "list \fBbgtree\fP = \fBbgFiles\fP[bg]"
+.br
+.ti -1c
+.RI "tuple \fBnewtree\fP = bgtree\&.CloneTree()"
+.br
+.ti -1c
+.RI "list \fBfile1\fP = \fBbgFiles\fP[bg]"
+.br
+.ti -1c
+.RI "tuple \fBbgmain\fP = file1\&.Get('h1_scaled_mt')"
+.br
+.ti -1c
+.RI "tuple \fBscf\fP = \fBlumi\fP*float(\fBxs_cfg\fP[bg]['xs'])"
+.br
+.ti -1c
+.RI "tuple \fBbgtmp\fP = file1\&.Get(histname)"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "string signal_mover\&.basedir = '/user/erdweg/out/true_res2/'"
+
+.PP
+Definition at line 11 of file signal_mover\&.py\&.
+.SS "string signal_mover\&.bgFile = \fBbasedir\fP+bg+'\&.root'"
+
+.PP
+Definition at line 217 of file signal_mover\&.py\&.
+.SS "dictionary signal_mover\&.bgFiles = {}"
+
+.PP
+Definition at line 214 of file signal_mover\&.py\&.
+.SS "tuple signal_mover\&.bgmain = file1\&.Get('h1_scaled_mt')"
+
+.PP
+Definition at line 233 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.bgtmp = file1\&.Get(histname)"
+
+.PP
+Definition at line 241 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.bgtree = \fBbgFiles\fP[bg]"
+
+.PP
+Definition at line 226 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.counter = \fBbgFiles\fP[bg]"
+
+.PP
+Definition at line 225 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.file1 = \fBbgFiles\fP[bg]"
+
+.PP
+Definition at line 231 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.fileList"
+
+.PP
+Definition at line 69 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.histList1"
+\fBInitial value:\fP
+.PP
+.nf
+1 = ["h1_mtsys_mures_scaled",
+2 "h1_mtsys_muscaleup_scaled",
+3 "h1_mtsys_muscaledown_scaled",
+4 "h1_mtsys_MetUnclusteredEnDown_scaled",
+5 "h1_mtsys_MetUnclusteredEnUp_scaled",
+6 "h1_mtsys_MetJetEnDown_scaled",
+7 "h1_mtsys_MetJetEnUp_scaled",
+8 "h1_mtsys_MetJetResDown_scaled",
+9 "h1_mtsys_MetJetResUp_scaled",
+10 "h1_mtsys_MetTauEnDown_scaled",
+11 "h1_mtsys_MetTauEnUp_scaled",
+12 "h1_mtsys_MetElectronEnDown_scaled",
+13 "h1_mtsys_MetElectronEnUp_scaled",
+14 "h1_mtsys_pileup_scaled",
+15 "h1_mtsys_kfacdown_scaled",
+16 "h1_mtsys_kfacup_scaled"
+17 ]
+.fi
+.PP
+Definition at line 180 of file signal_mover\&.py\&.
+.SS "list signal_mover\&.histList2"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2 "CT10_up",
+3 "CT10_down",
+4 "MSTW_up",
+5 "MSTW_down",
+6 "NNPDF_up",
+7 "NNPDF_down"
+8 ]
+.fi
+.PP
+Definition at line 197 of file signal_mover\&.py\&.
+.SS "int signal_mover\&.lumi = 19700"
+
+.PP
+Definition at line 212 of file signal_mover\&.py\&.
+.SS "tuple signal_mover\&.newtree = bgtree\&.CloneTree()"
+
+.PP
+Definition at line 229 of file signal_mover\&.py\&.
+.SS "tuple signal_mover\&.out_file = TFile(\fBoutdir\fP+bg+'\&.root','RECREATE')"
+
+.PP
+Definition at line 224 of file signal_mover\&.py\&.
+.SS "string signal_mover\&.outdir = '/net/scratch_cms/institut_3a/erdweg/public/Corrected_Results/'"
+
+.PP
+Definition at line 12 of file signal_mover\&.py\&.
+.SS "tuple signal_mover\&.scf = \fBlumi\fP*float(\fBxs_cfg\fP[bg]['xs'])"
+
+.PP
+Definition at line 234 of file signal_mover\&.py\&.
+.PP
+Referenced by get_scalefactor()\&.
+.SS "tuple signal_mover\&.xs_cfg = ConfigObj('xs\&.cfg')"
+
+.PP
+Definition at line 207 of file signal_mover\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

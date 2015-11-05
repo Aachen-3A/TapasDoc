@@ -1,0 +1,90 @@
+.TH "physpic.EventFile" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+physpic.EventFile \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fB__iter__\fP"
+.br
+.ti -1c
+.RI "def \fBnext\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBfp\fP"
+.br
+.ti -1c
+.RI "\fBbeginevent\fP"
+.br
+.ti -1c
+.RI "\fBlinecounter\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 85 of file physpic\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def physpic\&.EventFile\&.__init__ (self, filename, forcegzipped = \fCFalse\fP)"
+
+.PP
+Definition at line 86 of file physpic\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def physpic\&.EventFile\&.__iter__ (self)"
+
+.PP
+Definition at line 101 of file physpic\&.py\&.
+.SS "def physpic\&.EventFile\&.next (self)"
+
+.PP
+Definition at line 103 of file physpic\&.py\&.
+.PP
+References physpic\&.EventFile\&.beginevent, lheanalyzer\&.LHEFileFormatError\&.filename, physpic\&.EventFileFormatError\&.filename, lheanalyzer\&.LHEFile\&.filename, physpic\&.EventFile\&.filename, lheanalyzer\&.LHEFile\&.fp, physpic\&.EventFile\&.fp, and physpic\&.EventFile\&.linecounter\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "physpic\&.EventFile\&.beginevent"
+
+.PP
+Definition at line 92 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.EventFile\&.next()\&.
+.SS "physpic\&.EventFile\&.filename"
+
+.PP
+Definition at line 87 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.EventFile\&.next()\&.
+.SS "physpic\&.EventFile\&.fp"
+
+.PP
+Definition at line 89 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.EventFile\&.next()\&.
+.SS "physpic\&.EventFile\&.linecounter"
+
+.PP
+Definition at line 93 of file physpic\&.py\&.
+.PP
+Referenced by physpic\&.EventFile\&.next()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

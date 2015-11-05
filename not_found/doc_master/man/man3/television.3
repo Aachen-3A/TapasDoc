@@ -1,0 +1,229 @@
+.TH "television" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+television \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNoDaemonProcess\fP"
+.br
+.ti -1c
+.RI "class \fBNoDaemonPool\fP"
+.br
+.ti -1c
+.RI "class \fBOverview\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBterminate\fP"
+.br
+.ti -1c
+.RI "def \fBaddtime\fP"
+.br
+.ti -1c
+.RI "def \fBtimerepr\fP"
+.br
+.ti -1c
+.RI "def \fBrunParralellTask\fP"
+.br
+.ti -1c
+.RI "def \fBcheckTask\fP"
+.br
+.ti -1c
+.RI "def \fBnextUpdate\fP"
+.br
+.ti -1c
+.RI "def \fBresubmitByStatus\fP"
+.br
+.ti -1c
+.RI "def \fBaddToList\fP"
+.br
+.ti -1c
+.RI "def \fBclearFinishedJobs\fP"
+.br
+.ti -1c
+.RI "def \fBgetRunTimeFromHistory\fP"
+.br
+.ti -1c
+.RI "def \fBstatistics\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBwaitingForExit\fP = False"
+.br
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+.br
+.ti -1c
+.RI "tuple \fBtask\fP = \fBcesubmit\&.Task\&.load\fP(directory)"
+.br
+.ti -1c
+.RI "tuple \fBpp\fP = pprint\&.PrettyPrinter(indent=2)"
+.br
+.ti -1c
+.RI "\fBpassphrase\fP = None"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def television\&.addtime (tfor, tsince, tto)"
+
+.PP
+.nf
+Add two time intervals
+tfor to tto-tsince
+
+.fi
+.PP
+ 
+.PP
+Definition at line 43 of file television\&.py\&.
+.SS "def television\&.addToList (taskList, myList, overview)"
+
+.PP
+.nf
+add jobs to the kill / resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 109 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.checkTask (task, resubmitJobs, killJobs)"
+
+.PP
+.nf
+perform actions on a task
+resubmit jobs, get status, get output and get status again
+
+.fi
+.PP
+ 
+.PP
+Definition at line 70 of file television\&.py\&.
+.PP
+References cesubmit\&.Task\&.load()\&.
+.SS "def television\&.clearFinishedJobs (taskList)"
+
+.PP
+.nf
+remove done jobs from the list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 125 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.getRunTimeFromHistory (history)"
+
+.PP
+Definition at line 136 of file television\&.py\&.
+.PP
+References timerepr()\&.
+.PP
+Referenced by television\&.Overview\&.update()\&.
+.SS "def television\&.main (stdscr, options, args, passphrase)"
+
+.PP
+Definition at line 360 of file television\&.py\&.
+.PP
+References addToList(), cesubmit\&.checkAndRenewVomsProxy(), clearFinishedJobs(), lumi\&.format, cesubmit\&.Task\&.load(), nextUpdate(), resubmitByStatus(), statistics(), cesubmit\&.timeLeftVomsProxy(), and timerepr()\&.
+.SS "def television\&.nextUpdate (lastUpdate, updateInterval, nextTaskId)"
+
+.PP
+Definition at line 88 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.resubmitByStatus (taskList, resubmitList, status, overview)"
+
+.PP
+.nf
+add jobs with a certain status to the resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 94 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.runParralellTask (direcory)"
+
+.PP
+Definition at line 67 of file television\&.py\&.
+.SS "def television\&.statistics (taskList)"
+
+.PP
+.nf
+Draw statistics
+Draws a histogram of the time consumed by the finished jobs
+
+.fi
+.PP
+ 
+.PP
+Definition at line 147 of file television\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def television\&.terminate (signum, frame)"
+
+.PP
+Definition at line 39 of file television\&.py\&.
+.SS "def television\&.timerepr (deltat)"
+
+.PP
+.nf
+Return formatted time interval
+
+.fi
+.PP
+ 
+.PP
+Definition at line 55 of file television\&.py\&.
+.PP
+References lumi\&.format\&.
+.PP
+Referenced by getRunTimeFromHistory(), and main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple television\&.parser = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+
+.PP
+Definition at line 532 of file television\&.py\&.
+.SS "tuple television\&.passphrase = None"
+
+.PP
+Definition at line 550 of file television\&.py\&.
+.SS "tuple television\&.pp = pprint\&.PrettyPrinter(indent=2)"
+
+.PP
+Definition at line 544 of file television\&.py\&.
+.SS "tuple television\&.task = \fBcesubmit\&.Task\&.load\fP(directory)"
+
+.PP
+Definition at line 541 of file television\&.py\&.
+.SS "television\&.waitingForExit = False"
+
+.PP
+Definition at line 26 of file television\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

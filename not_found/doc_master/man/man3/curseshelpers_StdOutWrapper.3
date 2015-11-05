@@ -1,0 +1,80 @@
+.TH "curseshelpers.StdOutWrapper" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+curseshelpers.StdOutWrapper \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBwrite\fP"
+.br
+.ti -1c
+.RI "def \fBflush\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbottomText\fP"
+.br
+.ti -1c
+.RI "\fBdoflush\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This is a Stream object to redirect stdout and stderr to a BottomText element, which
+can be dispayed in curses
+
+.fi
+.PP
+ 
+.PP
+Definition at line 418 of file curseshelpers\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def curseshelpers\&.StdOutWrapper\&.__init__ (self, screen, nlines = \fC10\fP)"
+
+.PP
+Definition at line 422 of file curseshelpers\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def curseshelpers\&.StdOutWrapper\&.flush (self)"
+
+.PP
+Definition at line 429 of file curseshelpers\&.py\&.
+.PP
+References curseshelpers\&.StdOutWrapper\&.doflush\&.
+.SS "def curseshelpers\&.StdOutWrapper\&.write (self, txt)"
+
+.PP
+Definition at line 426 of file curseshelpers\&.py\&.
+.PP
+References curseshelpers\&.StdOutWrapper\&.doflush\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "curseshelpers\&.StdOutWrapper\&.bottomText"
+
+.PP
+Definition at line 424 of file curseshelpers\&.py\&.
+.SS "curseshelpers\&.StdOutWrapper\&.doflush"
+
+.PP
+Definition at line 425 of file curseshelpers\&.py\&.
+.PP
+Referenced by curseshelpers\&.StdOutWrapper\&.flush(), and curseshelpers\&.StdOutWrapper\&.write()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

@@ -1,0 +1,202 @@
+.TH "cesubmit" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cesubmit \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBJob\fP"
+.br
+.ti -1c
+.RI "class \fBTask\fP"
+.br
+.ti -1c
+.RI "class \fBProxyError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBsubmitWorker\fP"
+.br
+.ti -1c
+.RI "def \fBrunWorker\fP"
+.br
+.ti -1c
+.RI "def \fBresubmitWorker\fP"
+.br
+.ti -1c
+.RI "def \fBkillWorker\fP"
+.br
+.ti -1c
+.RI "def \fBgetCernUserName\fP"
+.br
+.ti -1c
+.RI "def \fBcreateAndUploadGridPack\fP"
+.br
+.ti -1c
+.RI "def \fBuploadGridPack\fP"
+.br
+.ti -1c
+.RI "def \fBparseGetOutput\fP"
+.br
+.ti -1c
+.RI "def \fBparseStatus\fP"
+.br
+.ti -1c
+.RI "def \fBparseStatusMultiple\fP"
+.br
+.ti -1c
+.RI "def \fBparseStatusMultipleL1\fP"
+.br
+.ti -1c
+.RI "def \fBchunks\fP"
+.br
+.ti -1c
+.RI "def \fBtimeLeftVomsProxy\fP"
+.br
+.ti -1c
+.RI "def \fBcheckVomsProxy\fP"
+.br
+.ti -1c
+.RI "def \fBrenewVomsProxy\fP"
+.br
+.ti -1c
+.RI "def \fBcheckAndRenewVomsProxy\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlog\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def cesubmit\&.checkAndRenewVomsProxy (time = \fC604800\fP, voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
+
+.PP
+Definition at line 763 of file cesubmit\&.py\&.
+.PP
+References checkVomsProxy(), and renewVomsProxy()\&.
+.PP
+Referenced by television\&.main(), and cesubmit\&.Job\&.submit()\&.
+.SS "def cesubmit\&.checkVomsProxy (time = \fC86400\fP)"
+
+.PP
+.nf
+Returns True if the proxy is valid longer than time, False otherwise.
+.fi
+.PP
+ 
+.PP
+Definition at line 745 of file cesubmit\&.py\&.
+.PP
+References timeLeftVomsProxy()\&.
+.PP
+Referenced by checkAndRenewVomsProxy()\&.
+.SS "def cesubmit\&.chunks (l, n)"
+
+.PP
+.nf
+Yield successive n-sized chunks from l.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 725 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&._getStatusMultiple(), and cesubmit\&.Task\&.getOutput()\&.
+.SS "def cesubmit\&.createAndUploadGridPack (localfiles, uploadurl, tarfile = \fC'gridpacktemp\&.tar\&.gz'\fP, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP)"
+
+.PP
+Definition at line 48 of file cesubmit\&.py\&.
+.PP
+References uploadGridPack()\&.
+.PP
+Referenced by submit\&.main()\&.
+.SS "def cesubmit\&.getCernUserName ()"
+
+.PP
+Definition at line 36 of file cesubmit\&.py\&.
+.PP
+Referenced by remoteAnalysis\&.checkGridpack(), aix3adb2music\&.commandline_parsing(), cesubmit\&.Task\&.makePrologue(), and uploadGridPack()\&.
+.SS "def cesubmit\&.killWorker (job)"
+
+.PP
+Definition at line 32 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.parseGetOutput (stdout)"
+
+.PP
+Definition at line 659 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&.getOutput()\&.
+.SS "def cesubmit\&.parseStatus (stdout)"
+
+.PP
+Definition at line 673 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.parseStatusMultiple (stdout)"
+
+.PP
+Definition at line 685 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.parseStatusMultipleL1 (stdout)"
+
+.PP
+Definition at line 701 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Task\&._getStatusMultiple()\&.
+.SS "def cesubmit\&.renewVomsProxy (voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
+
+.PP
+.nf
+Make a new proxy with a lifetime of one week.
+.fi
+.PP
+ 
+.PP
+Definition at line 750 of file cesubmit\&.py\&.
+.PP
+Referenced by checkAndRenewVomsProxy()\&.
+.SS "def cesubmit\&.resubmitWorker (job)"
+
+.PP
+Definition at line 28 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.runWorker (job)"
+
+.PP
+Definition at line 24 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.submitWorker (job)"
+
+.PP
+Definition at line 20 of file cesubmit\&.py\&.
+.SS "def cesubmit\&.timeLeftVomsProxy ()"
+
+.PP
+Definition at line 734 of file cesubmit\&.py\&.
+.PP
+Referenced by checkVomsProxy(), and television\&.main()\&.
+.SS "def cesubmit\&.uploadGridPack (tarfile, uploadurl, uploadsite = \fC'srm://grid-srm\&.physik\&.rwth-aachen\&.de:8443/srm/managerv2\\?SFN=/pnfs/physik\&.rwth-aachen\&.de/cms/store/user/{username}/'\fP, force = \fCFalse\fP)"
+
+.PP
+Definition at line 61 of file cesubmit\&.py\&.
+.PP
+References lumi\&.format, getCernUserName(), and raw_input()\&.
+.PP
+Referenced by remoteAnalysis\&.checkGridpack(), and createAndUploadGridPack()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple cesubmit\&.log = logging\&.getLogger(__name__)"
+
+.PP
+Definition at line 16 of file cesubmit\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

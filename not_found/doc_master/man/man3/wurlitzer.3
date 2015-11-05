@@ -1,0 +1,106 @@
+.TH "wurlitzer" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wurlitzer \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetRunTimeFromHistory\fP"
+.br
+.ti -1c
+.RI "def \fBcheckTask\fP"
+.br
+.ti -1c
+.RI "def \fBlinearStatusgetter\fP"
+.br
+.ti -1c
+.RI "def \fBresubmitByStatus\fP"
+.br
+.ti -1c
+.RI "def \fBresubmitBytime\fP"
+.br
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBparser\fP = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def wurlitzer\&.checkTask (item)"
+
+.PP
+.nf
+perform actions on a task
+resubmit jobs, get status, get output and get status again
+
+.fi
+.PP
+ 
+.PP
+Definition at line 30 of file wurlitzer\&.py\&.
+.SS "def wurlitzer\&.getRunTimeFromHistory (history)"
+
+.PP
+Definition at line 18 of file wurlitzer\&.py\&.
+.PP
+Referenced by resubmitBytime()\&.
+.SS "def wurlitzer\&.linearStatusgetter (taskList, resubmitList, killList)"
+
+.PP
+Definition at line 49 of file wurlitzer\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def wurlitzer\&.main (options, args)"
+
+.PP
+Definition at line 88 of file wurlitzer\&.py\&.
+.PP
+References linearStatusgetter(), cesubmit\&.Task\&.load(), resubmitByStatus(), and resubmitBytime()\&.
+.SS "def wurlitzer\&.resubmitByStatus (taskList, resubmitList, status, force = \fCFalse\fP)"
+
+.PP
+.nf
+add jobs with a certain status to the resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 67 of file wurlitzer\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def wurlitzer\&.resubmitBytime (taskList, resubmitList, time)"
+
+.PP
+.nf
+add jobs with a certain status to the resubmit list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 77 of file wurlitzer\&.py\&.
+.PP
+References getRunTimeFromHistory()\&.
+.PP
+Referenced by main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple wurlitzer\&.parser = optparse\&.OptionParser( description='Monitor for ce tasks', usage='usage: %prog directories')"
+
+.PP
+Definition at line 233 of file wurlitzer\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

@@ -1,0 +1,229 @@
+.TH "hadronizer_match_pu_2_cfg" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hadronizer_match_pu_2_cfg \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBprocess\fP = cms\&.Process('HLT')"
+.br
+.ti -1c
+.RI "tuple \fBinput\fP = cms\&.untracked\&.int32(20)"
+.br
+.ti -1c
+.RI "tuple \fBfileNames\fP = cms\&.untracked\&.vstring('/store/user/padeken/MC/DMV/PROC_NAME/File_NAME')"
+.br
+.ti -1c
+.RI "tuple \fBversion\fP = cms\&.untracked\&.string('$Revision: 1\&.19 $')"
+.br
+.ti -1c
+.RI "tuple \fBannotation\fP = cms\&.untracked\&.string('Configuration/GenProduction/python/ThirteenTeV/Hadronizer_MgmMatchTune4C_hacked_13TeV_madgraph_pythia8_Tauola_cff\&.py nevts:1')"
+.br
+.ti -1c
+.RI "tuple \fBname\fP = cms\&.untracked\&.string('Applications')"
+.br
+.ti -1c
+.RI "tuple \fBcompressionLevel\fP = cms\&.untracked\&.int32(4)"
+.br
+.ti -1c
+.RI "tuple \fBcompressionAlgorithm\fP = cms\&.untracked\&.string('LZMA')"
+.br
+.ti -1c
+.RI "tuple \fBeventAutoFlushCompressedSize\fP = cms\&.untracked\&.int32(15728640)"
+.br
+.ti -1c
+.RI "\fBoutputCommands\fP = process\&.AODSIMEventContent\&.outputCommands,"
+.br
+.ti -1c
+.RI "tuple \fBfileName\fP = cms\&.untracked\&.string('file:test\&.root')"
+.br
+.ti -1c
+.RI "tuple \fBdataset\fP"
+.br
+.ti -1c
+.RI "tuple \fBSelectEvents\fP"
+.br
+.ti -1c
+.RI "tuple \fBExternalDecays\fP"
+.br
+.ti -1c
+.RI "tuple \fBmaxEventsToPrint\fP = cms\&.untracked\&.int32(1)"
+.br
+.ti -1c
+.RI "tuple \fBpythiaPylistVerbosity\fP = cms\&.untracked\&.int32(1)"
+.br
+.ti -1c
+.RI "tuple \fBfilterEfficiency\fP = cms\&.untracked\&.double(1\&.0)"
+.br
+.ti -1c
+.RI "tuple \fBpythiaHepMCVerbosity\fP = cms\&.untracked\&.bool(False)"
+.br
+.ti -1c
+.RI "tuple \fBcomEnergy\fP = cms\&.double(13000\&.0)"
+.br
+.ti -1c
+.RI "tuple \fBUseExternalGenerators\fP = cms\&.untracked\&.bool(True)"
+.br
+.ti -1c
+.RI "tuple \fBjetMatching\fP"
+.br
+.ti -1c
+.RI "tuple \fBPythiaParameters\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "tuple hadronizer_match_pu_2_cfg\&.annotation = cms\&.untracked\&.string('Configuration/GenProduction/python/ThirteenTeV/Hadronizer_MgmMatchTune4C_hacked_13TeV_madgraph_pythia8_Tauola_cff\&.py nevts:1')"
+
+.PP
+Definition at line 51 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.comEnergy = cms\&.double(13000\&.0)"
+
+.PP
+Definition at line 100 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.compressionAlgorithm = cms\&.untracked\&.string('LZMA')"
+
+.PP
+Definition at line 59 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.compressionLevel = cms\&.untracked\&.int32(4)"
+
+.PP
+Definition at line 58 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.dataset"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.untracked\&.PSet(
+2         filterName = cms\&.untracked\&.string(''),
+3         dataTier = cms\&.untracked\&.string('AODSIM')
+4     )
+.fi
+.PP
+Definition at line 63 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.eventAutoFlushCompressedSize = cms\&.untracked\&.int32(15728640)"
+
+.PP
+Definition at line 60 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.ExternalDecays"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.PSet(
+2         Tauola = cms\&.untracked\&.PSet(
+3             UseTauolaPolarization = cms\&.bool(True),
+4             InputCards = cms\&.PSet(
+5                 mdtau = cms\&.int32(0),
+6                 pjak2 = cms\&.int32(0),
+7                 pjak1 = cms\&.int32(0)
+8             )
+9         ),
+10         parameterSets = cms\&.vstring('Tauola')
+11     )
+.fi
+.PP
+Definition at line 85 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.fileName = cms\&.untracked\&.string('file:test\&.root')"
+
+.PP
+Definition at line 62 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.fileNames = cms\&.untracked\&.vstring('/store/user/padeken/MC/DMV/PROC_NAME/File_NAME')"
+
+.PP
+Definition at line 39 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.filterEfficiency = cms\&.untracked\&.double(1\&.0)"
+
+.PP
+Definition at line 98 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.input = cms\&.untracked\&.int32(20)"
+
+.PP
+Definition at line 34 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.jetMatching"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.untracked\&.PSet(
+2         MEMAIN_nqmatch = cms\&.int32(5),
+3         MEMAIN_showerkt = cms\&.double(0),
+4         MEMAIN_minjets = cms\&.int32(-1),
+5         MEMAIN_qcut = cms\&.double(-1),
+6         MEMAIN_excres = cms\&.string(''),
+7         MEMAIN_etaclmax = cms\&.double(-1),
+8         outTree_flag = cms\&.int32(0),
+9         scheme = cms\&.string('Madgraph'),
+10         MEMAIN_maxjets = cms\&.int32(-1),
+11         mode = cms\&.string('auto')
+12     )
+.fi
+.PP
+Definition at line 102 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.maxEventsToPrint = cms\&.untracked\&.int32(1)"
+
+.PP
+Definition at line 96 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.name = cms\&.untracked\&.string('Applications')"
+
+.PP
+Definition at line 52 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "hadronizer_match_pu_2_cfg\&.outputCommands = process\&.AODSIMEventContent\&.outputCommands,"
+
+.PP
+Definition at line 61 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.process = cms\&.Process('HLT')"
+
+.PP
+Definition at line 8 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.pythiaHepMCVerbosity = cms\&.untracked\&.bool(False)"
+
+.PP
+Definition at line 99 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.PythiaParameters"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.PSet(
+2         processParameters = cms\&.vstring('Main:timesAllowErrors    = 10000',
+3             'ParticleDecays:limitTau0 = on',
+4             'ParticleDecays:tauMax = 10',
+5             'Tune:ee 3',
+6             'Tune:pp 5',
+7             'MultipartonInteractions:pT0Ref=2\&.1006',
+8             'MultipartonInteractions:ecmPow=0\&.21057',
+9             'MultipartonInteractions:expPow=1\&.6089',
+10             'MultipartonInteractions:a1=0\&.00',
+11             'ColourReconnection:range=3\&.31257'),
+12         parameterSets = cms\&.vstring('processParameters')
+13     )
+.fi
+.PP
+Definition at line 114 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.pythiaPylistVerbosity = cms\&.untracked\&.int32(1)"
+
+.PP
+Definition at line 97 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.SelectEvents"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.untracked\&.PSet(
+2         SelectEvents = cms\&.vstring('generation_step')
+3     )
+.fi
+.PP
+Definition at line 67 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.UseExternalGenerators = cms\&.untracked\&.bool(True)"
+
+.PP
+Definition at line 101 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SS "tuple hadronizer_match_pu_2_cfg\&.version = cms\&.untracked\&.string('$Revision: 1\&.19 $')"
+
+.PP
+Definition at line 50 of file hadronizer_match_pu_2_cfg\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

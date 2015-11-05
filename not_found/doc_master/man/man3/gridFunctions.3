@@ -1,0 +1,253 @@
+.TH "gridFunctions" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gridFunctions \- 
+.PP
+This module provides common functions for interaction with the local Tier2\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFileNotFound\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBuberls\fP"
+.br
+.RI "\fIGet list of files and directories in dCap folder  directory: string\&. \fP"
+.ti -1c
+.RI "def \fBcp\fP"
+.br
+.RI "\fICopy a file / folder to the dCache  source: string\&. \fP"
+.ti -1c
+.RI "def \fBcpFolder\fP"
+.br
+.RI "\fICopy a folder to the dCache  source: string\&. \fP"
+.ti -1c
+.RI "def \fBfileinfos\fP"
+.br
+.RI "\fIGet a dictionary of detailed file information of a remote file  source: string\&. \fP"
+.ti -1c
+.RI "def \fBadler32\fP"
+.br
+.RI "\fIGet the adler32 hash value of a dCache file  source: string\&. \fP"
+.ti -1c
+.RI "def \fBgetdcachelist\fP"
+.br
+.RI "\fIGet list of files with certain file extension in dCap folder recursively  dir: string\&. \fP"
+.ti -1c
+.RI "def \fBtimeLeftVomsProxy\fP"
+.br
+.RI "\fIReturns the life time left\&. \fP"
+.ti -1c
+.RI "def \fBcheckVomsProxy\fP"
+.br
+.RI "\fIChecks if the proxy is valid longer than time\&. \fP"
+.ti -1c
+.RI "def \fBrenewVomsProxy\fP"
+.br
+.RI "\fICreates a new vom proxy\&. \fP"
+.ti -1c
+.RI "def \fBcheckAndRenewVomsProxy\fP"
+.br
+.RI "\fIChecks if the proxy is valid longer than time and renew if needed\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This module provides common functions for interaction with the local Tier2\&. 
+.SH "Function Documentation"
+.PP 
+.SS "def gridFunctions\&.adler32 (source)"
+
+.PP
+Get the adler32 hash value of a dCache file  source: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource,:\fP The dCap file path without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/ 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file gridFunctions\&.py\&.
+.PP
+References fileinfos()\&.
+.PP
+Referenced by remoteAnalysis\&.checkGridpack()\&.
+.SS "def gridFunctions\&.checkAndRenewVomsProxy (time = \fC604800\fP, voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
+
+.PP
+Checks if the proxy is valid longer than time and renew if needed\&. time: int 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime,:\fP reference time in seconds to check against 
+.br
+\fIvoms,:\fP the voms group used to set up the server [default:cms:/cms/dcms]  passphrase: string 
+.br
+\fIpassphrase,:\fP Passphrase for GRID certificate [default:none]\&. The password request is send to the prompt if no passphrase given 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file gridFunctions\&.py\&.
+.PP
+References checkVomsProxy(), and renewVomsProxy()\&.
+.PP
+Referenced by watchfrog\&.commandline_parsing(), music_crab3\&.commandline_parsing(), and remoteAnalysis\&.main()\&.
+.SS "def gridFunctions\&.checkVomsProxy (time = \fC86400\fP)"
+
+.PP
+Checks if the proxy is valid longer than time\&. time: int 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime,:\fP reference time in seconds to check against 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boolean returns True if the proxy is valid longer than time, False otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 197 of file gridFunctions\&.py\&.
+.PP
+References timeLeftVomsProxy()\&.
+.PP
+Referenced by checkAndRenewVomsProxy(), and watchfrog\&.commandline_parsing()\&.
+.SS "def gridFunctions\&.cp (source, target)"
+
+.PP
+Copy a file / folder to the dCache  source: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource,:\fP The local path to the file / folder name\&. If you want to copy a folder, the path has to end with an '/'\&.  target: string 
+.br
+\fItarget,:\fP The dCap folder without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/\&. The folder has to end with an '/' 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file gridFunctions\&.py\&.
+.PP
+References fileinfos(), and raw_input()\&.
+.PP
+Referenced by cpFolder()\&.
+.SS "def gridFunctions\&.cpFolder (source, target)"
+
+.PP
+Copy a folder to the dCache  source: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource,:\fP The local path to the folder name  target: string 
+.br
+\fItarget,:\fP The dCap folder without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/ 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file gridFunctions\&.py\&.
+.PP
+References cp(), and fileinfos()\&.
+.SS "def gridFunctions\&.fileinfos (source)"
+
+.PP
+Get a dictionary of detailed file information of a remote file  source: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource,:\fP The dCap file path without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/ 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file gridFunctions\&.py\&.
+.PP
+Referenced by adler32(), cp(), and cpFolder()\&.
+.SS "def gridFunctions\&.getdcachelist (dir, Tag = \fC''\fP, mem_limit = \fC500000000\fP, fileXtension = \fC'\&.pxlio'\fP)"
+
+.PP
+Get list of files with certain file extension in dCap folder recursively  dir: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir,:\fP The dCap folder without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/  mem_limit: int 
+.br
+\fImem_limit,:\fP Maximum summed filesize before files are splitted in sublists [default:500000000] 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file gridFunctions\&.py\&.
+.PP
+References HistClass\&.split()\&.
+.PP
+Referenced by crabFunctions\&.CrabTask\&.finalizeTask(), remote_example\&.getFilesfromFile(), and remoteAnalysis\&.prepareFileList()\&.
+.SS "def gridFunctions\&.renewVomsProxy (voms = \fC'cms:/cms/dcms'\fP, passphrase = \fCNone\fP)"
+
+.PP
+Creates a new vom proxy\&. This function creates a new  voms: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoms,:\fP the voms group used to set up the server [default:cms:/cms/dcms]  passphrase: string 
+.br
+\fIpassphrase,:\fP Passphrase for GRID certificate [default:none]\&. The password request is send to the prompt if no passphrase given 
+.PP
+.nf
+Make a new proxy with a lifetime of one week.
+.fi
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file gridFunctions\&.py\&.
+.PP
+Referenced by checkAndRenewVomsProxy()\&.
+.SS "def gridFunctions\&.timeLeftVomsProxy ()"
+
+.PP
+Returns the life time left\&. for a proxy\&.
+.PP
+\fBReturns:\fP
+.RS 4
+int time left for the proxy 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file gridFunctions\&.py\&.
+.PP
+Referenced by checkVomsProxy()\&.
+.SS "def gridFunctions\&.uberls (directory)"
+
+.PP
+Get list of files and directories in dCap folder  directory: string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirectory,:\fP The dCap folder without /pnfs/physik\&.rwth-aachen\&.de/cms/store/user/ 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file gridFunctions\&.py\&.
+.PP
+References lumi\&.format\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

@@ -1,0 +1,145 @@
+.TH "B2G-Phys14DR-00002_3_cfg" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+B2G-Phys14DR-00002_3_cfg \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBprocess\fP = cms\&.Process('PAT')"
+.br
+.ti -1c
+.RI "tuple \fBinput\fP = cms\&.untracked\&.int32(82)"
+.br
+.ti -1c
+.RI "tuple \fBsecondaryFileNames\fP = cms\&.untracked\&.vstring()"
+.br
+.ti -1c
+.RI "tuple \fBfileNames\fP = cms\&.untracked\&.vstring('file:test\&.root')"
+.br
+.ti -1c
+.RI "tuple \fBallowUnscheduled\fP = cms\&.untracked\&.bool(True)"
+.br
+.ti -1c
+.RI "tuple \fBversion\fP = cms\&.untracked\&.string('$Revision: 1\&.19 $')"
+.br
+.ti -1c
+.RI "tuple \fBannotation\fP = cms\&.untracked\&.string('step3 nevts:82')"
+.br
+.ti -1c
+.RI "tuple \fBname\fP = cms\&.untracked\&.string('Applications')"
+.br
+.ti -1c
+.RI "tuple \fBcompressionLevel\fP = cms\&.untracked\&.int32(4)"
+.br
+.ti -1c
+.RI "tuple \fBcompressionAlgorithm\fP = cms\&.untracked\&.string('LZMA')"
+.br
+.ti -1c
+.RI "tuple \fBeventAutoFlushCompressedSize\fP = cms\&.untracked\&.int32(15728640)"
+.br
+.ti -1c
+.RI "\fBoutputCommands\fP = process\&.MINIAODSIMEventContent\&.outputCommands,"
+.br
+.ti -1c
+.RI "tuple \fBfileName\fP = cms\&.untracked\&.string('file:testMiniAOD\&.root')"
+.br
+.ti -1c
+.RI "tuple \fBdataset\fP"
+.br
+.ti -1c
+.RI "tuple \fBdropMetaData\fP = cms\&.untracked\&.string('ALL')"
+.br
+.ti -1c
+.RI "tuple \fBfastCloning\fP = cms\&.untracked\&.bool(False)"
+.br
+.ti -1c
+.RI "tuple \fBoverrideInputFileSplitLevels\fP = cms\&.untracked\&.bool(True)"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.allowUnscheduled = cms\&.untracked\&.bool(True)"
+
+.PP
+Definition at line 32 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.annotation = cms\&.untracked\&.string('step3 nevts:82')"
+
+.PP
+Definition at line 38 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.compressionAlgorithm = cms\&.untracked\&.string('LZMA')"
+
+.PP
+Definition at line 46 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.compressionLevel = cms\&.untracked\&.int32(4)"
+
+.PP
+Definition at line 45 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.dataset"
+\fBInitial value:\fP
+.PP
+.nf
+1 = cms\&.untracked\&.PSet(
+2         filterName = cms\&.untracked\&.string(''),
+3         dataTier = cms\&.untracked\&.string('MINIAODSIM')
+4     )
+.fi
+.PP
+Definition at line 50 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.dropMetaData = cms\&.untracked\&.string('ALL')"
+
+.PP
+Definition at line 54 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.eventAutoFlushCompressedSize = cms\&.untracked\&.int32(15728640)"
+
+.PP
+Definition at line 47 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.fastCloning = cms\&.untracked\&.bool(False)"
+
+.PP
+Definition at line 55 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.fileName = cms\&.untracked\&.string('file:testMiniAOD\&.root')"
+
+.PP
+Definition at line 49 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.fileNames = cms\&.untracked\&.vstring('file:test\&.root')"
+
+.PP
+Definition at line 28 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.input = cms\&.untracked\&.int32(82)"
+
+.PP
+Definition at line 22 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.name = cms\&.untracked\&.string('Applications')"
+
+.PP
+Definition at line 39 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.PP
+Referenced by HistClass\&.CreateTree(), HistClass\&.FillTree(), HistClass\&.WriteAll(), HistClass\&.WriteAll2(), HistClass\&.WriteAllEff(), HistClass\&.WriteAllProf(), HistClass\&.WriteAllTrees(), and HistClass\&.WriteN()\&.
+.SS "B2G-Phys14DR-00002_3_cfg\&.outputCommands = process\&.MINIAODSIMEventContent\&.outputCommands,"
+
+.PP
+Definition at line 48 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.overrideInputFileSplitLevels = cms\&.untracked\&.bool(True)"
+
+.PP
+Definition at line 56 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.process = cms\&.Process('PAT')"
+
+.PP
+Definition at line 8 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.secondaryFileNames = cms\&.untracked\&.vstring()"
+
+.PP
+Definition at line 27 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SS "tuple B2G-Phys14DR-00002_3_cfg\&.version = cms\&.untracked\&.string('$Revision: 1\&.19 $')"
+
+.PP
+Definition at line 37 of file B2G-Phys14DR-00002_3_cfg\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

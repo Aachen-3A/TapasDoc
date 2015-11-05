@@ -1,0 +1,363 @@
+.TH "remoteAnalysis" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+remoteAnalysis \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMyConfigParser\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmain\fP"
+.br
+.ti -1c
+.RI "def \fBreadConfig\fP"
+.br
+.ti -1c
+.RI "def \fBprepare\fP"
+.br
+.ti -1c
+.RI "def \fBmerge\fP"
+.br
+.ti -1c
+.RI "def \fBmakeTask\fP"
+.br
+.ti -1c
+.RI "def \fBadler32\fP"
+.br
+.RI "\fIDetermines the adler32 check sum of a file\&. \fP"
+.ti -1c
+.RI "def \fBask\fP"
+.br
+.RI "\fIAsks a yes/no question at the prompt\&. \fP"
+.ti -1c
+.RI "def \fBprepareFileList\fP"
+.br
+.RI "\fIThis function prepares a list of pxlio files depending on the chosen options\&. \fP"
+.ti -1c
+.RI "def \fBcheckGridpack\fP"
+.br
+.RI "\fICheck a grid pack and asks if it should be updated\&. \fP"
+.ti -1c
+.RI "def \fBcreateGridpack\fP"
+.br
+.RI "\fICreates a local grid pack tar\&.gz file\&. \fP"
+.ti -1c
+.RI "def \fBexpandFiles\fP"
+.br
+.RI "\fIReturns a list of paths from a base directory and a shell conform list of subpath\&. \fP"
+.ti -1c
+.RI "def \fBgetJobChunks\fP"
+.br
+.ti -1c
+.RI "def \fBdetermineJobChunksByFiles\fP"
+.br
+.ti -1c
+.RI "def \fBdetermineJobChunksByEvents\fP"
+.br
+.ti -1c
+.RI "def \fBgetFileList\fP"
+.br
+.ti -1c
+.RI "def \fBgetSkipEventsLocal\fP"
+.br
+.ti -1c
+.RI "def \fBprepareConfigs\fP"
+.br
+.RI "\fIThis function may be used to implement dynamic creation of config files during submission\&. \fP"
+.ti -1c
+.RI "def \fBchunks\fP"
+.br
+.RI "\fIYield successive n-sized chunks from l\&. \fP"
+.ti -1c
+.RI "def \fBcummulative\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def remoteAnalysis\&.adler32 (path)"
+
+.PP
+Determines the adler32 check sum of a file\&. path: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath,:\fP The path to the file\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string The adler32 check sum value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 202 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by checkGridpack()\&.
+.SS "def remoteAnalysis\&.ask (question)"
+
+.PP
+Asks a yes/no question at the prompt\&. question: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIquestion,:\fP The question to ask 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boolean returns True if the user answered y, False if the user answered n\&. 
+.RE
+.PP
+
+.PP
+Definition at line 213 of file remoteAnalysis\&.py\&.
+.PP
+References raw_input()\&.
+.PP
+Referenced by checkGridpack()\&.
+.SS "def remoteAnalysis\&.checkGridpack (local, remote, gpdir, gpfilestring)"
+
+.PP
+Check a grid pack and asks if it should be updated\&. Two checks are performed\&. (1) the timestamp of all files that should enter the grid pack is compared to the local grid pack timestamp\&. If at least one file is newer than the grid pack, it is suggested to upgrade the grid pack\&. (2) The adler32 check sum of the remote grid pack is compared to the local grid pack\&. If they differ or no remote grid pack is found, it is suggested to upload the grid pack\&.  local: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocal,:\fP The local path where the grid tar\&.gz file is stored\&.  remote: string 
+.br
+\fIremote,:\fP The remote path where the grid tar\&.gz file is stored\&.  gpdir: string 
+.br
+\fIgpdir,:\fP The local directory containing all the files and subdirectories that are part of the gridpack\&.  gpfilestring: string\&. 
+.br
+\fIgpfilestring,:\fP A string describing all files that should be contained in the grid pack\&. Usual shell syntax, such as astersiks is allowed\&. Directories are included recursively\&. 
+.RE
+.PP
+
+.PP
+Definition at line 259 of file remoteAnalysis\&.py\&.
+.PP
+References gridFunctions\&.adler32(), adler32(), ask(), createGridpack(), expandFiles(), cesubmit\&.getCernUserName(), and cesubmit\&.uploadGridPack()\&.
+.PP
+Referenced by prepare()\&.
+.SS "def remoteAnalysis\&.chunks (l, n)"
+
+.PP
+Yield successive n-sized chunks from l\&. The last chunk may be smaller than n\&.
+.PP
+l: iterable 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl,:\fP The iterable from which chunks are determiend\&.  l: iterable 
+.br
+\fIl,:\fP The iterable from which chunks are determiend\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A list of chunks from l\&. 
+.RE
+.PP
+
+.PP
+Definition at line 387 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by determineJobChunksByFiles()\&.
+.SS "def remoteAnalysis\&.createGridpack (localpath, gpdir, gpfilestring)"
+
+.PP
+Creates a local grid pack tar\&.gz file\&. localpath: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocalpath,:\fP The local path where the grid tar\&.gz file is stored\&.  gpdir: string 
+.br
+\fIgpdir,:\fP The local directory containing all the files and subdirectories that are part of the gridpack\&.  gpfilestring: string\&. 
+.br
+\fIgpfilestring,:\fP A string describing all files that should be contained in the grid pack\&. Usual shell syntax, such as astersiks is allowed\&. Directories are included recursively\&. 
+.RE
+.PP
+
+.PP
+Definition at line 299 of file remoteAnalysis\&.py\&.
+.PP
+References expandFiles()\&.
+.PP
+Referenced by checkGridpack()\&.
+.SS "def remoteAnalysis\&.cummulative (l)"
+
+.PP
+.nf
+Yield cummulative sums.
+.fi
+.PP
+ 
+.PP
+Definition at line 391 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by determineJobChunksByEvents()\&.
+.SS "def remoteAnalysis\&.determineJobChunksByEvents (files, eventsperjob)"
+
+.PP
+Definition at line 342 of file remoteAnalysis\&.py\&.
+.PP
+References cummulative(), getFileList(), and getSkipEventsLocal()\&.
+.PP
+Referenced by getJobChunks()\&.
+.SS "def remoteAnalysis\&.determineJobChunksByFiles (files, filesperjob)"
+
+.PP
+Definition at line 338 of file remoteAnalysis\&.py\&.
+.PP
+References chunks()\&.
+.PP
+Referenced by getJobChunks()\&.
+.SS "def remoteAnalysis\&.expandFiles (gpdir, gpfilestring)"
+
+.PP
+Returns a list of paths from a base directory and a shell conform list of subpath\&. The function prepends the base directory and resolves wildcards  gpdir: string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgpdir,:\fP The local directory containing all the files and subdirectories that are part of the gridpack\&.  gpfilestring: string\&. 
+.br
+\fIgpfilestring,:\fP A string describing all files that should be contained in the grid pack\&. Usual shell syntax, such as astersiks is allowed\&. Directories are included recursively\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+: A list of all paths corresponding to the input 
+.RE
+.PP
+
+.PP
+Definition at line 315 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by checkGridpack(), createGridpack(), and makeTask()\&.
+.SS "def remoteAnalysis\&.getFileList (files, cummulativeHigh, cummulativeLow, skipEventsGlobal, eventsperjob)"
+
+.PP
+Definition at line 355 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by determineJobChunksByEvents()\&.
+.SS "def remoteAnalysis\&.getJobChunks (files, options)"
+
+.PP
+Definition at line 321 of file remoteAnalysis\&.py\&.
+.PP
+References determineJobChunksByEvents(), and determineJobChunksByFiles()\&.
+.PP
+Referenced by makeTask()\&.
+.SS "def remoteAnalysis\&.getSkipEventsLocal (cummulativeLow, skipEventsGlobal)"
+
+.PP
+Definition at line 359 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by determineJobChunksByEvents()\&.
+.SS "def remoteAnalysis\&.main ()"
+
+.PP
+Definition at line 21 of file remoteAnalysis\&.py\&.
+.PP
+References gridFunctions\&.checkAndRenewVomsProxy(), merge(), and prepare()\&.
+.PP
+Referenced by remoteAnalysis\&.MyConfigParser\&.optionxform()\&.
+.SS "def remoteAnalysis\&.makeTask (options, skim, sample, section, arguments)"
+
+.PP
+Definition at line 169 of file remoteAnalysis\&.py\&.
+.PP
+References expandFiles(), getJobChunks(), and prepareFileList()\&.
+.PP
+Referenced by prepare()\&.
+.SS "def remoteAnalysis\&.merge (options, args)"
+
+.PP
+Definition at line 157 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by main()\&.
+.SS "def remoteAnalysis\&.prepare (options, args)"
+
+.PP
+Definition at line 135 of file remoteAnalysis\&.py\&.
+.PP
+References checkGridpack(), lumi\&.format, makeTask(), prepareConfigs(), and readConfig()\&.
+.PP
+Referenced by main()\&.
+.SS "def remoteAnalysis\&.prepareConfigs (skimlist, options)"
+
+.PP
+This function may be used to implement dynamic creation of config files during submission\&. Currently only MUSiC configs are implemented 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoptions\fP A ConfigOptions object holding current script wide options 
+.br
+\fIargs\fP A list of additional command line arguments 
+.br
+\fIA\fP list of skims and samples as created by readConfig 
+.RE
+.PP
+
+.PP
+Definition at line 374 of file remoteAnalysis\&.py\&.
+.PP
+References aix3adb2music\&.flattenRemoteSkimDict(), aix3adb2music\&.getConfigDicts(), and aix3adb2music\&.writeConfigDicts()\&.
+.PP
+Referenced by prepare()\&.
+.SS "def remoteAnalysis\&.prepareFileList (skim, sample, options)"
+
+.PP
+This function prepares a list of pxlio files depending on the chosen options\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIA\fP \fBaix3adb\fP skim object 
+.br
+\fIProgram\fP wide options saved in Option class from optparse 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A list of dicts as used in the skim\&.files field 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file remoteAnalysis\&.py\&.
+.PP
+References gridFunctions\&.getdcachelist()\&.
+.PP
+Referenced by makeTask()\&.
+.SS "def remoteAnalysis\&.readConfig (options, args)"
+
+.PP
+Definition at line 54 of file remoteAnalysis\&.py\&.
+.PP
+Referenced by aix3adb2music\&.getSkimAndSampleList(), and prepare()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tuple remoteAnalysis\&.logger = logging\&.getLogger(__name__)"
+
+.PP
+Definition at line 5 of file remoteAnalysis\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

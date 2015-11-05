@@ -1,0 +1,211 @@
+.TH "cesubmit.Job" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cesubmit.Job \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBstatus\fP"
+.br
+.ti -1c
+.RI "def \fBwriteJdl\fP"
+.br
+.ti -1c
+.RI "def \fBsubmit\fP"
+.br
+.ti -1c
+.RI "def \fBrunLocal\fP"
+.br
+.ti -1c
+.RI "def \fBgetStatus\fP"
+.br
+.ti -1c
+.RI "def \fBgetOutput\fP"
+.br
+.ti -1c
+.RI "def \fBcancel\fP"
+.br
+.ti -1c
+.RI "def \fBpurge\fP"
+.br
+.ti -1c
+.RI "def \fBkill\fP"
+.br
+.ti -1c
+.RI "def \fBresubmit\fP"
+.br
+.ti -1c
+.RI "def \fBoutputSubDirectory\fP"
+.br
+.ti -1c
+.RI "def \fBjid\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBexecutable\fP"
+.br
+.ti -1c
+.RI "\fBfrontEndStatus\fP"
+.br
+.ti -1c
+.RI "\fBjobid\fP"
+.br
+.ti -1c
+.RI "\fBinputfiles\fP"
+.br
+.ti -1c
+.RI "\fBjdlfilename\fP"
+.br
+.ti -1c
+.RI "\fBerror\fP"
+.br
+.ti -1c
+.RI "\fBinfos\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 94 of file cesubmit\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def cesubmit\&.Job\&.__init__ (self)"
+
+.PP
+Definition at line 95 of file cesubmit\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def cesubmit\&.Job\&.cancel (self)"
+
+.PP
+Definition at line 277 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
+.PP
+Referenced by cesubmit\&.Job\&.kill(), and cesubmit\&.Job\&.resubmit()\&.
+.SS "def cesubmit\&.Job\&.getOutput (self)"
+
+.PP
+Definition at line 265 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.frontEndStatus, cesubmit\&.Job\&.jobid, and cesubmit\&.Job\&.purge()\&.
+.SS "def cesubmit\&.Job\&.getStatus (self)"
+
+.PP
+Definition at line 253 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
+.SS "def cesubmit\&.Job\&.jid (self)"
+
+.PP
+Definition at line 314 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.jobid, and HistClass\&.split()\&.
+.SS "def cesubmit\&.Job\&.kill (self)"
+
+.PP
+Definition at line 299 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.infos, and cesubmit\&.Job\&.purge()\&.
+.SS "def cesubmit\&.Job\&.outputSubDirectory (self)"
+
+.PP
+Definition at line 311 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.jobid\&.
+.SS "def cesubmit\&.Job\&.purge (self)"
+
+.PP
+Definition at line 288 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.frontEndStatus, and cesubmit\&.Job\&.jobid\&.
+.PP
+Referenced by cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.kill(), and cesubmit\&.Job\&.resubmit()\&.
+.SS "def cesubmit\&.Job\&.resubmit (self)"
+
+.PP
+Definition at line 304 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.infos, cesubmit\&.Job\&.purge(), cesubmit\&.Job\&.status(), and cesubmit\&.Job\&.submit()\&.
+.SS "def cesubmit\&.Job\&.runLocal (self)"
+
+.PP
+Definition at line 190 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.executable, cesubmit\&.Job\&.jdlfilename, and cesubmit\&.Job\&.jobid\&.
+.SS "def cesubmit\&.Job\&.status (self)"
+
+.PP
+Definition at line 100 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.infos\&.
+.PP
+Referenced by lheanalyzer\&.Particle\&.__repr__(), and cesubmit\&.Job\&.resubmit()\&.
+.SS "def cesubmit\&.Job\&.submit (self)"
+
+.PP
+Definition at line 143 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.checkAndRenewVomsProxy(), and cesubmit\&.Job\&.jdlfilename\&.
+.PP
+Referenced by cesubmit\&.Job\&.resubmit()\&.
+.SS "def cesubmit\&.Job\&.writeJdl (self)"
+
+.PP
+Definition at line 106 of file cesubmit\&.py\&.
+.PP
+References cesubmit\&.Job\&.executable\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "cesubmit\&.Job\&.error"
+
+.PP
+Definition at line 178 of file cesubmit\&.py\&.
+.SS "cesubmit\&.Job\&.executable"
+
+.PP
+Definition at line 96 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Job\&.runLocal(), and cesubmit\&.Job\&.writeJdl()\&.
+.SS "cesubmit\&.Job\&.frontEndStatus"
+
+.PP
+Definition at line 97 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.getStatus(), cesubmit\&.Task\&.getStatus(), cesubmit\&.Job\&.purge(), cesubmit\&.Task\&.resubmit(), and cesubmit\&.Task\&.resubmitLocal()\&.
+.SS "cesubmit\&.Job\&.infos"
+
+.PP
+Definition at line 264 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Job\&.kill(), cesubmit\&.Job\&.resubmit(), and cesubmit\&.Job\&.status()\&.
+.SS "cesubmit\&.Job\&.inputfiles"
+
+.PP
+Definition at line 114 of file cesubmit\&.py\&.
+.SS "cesubmit\&.Job\&.jdlfilename"
+
+.PP
+Definition at line 138 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Job\&.runLocal(), and cesubmit\&.Job\&.submit()\&.
+.SS "cesubmit\&.Job\&.jobid"
+
+.PP
+Definition at line 98 of file cesubmit\&.py\&.
+.PP
+Referenced by cesubmit\&.Job\&.cancel(), cesubmit\&.Job\&.getOutput(), cesubmit\&.Job\&.getStatus(), cesubmit\&.Job\&.jid(), cesubmit\&.Job\&.outputSubDirectory(), cesubmit\&.Job\&.purge(), and cesubmit\&.Job\&.runLocal()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.

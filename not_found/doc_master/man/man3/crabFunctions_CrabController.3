@@ -1,0 +1,370 @@
+.TH "crabFunctions.CrabController" 3 "Thu Nov 5 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+crabFunctions.CrabController \- 
+.PP
+The \fBCrabController\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.RI "\fIThe constructor\&. \fP"
+.ti -1c
+.RI "def \fBcheckwrite\fP"
+.br
+.RI "\fICheck if crab can write to specified site\&. \fP"
+.ti -1c
+.RI "def \fBsubmit\fP"
+.br
+.RI "\fICheck if crab can write to specified site\&. \fP"
+.ti -1c
+.RI "def \fBresubmit\fP"
+.br
+.RI "\fIResubmit all failed tasks in job or specified list of jobs in task\&. \fP"
+.ti -1c
+.RI "def \fBcheckusername\fP"
+.br
+.RI "\fIReturns the hn name for a user with valid proxy\&. \fP"
+.ti -1c
+.RI "def \fBstatus\fP"
+.br
+.RI "\fICheck crab status\&. \fP"
+.ti -1c
+.RI "def \fBcallCrabCommand\fP"
+.br
+.RI "\fICall crab command in a new process and return result dict\&. \fP"
+.ti -1c
+.RI "def \fBgetlog\fP"
+.br
+.RI "\fICall crab getlog\&. \fP"
+.ti -1c
+.RI "def \fBreadCrabConfig\fP"
+.br
+.RI "\fIRead a crab config and return python object\&. \fP"
+.ti -1c
+.RI "def \fBcrabFolders\fP"
+.br
+.RI "\fIReturn list of all crab folders in workin area (default cwd) \fP"
+.ti -1c
+.RI "def \fBcommandlineOptions\fP"
+.br
+.RI "\fIPopulates an existing optparse parser or returns a new one with options for crab functions\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdebug\fP"
+.br
+.ti -1c
+.RI "\fBworkingArea\fP"
+.br
+.ti -1c
+.RI "\fBdry_run\fP"
+.br
+.ti -1c
+.RI "\fBvoGroup\fP"
+.br
+.ti -1c
+.RI "\fBusername\fP"
+.br
+.ti -1c
+.RI "\fBlogger\fP"
+.br
+.ti -1c
+.RI "\fBcrab_q\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB_prepareFoldername\fP"
+.br
+.RI "\fIAdd crab_ to Foldername if needed\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBCrabController\fP class\&. 
+
+This class can be used to manage Analyses using crab3 
+.PP
+Definition at line 35 of file crabFunctions\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def crabFunctions\&.CrabController\&.__init__ (self, debug = \fC0\fP, logger = \fCNone\fP, workingArea = \fCNone\fP, voGroup = \fCNone\fP, username = \fCNone\fP)"
+
+.PP
+The constructor\&. self: \fBCrabController\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  self: A logging logger instance 
+.br
+\fIself,:\fP A previously defined logger\&. Crab log messages will use this logger as their parent logger\&. 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file crabFunctions\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def crabFunctions\&.CrabController\&._prepareFoldername (self, name)\fC [private]\fP"
+
+.PP
+Add crab_ to Foldername if needed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgetlog(self,name)\fP 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.getlog(), and crabFunctions\&.CrabController\&.resubmit()\&.
+.SS "def crabFunctions\&.CrabController\&.callCrabCommand (self, crabArgs)"
+
+.PP
+Call crab command in a new process and return result dict\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself\fP The object pointer 
+.br
+\fIcrabArgs\fP A list of arguments for crab beginning with the command 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.crab_q\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.getlog(), crabFunctions\&.CrabController\&.resubmit(), crabFunctions\&.CrabController\&.status(), and crabFunctions\&.CrabController\&.submit()\&.
+.SS "def crabFunctions\&.CrabController\&.checkusername (self)"
+
+.PP
+Returns the hn name for a user with valid proxy\&. self: \fBCrabController\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+users hypernews name 
+.RE
+.PP
+
+.PP
+Definition at line 145 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.username\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.checkwrite()\&.
+.SS "def crabFunctions\&.CrabController\&.checkwrite (self, site = \fC'T2_DE_RWTH'\fP, path = \fC'noPath'\fP)"
+
+.PP
+Check if crab can write to specified site\&. self: \fBCrabController\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  site string 
+.br
+\fIsite\fP The Site symbol [default:T2_DE_RWTH]  path string 
+.br
+\fIpath\fP lfn path to check write permission in\&. see twiki WorkBookCRAB3Tutorial 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boolean which is True if user can write to site and False otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.checkusername(), crabFunctions\&.CrabController\&.username, and crabFunctions\&.CrabController\&.voGroup\&.
+.SS "def crabFunctions\&.CrabController\&.commandlineOptions (self, parser = \fCoptparse\&.OptionParser( 'usage: %prog' )\fP)"
+
+.PP
+Populates an existing optparse parser or returns a new one with options for crab functions\&. This functions populates a previously created (or new) instance of a optparse parser object with options needed by crab functions\&. It is possible to add three kinds of options:
+.IP "\(bu" 2
+options where a error should be raised if the option was previously defined
+.IP "\(bu" 2
+options where previous definitions should be kept
+.IP "\(bu" 2
+options where previous definitions should be overriden  Optparse parser instance 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparser\fP A previously created parser oject which should be extenden [default: new instance] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new or extenden optparse parser instance 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line 256 of file crabFunctions\&.py\&.
+.SS "def crabFunctions\&.CrabController\&.crabFolders (self)"
+
+.PP
+Return list of all crab folders in workin area (default cwd) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself\fP The object pointer 
+.RE
+.PP
+
+.PP
+Definition at line 231 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.workingArea\&.
+.SS "def crabFunctions\&.CrabController\&.getlog (self, name)"
+
+.PP
+Call crab getlog\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  name string 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&._prepareFoldername(), and crabFunctions\&.CrabController\&.callCrabCommand()\&.
+.SS "def crabFunctions\&.CrabController\&.readCrabConfig (self, name)"
+
+.PP
+Read a crab config and return python object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&. 
+.br
+\fIname\fP The sample name (crab request name) 
+.RE
+.PP
+
+.PP
+Definition at line 215 of file crabFunctions\&.py\&.
+.SS "def crabFunctions\&.CrabController\&.resubmit (self, name, joblist = \fCNone\fP)"
+
+.PP
+Resubmit all failed tasks in job or specified list of jobs in task\&. self: \fBCrabController\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  name string 
+.br
+\fIname\fP The crab3 request name, a\&.k\&.a the sample name  joblist list of strings 
+.br
+\fIjoblist\fP The crab3 request name, a\&.k\&.a the sample name 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&._prepareFoldername(), crabFunctions\&.CrabController\&.callCrabCommand(), crabFunctions\&.CrabController\&.dry_run, and crabFunctions\&.CrabController\&.workingArea\&.
+.SS "def crabFunctions\&.CrabController\&.status (self, name)"
+
+.PP
+Check crab status\&. self: \fBCrabController\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  name string 
+.br
+\fIname\fP The crab3 request name, a\&.k\&.a the sample name 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.callCrabCommand(), and crabFunctions\&.CrabController\&.dry_run\&.
+.PP
+Referenced by lheanalyzer\&.Particle\&.__repr__()\&.
+.SS "def crabFunctions\&.CrabController\&.submit (self, name)"
+
+.PP
+Check if crab can write to specified site\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIself,:\fP The object pointer\&.  name string 
+.br
+\fIname\fP The crab3 config file name 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file crabFunctions\&.py\&.
+.PP
+References crabFunctions\&.CrabController\&.callCrabCommand(), crabFunctions\&.CrabController\&.debug, and crabFunctions\&.CrabController\&.dry_run\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "crabFunctions\&.CrabController\&.crab_q"
+
+.PP
+Definition at line 75 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.callCrabCommand()\&.
+.SS "crabFunctions\&.CrabController\&.debug"
+
+.PP
+Definition at line 43 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.submit()\&.
+.SS "crabFunctions\&.CrabController\&.dry_run"
+
+.PP
+Definition at line 48 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.resubmit(), crabFunctions\&.CrabController\&.status(), and crabFunctions\&.CrabController\&.submit()\&.
+.SS "crabFunctions\&.CrabController\&.logger"
+
+.PP
+Definition at line 59 of file crabFunctions\&.py\&.
+.SS "crabFunctions\&.CrabController\&.username"
+
+.PP
+Definition at line 54 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.checkusername(), and crabFunctions\&.CrabController\&.checkwrite()\&.
+.SS "crabFunctions\&.CrabController\&.voGroup"
+
+.PP
+Definition at line 50 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.checkwrite()\&.
+.SS "crabFunctions\&.CrabController\&.workingArea"
+
+.PP
+Definition at line 45 of file crabFunctions\&.py\&.
+.PP
+Referenced by crabFunctions\&.CrabController\&.crabFolders(), and crabFunctions\&.CrabController\&.resubmit()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.
