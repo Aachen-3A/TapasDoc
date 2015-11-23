@@ -1,4 +1,4 @@
-.TH "lib.plotlib" 3 "Mon Oct 12 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.plotlib" 3 "Mon Nov 23 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -48,6 +48,9 @@ lib.plotlib \-
 .ti -1c
 .RI "def \fBgetRGBTColor\fP"
 .br
+.ti -1c
+.RI "def \fBmakeTeXTable\fP"
+.br
 .in -1c
 .SS "Variables"
 
@@ -64,13 +67,13 @@ lib.plotlib \-
 .SS "def lib\&.plotlib\&._duke__errorbar (h, xerr, yerr, axes = \fCNone\fP, emptybins = \fCTrue\fP, ignore_binns = \fCNone\fP, zorder = \fCNone\fP, kwargs)\fC [private]\fP"
 
 .PP
-Definition at line 186 of file plotlib\&.py\&.
+Definition at line 187 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.duke_errorbar()\&.
 .SS "def lib\&.plotlib\&.duke_errorbar (hists, xerr = \fCTrue\fP, yerr = \fCTrue\fP, xpadding = \fC0\fP, ypadding = \fC\&.1\fP, xerror_in_padding = \fCTrue\fP, yerror_in_padding = \fCTrue\fP, emptybins = \fCTrue\fP, snap = \fCTrue\fP, axes = \fCNone\fP, ignore_binns = \fCNone\fP, kwargs)"
 
 .PP
-Definition at line 88 of file plotlib\&.py\&.
+Definition at line 89 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&._duke__errorbar()\&.
 .PP
@@ -78,25 +81,29 @@ Referenced by lib\&.plotlib\&.scale_xaxis()\&.
 .SS "def lib\&.plotlib\&.getColorList (ncolors)"
 
 .PP
-Definition at line 40 of file plotlib\&.py\&.
+Definition at line 41 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.xfrange()\&.
 .SS "def lib\&.plotlib\&.getDictValue (hist, parmDict)"
 
 .PP
-Definition at line 51 of file plotlib\&.py\&.
+Definition at line 52 of file plotlib\&.py\&.
 .PP
 Referenced by DukePlotALot_tester\&.Creat_standard_plot(), DukePlotALot_tester_realPlotRoot\&.main(), and DukePlotALot_tester_realPlot\&.main()\&.
 .SS "def lib\&.plotlib\&.getRGBTColor (color)"
 
 .PP
-Definition at line 227 of file plotlib\&.py\&.
+Definition at line 228 of file plotlib\&.py\&.
 .PP
 Referenced by DukePlotALot_tester_realPlotRoot\&.main()\&.
+.SS "def lib\&.plotlib\&.makeTeXTable (dir_name, hist, histContainer)"
+
+.PP
+Definition at line 242 of file plotlib\&.py\&.
 .SS "def lib\&.plotlib\&.scale_xaxis (hist, factor)"
 
 .PP
-Definition at line 63 of file plotlib\&.py\&.
+Definition at line 64 of file plotlib\&.py\&.
 .PP
 References lib\&.plotlib\&.duke_errorbar()\&.
 .SS "def lib\&.plotlib\&.xfrange (start, stop, step)"
@@ -104,7 +111,7 @@ References lib\&.plotlib\&.duke_errorbar()\&.
 .PP
 helper methods some times one needs float lists 
 .PP
-Definition at line 34 of file plotlib\&.py\&.
+Definition at line 35 of file plotlib\&.py\&.
 .PP
 Referenced by lib\&.plotlib\&.getColorList()\&.
 .SH "Variable Documentation"
@@ -112,11 +119,11 @@ Referenced by lib\&.plotlib\&.getColorList()\&.
 .SS "list lib\&.plotlib\&.log_plotlib = log['plotlib']"
 
 .PP
-Definition at line 27 of file plotlib\&.py\&.
+Definition at line 28 of file plotlib\&.py\&.
 .SS "tuple lib\&.plotlib\&.rnd = rounding()"
 
 .PP
-Definition at line 29 of file plotlib\&.py\&.
+Definition at line 30 of file plotlib\&.py\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for PlotLib from the source code\&.

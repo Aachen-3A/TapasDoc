@@ -35,6 +35,7 @@
       <div align=right><select id="choose_branch">
         <option value="">Change branch</option>
         <option value="http://aachen-3a.github.io/TapasDoc/https://github.com/Aachen-3A/PlotLib/doc_master/html/index.html">master</option>
+<option value="http://aachen-3a.github.io/TapasDoc/https://github.com/Aachen-3A/PlotLib/doc_newNomalization/html/index.html">newNomalization</option>
 <option value="http://aachen-3a.github.io/TapasDoc/https://github.com/Aachen-3A/PlotLib/doc_dev/html/index.html">dev</option>
         </select>
      </div>   
@@ -131,14 +132,14 @@ $(document).ready(function(){initNavTree('rounding_8py_source.html','');});
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classlib_1_1rounding_1_1rounding.html#a7aa97308c285fb128ed81e1a0708efa0">   33</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classlib_1_1rounding_1_1rounding.html#a7aa97308c285fb128ed81e1a0708efa0">latexValueError</a>(self, n, error):</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        a, b, expo = self.<a class="code" href="classlib_1_1rounding_1_1rounding.html#ab670fb08f173b754ba6160c26651e7a8">sdr</a>(n, error)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> expo != 0:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}\pm{1}\cdot10^{{{2}}}$&#39;</span>.format(a, b, exp )</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}\pm{1}\cdot10^{{{2}}}$&#39;</span>.format(a, b, expo )</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}\pm{1}$&#39;</span>.format(a, b)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlib_1_1rounding_1_1rounding.html#aa9145baf9d19c5bb7fbba0e968c23027">   40</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classlib_1_1rounding_1_1rounding.html#aa9145baf9d19c5bb7fbba0e968c23027">latexValueUpDownError</a>( self, n, up, down ):</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        a, b, c, expo = self.<a class="code" href="classlib_1_1rounding_1_1rounding.html#ab670fb08f173b754ba6160c26651e7a8">sdr</a>( n, up, down )</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> expo != 0:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}^{{+{1}}}_{{-{2}}}\cdot10^{{{3}}}$&#39;</span>.format(a, b, c, exp)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}^{{+{1}}}_{{-{2}}}\cdot10^{{{3}}}$&#39;</span>.format(a, b, c, expo)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;${0}^{{+{1}}}_{{-{2}}}$&#39;</span>.format(a, b)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>

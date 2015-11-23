@@ -1,4 +1,4 @@
-.TH "lib.style_class.style_container" 3 "Mon Oct 12 2015" "PlotLib" \" -*- nroff -*-
+.TH "lib.style_class.style_container" 3 "Mon Nov 23 2015" "PlotLib" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -213,6 +213,9 @@ lib.style_class.style_container \-
 .RI "def \fBGet_zmax\fP"
 .br
 .ti -1c
+.RI "def \fBGet_do_overflowbin\fP"
+.br
+.ti -1c
 .RI "def \fBSet_line_style\fP"
 .br
 .ti -1c
@@ -274,6 +277,9 @@ lib.style_class.style_container \-
 .br
 .ti -1c
 .RI "def \fBSet_minor_ticks\fP"
+.br
+.ti -1c
+.RI "def \fBSet_do_overflowbin\fP"
 .br
 .ti -1c
 .RI "def \fBSet_axis\fP"
@@ -474,6 +480,15 @@ lib.style_class.style_container \-
 .RI "\fB_poisson_error\fP"
 .br
 .ti -1c
+.RI "\fB_show_minor_tick_labels\fP"
+.br
+.ti -1c
+.RI "\fB_do_minor_ticks\fP"
+.br
+.ti -1c
+.RI "\fB_do_overflowbin\fP"
+.br
+.ti -1c
 .RI "\fB_cmsTextPosition\fP"
 .br
 .ti -1c
@@ -493,9 +508,6 @@ lib.style_class.style_container \-
 .br
 .ti -1c
 .RI "\fB_line_style\fP"
-.br
-.ti -1c
-.RI "\fB_do_minor_ticks\fP"
 .br
 .ti -1c
 .RI "\fB_add_cms_text\fP"
@@ -543,9 +555,6 @@ lib.style_class.style_container \-
 .RI "\fB_cms_text_alignment\fP"
 .br
 .ti -1c
-.RI "\fB_show_minor_tick_labels\fP"
-.br
-.ti -1c
 .RI "\fB_axis_title_font\fP"
 .br
 .ti -1c
@@ -576,7 +585,7 @@ Definition at line 9 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.__del__ (self)"
 
 .PP
-Definition at line 70 of file style_class\&.py\&.
+Definition at line 73 of file style_class\&.py\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "def lib\&.style_class\&.style_container\&._Set_CMS_style (self)\fC [private]\fP"
@@ -588,423 +597,429 @@ Definition at line 70 of file style_class\&.py\&.
 .SS "Private functions "
 
 .PP
-Definition at line 399 of file style_class\&.py\&.
+Definition at line 408 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&._Set_Cool_style (self)\fC [private]\fP"
 
 .PP
-Definition at line 465 of file style_class\&.py\&.
+Definition at line 470 of file style_class\&.py\&.
 .PP
-References lib\&.style_class\&.style_container\&._add_cms_text, lib\&.style_class\&.style_container\&._annotation_text_color, lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio, lib\&.style_class\&.style_container\&._axis_title_font, lib\&.style_class\&.style_container\&._bg_color, lib\&.style_class\&.style_container\&._cms_text_alignment, lib\&.style_class\&.style_container\&._do_minor_ticks, lib\&.style_class\&.style_container\&._grid_color, lib\&.style_class\&.style_container\&._grid_style, lib\&.style_class\&.style_container\&._grid_width, lib\&.style_class\&.style_container\&._histaxis_label_text_color, lib\&.style_class\&.style_container\&._label_text_color, lib\&.style_class\&.style_container\&._legend_font_size, lib\&.style_class\&.style_container\&._line_style, lib\&.style_class\&.style_container\&._marker_color, lib\&.style_class\&.style_container\&._marker_error_cap_width, lib\&.style_class\&.style_container\&._marker_size, lib\&.style_class\&.style_container\&._marker_style, lib\&.style_class\&.style_container\&._ref_line_color, lib\&.style_class\&.style_container\&._show_minor_tick_labels, lib\&.style_class\&.style_container\&._spine_color, lib\&.style_class\&.style_container\&._tick_color, lib\&.style_class\&.style_container\&._tick_font_size, and lib\&.style_class\&.style_container\&.histaxis\&.
+References lib\&.style_class\&.style_container\&._add_cms_text, lib\&.style_class\&.style_container\&._annotation_text_color, lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio, lib\&.style_class\&.style_container\&._axis_title_font, lib\&.style_class\&.style_container\&._bg_color, lib\&.style_class\&.style_container\&._cms_text_alignment, lib\&.style_class\&.style_container\&._grid_color, lib\&.style_class\&.style_container\&._grid_style, lib\&.style_class\&.style_container\&._grid_width, lib\&.style_class\&.style_container\&._histaxis_label_text_color, lib\&.style_class\&.style_container\&._label_text_color, lib\&.style_class\&.style_container\&._legend_font_size, lib\&.style_class\&.style_container\&._line_style, lib\&.style_class\&.style_container\&._marker_color, lib\&.style_class\&.style_container\&._marker_error_cap_width, lib\&.style_class\&.style_container\&._marker_size, lib\&.style_class\&.style_container\&._marker_style, lib\&.style_class\&.style_container\&._ref_line_color, lib\&.style_class\&.style_container\&._spine_color, lib\&.style_class\&.style_container\&._tick_color, lib\&.style_class\&.style_container\&._tick_font_size, and lib\&.style_class\&.style_container\&.histaxis\&.
 .SS "def lib\&.style_class\&.style_container\&._Set_Plain_style (self)\fC [private]\fP"
 
 .PP
-Definition at line 432 of file style_class\&.py\&.
+Definition at line 439 of file style_class\&.py\&.
 .PP
-References lib\&.style_class\&.style_container\&._add_cms_text, lib\&.style_class\&.style_container\&._annotation_text_color, lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio, lib\&.style_class\&.style_container\&._axis_title_font, lib\&.style_class\&.style_container\&._bg_color, lib\&.style_class\&.style_container\&._cms_text_alignment, lib\&.style_class\&.style_container\&._do_minor_ticks, lib\&.style_class\&.style_container\&._grid_color, lib\&.style_class\&.style_container\&._grid_style, lib\&.style_class\&.style_container\&._grid_width, lib\&.style_class\&.style_container\&._histaxis_label_text_color, lib\&.style_class\&.style_container\&._label_text_color, lib\&.style_class\&.style_container\&._legend_font_size, lib\&.style_class\&.style_container\&._line_style, lib\&.style_class\&.style_container\&._marker_color, lib\&.style_class\&.style_container\&._marker_error_cap_width, lib\&.style_class\&.style_container\&._marker_size, lib\&.style_class\&.style_container\&._marker_style, lib\&.style_class\&.style_container\&._ref_line_color, lib\&.style_class\&.style_container\&._show_minor_tick_labels, lib\&.style_class\&.style_container\&._spine_color, lib\&.style_class\&.style_container\&._tick_color, lib\&.style_class\&.style_container\&._tick_font_size, and lib\&.style_class\&.style_container\&.histaxis\&.
+References lib\&.style_class\&.style_container\&._add_cms_text, lib\&.style_class\&.style_container\&._annotation_text_color, lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio, lib\&.style_class\&.style_container\&._axis_title_font, lib\&.style_class\&.style_container\&._bg_color, lib\&.style_class\&.style_container\&._cms_text_alignment, lib\&.style_class\&.style_container\&._grid_color, lib\&.style_class\&.style_container\&._grid_style, lib\&.style_class\&.style_container\&._grid_width, lib\&.style_class\&.style_container\&._histaxis_label_text_color, lib\&.style_class\&.style_container\&._label_text_color, lib\&.style_class\&.style_container\&._legend_font_size, lib\&.style_class\&.style_container\&._line_style, lib\&.style_class\&.style_container\&._marker_color, lib\&.style_class\&.style_container\&._marker_error_cap_width, lib\&.style_class\&.style_container\&._marker_size, lib\&.style_class\&.style_container\&._marker_style, lib\&.style_class\&.style_container\&._ref_line_color, lib\&.style_class\&.style_container\&._spine_color, lib\&.style_class\&.style_container\&._tick_color, lib\&.style_class\&.style_container\&._tick_font_size, and lib\&.style_class\&.style_container\&.histaxis\&.
 .SS "def lib\&.style_class\&.style_container\&._Set_Root_style (self)\fC [private]\fP"
 
 .PP
-Definition at line 498 of file style_class\&.py\&.
+Definition at line 501 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.AddAxisTitle (self, hist)"
 
 .PP
-Definition at line 73 of file style_class\&.py\&.
+Definition at line 76 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.AddAxisTitle_histaxis (self, hist)"
 
 .PP
-Definition at line 82 of file style_class\&.py\&.
+Definition at line 85 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_add_cms_text (self)"
 
 .PP
-Definition at line 204 of file style_class\&.py\&.
+Definition at line 207 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._add_cms_text\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_add_lumi_text (self)"
 
 .PP
-Definition at line 207 of file style_class\&.py\&.
+Definition at line 210 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._add_lumi_text\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_additional_text (self)"
 
 .PP
-Definition at line 138 of file style_class\&.py\&.
+Definition at line 141 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._additional_text\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_annotation_text_color (self)"
 
 .PP
-Definition at line 216 of file style_class\&.py\&.
+Definition at line 219 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._annotation_text_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_axis_text_main_to_sub_ratio (self)"
 
 .PP
-Definition at line 318 of file style_class\&.py\&.
+Definition at line 324 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_axis_title_font (self)"
 
 .PP
-Definition at line 315 of file style_class\&.py\&.
+Definition at line 321 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._axis_title_font\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_batch_mode (self)"
 
 .PP
-Definition at line 222 of file style_class\&.py\&.
+Definition at line 225 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._batch_mode\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_bg_color (self)"
 
 .PP
-Definition at line 219 of file style_class\&.py\&.
+Definition at line 222 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._bg_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_cms_text_alignment (self)"
 
 .PP
-Definition at line 252 of file style_class\&.py\&.
+Definition at line 255 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._cms_text_alignment\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_cms_val (self)"
 
 .PP
-Definition at line 297 of file style_class\&.py\&.
+Definition at line 300 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._cms_val\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_cmsTextPosition (self)"
 
 .PP
-Definition at line 261 of file style_class\&.py\&.
+Definition at line 264 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._cmsTextPosition\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_content (self)"
 
 .PP
-Definition at line 291 of file style_class\&.py\&.
+Definition at line 294 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._content\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_do_minor_ticks (self)"
 
 .PP
-Definition at line 273 of file style_class\&.py\&.
+Definition at line 276 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._do_minor_ticks\&.
+.SS "def lib\&.style_class\&.style_container\&.Get_do_overflowbin (self)"
+
+.PP
+Definition at line 309 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.style_container\&._do_overflowbin\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_bands_alph (self)"
 
 .PP
-Definition at line 153 of file style_class\&.py\&.
+Definition at line 156 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_alph\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_bands_center (self)"
 
 .PP
-Definition at line 159 of file style_class\&.py\&.
+Definition at line 162 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_center\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_bands_ecol (self)"
 
 .PP
-Definition at line 147 of file style_class\&.py\&.
+Definition at line 150 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_ecol\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_bands_fcol (self)"
 
 .PP
-Definition at line 150 of file style_class\&.py\&.
+Definition at line 153 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_fcol\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_bands_labl (self)"
 
 .PP
-Definition at line 156 of file style_class\&.py\&.
+Definition at line 159 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_labl\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_line_width (self)"
 
 .PP
-Definition at line 165 of file style_class\&.py\&.
+Definition at line 168 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._line_width\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_error_stacking (self)"
 
 .PP
-Definition at line 162 of file style_class\&.py\&.
+Definition at line 165 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_stacking\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_grid (self)"
 
 .PP
-Definition at line 279 of file style_class\&.py\&.
+Definition at line 282 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._grid\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_grid_color (self)"
 
 .PP
-Definition at line 288 of file style_class\&.py\&.
+Definition at line 291 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._grid_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_grid_style (self)"
 
 .PP
-Definition at line 282 of file style_class\&.py\&.
+Definition at line 285 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._grid_style\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_grid_width (self)"
 
 .PP
-Definition at line 285 of file style_class\&.py\&.
+Definition at line 288 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._grid_width\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_label_text_color (self)"
 
 .PP
-Definition at line 213 of file style_class\&.py\&.
+Definition at line 216 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_label_text_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_logy (self)"
 
 .PP
-Definition at line 195 of file style_class\&.py\&.
+Definition at line 198 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_logy\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_xaxis_title (self)"
 
 .PP
-Definition at line 132 of file style_class\&.py\&.
+Definition at line 135 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_xaxis_title\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_y_label_offset (self)"
 
 .PP
-Definition at line 144 of file style_class\&.py\&.
+Definition at line 147 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_y_label_offset\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_yaxis_title (self)"
 
 .PP
-Definition at line 135 of file style_class\&.py\&.
+Definition at line 138 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_yaxis_title\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_ymax (self)"
 
 .PP
-Definition at line 201 of file style_class\&.py\&.
+Definition at line 204 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_ymax\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_histaxis_ymin (self)"
 
 .PP
-Definition at line 198 of file style_class\&.py\&.
+Definition at line 201 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._histaxis_ymin\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_kind (self)"
 
 .PP
-Definition at line 276 of file style_class\&.py\&.
+Definition at line 279 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._kind\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_label_text_color (self)"
 
 .PP
-Definition at line 210 of file style_class\&.py\&.
+Definition at line 213 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._label_text_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_legend_font_size (self)"
 
 .PP
-Definition at line 258 of file style_class\&.py\&.
+Definition at line 261 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._legend_font_size\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_LegendPosition (self)"
 
 .PP
-Definition at line 264 of file style_class\&.py\&.
+Definition at line 267 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._LegendPosition\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_line_style (self)"
 
 .PP
-Definition at line 240 of file style_class\&.py\&.
+Definition at line 243 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._line_style\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_logx (self)"
 
 .PP
-Definition at line 171 of file style_class\&.py\&.
+Definition at line 174 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._logx\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_logy (self)"
 
 .PP
-Definition at line 174 of file style_class\&.py\&.
+Definition at line 177 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._logy\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_lumi_val (self)"
 
 .PP
-Definition at line 294 of file style_class\&.py\&.
+Definition at line 297 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._lumi_val\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_marker_color (self)"
 
 .PP
-Definition at line 246 of file style_class\&.py\&.
+Definition at line 249 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._marker_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_marker_error_cap_width (self)"
 
 .PP
-Definition at line 249 of file style_class\&.py\&.
+Definition at line 252 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._marker_error_cap_width\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_marker_size (self)"
 
 .PP
-Definition at line 243 of file style_class\&.py\&.
+Definition at line 246 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._marker_size\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_marker_style (self)"
 
 .PP
-Definition at line 237 of file style_class\&.py\&.
+Definition at line 240 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._marker_style\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_n_legend_columns (self)"
 
 .PP
-Definition at line 270 of file style_class\&.py\&.
+Definition at line 273 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._legend_ncol\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_no_legend (self)"
 
 .PP
-Definition at line 267 of file style_class\&.py\&.
+Definition at line 270 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._no_legend\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_poisson_error (self)"
 
 .PP
-Definition at line 192 of file style_class\&.py\&.
+Definition at line 195 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._poisson_error\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_ref_line_color (self)"
 
 .PP
-Definition at line 225 of file style_class\&.py\&.
+Definition at line 228 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._ref_line_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_show_minor_tick_labels (self)"
 
 .PP
-Definition at line 255 of file style_class\&.py\&.
+Definition at line 258 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._show_minor_tick_labels\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_spine_color (self)"
 
 .PP
-Definition at line 228 of file style_class\&.py\&.
+Definition at line 231 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._spine_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_spine_line_width (self)"
 
 .PP
-Definition at line 168 of file style_class\&.py\&.
+Definition at line 171 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._spine_line_width\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_tick_color (self)"
 
 .PP
-Definition at line 231 of file style_class\&.py\&.
+Definition at line 234 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._tick_color\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_useRoot (self)"
 
 .PP
-Definition at line 111 of file style_class\&.py\&.
+Definition at line 114 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._useRoot, and lib\&.DukePlotALot\&.plotter\&._useRoot\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_xaxis_title (self)"
 
 .PP
-Definition at line 114 of file style_class\&.py\&.
+Definition at line 117 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._axis_title_font, and lib\&.style_class\&.style_container\&._xaxis_title\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_xerr (self)"
 
 .PP
-Definition at line 189 of file style_class\&.py\&.
+Definition at line 192 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._xerr\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_xmax (self)"
 
 .PP
-Definition at line 186 of file style_class\&.py\&.
+Definition at line 189 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._xmax\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_xmin (self)"
 
 .PP
-Definition at line 183 of file style_class\&.py\&.
+Definition at line 186 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._xmin\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_y_label_offset (self)"
 
 .PP
-Definition at line 141 of file style_class\&.py\&.
+Definition at line 144 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._y_label_offset\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_yaxis_title (self)"
 
 .PP
-Definition at line 125 of file style_class\&.py\&.
+Definition at line 128 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._yaxis_title\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_ymax (self)"
 
 .PP
-Definition at line 180 of file style_class\&.py\&.
+Definition at line 183 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._ymax\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_ymin (self)"
 
 .PP
-Definition at line 177 of file style_class\&.py\&.
+Definition at line 180 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._ymin\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_zmax (self)"
 
 .PP
-Definition at line 303 of file style_class\&.py\&.
+Definition at line 306 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._zmax\&.
 .SS "def lib\&.style_class\&.style_container\&.Get_zmin (self)"
 
 .PP
-Definition at line 300 of file style_class\&.py\&.
+Definition at line 303 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._zmin\&.
 .SS "def lib\&.style_class\&.style_container\&.Gets_tick_font_size (self)"
 
 .PP
-Definition at line 234 of file style_class\&.py\&.
+Definition at line 237 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._tick_font_size\&.
 .SS "def lib\&.style_class\&.style_container\&.InitStyle (self, addplots = \fC[''\fP, addheights = \fC[0\fP, histaxis = \fC[]\fP)"
 
 .PP
-Definition at line 91 of file style_class\&.py\&.
+Definition at line 94 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_add_lumi_text (self, value)"
 
 .PP
-Definition at line 324 of file style_class\&.py\&.
+Definition at line 330 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._add_lumi_text\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_additional_text (self, text)"
 
 .PP
-Definition at line 358 of file style_class\&.py\&.
+Definition at line 364 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._additional_text\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_axis (self, logx = \fCFalse\fP, logy = \fCTrue\fP, ymin = \fC-1\fP, ymax = \fC-1\fP, xmin = \fC-1\fP, xmax = \fC-1\fP, zmin = \fC-1\fP, zmax = \fC-1\fP, histaxis_logy = \fCFalse\fP, histaxis_ymin = \fC-1\fP, histaxis_ymax = \fC-1\fP, grid = \fCFalse\fP)"
@@ -1035,107 +1050,115 @@ Function to set properties of the plotting axis\&. This function sets axis prope
 .PP
 
 .PP
-Definition at line 383 of file style_class\&.py\&.
+Definition at line 392 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._grid, lib\&.style_class\&.style_container\&._histaxis_logy, lib\&.style_class\&.style_container\&._histaxis_ymax, lib\&.style_class\&.style_container\&._histaxis_ymin, lib\&.style_class\&.style_container\&._logx, lib\&.style_class\&.style_container\&._logy, lib\&.style_class\&.style_container\&._xmax, lib\&.style_class\&.style_container\&._xmin, lib\&.style_class\&.style_container\&._ymax, lib\&.style_class\&.style_container\&._ymin, lib\&.style_class\&.style_container\&._zmax, and lib\&.style_class\&.style_container\&._zmin\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_batch_mode (self, value)"
 
 .PP
-Definition at line 330 of file style_class\&.py\&.
+Definition at line 336 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._batch_mode\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.SetBatchMode()\&.
+.SS "def lib\&.style_class\&.style_container\&.Set_do_overflowbin (self)"
+
+.PP
+Definition at line 376 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.style_container\&._do_overflowbin\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_bands_center (self, center)"
 
 .PP
-Definition at line 343 of file style_class\&.py\&.
+Definition at line 349 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_center\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_bands_ecol (self, value)"
 
 .PP
-Definition at line 309 of file style_class\&.py\&.
+Definition at line 315 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_ecol\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_bands_fcol (self, value)"
 
 .PP
-Definition at line 312 of file style_class\&.py\&.
+Definition at line 318 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_fcol\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_bands_labl (self, label)"
 
 .PP
-Definition at line 340 of file style_class\&.py\&.
+Definition at line 346 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_bands_labl\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_line_width (self, width)"
 
 .PP
-Definition at line 349 of file style_class\&.py\&.
+Definition at line 355 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._line_width\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_error_stacking (self, stacking)"
 
 .PP
-Definition at line 346 of file style_class\&.py\&.
+Definition at line 352 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._error_stacking\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_legend_font_size (self, value)"
 
 .PP
-Definition at line 333 of file style_class\&.py\&.
+Definition at line 339 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._legend_font_size\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_line_style (self, value)"
 
 .PP
-Definition at line 306 of file style_class\&.py\&.
+Definition at line 312 of file style_class\&.py\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_lumi_val (self, lumi)"
 
 .PP
-Definition at line 327 of file style_class\&.py\&.
+Definition at line 333 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._lumi_val\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_minor_ticks (self)"
 
 .PP
-Definition at line 367 of file style_class\&.py\&.
+Definition at line 373 of file style_class\&.py\&.
+.PP
+References lib\&.style_class\&.style_container\&._do_minor_ticks\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_n_legend_columns (self, n)"
 
 .PP
-Definition at line 361 of file style_class\&.py\&.
+Definition at line 367 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._legend_ncol\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_no_legend (self)"
 
 .PP
-Definition at line 355 of file style_class\&.py\&.
+Definition at line 361 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._no_legend\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_poisson_error_off (self)"
 
 .PP
-Definition at line 364 of file style_class\&.py\&.
+Definition at line 370 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._poisson_error\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_xerr (self)"
 
 .PP
-Definition at line 352 of file style_class\&.py\&.
+Definition at line 358 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._xerr\&.
 .SS "def lib\&.style_class\&.style_container\&.Set_y_label_offset (self, value)"
 
 .PP
-Definition at line 321 of file style_class\&.py\&.
+Definition at line 327 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&._y_label_offset\&.
 .SS "def lib\&.style_class\&.style_container\&.SetBatchMode (self, value)"
 
 .PP
-Definition at line 337 of file style_class\&.py\&.
+Definition at line 343 of file style_class\&.py\&.
 .PP
 References lib\&.style_class\&.style_container\&.Set_batch_mode()\&.
 .SH "Member Data Documentation"
@@ -1143,7 +1166,7 @@ References lib\&.style_class\&.style_container\&.Set_batch_mode()\&.
 .SS "lib\&.style_class\&.style_container\&._add_cms_text\fC [private]\fP"
 
 .PP
-Definition at line 400 of file style_class\&.py\&.
+Definition at line 409 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_add_cms_text()\&.
 .SS "lib\&.style_class\&.style_container\&._add_lumi_text\fC [private]\fP"
@@ -1161,19 +1184,19 @@ Referenced by lib\&.style_class\&.style_container\&.Get_additional_text(), and l
 .SS "lib\&.style_class\&.style_container\&._annotation_text_color\fC [private]\fP"
 
 .PP
-Definition at line 402 of file style_class\&.py\&.
+Definition at line 411 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_annotation_text_color()\&.
 .SS "lib\&.style_class\&.style_container\&._axis_text_main_to_sub_ratio\fC [private]\fP"
 
 .PP
-Definition at line 426 of file style_class\&.py\&.
+Definition at line 433 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_axis_text_main_to_sub_ratio()\&.
 .SS "lib\&.style_class\&.style_container\&._axis_title_font\fC [private]\fP"
 
 .PP
-Definition at line 420 of file style_class\&.py\&.
+Definition at line 427 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), lib\&.style_class\&.style_container\&.Get_axis_title_font(), and lib\&.style_class\&.style_container\&.Get_xaxis_title()\&.
 .SS "lib\&.style_class\&.style_container\&._batch_mode\fC [private]\fP"
@@ -1185,13 +1208,13 @@ Referenced by lib\&.style_class\&.style_container\&.Get_batch_mode(), and lib\&.
 .SS "lib\&.style_class\&.style_container\&._bg_color\fC [private]\fP"
 
 .PP
-Definition at line 403 of file style_class\&.py\&.
+Definition at line 412 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_bg_color()\&.
 .SS "lib\&.style_class\&.style_container\&._cms_text_alignment\fC [private]\fP"
 
 .PP
-Definition at line 415 of file style_class\&.py\&.
+Definition at line 424 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_cms_text_alignment()\&.
 .SS "lib\&.style_class\&.style_container\&._cms_val\fC [private]\fP"
@@ -1203,7 +1226,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_cms_val()\&.
 .SS "lib\&.style_class\&.style_container\&._cmsTextPosition\fC [private]\fP"
 
 .PP
-Definition at line 67 of file style_class\&.py\&.
+Definition at line 70 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_cmsTextPosition()\&.
 .SS "lib\&.style_class\&.style_container\&._content\fC [private]\fP"
@@ -1215,9 +1238,15 @@ Referenced by lib\&.style_class\&.style_container\&.Get_content()\&.
 .SS "lib\&.style_class\&.style_container\&._do_minor_ticks\fC [private]\fP"
 
 .PP
-Definition at line 368 of file style_class\&.py\&.
+Definition at line 67 of file style_class\&.py\&.
 .PP
-Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_do_minor_ticks()\&.
+Referenced by lib\&.style_class\&.style_container\&.Get_do_minor_ticks(), and lib\&.style_class\&.style_container\&.Set_minor_ticks()\&.
+.SS "lib\&.style_class\&.style_container\&._do_overflowbin\fC [private]\fP"
+
+.PP
+Definition at line 68 of file style_class\&.py\&.
+.PP
+Referenced by lib\&.style_class\&.style_container\&.Get_do_overflowbin(), and lib\&.style_class\&.style_container\&.Set_do_overflowbin()\&.
 .SS "lib\&.style_class\&.style_container\&._error_bands_alph\fC [private]\fP"
 
 .PP
@@ -1267,25 +1296,25 @@ Referenced by lib\&.style_class\&.style_container\&.Get_grid(), and lib\&.style_
 .SS "lib\&.style_class\&.style_container\&._grid_color\fC [private]\fP"
 
 .PP
-Definition at line 408 of file style_class\&.py\&.
+Definition at line 417 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_grid_color()\&.
 .SS "lib\&.style_class\&.style_container\&._grid_style\fC [private]\fP"
 
 .PP
-Definition at line 406 of file style_class\&.py\&.
+Definition at line 415 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_grid_style()\&.
 .SS "lib\&.style_class\&.style_container\&._grid_width\fC [private]\fP"
 
 .PP
-Definition at line 407 of file style_class\&.py\&.
+Definition at line 416 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_grid_width()\&.
 .SS "lib\&.style_class\&.style_container\&._histaxis_label_text_color\fC [private]\fP"
 
 .PP
-Definition at line 428 of file style_class\&.py\&.
+Definition at line 435 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_histaxis_label_text_color()\&.
 .SS "lib\&.style_class\&.style_container\&._histaxis_logy\fC [private]\fP"
@@ -1297,7 +1326,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_histaxis_logy(), and lib
 .SS "lib\&.style_class\&.style_container\&._histaxis_xaxis_title\fC [private]\fP"
 
 .PP
-Definition at line 84 of file style_class\&.py\&.
+Definition at line 87 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_histaxis_xaxis_title()\&.
 .SS "lib\&.style_class\&.style_container\&._histaxis_y_label_offset\fC [private]\fP"
@@ -1309,7 +1338,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_histaxis_y_label_offset(
 .SS "lib\&.style_class\&.style_container\&._histaxis_yaxis_title\fC [private]\fP"
 
 .PP
-Definition at line 85 of file style_class\&.py\&.
+Definition at line 88 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_histaxis_yaxis_title()\&.
 .SS "lib\&.style_class\&.style_container\&._histaxis_ymax\fC [private]\fP"
@@ -1333,7 +1362,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_kind()\&.
 .SS "lib\&.style_class\&.style_container\&._label_text_color\fC [private]\fP"
 
 .PP
-Definition at line 401 of file style_class\&.py\&.
+Definition at line 410 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_label_text_color()\&.
 .SS "lib\&.style_class\&.style_container\&._legend_font_size\fC [private]\fP"
@@ -1351,13 +1380,13 @@ Referenced by lib\&.style_class\&.style_container\&.Get_n_legend_columns(), and 
 .SS "lib\&.style_class\&.style_container\&._LegendPosition\fC [private]\fP"
 
 .PP
-Definition at line 68 of file style_class\&.py\&.
+Definition at line 71 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_LegendPosition()\&.
 .SS "lib\&.style_class\&.style_container\&._line_style\fC [private]\fP"
 
 .PP
-Definition at line 307 of file style_class\&.py\&.
+Definition at line 313 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_line_style()\&.
 .SS "lib\&.style_class\&.style_container\&._line_width\fC [private]\fP"
@@ -1387,25 +1416,25 @@ Referenced by lib\&.style_class\&.style_container\&.Get_lumi_val(), and lib\&.st
 .SS "lib\&.style_class\&.style_container\&._marker_color\fC [private]\fP"
 
 .PP
-Definition at line 413 of file style_class\&.py\&.
+Definition at line 422 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_marker_color()\&.
 .SS "lib\&.style_class\&.style_container\&._marker_error_cap_width\fC [private]\fP"
 
 .PP
-Definition at line 414 of file style_class\&.py\&.
+Definition at line 423 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_marker_error_cap_width()\&.
 .SS "lib\&.style_class\&.style_container\&._marker_size\fC [private]\fP"
 
 .PP
-Definition at line 412 of file style_class\&.py\&.
+Definition at line 421 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_marker_size()\&.
 .SS "lib\&.style_class\&.style_container\&._marker_style\fC [private]\fP"
 
 .PP
-Definition at line 410 of file style_class\&.py\&.
+Definition at line 419 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_marker_style()\&.
 .SS "lib\&.style_class\&.style_container\&._no_legend\fC [private]\fP"
@@ -1423,19 +1452,19 @@ Referenced by lib\&.style_class\&.style_container\&.Get_poisson_error(), and lib
 .SS "lib\&.style_class\&.style_container\&._ref_line_color\fC [private]\fP"
 
 .PP
-Definition at line 404 of file style_class\&.py\&.
+Definition at line 413 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_ref_line_color()\&.
 .SS "lib\&.style_class\&.style_container\&._show_minor_tick_labels\fC [private]\fP"
 
 .PP
-Definition at line 416 of file style_class\&.py\&.
+Definition at line 66 of file style_class\&.py\&.
 .PP
-Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_show_minor_tick_labels()\&.
+Referenced by lib\&.style_class\&.style_container\&.Get_show_minor_tick_labels()\&.
 .SS "lib\&.style_class\&.style_container\&._spine_color\fC [private]\fP"
 
 .PP
-Definition at line 405 of file style_class\&.py\&.
+Definition at line 414 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_spine_color()\&.
 .SS "lib\&.style_class\&.style_container\&._spine_line_width\fC [private]\fP"
@@ -1451,13 +1480,13 @@ Definition at line 10 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&._tick_color\fC [private]\fP"
 
 .PP
-Definition at line 409 of file style_class\&.py\&.
+Definition at line 418 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Get_tick_color()\&.
 .SS "lib\&.style_class\&.style_container\&._tick_font_size\fC [private]\fP"
 
 .PP
-Definition at line 425 of file style_class\&.py\&.
+Definition at line 432 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), lib\&.style_class\&.style_container\&._Set_Plain_style(), and lib\&.style_class\&.style_container\&.Gets_tick_font_size()\&.
 .SS "lib\&.style_class\&.style_container\&._useRoot\fC [private]\fP"
@@ -1469,7 +1498,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_useRoot()\&.
 .SS "lib\&.style_class\&.style_container\&._xaxis_title\fC [private]\fP"
 
 .PP
-Definition at line 75 of file style_class\&.py\&.
+Definition at line 78 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_xaxis_title()\&.
 .SS "lib\&.style_class\&.style_container\&._xerr\fC [private]\fP"
@@ -1499,7 +1528,7 @@ Referenced by lib\&.style_class\&.style_container\&.Get_y_label_offset(), and li
 .SS "lib\&.style_class\&.style_container\&._yaxis_title\fC [private]\fP"
 
 .PP
-Definition at line 76 of file style_class\&.py\&.
+Definition at line 79 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&.Get_yaxis_title()\&.
 .SS "lib\&.style_class\&.style_container\&._ymax\fC [private]\fP"
@@ -1529,77 +1558,77 @@ Referenced by lib\&.style_class\&.style_container\&.Get_zmin(), and lib\&.style_
 .SS "lib\&.style_class\&.style_container\&.addheights"
 
 .PP
-Definition at line 93 of file style_class\&.py\&.
+Definition at line 96 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.additionalTextFont"
 
 .PP
-Definition at line 502 of file style_class\&.py\&.
+Definition at line 505 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.additionalTextSize"
 
 .PP
-Definition at line 506 of file style_class\&.py\&.
+Definition at line 509 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.addplots"
 
 .PP
-Definition at line 92 of file style_class\&.py\&.
+Definition at line 95 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.axisLabelTextSize"
 
 .PP
-Definition at line 510 of file style_class\&.py\&.
+Definition at line 513 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.axisOffsetX"
 
 .PP
-Definition at line 513 of file style_class\&.py\&.
+Definition at line 516 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.axisOffsetY"
 
 .PP
-Definition at line 512 of file style_class\&.py\&.
+Definition at line 515 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.axisTitleTextSize"
 
 .PP
-Definition at line 511 of file style_class\&.py\&.
+Definition at line 514 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.cmsTextFont"
 
 .PP
-Definition at line 499 of file style_class\&.py\&.
+Definition at line 502 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.cmsTextSize"
 
 .PP
-Definition at line 503 of file style_class\&.py\&.
+Definition at line 506 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.extraTextFont"
 
 .PP
-Definition at line 501 of file style_class\&.py\&.
+Definition at line 504 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.extraTextOffset"
 
 .PP
-Definition at line 509 of file style_class\&.py\&.
+Definition at line 512 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.extraTextSize"
 
 .PP
-Definition at line 505 of file style_class\&.py\&.
+Definition at line 508 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.histaxis"
 
 .PP
-Definition at line 94 of file style_class\&.py\&.
+Definition at line 97 of file style_class\&.py\&.
 .PP
 Referenced by lib\&.style_class\&.style_container\&._Set_Cool_style(), and lib\&.style_class\&.style_container\&._Set_Plain_style()\&.
 .SS "lib\&.style_class\&.style_container\&.legendTextSize"
 
 .PP
-Definition at line 507 of file style_class\&.py\&.
+Definition at line 510 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.lumiTextFont"
 
 .PP
-Definition at line 500 of file style_class\&.py\&.
+Definition at line 503 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.lumiTextOffset"
 
 .PP
-Definition at line 508 of file style_class\&.py\&.
+Definition at line 511 of file style_class\&.py\&.
 .SS "lib\&.style_class\&.style_container\&.lumiTextSize"
 
 .PP
-Definition at line 504 of file style_class\&.py\&.
+Definition at line 507 of file style_class\&.py\&.
 
 .SH "Author"
 .PP 
