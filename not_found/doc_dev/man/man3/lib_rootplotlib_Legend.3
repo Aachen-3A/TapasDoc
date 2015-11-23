@@ -1,0 +1,298 @@
+.TH "lib.rootplotlib.Legend" 3 "Mon Nov 23 2015" "not_found" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib.rootplotlib.Legend \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBadd\fP"
+.br
+.ti -1c
+.RI "def \fBAddEntry\fP"
+.br
+.ti -1c
+.RI "def \fBgetTextWidth\fP"
+.br
+.ti -1c
+.RI "def \fBSetHeader\fP"
+.br
+.ti -1c
+.RI "def \fBDraw\fP"
+.br
+.ti -1c
+.RI "def \fBdraw\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtextFont\fP"
+.br
+.ti -1c
+.RI "\fBtextSize\fP"
+.br
+.ti -1c
+.RI "\fBtickOffset\fP"
+.br
+.ti -1c
+.RI "\fBrelPosX\fP"
+.br
+.ti -1c
+.RI "\fBrelPosY\fP"
+.br
+.ti -1c
+.RI "\fBlineHeight\fP"
+.br
+.ti -1c
+.RI "\fBsymbolWidth\fP"
+.br
+.ti -1c
+.RI "\fBlegendGap\fP"
+.br
+.ti -1c
+.RI "\fBvspace\fP"
+.br
+.ti -1c
+.RI "\fBhspace\fP"
+.br
+.ti -1c
+.RI "\fBncolumns\fP"
+.br
+.ti -1c
+.RI "\fBheader\fP"
+.br
+.ti -1c
+.RI "\fBpad\fP"
+.br
+.ti -1c
+.RI "\fBreferenceHeight\fP"
+.br
+.ti -1c
+.RI "\fBvalign\fP"
+.br
+.ti -1c
+.RI "\fBentries\fP"
+.br
+.ti -1c
+.RI "\fBmargin\fP"
+.br
+.ti -1c
+.RI "\fBalign\fP"
+.br
+.ti -1c
+.RI "\fBleg\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBx0\fP = property(lambda self: self\&.__position[0])"
+.br
+.ti -1c
+.RI "\fBy0\fP = property(lambda self: self\&.__position[1])"
+.br
+.ti -1c
+.RI "\fBx1\fP = property(lambda self: self\&.__position[2])"
+.br
+.ti -1c
+.RI "\fBy1\fP = property(lambda self: self\&.__position[3])"
+.br
+.ti -1c
+.RI "\fBwidth\fP = property(lambda self: self\&.__position[2]-self\&.__position[0])"
+.br
+.ti -1c
+.RI "\fBheight\fP = property(lambda self: self\&.__position[3]-self\&.__position[1])"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB__position\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 146 of file rootplotlib\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def lib\&.rootplotlib\&.Legend\&.__init__ (self, align = \fC'right'\fP, valign = \fC'top'\fP, pad = \fCNone\fP, vspace = \fC0\fP, hspace = \fC0\fP, ncolumns = \fC1\fP)"
+
+.PP
+Definition at line 147 of file rootplotlib\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def lib\&.rootplotlib\&.Legend\&.add (self, hist, label, option = \fC''\fP)"
+
+.PP
+Definition at line 174 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.AddEntry()\&.
+.SS "def lib\&.rootplotlib\&.Legend\&.AddEntry (self, hist, label, option = \fC''\fP)"
+
+.PP
+Definition at line 176 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.Legend\&.add()\&.
+.SS "def lib\&.rootplotlib\&.Legend\&.Draw (self)"
+
+.PP
+Definition at line 187 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.Legend\&.draw()\&.
+.SS "def lib\&.rootplotlib\&.Legend\&.draw (self)"
+
+.PP
+Definition at line 189 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.Legend\&.entries, and lib\&.rootplotlib\&.Legend\&.getTextWidth()\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.Draw()\&.
+.SS "def lib\&.rootplotlib\&.Legend\&.getTextWidth (self, text)"
+
+.PP
+Definition at line 178 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.Legend\&.referenceHeight, lib\&.rootplotlib\&.Legend\&.textFont, and lib\&.rootplotlib\&.Legend\&.textSize\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.draw()\&.
+.SS "def lib\&.rootplotlib\&.Legend\&.SetHeader (self, header = \fC''\fP)"
+
+.PP
+Definition at line 185 of file rootplotlib\&.py\&.
+.PP
+References lib\&.rootplotlib\&.Legend\&.header\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "lib\&.rootplotlib\&.Legend\&.__position\fC [private]\fP"
+
+.PP
+Definition at line 173 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.align"
+
+.PP
+Definition at line 210 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.entries"
+
+.PP
+Definition at line 172 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.draw()\&.
+.SS "lib\&.rootplotlib\&.Legend\&.header"
+
+.PP
+Definition at line 160 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.SetHeader()\&.
+.SS "lib\&.rootplotlib\&.Legend\&.hspace"
+
+.PP
+Definition at line 158 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.leg"
+
+.PP
+Definition at line 233 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.legendGap"
+
+.PP
+Definition at line 156 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.lineHeight"
+
+.PP
+Definition at line 154 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.margin"
+
+.PP
+Definition at line 199 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.ncolumns"
+
+.PP
+Definition at line 159 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.pad"
+
+.PP
+Definition at line 162 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.referenceHeight"
+
+.PP
+Definition at line 168 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.getTextWidth()\&.
+.SS "lib\&.rootplotlib\&.Legend\&.relPosX"
+
+.PP
+Definition at line 152 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.relPosY"
+
+.PP
+Definition at line 153 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.symbolWidth"
+
+.PP
+Definition at line 155 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.textFont"
+
+.PP
+Definition at line 149 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.getTextWidth()\&.
+.SS "lib\&.rootplotlib\&.Legend\&.textSize"
+
+.PP
+Definition at line 150 of file rootplotlib\&.py\&.
+.PP
+Referenced by lib\&.rootplotlib\&.Legend\&.getTextWidth()\&.
+.SS "lib\&.rootplotlib\&.Legend\&.tickOffset"
+
+.PP
+Definition at line 151 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.valign"
+
+.PP
+Definition at line 171 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.vspace"
+
+.PP
+Definition at line 157 of file rootplotlib\&.py\&.
+.SH "Property Documentation"
+.PP 
+.SS "lib\&.rootplotlib\&.Legend\&.height = property(lambda self: self\&.__position[3]-self\&.__position[1])\fC [static]\fP"
+
+.PP
+Definition at line 239 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.width = property(lambda self: self\&.__position[2]-self\&.__position[0])\fC [static]\fP"
+
+.PP
+Definition at line 238 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.x0 = property(lambda self: self\&.__position[0])\fC [static]\fP"
+
+.PP
+Definition at line 234 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.x1 = property(lambda self: self\&.__position[2])\fC [static]\fP"
+
+.PP
+Definition at line 236 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.y0 = property(lambda self: self\&.__position[1])\fC [static]\fP"
+
+.PP
+Definition at line 235 of file rootplotlib\&.py\&.
+.SS "lib\&.rootplotlib\&.Legend\&.y1 = property(lambda self: self\&.__position[3])\fC [static]\fP"
+
+.PP
+Definition at line 237 of file rootplotlib\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for not_found from the source code\&.
